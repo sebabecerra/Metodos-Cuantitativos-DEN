@@ -1,0 +1,1207 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.7cm,
+    right=2.7cm
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\onehalfspacing
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Métodos Cuantitativos de Investigación en Negocios}
+\fancyhead[R]{PhD in Business Economics}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\section}
+{\large\bfseries}
+{\thesection.}
+{0.5em}
+{}
+
+\newlist{opciones}{enumerate}{1}
+
+\setlist[opciones]{
+    label=\arabic*.,
+    leftmargin=1.2cm,
+    itemsep=0.3em,
+    topsep=0.3em
+}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{UNIVERSIDAD DEL DESARROLLO}}\\
+{\large \textbf{FACULTAD DE ECONOMÍA Y NEGOCIOS}}\\
+{\large \textbf{PhD in Business Economics}}
+
+\vspace{1em}
+
+{\Large \textbf{MÉTODOS CUANTITATIVOS DE INVESTIGACIÓN EN NEGOCIOS}}
+
+\vspace{0.7em}
+
+{\large \textbf{TAREA 1: ESCALAS DE MEDICIÓN Y PRUEBAS ESTADÍSTICAS}}
+\end{center}
+
+\vspace{1em}
+
+\textbf{Fecha de entrega:} 1 de junio de 2026
+
+\textbf{Ponderación:} 20\%
+
+\vspace{1em}
+
+\section{Enunciado}
+
+\subsection*{1. Escalas de medición}
+
+Para cada una de las siguientes variables, proponga dos escalas de medición (una métrica y una no métrica) de una sola pregunta o ítem. Para esto, debe explicitar qué tipo de escala utiliza (nominal, ordinal, de intervalo o de razón) y describirla completamente en términos de su enunciado y de las opciones de respuesta.
+
+\begin{opciones}
+\item Intención de recompra
+\item Satisfacción laboral
+\item Tamaño de la empresa
+\item Credibilidad de mensaje publicitario
+\item Antigüedad en la organización
+\end{opciones}
+
+\vspace{1em}
+
+\subsection*{2. Constructos reflectivos y formativos}
+
+Identifique un constructo del área de negocios que haya sido medido con una escala reflectiva y uno que haya sido medido con una escala formativa. Para cada uno de ellos, proporcione la definición conceptual del constructo, la escala de medición usada para su operacionalización, y la justificación en relación a su naturaleza (formativa o reflectiva).
+
+\vspace{0.5em}
+
+\textbf{Nota:} Cada estudiante debe proporcionar constructos diferentes, por lo que se recomienda informar previamente los constructos seleccionados para evitar repeticiones.
+
+\vspace{1em}
+
+\subsection*{3. Pruebas estadísticas}
+
+Usando la base ``Datos Tarea 1'' (en Canvas) que contiene los resultados de un experimento en el que se expuso a los participantes a información de una empresa (2 tratamientos con información de actividades de CSR interna o externa de la empresa, y un grupo de control con información general) y se midió su nivel de confianza en la empresa antes y después de la información, se solicita realizar las siguientes pruebas:
+
+\begin{enumerate}[label=\alph*)]
+\item Prueba t de medias de dos muestras para la variable edad entre los grupos de tratamiento (no considere el grupo de control).
+
+\item Prueba t de medias para muestras relacionadas para las variables ``Medición de Confianza en la empresa antes de la información'' y ``Medición de Confianza en la empresa después de la información'' para cada uno de los grupos (tratamientos y control).
+
+\item Prueba Z de porcentajes para la variable género entre los grupos de tratamiento (no considere el grupo de control).
+
+\item Prueba de chi-cuadrado para la variable ocupación entre los grupos de tratamiento (no considere el grupo de control).
+
+\item Test ANOVA para las variables ``Medición de Confianza en la empresa antes de la información'' y ``Medición de Confianza en la empresa después de la información'' para cada uno de los grupos (tratamientos y control), incluyendo pruebas post hoc en caso de ser necesario.
+
+\item Test de chi-cuadrado para la variable ingresos en los tres grupos.
+
+\item Test ANOVA para una nueva variable (que usted debe calcular) que mida el cambio en la confianza en la empresa producto de la información entre los tres grupos.
+\end{enumerate}
+
+Para cada prueba, reporte los valores del estadístico, grados de libertad (en caso de ser pertinente) y su cálculo, estadístico de comparación al 95\% de confianza, conclusión respecto a la hipótesis nula, e interpretación de los resultados.
+
+\newpage
+
+\section{Respuestas}
+
+\subsection*{1. Escalas de medición}
+
+Una escala de medición es la forma en que una variable se expresa mediante una pregunta y opciones de respuesta. Las escalas pueden clasificarse en no métricas y métricas.
+
+\textbf{Escalas no métricas.} La escala nominal clasifica respuestas en categorías sin orden. La escala ordinal clasifica respuestas en categorías ordenadas, pero sin asumir que la distancia entre categorías sea equivalente.
+
+\textbf{Escalas métricas.} La escala de intervalo permite interpretar diferencias entre valores, aunque no posee cero absoluto. La escala de razón permite interpretar diferencias y proporciones, porque sí posee cero absoluto.
+
+\subsubsection*{a) Intención de recompra}
+
+\textbf{Respuesta}
+
+\textbf{Escala métrica: escala de intervalo}
+
+\textbf{Enunciado}
+
+En una escala de 0 a 10, ¿qué tan probable es que vuelva a comprar productos o servicios de esta empresa durante los próximos seis meses?
+
+\textbf{Opciones de respuesta}
+
+0 = Nada probable; 10 = Muy probable. El encuestado puede seleccionar cualquier número entero entre 0 y 10.
+
+\textbf{Justificación metodológica}
+
+Se considera una escala de intervalo porque permite medir intensidad y comparar diferencias entre niveles de intención de recompra.
+
+\textbf{Escala no métrica: escala ordinal}
+
+\textbf{Enunciado}
+
+¿Cuál de las siguientes alternativas describe mejor su intención de volver a comprar en esta empresa?
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Definitivamente no volvería a comprar
+\item Probablemente no volvería a comprar
+\item No estoy seguro/a
+\item Probablemente volvería a comprar
+\item Definitivamente volvería a comprar
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala ordinal porque las categorías tienen un orden lógico, pero no puede asegurarse que la distancia entre ellas sea equivalente.
+
+\subsubsection*{b) Satisfacción laboral}
+
+\textbf{Respuesta}
+
+\textbf{Escala métrica: escala de intervalo}
+
+\textbf{Enunciado}
+
+Considerando su experiencia general en la organización, indique su nivel de satisfacción laboral.
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Muy insatisfecho/a
+\item Insatisfecho/a
+\item Algo insatisfecho/a
+\item Ni satisfecho/a ni insatisfecho/a
+\item Algo satisfecho/a
+\item Satisfecho/a
+\item Muy satisfecho/a
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala de intervalo porque mide distintos niveles de satisfacción y, al tener siete categorías, puede tratarse como aproximación métrica para análisis cuantitativos.
+
+\textbf{Escala no métrica: escala ordinal}
+
+\textbf{Enunciado}
+
+¿Cómo clasificaría su nivel actual de satisfacción laboral?
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Baja
+\item Media
+\item Alta
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala ordinal porque las categorías tienen orden, pero no se conoce la distancia exacta entre baja, media y alta.
+
+\subsubsection*{c) Tamaño de la empresa}
+
+\textbf{Respuesta}
+
+\textbf{Escala métrica: escala de razón}
+
+\textbf{Enunciado}
+
+¿Cuántos trabajadores tiene actualmente su empresa?
+
+\textbf{Opciones de respuesta}
+
+Respuesta numérica abierta. Por ejemplo: 5 trabajadores, 40 trabajadores, 250 trabajadores o 1200 trabajadores.
+
+\textbf{Justificación metodológica}
+
+Se considera una escala de razón porque tiene cero absoluto y permite comparar proporciones. Por ejemplo, una empresa con 200 trabajadores tiene el doble de trabajadores que una empresa con 100.
+
+\textbf{Escala no métrica: escala ordinal}
+
+\textbf{Enunciado}
+
+Según el número de trabajadores, ¿en qué categoría se ubica su empresa?
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Microempresa: 1 a 9 trabajadores
+\item Pequeña empresa: 10 a 49 trabajadores
+\item Mediana empresa: 50 a 199 trabajadores
+\item Gran empresa: 200 o más trabajadores
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala ordinal porque las categorías están ordenadas por tamaño, pero los rangos no tienen la misma amplitud.
+
+\subsubsection*{d) Credibilidad del mensaje publicitario}
+
+\textbf{Respuesta}
+
+\textbf{Escala métrica: escala de intervalo}
+
+\textbf{Enunciado}
+
+Después de observar el mensaje publicitario, indique qué tan creíble le parece.
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Nada creíble
+\item Muy poco creíble
+\item Poco creíble
+\item Medianamente creíble
+\item Algo creíble
+\item Bastante creíble
+\item Muy creíble
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala de intervalo porque mide intensidad percibida de credibilidad en distintos niveles.
+
+\textbf{Escala no métrica: escala nominal}
+
+\textbf{Enunciado}
+
+¿Cómo clasificaría el mensaje publicitario observado?
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Creíble
+\item No creíble
+\item No puedo determinarlo
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala nominal porque clasifica la percepción del mensaje sin establecer un orden jerárquico completo entre las alternativas.
+
+\subsubsection*{e) Antigüedad en la organización}
+
+\textbf{Respuesta}
+
+\textbf{Escala métrica: escala de razón}
+
+\textbf{Enunciado}
+
+¿Cuántos años completos lleva trabajando en esta organización?
+
+\textbf{Opciones de respuesta}
+
+Respuesta numérica abierta. Por ejemplo: 0 años, 3 años, 8 años o 15 años.
+
+\textbf{Justificación metodológica}
+
+Se considera una escala de razón porque tiene cero absoluto y permite comparar proporciones. Por ejemplo, una persona con 10 años de antigüedad tiene el doble de antigüedad que una persona con 5 años.
+
+\textbf{Escala no métrica: escala ordinal}
+
+\textbf{Enunciado}
+
+¿En qué tramo se encuentra su antigüedad en la organización?
+
+\textbf{Opciones de respuesta}
+
+\begin{opciones}
+\item Menos de 1 año
+\item Entre 1 y 3 años
+\item Entre 4 y 7 años
+\item Entre 8 y 15 años
+\item Más de 15 años
+\end{opciones}
+
+\textbf{Justificación metodológica}
+
+Se considera una escala ordinal porque los tramos tienen orden creciente, pero las distancias entre categorías no son equivalentes.
+
+\subsection*{2. Constructos reflectivos y formativos}
+
+Un constructo es un concepto teórico que no se observa directamente, pero que puede medirse mediante indicadores. Por ejemplo, personalidad de marca o sostenibilidad corporativa son constructos porque no se observan de forma directa, sino a través de atributos, dimensiones o preguntas observables.
+
+En una escala reflectiva, el constructo causa las respuestas observadas; por eso los indicadores reflejan una misma variable latente. En una escala formativa, los indicadores construyen el constructo; por eso cada dimensión aporta una parte distinta del concepto.
+
+\subsubsection*{Constructo reflectivo: personalidad de marca}
+
+\textbf{Respuesta}
+
+\textbf{Definición conceptual}
+
+La personalidad de marca corresponde al conjunto de características humanas asociadas a una marca. Es decir, una marca puede ser percibida como sincera, emocionante, competente, sofisticada o ruda, de manera similar a como las personas atribuyen rasgos de personalidad a otros individuos.
+
+Se selecciona el estudio de Aaker (1997) porque es una referencia clásica en marketing y desarrolla una escala ampliamente utilizada para medir la personalidad de marca mediante indicadores observables.
+
+\textbf{Escala de medición}
+
+Aaker (1997) desarrolla una escala tipo Likert para medir personalidad de marca. La escala se organiza en cinco dimensiones principales:
+
+\begin{opciones}
+\item Sinceridad.
+\item Emoción.
+\item Competencia.
+\item Sofisticación.
+\item Rudeza.
+\end{opciones}
+
+Cada dimensión se mide mediante rasgos o atributos específicos de marca. Por ejemplo:
+
+\begin{opciones}
+\item Sinceridad: honesta, auténtica, saludable, alegre.
+\item Emoción: atrevida, actual, imaginativa, moderna.
+\item Competencia: confiable, inteligente, exitosa.
+\item Sofisticación: elegante, prestigiosa, encantadora.
+\item Rudeza: resistente, fuerte, aventurera.
+\end{opciones}
+
+\textbf{Justificación de su naturaleza reflectiva}
+
+Este constructo es reflectivo porque la personalidad percibida de la marca se manifiesta en las respuestas a los distintos atributos. Si una marca es percibida como altamente competente, debería recibir evaluaciones altas en atributos como confiable, inteligente o exitosa.
+
+La dirección causal va desde el constructo hacia los indicadores: la personalidad de marca percibida explica las respuestas observadas. Además, se espera covariación entre los indicadores dentro de cada dimensión, porque todos reflejan un mismo rasgo latente. Por esta razón, la escala puede evaluarse mediante consistencia interna, cargas factoriales y validez convergente.
+
+\subsubsection*{Constructo formativo: sostenibilidad corporativa}
+
+\textbf{Respuesta}
+
+\textbf{Definición conceptual}
+
+La sostenibilidad corporativa corresponde a la integración de dimensiones ambientales, sociales, económicas y de gobernanza en la estrategia y las operaciones de una empresa. Cantele, Landi y Vernizzi (2024) la conceptualizan como un constructo multidimensional que combina el enfoque ESG con el triple bottom line.
+
+\textbf{Escala de medición}
+
+Cantele et al. (2024) desarrollan y validan una escala de sostenibilidad corporativa como constructo formativo de orden superior. La escala se estructura en cuatro dimensiones principales:
+
+\textbf{Dimensiones utilizadas en el paper}
+
+\begin{opciones}
+\item Planeta: gestión ambiental, emisiones, residuos y uso eficiente de recursos naturales.
+\item Personas: diversidad, derechos laborales, bienestar de los trabajadores e impacto en la comunidad.
+\item Prosperidad: generación de valor económico, innovación y contribución al desarrollo económico.
+\item Gobernanza: transparencia, ética, rendición de cuentas y mecanismos anticorrupción.
+\end{opciones}
+
+\textbf{Justificación de su naturaleza formativa}
+
+Este constructo es formativo porque sus dimensiones construyen conjuntamente la sostenibilidad corporativa. La dirección causal va desde los indicadores hacia el constructo: una empresa es más sostenible en la medida en que presenta mejores prácticas ambientales, sociales, económicas y de gobernanza.
+
+Las dimensiones no son intercambiables. Por ejemplo, eliminar la dimensión social implica perder una parte relevante del concepto, aunque se mantengan las dimensiones ambiental, económica y de gobernanza. Además, no es necesario que todas las dimensiones estén altamente correlacionadas: una empresa puede tener buen desempeño ambiental y, al mismo tiempo, debilidades en gobernanza o prácticas laborales.
+
+Por ello, la evaluación de una escala formativa se centra en la relevancia de los pesos formativos, la posible multicolinealidad entre dimensiones y la cobertura conceptual del constructo, más que en la consistencia interna tradicional.
+
+\textbf{Referencias utilizadas}
+
+Aaker, J. L. (1997). Dimensions of brand personality. \textit{Journal of Marketing Research, 34}(3), 347--356.
+
+Cantele, S., Landi, S., \& Vernizzi, S. (2024). Measuring corporate sustainability in its multidimensionality: A formative approach to integrate ESG and triple bottom line approaches. \textit{Business Strategy and the Environment, 33}(7), 7383--7408.
+
+Jarvis, C. B., MacKenzie, S. B., \& Podsakoff, P. M. (2003). A critical review of construct indicators and measurement model misspecification in marketing and consumer research. \textit{Journal of Consumer Research, 30}(2), 199--218.
+
+
+\subsection*{3. Pruebas estadísticas}
+
+Para responder esta sección se utilizó la base \textit{Datos Tarea 1}, que contiene 120 observaciones distribuidas equitativamente en tres grupos experimentales: CSR Externa, CSR Interna e Información sin CSR. Cada grupo contiene 40 participantes. Las variables categóricas fueron interpretadas a partir de las etiquetas contenidas en la metadata del archivo SPSS.
+
+Antes de realizar las pruebas inferenciales, se calcularon estadísticos descriptivos generales. La edad promedio fue 30.675 años en CSR Externa, 31.225 años en CSR Interna y 31.900 años en el grupo Información sin CSR. La confianza promedio antes de la información fue 4.700 en CSR Externa, 5.125 en CSR Interna y 4.650 en Información sin CSR. Después de la información, la confianza promedio fue 7.275 en CSR Externa, 6.550 en CSR Interna y 4.900 en Información sin CSR.
+
+\subsubsection*{a) Prueba t de medias de dos muestras para edad entre los grupos de tratamiento}
+
+El objetivo de esta prueba es evaluar si existen diferencias significativas en la edad promedio entre los dos grupos de tratamiento, CSR Externa y CSR Interna. No se considera el grupo de control.
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \mu_{\text{Edad CSR Externa}} = \mu_{\text{Edad CSR Interna}}
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \mu_{\text{Edad CSR Externa}} \neq \mu_{\text{Edad CSR Interna}}
+\]
+
+Se utilizó una prueba t de dos muestras independientes con corrección de Welch, dado que esta versión no exige asumir igualdad de varianzas entre los grupos.
+
+Los resultados descriptivos fueron los siguientes:
+
+\begin{itemize}
+    \item CSR Externa: \(n = 40\), media = 30.6750, desviación estándar = 8.3309.
+    \item CSR Interna: \(n = 40\), media = 31.2250, desviación estándar = 8.9743.
+\end{itemize}
+
+La corrección de Welch se utiliza porque ajusta el error estándar y los grados de libertad cuando las varianzas muestrales de los dos grupos no se asumen iguales. En este caso, en lugar de usar una varianza combinada, se calcula el estadístico t con las varianzas separadas de cada grupo:
+
+\[
+t =
+\frac{\bar{X}_1 - \bar{X}_2}
+{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+\]
+
+donde \(\bar{X}_1\) y \(\bar{X}_2\) son las medias de edad de los grupos, \(s_1^2\) y \(s_2^2\) son las varianzas muestrales, y \(n_1\) y \(n_2\) son los tamaños muestrales.
+
+Reemplazando los valores:
+
+\[
+t =
+\frac{30.6750 - 31.2250}
+{\sqrt{\frac{8.3309^2}{40} + \frac{8.9743^2}{40}}}
+\]
+
+\[
+t =
+\frac{-0.5500}
+{\sqrt{1.7351 + 2.0134}}
+\]
+
+\[
+t =
+\frac{-0.5500}{1.9361}
+= -0.2841
+\]
+
+Por lo tanto, el estadístico obtenido fue:
+
+\[
+t = -0.2841
+\]
+
+Los grados de libertad de Welch se calculan con la siguiente fórmula:
+
+\[
+gl =
+\frac{
+\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2
+}{
+\frac{\left(\frac{s_1^2}{n_1}\right)^2}{n_1 - 1}
++
+\frac{\left(\frac{s_2^2}{n_2}\right)^2}{n_2 - 1}
+}
+\]
+
+Reemplazando los valores:
+
+\[
+gl =
+\frac{
+\left(\frac{8.3309^2}{40} + \frac{8.9743^2}{40}\right)^2
+}{
+\frac{\left(\frac{8.3309^2}{40}\right)^2}{40 - 1}
++
+\frac{\left(\frac{8.9743^2}{40}\right)^2}{40 - 1}
+}
+\]
+
+\[
+gl = 77.5723
+\]
+
+Por lo tanto, los grados de libertad aproximados de Welch fueron:
+
+\[
+gl = 77.5723
+\]
+
+El estadístico crítico se obtiene desde la distribución t de Student usando una prueba bilateral con \(\alpha = 0.05\). Como la prueba es bilateral, se reparte el nivel de significancia en dos colas:
+
+\[
+\alpha/2 = 0.025
+\]
+
+Por lo tanto, se busca el percentil:
+
+\[
+t_{1-\alpha/2, gl} = t_{0.975, 77.5723}
+\]
+
+Esto entrega:
+
+\[
+t_c = \pm 1.9910
+\]
+
+El p-value fue:
+
+\[
+p = 0.7771
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, no existe evidencia estadísticamente significativa para afirmar que la edad promedio difiera entre los grupos CSR Externa y CSR Interna. Esto sugiere que ambos grupos de tratamiento son comparables en términos de edad.
+
+\subsubsection*{b) Prueba t de medias para muestras relacionadas para confianza antes y después}
+
+El objetivo de esta prueba es evaluar si la confianza en la empresa cambió significativamente después de recibir la información dentro de cada grupo experimental. Como se compara la medición antes y después para los mismos participantes, corresponde aplicar una prueba t para muestras relacionadas.
+
+Para cada grupo, las hipótesis son:
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \mu_{\text{Confianza después} - \text{Confianza antes}} = 0
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \mu_{\text{Confianza después} - \text{Confianza antes}} \neq 0
+\]
+
+Los grados de libertad para cada prueba se calculan como:
+
+\[
+gl = n - 1 = 40 - 1 = 39
+\]
+
+El estadístico t pareado se calcula con la media de las diferencias individuales entre confianza después y confianza antes:
+
+\[
+t =
+\frac{\bar{d}}
+{s_d/\sqrt{n}}
+\]
+
+donde \(\bar{d}\) es el cambio promedio, \(s_d\) es la desviación estándar de los cambios individuales y \(n\) es el número de pares observados.
+
+El estadístico crítico bilateral se obtiene desde la distribución t de Student con \(gl = 39\). Como la prueba es bilateral y \(\alpha = 0.05\), se busca:
+
+\[
+t_{1-\alpha/2,gl} = t_{0.975,39}
+\]
+
+Por lo tanto, el estadístico crítico bilateral al 95\% de confianza fue:
+
+\[
+t_c = \pm 2.0227
+\]
+
+\textbf{Grupo CSR Externa.}
+
+En este grupo, la confianza promedio antes de la información fue 4.7000 y la confianza promedio después fue 7.2750. El cambio promedio fue 2.5750.
+
+La desviación estándar del cambio fue 1.0099. Por lo tanto:
+
+\[
+t =
+\frac{2.5750}
+{1.0099/\sqrt{40}}
+=
+\frac{2.5750}{0.1597}
+= 16.1263
+\]
+
+Los resultados de la prueba fueron:
+
+\[
+t = 16.1263,\quad gl = 39,\quad p < 0.001
+\]
+
+Dado que \(p < 0.05\), se rechaza la hipótesis nula. Por lo tanto, existe evidencia estadísticamente significativa de que la confianza aumentó después de recibir información sobre CSR Externa.
+
+\textbf{Grupo CSR Interna.}
+
+En este grupo, la confianza promedio antes de la información fue 5.1250 y la confianza promedio después fue 6.5500. El cambio promedio fue 1.4250.
+
+La desviación estándar del cambio fue 0.5006. Por lo tanto:
+
+\[
+t =
+\frac{1.4250}
+{0.5006/\sqrt{40}}
+=
+\frac{1.4250}{0.0792}
+= 18.0019
+\]
+
+Los resultados de la prueba fueron:
+
+\[
+t = 18.0019,\quad gl = 39,\quad p < 0.001
+\]
+
+Dado que \(p < 0.05\), se rechaza la hipótesis nula. Por lo tanto, existe evidencia estadísticamente significativa de que la confianza aumentó después de recibir información sobre CSR Interna.
+
+\textbf{Grupo Información sin CSR.}
+
+En este grupo, la confianza promedio antes de la información fue 4.6500 y la confianza promedio después fue 4.9000. El cambio promedio fue 0.2500.
+
+La desviación estándar del cambio fue 1.1491. Por lo tanto:
+
+\[
+t =
+\frac{0.2500}
+{1.1491/\sqrt{40}}
+=
+\frac{0.2500}{0.1817}
+= 1.3759
+\]
+
+Los resultados de la prueba fueron:
+
+\[
+t = 1.3759,\quad gl = 39,\quad p = 0.1767
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, no existe evidencia estadísticamente significativa de que la confianza haya cambiado en el grupo de control.
+
+En síntesis, la confianza aumentó significativamente en los dos grupos que recibieron información de CSR, pero no aumentó significativamente en el grupo que recibió información general sin CSR.
+
+\subsubsection*{c) Prueba Z de porcentajes para género entre los grupos de tratamiento}
+
+El objetivo de esta prueba es comparar la proporción de participantes de género femenino entre los grupos CSR Externa y CSR Interna. No se considera el grupo de control.
+
+\textbf{Hipótesis nula:}
+\[
+H_0: p_{\text{Femenino CSR Externa}} = p_{\text{Femenino CSR Interna}}
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: p_{\text{Femenino CSR Externa}} \neq p_{\text{Femenino CSR Interna}}
+\]
+
+En CSR Externa hubo 18 participantes de género femenino de un total de 40, lo que corresponde a una proporción de 0.4500. En CSR Interna hubo 16 participantes de género femenino de un total de 40, lo que corresponde a una proporción de 0.4000.
+
+La prueba Z para dos proporciones utiliza la proporción agrupada bajo la hipótesis nula:
+
+\[
+\hat{p} =
+\frac{x_1 + x_2}{n_1 + n_2}
+\]
+
+Reemplazando los valores:
+
+\[
+\hat{p} =
+\frac{18 + 16}{40 + 40}
+=
+\frac{34}{80}
+= 0.4250
+\]
+
+El error estándar se calcula como:
+
+\[
+EE =
+\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}
+\]
+
+\[
+EE =
+\sqrt{0.4250(1-0.4250)\left(\frac{1}{40}+\frac{1}{40}\right)}
+= 0.1105
+\]
+
+Luego, el estadístico Z se calcula como:
+
+\[
+Z =
+\frac{\hat{p}_1 - \hat{p}_2}{EE}
+=
+\frac{0.4500 - 0.4000}{0.1105}
+= 0.4523
+\]
+
+Por lo tanto, el estadístico obtenido fue:
+
+\[
+Z = 0.4523
+\]
+
+El estadístico crítico se obtiene desde la distribución normal estándar. Como la prueba es bilateral y \(\alpha = 0.05\), se busca:
+
+\[
+Z_{1-\alpha/2} = Z_{0.975}
+\]
+
+Por lo tanto, el estadístico crítico bilateral al 95\% de confianza fue:
+
+\[
+Z_c = \pm 1.9600
+\]
+
+El p-value fue:
+
+\[
+p = 0.6510
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, no existe evidencia estadísticamente significativa para afirmar que la proporción de mujeres difiera entre los grupos CSR Externa y CSR Interna. Esto sugiere que ambos grupos de tratamiento son comparables en términos de género.
+
+\subsubsection*{d) Prueba de chi-cuadrado para ocupación entre los grupos de tratamiento}
+
+El objetivo de esta prueba es evaluar si la distribución de la variable ocupación difiere entre los grupos CSR Externa y CSR Interna. No se considera el grupo de control.
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \text{la ocupación es independiente del grupo de tratamiento}
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \text{la ocupación no es independiente del grupo de tratamiento}
+\]
+
+Se utilizó una prueba chi-cuadrado de independencia. La tabla observada fue:
+
+\[
+\begin{array}{lrrrr}
+\hline
+ & \text{Estudiante} & \text{Otro} & \text{Trab. dep.} & \text{Trab. indep.} \\
+\hline
+\text{CSR Externa} & 7 & 14 & 7 & 12 \\
+\text{CSR Interna} & 9 & 9 & 12 & 10 \\
+\hline
+\end{array}
+\]
+
+Las frecuencias esperadas se calculan como:
+
+\[
+E_{ij} =
+\frac{(\text{total fila}_i)(\text{total columna}_j)}
+{\text{total general}}
+\]
+
+Por ejemplo, para estudiantes en CSR Externa:
+
+\[
+E =
+\frac{40 \times 16}{80}
+= 8.0000
+\]
+
+La tabla esperada fue:
+
+\[
+\begin{array}{lrrrr}
+\hline
+ & \text{Estudiante} & \text{Otro} & \text{Trab. dep.} & \text{Trab. indep.} \\
+\hline
+\text{CSR Externa} & 8.0 & 11.5 & 9.5 & 11.0 \\
+\text{CSR Interna} & 8.0 & 11.5 & 9.5 & 11.0 \\
+\hline
+\end{array}
+\]
+
+El estadístico chi-cuadrado se calcula como:
+
+\[
+\chi^2 =
+\sum \frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+\]
+
+Al reemplazar las frecuencias observadas y esperadas de la tabla, se obtiene:
+
+\[
+\chi^2 = 2.8346
+\]
+
+Los grados de libertad se calcularon como:
+
+\[
+gl = (r-1)(c-1) = (2-1)(4-1) = 3
+\]
+
+El estadístico crítico se obtiene desde la distribución chi-cuadrado con \(gl = 3\):
+
+\[
+\chi^2_{1-\alpha,gl} = \chi^2_{0.95,3}
+\]
+
+Por lo tanto, el estadístico crítico al 95\% de confianza fue:
+
+\[
+\chi^2_c = 7.8147
+\]
+
+El p-value fue:
+
+\[
+p = 0.4178
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, no existe evidencia estadísticamente significativa de asociación entre ocupación y grupo de tratamiento. Esto sugiere que los grupos CSR Externa y CSR Interna son comparables en términos de ocupación.
+
+\subsubsection*{e) ANOVA para confianza antes y después entre los tres grupos}
+
+El objetivo de esta prueba es comparar las medias de confianza entre los tres grupos experimentales: CSR Externa, CSR Interna e Información sin CSR. Se realizaron dos ANOVA de una vía: uno para la confianza antes de la información y otro para la confianza después de la información.
+
+Para cada ANOVA, las hipótesis son:
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \mu_1 = \mu_2 = \mu_3
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \text{al menos una media de grupo es diferente}
+\]
+
+Los grados de libertad se calcularon como:
+
+\[
+gl_{\text{entre}} = k - 1 = 3 - 1 = 2
+\]
+
+\[
+gl_{\text{dentro}} = N - k = 120 - 3 = 117
+\]
+
+El estadístico ANOVA se calcula como la razón entre el cuadrado medio entre grupos y el cuadrado medio dentro de los grupos:
+
+\[
+F =
+\frac{CM_{\text{entre}}}{CM_{\text{dentro}}}
+\]
+
+donde:
+
+\[
+CM_{\text{entre}} =
+\frac{SC_{\text{entre}}}{gl_{\text{entre}}}
+\]
+
+\[
+CM_{\text{dentro}} =
+\frac{SC_{\text{dentro}}}{gl_{\text{dentro}}}
+\]
+
+El estadístico crítico se obtiene desde la distribución F con \(gl_{\text{entre}} = 2\) y \(gl_{\text{dentro}} = 117\):
+
+\[
+F_{1-\alpha,gl_{\text{entre}},gl_{\text{dentro}}}
+=
+F_{0.95,2,117}
+= 3.0738
+\]
+
+\textbf{ANOVA para confianza antes.}
+
+Las medias de confianza antes de la información fueron:
+
+\begin{itemize}
+    \item CSR Externa: media = 4.7000, desviación estándar = 1.2850.
+    \item CSR Interna: media = 5.1250, desviación estándar = 1.3623.
+    \item Información sin CSR: media = 4.6500, desviación estándar = 1.0990.
+\end{itemize}
+
+El resultado del ANOVA fue:
+
+\[
+SC_{\text{entre}} = 5.4500,\quad
+SC_{\text{dentro}} = 183.8750
+\]
+
+\[
+CM_{\text{entre}} =
+\frac{5.4500}{2}
+= 2.7250
+\]
+
+\[
+CM_{\text{dentro}} =
+\frac{183.8750}{117}
+= 1.5716
+\]
+
+\[
+F =
+\frac{2.7250}{1.5716}
+= 1.7339
+\]
+
+\[
+F = 1.7339,\quad gl = (2,117),\quad F_c = 3.0738,\quad p = 0.1811
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, antes de la intervención no existen diferencias estadísticamente significativas en confianza entre los tres grupos. Esto sugiere que los grupos partían desde niveles similares de confianza.
+
+\textbf{ANOVA para confianza después.}
+
+Las medias de confianza después de la información fueron:
+
+\begin{itemize}
+    \item CSR Externa: media = 7.2750, desviación estándar = 1.5357.
+    \item CSR Interna: media = 6.5500, desviación estándar = 1.3578.
+    \item Información sin CSR: media = 4.9000, desviación estándar = 1.3359.
+\end{itemize}
+
+El resultado del ANOVA fue:
+
+\[
+SC_{\text{entre}} = 118.5167,\quad
+SC_{\text{dentro}} = 233.4750
+\]
+
+\[
+CM_{\text{entre}} =
+\frac{118.5167}{2}
+= 59.2583
+\]
+
+\[
+CM_{\text{dentro}} =
+\frac{233.4750}{117}
+= 1.9955
+\]
+
+\[
+F =
+\frac{59.2583}{1.9955}
+= 29.6958
+\]
+
+\[
+F = 29.6958,\quad gl = (2,117),\quad F_c = 3.0738,\quad p < 0.001
+\]
+
+Dado que \(p < 0.05\), se rechaza la hipótesis nula. Por lo tanto, después de la información existen diferencias estadísticamente significativas en confianza entre los grupos.
+
+Como el ANOVA fue significativo, se aplicó una prueba post hoc Tukey HSD. Los resultados indican que:
+
+\begin{itemize}
+    \item CSR Externa difiere significativamente del grupo Información sin CSR.
+    \item CSR Interna difiere significativamente del grupo Información sin CSR.
+    \item CSR Externa y CSR Interna no difieren significativamente entre sí al 5\%.
+\end{itemize}
+
+En términos sustantivos, ambos grupos que recibieron información sobre CSR presentan mayor confianza posterior que el grupo de control. Sin embargo, la diferencia entre CSR Externa y CSR Interna no alcanza significancia estadística al 5\%.
+
+\subsubsection*{f) Test de chi-cuadrado para ingresos en los tres grupos}
+
+El objetivo de esta prueba es evaluar si la distribución de ingresos difiere entre los tres grupos experimentales.
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \text{los ingresos son independientes del grupo experimental}
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \text{los ingresos no son independientes del grupo experimental}
+\]
+
+Se aplicó una prueba chi-cuadrado de independencia. La tabla observada fue:
+
+\[
+\begin{array}{lrrrrr}
+\hline
+ & \text{1 a 2 MM} & \text{200 a 500 mil} & \text{501 a 1000 mil} & \text{<200 mil} & \text{>2 MM} \\
+\hline
+\text{CSR Externa} & 9 & 10 & 6 & 10 & 5 \\
+\text{CSR Interna} & 11 & 7 & 15 & 3 & 4 \\
+\text{Info sin CSR} & 11 & 9 & 5 & 10 & 5 \\
+\hline
+\end{array}
+\]
+
+Las frecuencias esperadas se calculan como:
+
+\[
+E_{ij} =
+\frac{(\text{total fila}_i)(\text{total columna}_j)}
+{\text{total general}}
+\]
+
+Por ejemplo, para el tramo de ingresos entre 1 millón y 2 millones en CSR Externa:
+
+\[
+E =
+\frac{40 \times 31}{120}
+= 10.3333
+\]
+
+La tabla esperada fue:
+
+\[
+\begin{array}{lrrrrr}
+\hline
+ & \text{1 a 2 MM} & \text{200 a 500 mil} & \text{501 a 1000 mil} & \text{<200 mil} & \text{>2 MM} \\
+\hline
+\text{CSR Externa} & 10.3333 & 8.6667 & 8.6667 & 7.6667 & 4.6667 \\
+\text{CSR Interna} & 10.3333 & 8.6667 & 8.6667 & 7.6667 & 4.6667 \\
+\text{Info sin CSR} & 10.3333 & 8.6667 & 8.6667 & 7.6667 & 4.6667 \\
+\hline
+\end{array}
+\]
+
+El estadístico chi-cuadrado se calcula como:
+
+\[
+\chi^2 =
+\sum \frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+\]
+
+Al reemplazar las frecuencias observadas y esperadas de la tabla, se obtiene:
+
+\[
+\chi^2 = 12.2003
+\]
+
+Los grados de libertad se calcularon como:
+
+\[
+gl = (r-1)(c-1) = (3-1)(5-1) = 8
+\]
+
+El estadístico crítico se obtiene desde la distribución chi-cuadrado con \(gl = 8\):
+
+\[
+\chi^2_{1-\alpha,gl} = \chi^2_{0.95,8}
+\]
+
+Por lo tanto, el estadístico crítico al 95\% de confianza fue:
+
+\[
+\chi^2_c = 15.5073
+\]
+
+El p-value fue:
+
+\[
+p = 0.1425
+\]
+
+Dado que \(p > 0.05\), no se rechaza la hipótesis nula. Por lo tanto, no existe evidencia estadísticamente significativa para afirmar que la distribución de ingresos difiera entre los tres grupos. Esto sugiere que los grupos son comparables en términos de ingresos.
+
+\subsubsection*{g) ANOVA para el cambio en confianza entre los tres grupos}
+
+Para esta prueba se construyó una nueva variable denominada cambio en confianza, calculada como:
+
+\[
+\text{Cambio en confianza} = \text{Confianza después} - \text{Confianza antes}
+\]
+
+El objetivo es evaluar si el cambio promedio en confianza difiere entre los tres grupos.
+
+\textbf{Hipótesis nula:}
+\[
+H_0: \mu_{\Delta 1} = \mu_{\Delta 2} = \mu_{\Delta 3}
+\]
+
+\textbf{Hipótesis alternativa:}
+\[
+H_1: \text{al menos un grupo tiene un cambio promedio diferente}
+\]
+
+Las medias de cambio fueron:
+
+\begin{itemize}
+    \item CSR Externa: media = 2.5750, desviación estándar = 1.0099.
+    \item CSR Interna: media = 1.4250, desviación estándar = 0.5006.
+    \item Información sin CSR: media = 0.2500, desviación estándar = 1.1491.
+\end{itemize}
+
+Los grados de libertad fueron:
+
+\[
+gl_{\text{entre}} = 2,\quad gl_{\text{dentro}} = 117
+\]
+
+Al igual que en el ANOVA anterior, el estadístico F se calcula como:
+
+\[
+F =
+\frac{CM_{\text{entre}}}{CM_{\text{dentro}}}
+\]
+
+con:
+
+\[
+CM_{\text{entre}} =
+\frac{SC_{\text{entre}}}{gl_{\text{entre}}}
+\]
+
+\[
+CM_{\text{dentro}} =
+\frac{SC_{\text{dentro}}}{gl_{\text{dentro}}}
+\]
+
+Para la variable cambio en confianza, las sumas de cuadrados fueron:
+
+\[
+SC_{\text{entre}} = 108.1167,\quad
+SC_{\text{dentro}} = 101.0500
+\]
+
+Por lo tanto:
+
+\[
+CM_{\text{entre}} =
+\frac{108.1167}{2}
+= 54.0583
+\]
+
+\[
+CM_{\text{dentro}} =
+\frac{101.0500}{117}
+= 0.8637
+\]
+
+\[
+F =
+\frac{54.0583}{0.8637}
+= 62.5910
+\]
+
+El estadístico crítico se obtiene desde la distribución F:
+
+\[
+F_{1-\alpha,gl_{\text{entre}},gl_{\text{dentro}}}
+=
+F_{0.95,2,117}
+= 3.0738
+\]
+
+El resultado del ANOVA fue:
+
+\[
+F = 62.5910,\quad gl = (2,117),\quad F_c = 3.0738,\quad p < 0.001
+\]
+
+Dado que \(p < 0.05\), se rechaza la hipótesis nula. Por lo tanto, el cambio promedio en confianza difiere significativamente entre los tres grupos.
+
+Como el ANOVA fue significativo, se aplicó una prueba post hoc Tukey HSD. Los resultados muestran que los tres pares de grupos difieren significativamente entre sí:
+
+\begin{itemize}
+    \item CSR Externa difiere significativamente de CSR Interna.
+    \item CSR Externa difiere significativamente de Información sin CSR.
+    \item CSR Interna difiere significativamente de Información sin CSR.
+\end{itemize}
+
+En términos sustantivos, la información sobre CSR Externa produjo el mayor aumento promedio en confianza, seguida por la información sobre CSR Interna. El grupo Información sin CSR presentó el menor cambio promedio. Este resultado sugiere que el tipo de información recibida influye significativamente en el cambio de confianza hacia la empresa.
+
+\subsubsection*{Conclusión general de la pregunta 3}
+
+En conjunto, los resultados muestran que los grupos son comparables en variables sociodemográficas relevantes, ya que no se encontraron diferencias significativas en edad, género, ocupación ni ingresos. Además, antes de recibir la información, los tres grupos no presentaban diferencias significativas en confianza hacia la empresa.
+
+Después de la intervención, sí se observaron diferencias significativas en confianza entre los grupos. Los grupos expuestos a información sobre CSR mostraron mayores niveles de confianza que el grupo de control. Además, el análisis del cambio en confianza indica que la CSR Externa generó el mayor aumento promedio, seguida por la CSR Interna, mientras que la información general sin CSR produjo un cambio pequeño y no significativo.
+
+Por lo tanto, la evidencia sugiere que la información sobre responsabilidad social corporativa aumenta la confianza en la empresa, y que el efecto es especialmente fuerte cuando la información se refiere a actividades de CSR Externa.
+
+
+\end{document}

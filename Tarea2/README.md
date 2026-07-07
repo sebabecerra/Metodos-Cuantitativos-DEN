@@ -10,6 +10,14 @@
 
 Todos los notebooks están ejecutados, contienen sus resultados y no presentan errores de celda. Las bases `.sav` deben permanecer en esta misma carpeta.
 
+## Abrir en Google Colab
+
+- [Notebook completo](https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/Tarea_2_Completa.ipynb)
+- [Pregunta 1: mediación moderada](https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/Tarea_2_P1_Mediacion_Moderada.ipynb)
+- [Pregunta 2: análisis factorial](https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/Tarea_2_P2_Analisis_Factorial.ipynb)
+- [Pregunta 3: SEM](https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/Tarea_2_P3_SEM.ipynb)
+- [Pregunta 4: MANOVA](https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/Tarea_2_P4_MANOVA.ipynb)
+
 ## Dependencias
 
 ```bash

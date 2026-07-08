@@ -28,7 +28,7 @@
 
 Los análisis se realizaron con Python y fueron verificados mediante notebooks ejecutables de principio a fin. Para cada pregunta se identificó el modelo estadístico apropiado, se formularon hipótesis, se calcularon los estadísticos relevantes, se revisaron supuestos y se interpretaron los resultados con un nivel de significancia de $\alpha=0.05$.
 
-Los notebooks que acompañan este informe contienen el código completo, las salidas de cada procedimiento y la lógica utilizada. La primera pregunta reproduce el modelo 7 de PROCESS; la segunda aplica análisis factorial exploratorio; la tercera utiliza análisis factorial confirmatorio y ecuaciones estructurales; y la cuarta emplea MANOVA factorial.
+Los notebooks que acompañan este informe contienen el código completo, las salidas de cada procedimiento y la lógica utilizada. La primera pregunta estima en Python una especificación equivalente al modelo 7 de Hayes; la segunda aplica análisis factorial exploratorio; la tercera utiliza análisis factorial confirmatorio y ecuaciones estructurales; y la cuarta emplea MANOVA factorial.
 % NOTA: reinsertar aquí los enlaces de Colab verificados antes de la entrega.
 
 \section{Pregunta 1: mediación moderada}
@@ -39,7 +39,7 @@ Una mediación explica el mecanismo mediante el cual una variable influye en otr
 
 La moderación responde una pregunta diferente: determina cuándo o bajo qué condiciones una relación es más fuerte. El enunciado propone que la reacción de los empleados ante la presión competitiva depende de cuánto tolera la organización los errores derivados de experimentar. Por esa razón, la cultura de tolerancia al fracaso modifica el camino entre presión competitiva y conducta innovadora, no simplemente el nivel promedio de desempeño.
 
-Combinar ambas ideas produce una mediación moderada de primera etapa: el mecanismo indirecto $X \rightarrow M \rightarrow Y$ existe, pero su magnitud varía con $W$. Esta ubicación del moderador corresponde al modelo 7 de PROCESS y no al modelo 1, que solo estudiaría moderación, ni al modelo 4, que solo estudiaría mediación.
+Combinar ambas ideas produce una mediación moderada de primera etapa: el mecanismo indirecto $X \rightarrow M \rightarrow Y$ existe, pero su magnitud varía con $W$. Esta ubicación del moderador corresponde conceptualmente al modelo 7 de Hayes y no al modelo 1, que solo estudiaría moderación, ni al modelo 4, que solo estudiaría mediación.
 
 \subsection{a) Planteamiento del modelo en forma de hipótesis}
 
@@ -49,7 +49,7 @@ Se estudia si la presión competitiva del mercado ($X$) afecta el desempeño inn
 \text{Resultado:}\quad & Y = i_Y + c'X + bM + e_Y,\\
 \text{Efecto total:}\quad & Y = i_T + cX + e_T.
 \end{align}
-Las ecuaciones (1) y (2) constituyen el sistema estructural del modelo 7 de PROCESS; la ecuación (3) es la que permite evaluar H1. A partir de (1) y (2) se deriva el efecto indirecto condicional,
+Las ecuaciones (1) y (2) constituyen el sistema estructural equivalente al modelo 7 de Hayes; la ecuación (3) es la que permite evaluar H1. A partir de (1) y (2) se deriva el efecto indirecto condicional,
 \begin{equation}
 IE(W) = (a_1 + a_3 W)\, b,
 \end{equation}
@@ -69,11 +69,11 @@ La diferencia entre H4 y H6 es central. H4 pregunta si existe un mecanismo indir
 
 \subsection{b) Evaluación de las hipótesis}
 
-El modelo de mediación moderada se estima con las tres ecuaciones del planteamiento: la del mediador y la del resultado, que forman el sistema estructural, más la ecuación auxiliar del efecto total, que no modifica el modelo sino que permite reportar el efecto total requerido para evaluar H1 e interpretar la mediación. La expresión ``se estima el modelo simultáneamente'' significa que PROCESS ejecuta y reporta el sistema completo en una sola llamada; no significa que $M$ y $Y$ formen una única variable dependiente. Internamente se estima una regresión para $M$ y otra para $Y$, y luego se combinan sus coeficientes para formar los efectos indirectos condicionales.
+El modelo de mediación moderada se estima con las tres ecuaciones del planteamiento: la del mediador y la del resultado, que forman el sistema estructural, más la ecuación auxiliar del efecto total, que no modifica el modelo sino que permite reportar el efecto total requerido para evaluar H1 e interpretar la mediación. La expresión ``modelo equivalente al modelo 7'' significa que se estiman en Python las mismas ecuaciones que usaría esa especificación: una regresión para $M$, otra para $Y$ y una ecuación auxiliar para el efecto total. No significa que se haya utilizado la macro PROCESS directamente ni que $M$ y $Y$ formen una única variable dependiente.
 
 \paragraph{Nota técnica sobre el efecto total.} La ecuación (3) se usa para reportar el efecto total $c$ de $X$ sobre $Y$, pero no debe confundirse con el efecto indirecto condicional. En una mediación simple suele cumplirse $c=c'+ab$; en este modelo 7 esa descomposición no se obtiene usando $a_1$, porque $a_1$ es una pendiente condicional a $W$ y a la interacción. Por eso $c=2.0281$ no coincide con $c'+a_1b=1.7427$. La identidad OLS que sí se verifica es $c=c'+b\,\tilde a_1$, donde $\tilde a_1=2.3336$ proviene de la regresión simple $M\sim X$. Esta diferencia se explica por la presencia del moderador y por la correlación entre presión y tolerancia ($r=0.174$). En consecuencia, $c$ documenta H1 como asociación total, mientras que la mediación se evalúa formalmente con $IE(W)=(a_1+a_3W)b$ y sus intervalos bootstrap.
 
-\paragraph{Pasos seguidos.} Se analizaron 200 observaciones sin datos perdidos. $X$ y $W$ se centraron en sus medias y se construyó el producto $X_cW_c$. El centrado facilita la interpretación de los efectos principales y reduce la colinealidad no esencial, pero no altera el ajuste ni el contraste de la interacción. Las regresiones se estimaron por mínimos cuadrados ordinarios con errores estándar robustos HC3. El notebook reproduce el procedimiento de PROCESS y añade un bootstrap de 5.000 remuestras, el estándar de PROCESS, para los efectos indirectos.
+\paragraph{Pasos seguidos.} Se analizaron 200 observaciones sin datos perdidos. $X$ y $W$ se centraron en sus medias y se construyó el producto $X_cW_c$. El centrado facilita la interpretación de los efectos principales y reduce la colinealidad no esencial, pero no altera el ajuste ni el contraste de la interacción. Las regresiones se estimaron por mínimos cuadrados ordinarios con errores estándar robustos HC3. El notebook reproduce en Python la lógica estadística de esa especificación y añade un bootstrap de 5.000 remuestras para los efectos indirectos, siguiendo la práctica habitual de PROCESS.
 
 El orden de trabajo fue: (1) revisión de rango, datos perdidos y descriptivos; (2) centrado $X_c = X-\bar X$ y $W_c = W-\bar W$, de modo que el valor cero representa el nivel promedio; (3) construcción del producto $X_cW_c$, cuyo coeficiente $a_3$ indica moderación si es significativo; (4) estimación de las tres ecuaciones, que no pueden combinarse en una única regresión OLS porque poseen variables dependientes distintas; (5) cálculo de los efectos indirectos condicionales $(a_1+a_3W)b$ en niveles representativos de tolerancia; y (6) bootstrap, porque el producto de coeficientes suele presentar una distribución asimétrica y el intervalo percentil resulta más apropiado que la prueba normal de Sobel.
 

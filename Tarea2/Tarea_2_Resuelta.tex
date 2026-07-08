@@ -33,7 +33,7 @@ Los notebooks que acompañan este informe contienen el código completo, las sal
 
 \section{Pregunta 1: mediación moderada}
 
-\subsection{¿Por qué corresponde una mediación moderada?}
+\subsection{Por qué corresponde una mediación moderada}
 
 Una mediación explica el mecanismo mediante el cual una variable influye en otra. En este caso no basta con preguntar si la presión competitiva mejora el desempeño: el modelo propone que primero induce a los empleados a generar e implementar ideas y que esta conducta se transforma posteriormente en desempeño innovador. Por eso la conducta innovadora ocupa el papel de mediador.
 
@@ -65,11 +65,13 @@ Se plantearon las siguientes seis hipótesis:
 \item[\textbf{H6.}] El efecto indirecto aumenta cuando la tolerancia al fracaso es más alta: $a_3 b>0$.
 \end{itemize}
 
+La diferencia entre H4 y H6 es central. H4 pregunta si existe un mecanismo indirecto desde presión competitiva hacia desempeño mediante conducta innovadora. H6 pregunta si ese mecanismo indirecto cambia de intensidad según la tolerancia al fracaso. Por tanto, H4 evalúa la mediación y H6 evalúa la mediación moderada.
+
 \subsection{b) Evaluación de las hipótesis}
 
 El modelo de mediación moderada se estima con las tres ecuaciones del planteamiento: la del mediador y la del resultado, que forman el sistema estructural, más la ecuación auxiliar del efecto total, que no modifica el modelo sino que permite reportar el efecto total requerido para evaluar H1 e interpretar la mediación. La expresión ``se estima el modelo simultáneamente'' significa que PROCESS ejecuta y reporta el sistema completo en una sola llamada; no significa que $M$ y $Y$ formen una única variable dependiente. Internamente se estima una regresión para $M$ y otra para $Y$, y luego se combinan sus coeficientes para formar los efectos indirectos condicionales.
 
-Conviene precisar la relación entre las tres ecuaciones. En el modelo 4 de mediación simple se cumple exactamente la descomposición $c = c' + ab$. En el modelo 7 esa identidad no se cumple con $a_1$: aquí $c = 2.0281$ mientras que $c' + a_1 b = 0.0265 + (2.0008)(0.8577) = 1.7427$. La razón es que $a_1$ es el efecto de $X$ sobre $M$ condicional a $W$ y a la interacción, mientras que la ecuación del efecto total omite a $W$. La identidad OLS que sí se cumple exactamente es $c = c' + b\,\tilde a_1$, donde $\tilde a_1 = 2.3336$ proviene de la regresión simple $M \sim X$; en efecto, $0.0265 + (0.8577)(2.3336) = 2.0281$. La brecha entre $\tilde a_1$ y $a_1$ se explica por la correlación positiva entre presión y tolerancia ($r=0.174$). Además, el efecto total implicado por el sistema es condicional al moderador, $c(W) = c' + (a_1 + a_3 W)b$, igual a 1.7427 en el nivel medio de $W$. Por todo esto, $c$ se utiliza únicamente para documentar H1 como asociación total, y la evidencia formal de mediación descansa en los efectos indirectos condicionales y su bootstrap, no en la comparación entre $c$ y $c'$.
+\paragraph{Nota técnica sobre el efecto total.} La ecuación (3) se usa para reportar el efecto total $c$ de $X$ sobre $Y$, pero no debe confundirse con el efecto indirecto condicional. En una mediación simple suele cumplirse $c=c'+ab$; en este modelo 7 esa descomposición no se obtiene usando $a_1$, porque $a_1$ es una pendiente condicional a $W$ y a la interacción. Por eso $c=2.0281$ no coincide con $c'+a_1b=1.7427$. La identidad OLS que sí se verifica es $c=c'+b\,\tilde a_1$, donde $\tilde a_1=2.3336$ proviene de la regresión simple $M\sim X$. Esta diferencia se explica por la presencia del moderador y por la correlación entre presión y tolerancia ($r=0.174$). En consecuencia, $c$ documenta H1 como asociación total, mientras que la mediación se evalúa formalmente con $IE(W)=(a_1+a_3W)b$ y sus intervalos bootstrap.
 
 \paragraph{Pasos seguidos.} Se analizaron 200 observaciones sin datos perdidos. $X$ y $W$ se centraron en sus medias y se construyó el producto $X_cW_c$. El centrado facilita la interpretación de los efectos principales y reduce la colinealidad no esencial, pero no altera el ajuste ni el contraste de la interacción. Las regresiones se estimaron por mínimos cuadrados ordinarios con errores estándar robustos HC3. El notebook reproduce el procedimiento de PROCESS y añade un bootstrap de 5.000 remuestras, el estándar de PROCESS, para los efectos indirectos.
 
@@ -157,7 +159,7 @@ La presión competitiva impulsa la conducta innovadora, que a su vez incrementa 
 
 \section{Pregunta 2: análisis factorial exploratorio del EECS-R}
 
-\subsection{¿Por qué se usa análisis factorial exploratorio?}
+\subsection{Por qué se usa análisis factorial exploratorio}
 
 Los 28 ítems son variables observadas, mientras que las cuatro características de Blend son dimensiones latentes: no se observan directamente, sino mediante patrones de respuestas. El AFE permite descubrir cuántas fuentes comunes de variación existen y qué ítems se relacionan con cada una sin imponer de antemano una estructura rígida.
 
@@ -165,7 +167,7 @@ No se utilizó análisis de componentes principales como solución final porque 
 
 \subsection{Respuesta y preparación del análisis}
 
-La teoría de Blend propone cuatro características correlacionadas: amor por las estadísticas, entusiasmo por el diseño de experimentos, amor por la enseñanza y ausencia de habilidades interpersonales normales. Se analizaron 28 ítems respondidos por 239 profesores.
+La teoría de Blend propone cuatro características correlacionadas: amor por las estadísticas, entusiasmo por el diseño de experimentos, amor por la enseñanza y ausencia de habilidades interpersonales normales. Se analizaron 28 ítems respondidos por 239 profesores. Para concluir que la teoría se cumple no basta con obtener cuatro factores: también se espera que los ítems carguen principalmente en su factor esperado, que los factores sean interpretables y que cada conjunto presente confiabilidad razonable.
 
 Se encontraron nueve respuestas faltantes distribuidas entre los ítems; cada una se imputó con la mediana de su ítem, decisión adecuada dado el carácter ordinal de las respuestas Likert y la cantidad extremadamente pequeña de faltantes. Con una proporción mayor sería necesario estudiar el mecanismo de ausencia y utilizar imputación múltiple. Se eligió extracción de máxima verosimilitud y rotación oblicua Oblimin porque se buscan factores comunes y la teoría permite que estén correlacionados.
 
@@ -227,7 +229,7 @@ q28 & .01 & .21 & .53 & $-$.02 & Interpersonal\\
 
 El primer factor representa principalmente entusiasmo por el diseño experimental; el segundo, amor por la enseñanza; el tercero, deficiencia de habilidades interpersonales; y el cuarto, amor por la estadística. Algunos ítems presentan complejidad porque sus enunciados combinan contenido estadístico, experimental y docente.
 
-Una carga factorial puede interpretarse aproximadamente como la relación entre el ítem y el factor, controlando la estructura rotada. El signo indica dirección y la magnitud indica fuerza. Por ejemplo, q22 carga 0.86 en F1, por lo que es un indicador especialmente claro de entusiasmo por diseñar experimentos. En cambio, q12 no alcanza 0.40 en ningún factor, por lo que aporta poca información a una dimensión específica. Una carga cruzada ocurre cuando un ítem se relaciona materialmente con más de un factor; esto dificulta su interpretación y reduce la pureza de la escala.
+Una carga factorial puede interpretarse aproximadamente como la relación entre el ítem y el factor, controlando la estructura rotada. El signo indica dirección y la magnitud indica fuerza. Por ejemplo, q22 carga 0.86 en F1, por lo que es un indicador especialmente claro de entusiasmo por diseñar experimentos. En cambio, q12 no alcanza 0.40 en ningún factor, por lo que aporta poca información a una dimensión específica. Esto lo convierte en candidato a revisión o eliminación, porque no parece representar con claridad ninguna dimensión latente. Una carga cruzada ocurre cuando un ítem se relaciona materialmente con más de un factor; esto dificulta su interpretación y reduce la pureza de la escala.
 
 Se eligió Oblimin porque una rotación ortogonal forzaría correlaciones iguales a cero entre amor por estadísticas, diseño y enseñanza, una restricción contraria al enunciado. Las correlaciones factoriales estimadas alcanzan 0.47 entre F1 y F3, lo que confirma que la restricción ortogonal habría sido inadecuada. La rotación no cambia la solución fundamental ni la varianza común total; facilita obtener una estructura psicológicamente interpretable.
 
@@ -235,15 +237,15 @@ La confiabilidad fue alta para diseño experimental ($\alpha=0.880$) y estadíst
 
 \subsection{Conclusión de la pregunta 2}
 
-La evidencia apoya de manera general la teoría de Blend: la matriz es factorizable y el análisis paralelo, bajo dos criterios de retención, identifica cuatro factores cuyo contenido es interpretable en línea con la teoría. Sin embargo, el apoyo no es perfecto a nivel de cada ítem. En particular, q1, q9 y q27 presentan cargas cruzadas y q12 tiene una carga débil, y la dimensión interpersonal no queda completamente limpia. Se recomienda revisar esos ítems y validar posteriormente una versión depurada mediante CFA.
+La evidencia apoya parcialmente la teoría de Blend: la matriz es factorizable y el análisis paralelo, bajo dos criterios de retención, identifica cuatro factores cuyo contenido es interpretable en línea con la teoría. Sin embargo, el apoyo no es perfecto a nivel de cada ítem. En particular, q1, q9 y q27 presentan cargas cruzadas y q12 tiene una carga débil, y la dimensión interpersonal no queda completamente limpia. Se recomienda revisar esos ítems y validar posteriormente una versión depurada mediante CFA.
 
 \section{Pregunta 3: modelo de medición y ecuaciones estructurales}
 
-\subsection{¿Por qué se utiliza CFA y SEM?}
+\subsection{Por qué se utiliza CFA y SEM}
 
 Cada concepto está medido por cuatro ítems y, por tanto, contiene error de medición. Promediar los ítems y aplicar varias regresiones trataría cada promedio como perfectamente observado. SEM permite estimar simultáneamente el modelo de medición y las relaciones estructurales, separando el constructo latente del error de sus indicadores.
 
-Primero debe evaluarse el modelo de medición: si los ítems no miden adecuadamente sus constructos, las relaciones estructurales posteriores pierden sentido. Solo después de establecer confiabilidad y validez se comparan las explicaciones completamente y parcialmente mediadas.
+Primero debe evaluarse el modelo de medición: si los ítems no miden adecuadamente sus constructos, las relaciones estructurales posteriores pueden estar contaminadas por error de medición y perder sentido. Solo después de establecer confiabilidad y validez se comparan las explicaciones completamente y parcialmente mediadas.
 
 \subsection{a) Evaluación del modelo de medición}
 
@@ -299,7 +301,7 @@ Parcial & 311.19 & 163 & .963 & .957 & .048 & 47 & 405.19 & 592.79\\
 \end{tabular}
 \end{table}
 
-El modelo parcial presenta mejor CFI, TLI y RMSEA, y la prueba de diferencia entre modelos anidados es claramente significativa:
+El modelo parcial presenta mejor CFI, TLI y RMSEA, y la prueba de diferencia entre modelos anidados es claramente significativa. La hipótesis nula de esta comparación es que los caminos directos agregados no mejoran el modelo; por tanto, si $p<0.05$ se rechaza esa restricción y se prefiere el modelo más flexible:
 \[
 \Delta\chi^2(2)=62.43,\quad p<0.001.
 \]
@@ -352,7 +354,7 @@ $AC\rightarrow IP$ & $-$.0173 & .0322 & $-$.504 & .614\\
 
 Existen diferencias significativas en $AC\rightarrow ST$, $ST\rightarrow CO$ y $PA\rightarrow IP$. No se concluye diferencia comparando simplemente que un coeficiente sea significativo en un grupo y no en el otro: se prueba directamente la diferencia mediante $z$. Por ejemplo, $AC\rightarrow ST$ es negativo entre hombres y positivo entre mujeres, y el contraste $p<0.001$ confirma que ambas pendientes difieren. En $ST\rightarrow CO$ y $PA\rightarrow IP$ los efectos son mayores entre mujeres; las demás diferencias podrían deberse al error muestral.
 
-La conclusión multigrupo debe interpretarse con cautela porque comparar caminos latentes idealmente requiere demostrar previamente invariancia de medición. El análisis realizado constituye una evaluación estructural informativa y reproducible; el estudio podría fortalecerse con la secuencia formal configural--métrica--escalar.
+Sustantivamente, los resultados sugieren que algunas relaciones laborales operan con distinta intensidad entre hombres y mujeres: la relación entre compañeros y satisfacción cambia de signo, y los efectos de satisfacción sobre compromiso y de ambiente sobre permanencia son mayores en mujeres. La conclusión multigrupo debe interpretarse con cautela porque comparar caminos latentes idealmente requiere demostrar previamente invariancia de medición. El análisis realizado constituye una evaluación estructural informativa y reproducible; el estudio podría fortalecerse con la secuencia formal configural--métrica--escalar.
 
 \subsection{d) Explicación y conclusión de los resultados}
 
@@ -360,9 +362,9 @@ El modelo de medición es sólido: el CFA puro ajusta muy bien y presenta confia
 
 \section{Pregunta 4: MANOVA factorial de lealtad}
 
-\subsection{¿Por qué corresponde MANOVA?}
+\subsection{Por qué corresponde MANOVA}
 
-Existen tres resultados relacionados que representan conjuntamente la lealtad. Ejecutar tres ANOVA independientes desde el inicio aumentaría el riesgo de error tipo I y perdería la información contenida en sus correlaciones. MANOVA contrasta primero si los grupos difieren en alguna combinación lineal de satisfacción, recomendación y recompra.
+La lealtad no se observa como una sola variable, sino como un perfil de tres respuestas relacionadas: satisfacción, recomendación y recompra. Por eso existen tres resultados que representan conjuntamente la lealtad. Ejecutar tres ANOVA independientes desde el inicio aumentaría el riesgo de error tipo I y perdería la información contenida en sus correlaciones. MANOVA contrasta primero si los grupos difieren en alguna combinación lineal de satisfacción, recomendación y recompra.
 
 El diseño es factorial porque se analizan simultáneamente dos antecedentes categóricos. Esto permite separar dos efectos principales y una interacción. La interacción es indispensable para responder la tercera pregunta: si resulta significativa, el efecto de distribución depende del tamaño y los antecedentes no pueden describirse como independientes.
 
@@ -400,7 +402,7 @@ Distribución$\times$Tamaño & .9034 & 6.917 & 3 & 194 & $<.001$\\
 \end{tabular}
 \end{table}
 
-Se rechazan las tres hipótesis nulas. Tanto distribución como tamaño influyen en la combinación de variables de lealtad y, además, interactúan: no son antecedentes independientes. Wilks $\Lambda$ representa la proporción de variación multivariada no explicada por el efecto. La interacción significativa es la evidencia formal de que la ventaja de un canal no es constante en ambos tamaños.
+Como $p<0.05$ en los tres contrastes, se rechazan las tres hipótesis nulas. Tanto distribución como tamaño influyen en la combinación de variables de lealtad y, además, interactúan: no son antecedentes independientes. Wilks $\Lambda$ representa la proporción de variación multivariada no explicada por el efecto. La interacción significativa es la evidencia formal de que la ventaja de un canal no es constante en ambos tamaños.
 
 \subsection{ANOVA univariados}
 
@@ -467,7 +469,7 @@ El tipo de distribución y el tamaño inciden significativamente en la lealtad, 
 
 \section{Conclusión general}
 
-Los cuatro análisis requieren técnicas diferentes pero complementarias. La pregunta 1 confirma un mecanismo de mediación moderada: la tolerancia al fracaso amplifica la conversión de presión competitiva en innovación, con las seis hipótesis apoyadas. La pregunta 2 identifica cuatro factores compatibles, aunque no perfectamente, con la teoría de Blend, y la retención de cuatro factores es robusta a dos criterios de análisis paralelo. La pregunta 3 valida el modelo de medición mediante un CFA con ajuste excelente y favorece un modelo de mediación parcial según ajuste, prueba de diferencia y criterios de información, con diferencias estructurales por género. Finalmente, la pregunta 4 muestra que canal y tamaño afectan conjuntamente la lealtad y presentan interacción.
+Los cuatro análisis requieren técnicas diferentes pero complementarias. La evidencia muestra que las relaciones estudiadas no son puramente directas: aparecen mecanismos, constructos latentes e interacciones que modifican la interpretación simple entre variables. La pregunta 1 confirma que, en empresas con alta tolerancia al fracaso, la presión competitiva se convierte más fácilmente en innovación. La pregunta 2 apoya parcialmente la teoría de Blend y muestra que la escala requiere depurar ítems ambiguos. La pregunta 3 indica que la permanencia laboral depende tanto del compromiso como de la percepción directa del ambiente. Finalmente, la pregunta 4 muestra que HBAT no debería usar una estrategia comercial uniforme: el canal directo parece especialmente valioso para clientes grandes.
 
 Todos los cálculos pueden reproducirse en los cuatro notebooks individuales incluidos en la carpeta de entrega.
 % NOTA: reinsertar aquí los enlaces de Colab verificados.

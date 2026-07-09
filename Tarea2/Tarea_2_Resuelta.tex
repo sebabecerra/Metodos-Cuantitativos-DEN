@@ -255,12 +255,45 @@ La base contiene 400 empleados y cinco constructos reflectivos, cada uno medido 
 \[
 \chi^2(160)=220.31,\quad \text{CFI}=0.985,\quad \text{TLI}=0.982,\quad \text{RMSEA}=0.031,
 \]
-superando con holgura los criterios usuales (CFI/TLI $\geq 0.95$; RMSEA $\leq 0.06$). Sobre las cargas estandarizadas de este CFA se calcularon la confiabilidad compuesta y la varianza media extraída:
+superando con holgura los criterios usuales (CFI/TLI $\geq 0.95$; RMSEA $\leq 0.06$). La Tabla \ref{tab:cargas-cfa} reporta las cargas factoriales estandarizadas por ítem, que permiten evaluar cuantitativamente si cada indicador representa adecuadamente su constructo. Sobre estas cargas se calcularon la confiabilidad compuesta y la varianza media extraída:
 \begin{equation}
 CR=\frac{\left(\sum_i \lambda_i\right)^2}{\left(\sum_i \lambda_i\right)^2+\sum_i \theta_i},\qquad
 AVE=\frac{\sum_i \lambda_i^2}{\sum_i \lambda_i^2+\sum_i \theta_i},
 \end{equation}
 donde $\lambda_i$ son las cargas estandarizadas y $\theta_i=1-\lambda_i^2$ los errores. CR resume la consistencia de los indicadores ponderando sus cargas y AVE indica cuánta varianza de los ítems captura el constructo frente al error.
+
+
+\begin{table}[htbp]\centering
+\caption{Cargas factoriales estandarizadas del CFA por ítem}
+\label{tab:cargas-cfa}
+\scriptsize
+\begin{tabular}{llrrrr}
+\toprule
+Constructo & Ítem & Carga no est. & Carga est. & EE & $z$\\
+\midrule
+AC & AC1 & 1.000 & .822 & -- & --\\
+AC & AC2 & 1.236 & .820 & .067 & 18.389\\
+AC & AC3 & 1.038 & .837 & .055 & 18.867\\
+AC & AC4 & 1.147 & .816 & .063 & 18.251\\
+PA & PA1 & 1.000 & .692 & -- & --\\
+PA & PA2 & 1.034 & .804 & .073 & 14.089\\
+PA & PA3 & .820 & .778 & .060 & 13.727\\
+PA & PA4 & .914 & .823 & .064 & 14.335\\
+ST & ST1 & 1.000 & .737 & -- & --\\
+ST & ST2 & 1.023 & .737 & .081 & 12.611\\
+ST & ST3 & .929 & .697 & .077 & 12.092\\
+ST & ST4 & .920 & .709 & .075 & 12.257\\
+CO & CO1 & 1.000 & .584 & -- & --\\
+CO & CO2 & 1.313 & .885 & .107 & 12.215\\
+CO & CO3 & .782 & .657 & .076 & 10.327\\
+CO & CO4 & 1.164 & .836 & .097 & 11.975\\
+IP & IP1 & 1.000 & .811 & -- & --\\
+IP & IP2 & 1.073 & .864 & .055 & 19.556\\
+IP & IP3 & 1.066 & .741 & .066 & 16.053\\
+IP & IP4 & 1.167 & .852 & .061 & 19.222\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{table}[htbp]\centering
 \caption{Calidad del modelo de medición (CFA)}
@@ -277,11 +310,13 @@ IP & .886 & .890 & .670 & .818 & .741 & .864\\
 \end{tabular}
 \end{table}
 
-Todos los alfas y CR superan 0.70, y todas las AVE superan 0.50: existe confiabilidad y validez convergente adecuadas. Estos indicadores responden preguntas diferentes: alfa mide consistencia interna bajo supuestos relativamente restrictivos de equivalencia entre ítems; CR se basa en las cargas estimadas y es más apropiada dentro de CFA; AVE es la proporción promedio de varianza del indicador explicada por el constructo, de modo que AVE $>0.50$ significa que el constructo explica más varianza que el error.
+Las cargas estandarizadas oscilan entre .584 y .885; la mayoría supera .70 y las cargas inferiores pertenecen a escalas que mantienen CR y AVE adecuados. Todos los alfas y CR superan 0.70, y todas las AVE superan 0.50: existe confiabilidad y validez convergente adecuadas. Estos indicadores responden preguntas diferentes: alfa mide consistencia interna bajo supuestos relativamente restrictivos de equivalencia entre ítems; CR se basa en las cargas estimadas y es más apropiada dentro de CFA; AVE es la proporción promedio de varianza del indicador explicada por el constructo, de modo que AVE $>0.50$ significa que el constructo explica más varianza que el error.
 
 \paragraph{Validez discriminante.} La correlación latente más alta implicada por el CFA es 0.562 (PA con IP), inferior a la menor raíz de AVE (0.720 en ST), por lo que se cumple el criterio de Fornell--Larcker: cada constructo comparte más varianza con sus indicadores que con los demás constructos. El HTMT máximo fue 0.569 (PA--IP), muy por debajo del umbral de 0.85. Existe validez discriminante: cada escala captura algo distinto.
 
 La carga más baja fue 0.584 en CO1, todavía aceptable. No fue necesario eliminar ítems, evitando modificar el instrumento únicamente para mejorar el ajuste.
+
+\paragraph{Conclusión del inciso a).} El modelo de medición es adecuado. Cuantitativamente, el CFA presenta buen ajuste global (CFI=0.985, TLI=0.982, RMSEA=0.031), todas las escalas tienen confiabilidad suficiente (alfas entre 0.811 y 0.891; CR entre 0.811 y 0.894), todos los AVE son superiores a 0.50 y el HTMT máximo es 0.569, inferior al umbral de 0.85. Por lo tanto, las escalas muestran confiabilidad, validez convergente y validez discriminante suficientes para continuar con la comparación de los modelos estructurales.
 
 \subsection{b) Selección del modelo estructural superior}
 

@@ -753,11 +753,87 @@ Su labor consiste en determinar:
 
 \subsection*{Respuesta}
 
-\subsection*{Por qué corresponde CFA y SEM}
+\subsection*{Justificación conceptual del análisis}
 
-Los conceptos analizados no se observan directamente, sino mediante escalas compuestas por varios ítems. Por esta razón, primero se requiere evaluar si los indicadores representan adecuadamente sus constructos teóricos. Para ello se utiliza análisis factorial confirmatorio (CFA).
+El objetivo de esta pregunta es determinar cómo las condiciones de trabajo percibidas por los empleados se relacionan con su satisfacción laboral, su compromiso con la organización y su intención de permanecer en la empresa.
 
-Una vez evaluado el modelo de medición, se utiliza modelamiento de ecuaciones estructurales (SEM) para comparar los dos modelos teóricos propuestos. Esta estrategia permite estimar simultáneamente las relaciones entre variables latentes, considerando el error de medición de los indicadores.
+El planteamiento considera cinco conceptos que no se observan directamente: actitud hacia los compañeros de trabajo, percepción del ambiente laboral, satisfacción con el trabajo, compromiso organizacional e intención de permanecer. Cada uno fue medido mediante cuatro preguntas o indicadores.
+
+Debido a que los constructos son variables latentes, no resulta suficiente promediar sus ítems y utilizar esos promedios como si estuvieran medidos sin error. Cada respuesta contiene información sobre el constructo, pero también error de medición. Por esta razón, primero corresponde utilizar análisis factorial confirmatorio (CFA) para evaluar si los indicadores representan adecuadamente sus constructos.
+
+Una vez evaluado el modelo de medición, se utiliza modelamiento de ecuaciones estructurales (SEM) para comparar los dos modelos teóricos propuestos. Esta estrategia permite estimar simultáneamente las relaciones entre variables latentes, incorporando explícitamente el error de medición de los indicadores.
+
+La secuencia del análisis es importante: primero se evalúa si las escalas miden bien; luego se comparan los modelos estructurales. Si los ítems no midieran adecuadamente los constructos, cualquier conclusión sobre relaciones entre variables latentes podría estar distorsionada.
+
+\subsection*{Constructos e indicadores}
+
+El modelo contiene cinco constructos latentes reflectivos. En un modelo reflectivo, el constructo subyacente explica las respuestas observadas en sus indicadores. Por ejemplo, una mayor satisfacción laboral debería reflejarse en respuestas más favorables en los cuatro ítems de satisfacción.
+
+\begin{table}[H]
+\centering
+\caption{Constructos e indicadores del modelo}
+\begin{tabular}{lll}
+\toprule
+Constructo & Símbolo & Indicadores \\
+\midrule
+Actitud hacia compañeros de trabajo & AC & AC1, AC2, AC3, AC4 \\
+Percepción del ambiente de trabajo & PA & PA1, PA2, PA3, PA4 \\
+Satisfacción con el trabajo & ST & ST1, ST2, ST3, ST4 \\
+Compromiso organizacional & CO & CO1, CO2, CO3, CO4 \\
+Intención de permanecer & IP & IP1, IP2, IP3, IP4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La base contiene información de 400 empleados del sector de telecomunicaciones. Además de los constructos anteriores, se dispone de variables personales como género, edad y experiencia laboral.
+
+\subsection*{Modelos teóricos propuestos}
+
+El enunciado plantea dos modelos alternativos. Ambos proponen que las condiciones de trabajo influyen sobre satisfacción laboral, compromiso organizacional e intención de permanecer. La diferencia central es si la percepción del ambiente de trabajo y la actitud hacia los compañeros tienen efectos completamente mediados o parcialmente mediados sobre la intención de permanecer.
+
+\subsubsection*{Modelo completamente mediado}
+
+El modelo completamente mediado supone que la percepción del ambiente y la actitud hacia los compañeros no tienen caminos directos hacia la intención de permanecer. Sus efectos deben operar mediante satisfacción laboral y compromiso organizacional.
+
+De acuerdo con las flechas del modelo, sus ecuaciones estructurales son:
+
+\[
+ST=\beta_1 PA+\beta_2 AC+\varepsilon_{ST}
+\]
+
+\[
+CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}
+\]
+
+\[
+IP=\beta_6 ST+\beta_7 CO+\varepsilon_{IP}
+\]
+
+Bajo este modelo, PA y AC pueden afectar la permanencia solo de manera indirecta, a través de satisfacción y compromiso.
+
+\subsubsection*{Modelo parcialmente mediado}
+
+El modelo parcialmente mediado conserva las relaciones anteriores, pero agrega efectos directos desde percepción del ambiente y actitud hacia compañeros hacia intención de permanecer.
+
+\[
+ST=\beta_1 PA+\beta_2 AC+\varepsilon_{ST}
+\]
+
+\[
+CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}
+\]
+
+\[
+IP=\beta_6 ST+\beta_7 CO+\beta_8 PA+\beta_9 AC+\varepsilon_{IP}
+\]
+
+Por tanto, el modelo parcialmente mediado permite que una parte del efecto opere mediante satisfacción y compromiso, y que otra parte permanezca como efecto directo sobre la intención de seguir trabajando en la empresa.
+
+\subsection*{Preguntas de análisis y procedimiento}
+
+El análisis busca responder cuatro preguntas: (a) si el modelo de medición es confiable y válido; (b) cuál de los dos modelos representa mejor los datos; (c) si las relaciones estructurales se comportan igual entre hombres y mujeres; y (d) cómo interpretar sustantivamente los resultados.
+
+El procedimiento se desarrolló en tres etapas. Primero se estimó un CFA puro con cinco factores correlacionados. Segundo, se estimaron y compararon los modelos estructurales completo y parcial. Tercero, se estimó el modelo seleccionado por separado para hombres y mujeres y se compararon los coeficientes no estandarizados mediante pruebas de diferencia entre pendientes.
 
 \subsection*{a) Evaluación del modelo de medición}
 
@@ -832,7 +908,21 @@ La carga más baja fue 0.584 en CO1, todavía aceptable. No fue necesario elimin
 
 \subsection*{b) Selección del modelo estructural superior}
 
-Se compararon dos modelos anidados según las flechas de las figuras del enunciado. El modelo completamente mediado permite que $PA$ y $AC$ expliquen $ST$ y $CO$, que $ST$ explique $CO$ e $IP$, y que $CO$ explique $IP$. El modelo parcialmente mediado mantiene esos caminos y agrega dos efectos directos adicionales: $PA\rightarrow IP$ y $AC\rightarrow IP$. Por tanto, el modelo completo se obtiene fijando en cero esos dos caminos directos, y la diferencia de $\chi^2$ prueba si liberarlos mejora el ajuste más de lo esperable por azar.
+La comparación busca determinar si la percepción del ambiente y la actitud hacia los compañeros influyen sobre la intención de permanecer exclusivamente mediante satisfacción y compromiso, o si también conservan efectos directos.
+
+El modelo completamente mediado restringe los caminos directos $PA\rightarrow IP$ y $AC\rightarrow IP$ a cero. El modelo parcialmente mediado libera ambos caminos. Como el modelo completo es una versión restringida del modelo parcial, ambos son modelos anidados y pueden compararse mediante una prueba de diferencia de chi-cuadrado.
+
+Las hipótesis de esta comparación son:
+
+\[
+H_0:\beta_{PA\rightarrow IP}=\beta_{AC\rightarrow IP}=0
+\]
+
+\[
+H_1:\text{al menos uno de esos caminos directos es distinto de cero.}
+\]
+
+Si se rechaza $H_0$, significa que fijar ambos caminos directos en cero empeora significativamente el ajuste y, por tanto, corresponde preferir el modelo parcialmente mediado.
 
 Los criterios de información se calcularon sobre el estadístico de ajuste, $AIC=\chi^2+2k$ y $BIC=\chi^2+k\ln n$, con $k$ el número de parámetros libres y $n=400$. Estas versiones son comparables entre modelos anidados estimados sobre los mismos datos; se prefieren valores menores.\footnote{No se utilizó el AIC/BIC que reporta \texttt{semopy} por defecto, porque se basa en el valor de la función de ajuste y no es comparable con el AIC clásico que reportan lavaan o AMOS.}
 

@@ -90,7 +90,8 @@ Con los datos de las respuestas 200 empleados de 200 empresas distintas (conteni
 
 \subsection*{Respuesta}
 
-\subsection*{Justificación conceptual del modelo}
+\bigskip
+\noindent\textbf{a) Planteamiento del modelo en forma de hipótesis.}
 
 El objetivo de este análisis es comprender de qué manera la presión competitiva del mercado puede traducirse en un mayor desempeño innovador de la empresa. El planteamiento no supone que esta relación ocurra de forma exclusivamente directa. Por el contrario, propone que la presión competitiva primero modifica el comportamiento de los empleados, incentivándolos a generar, promover e implementar nuevas ideas. Estas conductas innovadoras constituirían el mecanismo mediante el cual una condición externa del mercado termina produciendo resultados innovadores a nivel organizacional.
 
@@ -100,7 +101,8 @@ Sin embargo, el modelo también reconoce que la presión competitiva no necesari
 
 Por esta razón, la cultura de tolerancia al fracaso actúa como variable moderadora. Su función es modificar la intensidad de la relación entre presión competitiva y conducta innovadora. Al combinarse el mecanismo de mediación con esta condición de moderación, el modelo corresponde a una mediación moderada de primera etapa. En esta tarea no se ejecuta la macro PROCESS; el modelo se estima directamente mediante regresiones OLS equivalentes al sistema estadístico requerido.
 
-\subsection*{Especificación formal del modelo}
+\bigskip
+\noindent\textbf{Especificación formal del modelo.}
 
 Las variables del modelo se organizan de la siguiente manera:
 
@@ -121,7 +123,8 @@ Variable dependiente & Desempeño innovador de la empresa & $Y$ \\
 
 El modelo se estima mediante tres regresiones relacionadas entre sí. Cada una responde una pregunta distinta y permite evaluar una parte específica del mecanismo propuesto.
 
-\subsubsection*{Primera regresión: explicación de la conducta innovadora}
+\medskip
+\noindent\textbf{Primera regresión: explicación de la conducta innovadora.}
 
 La primera ecuación toma la conducta innovadora como variable dependiente. Su propósito es determinar si la presión competitiva aumenta la conducta innovadora de los empleados y, al mismo tiempo, si esa relación cambia según el nivel de tolerancia al fracaso.
 
@@ -133,7 +136,8 @@ En esta ecuación, $a_1$ representa el efecto de la presión competitiva cuando 
 
 Si $a_3$ es positivo y significativo, se concluiría que la presión competitiva genera una mayor respuesta innovadora en organizaciones que aceptan con mayor facilidad los errores derivados de la experimentación.
 
-\subsubsection*{Segunda regresión: explicación del desempeño innovador}
+\medskip
+\noindent\textbf{Segunda regresión: explicación del desempeño innovador.}
 
 La segunda ecuación toma el desempeño innovador como variable dependiente. Su objetivo es determinar si la conducta innovadora de los empleados se traduce efectivamente en resultados innovadores para la empresa y si, una vez incorporado este mecanismo, persiste un efecto directo de la presión competitiva.
 
@@ -145,7 +149,8 @@ El coeficiente $b$ representa el efecto de la conducta innovadora sobre el desem
 
 Esta distinción es importante porque permite separar aquello que ocurre directamente desde la presión competitiva hacia el desempeño de aquello que ocurre indirectamente a través del comportamiento innovador de los empleados.
 
-\subsubsection*{Tercera regresión: estimación del efecto total}
+\medskip
+\noindent\textbf{Tercera regresión: estimación del efecto total.}
 
 La tercera ecuación evalúa la relación global entre presión competitiva y desempeño innovador antes de introducir el mediador.
 
@@ -155,7 +160,8 @@ Y=i_T+cX+e_T
 
 El coeficiente $c$ representa el efecto total de la presión competitiva sobre el desempeño innovador. Esta regresión permite establecer si existe una asociación global entre ambas variables, aunque por sí sola no permite identificar el mecanismo que genera dicha relación.
 
-\subsubsection*{Efecto indirecto condicional}
+\medskip
+\noindent\textbf{Efecto indirecto condicional.}
 
 A partir de las dos primeras ecuaciones se obtiene el efecto indirecto condicional:
 
@@ -165,7 +171,8 @@ IE(W)=\left(a_1+a_3W\right)b
 
 Esta expresión muestra que el efecto indirecto de la presión competitiva sobre el desempeño innovador no es constante. Su magnitud depende del nivel de tolerancia al fracaso. Cuando $W$ aumenta, también cambia el efecto de $X$ sobre $M$ y, en consecuencia, cambia el efecto indirecto completo sobre $Y$.
 
-\subsection*{Hipótesis}
+\bigskip
+\noindent\textbf{Hipótesis.}
 
 A partir de esta especificación se plantean las siguientes hipótesis:
 
@@ -183,7 +190,10 @@ A partir de esta especificación se plantean las siguientes hipótesis:
     \item H6: El efecto indirecto de la presión competitiva sobre el desempeño innovador aumenta cuando la tolerancia al fracaso es mayor, por lo que el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
 \end{itemize}
 
-\subsection*{Procedimiento de estimación}
+\bigskip
+\noindent\textbf{b) Evaluación de las hipótesis.}
+
+\textbf{Procedimiento de estimación.}
 
 El análisis se realizó utilizando las 200 observaciones disponibles en la base de datos, sin pérdidas de información en las variables incluidas en el modelo.
 
@@ -209,9 +219,11 @@ Las tres ecuaciones fueron estimadas mediante mínimos cuadrados ordinarios. Par
 
 Los efectos indirectos condicionales fueron evaluados mediante 5.000 remuestras bootstrap. Este procedimiento es especialmente apropiado para la mediación porque el producto de coeficientes no necesariamente sigue una distribución normal. En consecuencia, la significancia del efecto indirecto se determina observando si su intervalo de confianza bootstrap incluye o no el valor cero.
 
-\subsection*{Resultados}
+\bigskip
+\noindent\textbf{Resultados.}
 
-\subsubsection*{Primera regresión: conducta innovadora como variable dependiente}
+\medskip
+\noindent\textbf{Primera regresión: conducta innovadora como variable dependiente.}
 
 La primera regresión evalúa simultáneamente el efecto de la presión competitiva, el efecto de la tolerancia al fracaso y la interacción entre ambas variables sobre la conducta innovadora.
 
@@ -240,7 +252,8 @@ El resultado central de esta regresión corresponde al término de interacción.
 
 En términos sustantivos, la presión competitiva produce una respuesta innovadora más intensa cuando los empleados perciben que la organización acepta los errores propios de la experimentación. Por tanto, los resultados apoyan H2 y H5.
 
-\subsubsection*{Segunda regresión: desempeño innovador como variable dependiente}
+\medskip
+\noindent\textbf{Segunda regresión: desempeño innovador como variable dependiente.}
 
 La segunda regresión evalúa si la conducta innovadora se transforma en desempeño innovador y si la presión competitiva conserva un efecto directo una vez incluido el mediador.
 
@@ -268,7 +281,8 @@ En cambio, el efecto directo residual de la presión competitiva no es significa
 
 Este resultado sugiere que la asociación entre presión competitiva y desempeño innovador se transmite principalmente mediante la conducta innovadora. No obstante, la ausencia de significancia de $c'$ no constituye por sí sola una prueba suficiente de mediación. La evidencia formal debe obtenerse a partir de los intervalos bootstrap del efecto indirecto.
 
-\subsubsection*{Tercera regresión: efecto total}
+\medskip
+\noindent\textbf{Tercera regresión: efecto total.}
 
 La regresión del efecto total muestra que la presión competitiva se relaciona positiva y significativamente con el desempeño innovador antes de incluir la conducta innovadora como mediador.
 
@@ -280,7 +294,8 @@ Este coeficiente indica que una unidad adicional de presión competitiva se asoc
 
 Como el efecto total es positivo y significativo, se encuentra evidencia a favor de H1. Sin embargo, esta regresión no permite determinar por qué ocurre la relación. Para comprender el mecanismo es necesario examinar conjuntamente las dos regresiones anteriores y los efectos indirectos condicionales.
 
-\subsubsection*{Efectos indirectos condicionales}
+\medskip
+\noindent\textbf{Efectos indirectos condicionales.}
 
 El efecto indirecto se estimó en tres niveles representativos de tolerancia al fracaso: una desviación estándar bajo la media, la media y una desviación estándar sobre la media.
 
@@ -318,7 +333,8 @@ El intervalo bootstrap al 95\% fue:
 
 Como este intervalo no contiene el valor cero, se concluye que el efecto indirecto cambia significativamente cuando varía la tolerancia al fracaso. Por tanto, se apoya H6.
 
-\subsection*{Evaluación conjunta de las hipótesis}
+\bigskip
+\noindent\textbf{Evaluación conjunta de las hipótesis.}
 
 \begin{table}[H]
 \centering
@@ -337,7 +353,8 @@ H6 & El índice de mediación moderada es positivo y su intervalo bootstrap excl
 \end{tabular}
 \end{table}
 
-\subsection*{Interpretación general}
+\bigskip
+\noindent\textbf{c) Interpretación de los resultados.}
 
 Los resultados permiten reconstruir el proceso completo propuesto por el modelo. En primer lugar, la presión competitiva estimula la conducta innovadora de los empleados. Esto sugiere que, frente a un entorno más exigente, los trabajadores responden generando e implementando una mayor cantidad de ideas.
 
@@ -360,7 +377,8 @@ El cuestionario ``Enseñanza de Experimentos para las Ciencias Sociales'' (EECS)
 
 \subsection*{Respuesta}
 
-\subsection*{Justificación conceptual del análisis}
+\bigskip
+\noindent\textbf{Justificación conceptual del análisis.}
 
 El objetivo de esta pregunta es evaluar si la estructura empírica del cuestionario EECS-R es consistente con la teoría de Blend. Esta teoría sostiene que los buenos profesores de métodos cuantitativos presentan cuatro características fundamentales: amor por la estadística, entusiasmo por el diseño de experimentos, amor por la enseñanza y ausencia de habilidades interpersonales normales.
 
@@ -372,7 +390,8 @@ Esta distinción es importante para justificar por qué no se utilizó un análi
 
 Tampoco resulta conveniente comenzar con un análisis factorial confirmatorio. Aunque la teoría de Blend propone cuatro dimensiones, la tarea solicita evaluar si dicha estructura emerge efectivamente de las respuestas al cuestionario revisado. Por esta razón, primero se realiza un análisis exploratorio y, solo en una etapa posterior, una estructura depurada podría validarse mediante CFA.
 
-\subsection*{Objetivo del análisis}
+\bigskip
+\noindent\textbf{Objetivo del análisis.}
 
 La evaluación de la teoría de Blend requiere responder tres preguntas relacionadas.
 
@@ -384,7 +403,8 @@ En tercer lugar, se debe analizar si el contenido de los ítems asociados con ca
 
 Por tanto, la teoría de Blend no se considera respaldada únicamente porque aparezcan cuatro factores. También es necesario que esos factores sean interpretables, que los ítems carguen principalmente en las dimensiones esperadas y que cada conjunto presente un grado razonable de consistencia interna.
 
-\subsection*{Preparación de los datos}
+\bigskip
+\noindent\textbf{Preparación de los datos.}
 
 La base contiene las respuestas de 239 profesores de métodos de investigación a los 28 ítems del cuestionario EECS-R.
 
@@ -392,7 +412,8 @@ Antes de realizar el análisis factorial se revisaron los rangos de respuesta, l
 
 La mediana fue utilizada porque las respuestas provienen de escalas ordinales tipo Likert y porque este procedimiento es menos sensible a observaciones extremas que la media. Debido a que la cantidad de datos faltantes es mínima, la imputación no debería afectar de manera sustantiva la estructura de correlaciones. Si la proporción de faltantes hubiese sido mayor, habría sido necesario analizar su mecanismo y considerar procedimientos más sofisticados, como imputación múltiple.
 
-\subsection*{Procedimiento de análisis}
+\bigskip
+\noindent\textbf{Procedimiento de análisis.}
 
 El análisis se desarrolló en las siguientes etapas:
 
@@ -413,11 +434,13 @@ La rotación seleccionada fue Oblimin. Esta es una rotación oblicua, lo que sig
 
 Una rotación ortogonal, como Varimax, habría impuesto artificialmente que las correlaciones entre factores fueran iguales a cero, una restricción que no está respaldada por la teoría.
 
-\subsection*{Evaluación de la adecuación factorial}
+\bigskip
+\noindent\textbf{Evaluación de la adecuación factorial.}
 
 Antes de interpretar cualquier solución factorial es necesario determinar si las correlaciones observadas son adecuadas para este tipo de análisis.
 
-\subsubsection*{Prueba de esfericidad de Bartlett}
+\medskip
+\noindent\textbf{Prueba de esfericidad de Bartlett.}
 
 La prueba de Bartlett evalúa la hipótesis nula de que la matriz de correlaciones poblacional es una matriz identidad. Bajo esta hipótesis, los ítems no presentan correlaciones suficientes entre sí y, por tanto, no existiría una estructura común que pudiera resumirse mediante factores.
 
@@ -443,7 +466,8 @@ Dado que el valor $p$ es inferior a 0.05, se rechaza la hipótesis nula. Esto in
 
 Sin embargo, una prueba de Bartlett significativa no permite concluir que la teoría de Blend sea correcta ni determina cuántos factores existen. Su función es únicamente establecer que resulta razonable buscar una estructura factorial.
 
-\subsubsection*{Índice KMO}
+\medskip
+\noindent\textbf{Índice KMO.}
 
 También se calculó el índice de adecuación muestral de Kaiser--Meyer--Olkin. Este estadístico compara la magnitud de las correlaciones simples con la magnitud de las correlaciones parciales.
 
@@ -459,13 +483,15 @@ Este valor puede considerarse meritorio y se encuentra ampliamente por sobre el 
 
 En conjunto, Bartlett y KMO indican que la matriz es factorizable. No obstante, ninguno de estos estadísticos establece por sí solo el número de factores ni confirma el contenido de la teoría.
 
-\subsection*{Determinación del número de factores}
+\bigskip
+\noindent\textbf{Determinación del número de factores.}
 
 Una de las decisiones más importantes del análisis consiste en determinar cuántos factores conservar. Retener muy pocos factores puede combinar dimensiones conceptualmente distintas, mientras que retener demasiados puede producir factores pequeños, inestables o difíciles de interpretar.
 
 Para tomar esta decisión se consideraron tres fuentes de evidencia: los autovalores observados, el gráfico de sedimentación y el análisis paralelo.
 
-\subsubsection*{Autovalores y gráfico de sedimentación}
+\medskip
+\noindent\textbf{Autovalores y gráfico de sedimentación.}
 
 Los autovalores indican cuánta varianza explica cada factor antes de la rotación. Tradicionalmente se ha utilizado el criterio de conservar factores con autovalores mayores que uno. Sin embargo, este criterio tiende a sobreestimar el número de factores, especialmente cuando existen muchos ítems.
 
@@ -481,7 +507,8 @@ La inspección del gráfico sugirió una solución cercana a cuatro factores. El
 \caption{Gráfico de sedimentación y análisis paralelo del EECS-R}
 \end{figure}
 
-\subsubsection*{Análisis paralelo}
+\medskip
+\noindent\textbf{Análisis paralelo.}
 
 La decisión principal se basó en el análisis paralelo. Este procedimiento compara los autovalores observados con autovalores obtenidos a partir de matrices aleatorias que poseen el mismo número de observaciones y variables.
 
@@ -495,7 +522,8 @@ Debido a la cercanía entre ambos valores, se realizó una comprobación adicion
 
 Por tanto, el análisis paralelo respalda una solución de cuatro factores. Este resultado coincide con la cantidad de dimensiones propuesta por la teoría de Blend, aunque todavía es necesario examinar el contenido de cada factor para determinar si la correspondencia teórica es adecuada.
 
-\subsection*{Extracción y rotación de los factores}
+\bigskip
+\noindent\textbf{Extracción y rotación de los factores.}
 
 Luego de determinar que debían retenerse cuatro factores, se estimó una solución de máxima verosimilitud y se aplicó rotación Oblimin.
 
@@ -505,7 +533,8 @@ En una rotación oblicua se obtienen dos matrices principales: la matriz patrón
 
 Se consideró sustantiva una carga factorial con valor absoluto cercano o superior a 0.40. Esta regla no constituye un límite absoluto, pero permite distinguir asociaciones relativamente claras de relaciones débiles.
 
-\subsection*{Interpretación de la matriz patrón}
+\bigskip
+\noindent\textbf{Interpretación de la matriz patrón.}
 
 La solución de cuatro factores explica conjuntamente el 39.1\% de la varianza de los ítems. El aporte por factor fue F1=15.4\%, F2=9.7\%, F3=7.6\% y F4=6.3\%. Esta varianza acumulada es moderada, pero razonable en escalas actitudinales con contenido heterogéneo.
 
@@ -549,7 +578,8 @@ q28 & .01 & .21 & .53 & -.02 & Interpersonal \\
 \end{tabular}
 \end{table}
 
-\subsubsection*{Factor 1: entusiasmo por el diseño de experimentos}
+\medskip
+\noindent\textbf{Factor 1: entusiasmo por el diseño de experimentos.}
 
 El primer factor está definido principalmente por q8, q13, q14, q16, q17 y q22. El ítem q10 también carga sobre este factor, pero su contenido combina estadística y enseñanza, por lo que se interpreta con cautela. Entre estos indicadores, q22 presenta la carga más alta, con un valor de 0.86, seguido por q17, q14 y q16.
 
@@ -559,7 +589,8 @@ La magnitud de las cargas indica que varios ítems representan con claridad esta
 
 Los ítems q9, q10 y q21 también presentan su carga principal en este factor, aunque poseen contenido o asociaciones secundarias que sugieren cierta complejidad. Esto sugiere que su contenido podría combinar elementos de diseño experimental y razonamiento estadístico.
 
-\subsubsection*{Factor 2: amor por la enseñanza}
+\medskip
+\noindent\textbf{Factor 2: amor por la enseñanza.}
 
 El segundo factor se encuentra definido principalmente por q7, q11, q19, q20, q25, q26 y q27.
 
@@ -569,7 +600,8 @@ Por esta razón, el segundo factor se interpreta como amor por la enseñanza.
 
 Aunque la estructura general es clara, q27 presenta cierta complejidad porque también carga 0.38 en el factor interpersonal. Esto indica que el ítem no representa exclusivamente la dimensión de enseñanza, sino que comparte parte de su contenido con aspectos relacionados con la interacción social.
 
-\subsubsection*{Factor 3: ausencia de habilidades interpersonales normales}
+\medskip
+\noindent\textbf{Factor 3: ausencia de habilidades interpersonales normales.}
 
 El tercer factor está definido principalmente por q5, q18, q23 y q28. Los ítems q5 y q23 presentan cargas especialmente elevadas, de 0.67 y 0.70, respectivamente.
 
@@ -579,7 +611,8 @@ No obstante, esta dimensión presenta una estructura menos limpia que los factor
 
 Esto sugiere que la dimensión interpersonal es más heterogénea o que algunos de sus ítems no expresan con suficiente claridad el constructo propuesto.
 
-\subsubsection*{Factor 4: amor por la estadística}
+\medskip
+\noindent\textbf{Factor 4: amor por la estadística.}
 
 El cuarto factor está definido principalmente por q3, q4 y q24, con cargas de 0.51, 0.51 y 0.48, respectivamente.
 
@@ -589,7 +622,8 @@ Esta dimensión presenta menos indicadores con cargas altas que los factores de 
 
 El ítem q21 presenta una carga principal de 0.47 en diseño experimental y una carga secundaria de 0.27 en estadística. Esto puede deberse a que la práctica del diseño experimental se encuentra estrechamente relacionada con el análisis estadístico.
 
-\subsection*{Ítems con problemas de medición}
+\bigskip
+\noindent\textbf{Ítems con problemas de medición.}
 
 Aunque la solución general es interpretable, algunos ítems no presentan una asociación limpia con una única dimensión.
 
@@ -615,7 +649,8 @@ En el caso de q12, el problema es diferente. El ítem no presenta una carga elev
 
 Desde una perspectiva de desarrollo de escalas, q12 sería un candidato especialmente relevante para revisión o eventual eliminación. No obstante, cualquier decisión definitiva debería considerar también su contenido teórico y ser evaluada posteriormente en una muestra independiente.
 
-\subsection*{Correlaciones entre los factores}
+\bigskip
+\noindent\textbf{Correlaciones entre los factores.}
 
 La rotación Oblimin permitió que los factores se correlacionaran. La correlación factorial más alta alcanzó aproximadamente 0.47 entre F1 y F3.
 
@@ -625,7 +660,8 @@ El resultado también confirma que habría sido inadecuado imponer una rotación
 
 Sin embargo, una correlación de 0.47 no implica que ambos factores sean equivalentes. Todavía representan dimensiones distinguibles, aunque relacionadas.
 
-\subsection*{Evaluación de confiabilidad}
+\bigskip
+\noindent\textbf{Evaluación de confiabilidad.}
 
 Luego de interpretar la estructura factorial se calculó el alfa de Cronbach para cada conjunto de ítems.
 
@@ -656,7 +692,8 @@ No se observaron correlaciones ítem--total negativas dentro de las dimensiones,
 
 El alfa de Cronbach no demuestra por sí solo que una escala sea unidimensional. Un conjunto de ítems puede presentar alfa elevado y, aun así, medir más de un factor. Por esta razón, la confiabilidad debe evaluarse junto con las cargas factoriales, las cargas cruzadas y la coherencia conceptual.
 
-\subsection*{Evaluación de la teoría de Blend}
+\bigskip
+\noindent\textbf{Evaluación de la teoría de Blend.}
 
 La teoría de Blend propone cuatro dimensiones correlacionadas. Los resultados entregan evidencia favorable a esta estructura general.
 
@@ -671,7 +708,8 @@ Sin embargo, el apoyo no es perfecto a nivel de los ítems. Algunos indicadores 
 Por tanto, la teoría de Blend recibe apoyo general en cuanto al número y significado de las dimensiones, pero la versión revisada del cuestionario todavía presenta problemas específicos de medición.
 
 
-\subsection*{Síntesis de evaluación de la teoría}
+\bigskip
+\noindent\textbf{Síntesis de evaluación de la teoría.}
 
 \begin{table}[H]
 \centering
@@ -691,7 +729,8 @@ Confiabilidad & Adecuada en general, aunque más débil en la dimensión interpe
 \end{tabular}
 \end{table}
 
-\subsection*{Conclusión}
+\bigskip
+\noindent\textbf{Conclusión.}
 
 El análisis factorial exploratorio muestra que las respuestas al EECS-R pueden organizarse en cuatro factores relacionados y conceptualmente compatibles con la teoría de Blend.
 
@@ -753,7 +792,8 @@ Su labor consiste en determinar:
 
 \subsection*{Respuesta}
 
-\subsection*{Justificación conceptual del análisis}
+\bigskip
+\noindent\textbf{Justificación conceptual del análisis.}
 
 El objetivo de esta pregunta es determinar cómo las condiciones de trabajo percibidas por los empleados se relacionan con su satisfacción laboral, su compromiso con la organización y su intención de permanecer en la empresa.
 
@@ -765,7 +805,8 @@ Una vez evaluado el modelo de medición, se utiliza modelamiento de ecuaciones e
 
 La secuencia del análisis es importante: primero se evalúa si las escalas miden bien; luego se comparan los modelos estructurales. Si los ítems no midieran adecuadamente los constructos, cualquier conclusión sobre relaciones entre variables latentes podría estar distorsionada.
 
-\subsection*{Constructos e indicadores}
+\bigskip
+\noindent\textbf{Constructos e indicadores.}
 
 El modelo contiene cinco constructos latentes reflectivos. En un modelo reflectivo, el constructo subyacente explica las respuestas observadas en sus indicadores. Por ejemplo, una mayor satisfacción laboral debería reflejarse en respuestas más favorables en los cuatro ítems de satisfacción.
 
@@ -787,11 +828,13 @@ Intención de permanecer & IP & IP1, IP2, IP3, IP4 \\
 
 La base contiene información de 400 empleados del sector de telecomunicaciones. Además de los constructos anteriores, se dispone de variables personales como género, edad y experiencia laboral.
 
-\subsection*{Modelos teóricos propuestos}
+\bigskip
+\noindent\textbf{Modelos teóricos propuestos.}
 
 El enunciado plantea dos modelos alternativos. Ambos proponen que las condiciones de trabajo influyen sobre satisfacción laboral, compromiso organizacional e intención de permanecer. La diferencia central es si la percepción del ambiente de trabajo y la actitud hacia los compañeros tienen efectos completamente mediados o parcialmente mediados sobre la intención de permanecer.
 
-\subsubsection*{Modelo completamente mediado}
+\medskip
+\noindent\textbf{Modelo completamente mediado.}
 
 El modelo completamente mediado supone que la percepción del ambiente y la actitud hacia los compañeros no tienen caminos directos hacia la intención de permanecer. Sus efectos deben operar mediante satisfacción laboral y compromiso organizacional.
 
@@ -811,7 +854,8 @@ IP=\beta_6 ST+\beta_7 CO+\varepsilon_{IP}
 
 Bajo este modelo, PA y AC pueden afectar la permanencia solo de manera indirecta, a través de satisfacción y compromiso.
 
-\subsubsection*{Modelo parcialmente mediado}
+\medskip
+\noindent\textbf{Modelo parcialmente mediado.}
 
 El modelo parcialmente mediado conserva las relaciones anteriores, pero agrega efectos directos desde percepción del ambiente y actitud hacia compañeros hacia intención de permanecer.
 
@@ -829,17 +873,22 @@ IP=\beta_6 ST+\beta_7 CO+\beta_8 PA+\beta_9 AC+\varepsilon_{IP}
 
 Por tanto, el modelo parcialmente mediado permite que una parte del efecto opere mediante satisfacción y compromiso, y que otra parte permanezca como efecto directo sobre la intención de seguir trabajando en la empresa.
 
-\subsection*{Preguntas de análisis y procedimiento}
+\bigskip
+\noindent\textbf{Preguntas de análisis y procedimiento.}
 
 El análisis busca responder cuatro preguntas: (a) si el modelo de medición es confiable y válido; (b) cuál de los dos modelos representa mejor los datos; (c) si las relaciones estructurales se comportan igual entre hombres y mujeres; y (d) cómo interpretar sustantivamente los resultados.
 
 El procedimiento se desarrolló en tres etapas. Primero se estimó un CFA puro con cinco factores correlacionados. Segundo, se estimaron y compararon los modelos estructurales completo y parcial. Tercero, se estimó el modelo seleccionado por separado para hombres y mujeres y se compararon los coeficientes no estandarizados mediante pruebas de diferencia entre pendientes.
 
-\subsection*{a) Evaluación del modelo de medición}
+\bigskip
+\noindent\textbf{a) Evaluación del modelo de medición.}
 
 La base contiene 400 empleados y cinco constructos reflectivos, cada uno medido por cuatro indicadores: actitud hacia compañeros (AC), percepción del ambiente (PA), satisfacción laboral (ST), compromiso organizacional (CO) e intención de permanecer (IP).
 
-\paragraph{Ajuste del CFA.} Se estimó primero un análisis factorial confirmatorio puro con los cinco constructos libremente correlacionados, sin restricciones estructurales. El ajuste fue muy bueno:
+\medskip
+\noindent\textbf{Ajuste del CFA.}
+
+ Se estimó primero un análisis factorial confirmatorio puro con los cinco constructos libremente correlacionados, sin restricciones estructurales. El ajuste fue muy bueno:
 \[
 \chi^2(160)=220.31,\quad \text{CFI}=0.985,\quad \text{TLI}=0.982,\quad \text{RMSEA}=0.031,
 \]
@@ -900,13 +949,20 @@ IP & .886 & .890 & .670 & .818 & .741 & .864\\
 
 Las cargas estandarizadas oscilan entre .584 y .885; la mayoría supera .70 y las cargas inferiores pertenecen a escalas que mantienen CR y AVE adecuados. Todos los alfas y CR superan 0.70, y todas las AVE superan 0.50: existe confiabilidad y validez convergente adecuadas. Estos indicadores responden preguntas diferentes: alfa mide consistencia interna bajo supuestos relativamente restrictivos de equivalencia entre ítems; CR se basa en las cargas estimadas y es más apropiada dentro de CFA; AVE es la proporción promedio de varianza del indicador explicada por el constructo, de modo que AVE $>0.50$ significa que el constructo explica más varianza que el error.
 
-\paragraph{Validez discriminante.} La correlación latente más alta implicada por el CFA es 0.562 (PA con IP), inferior a la menor raíz de AVE (0.720 en ST), por lo que se cumple el criterio de Fornell--Larcker: cada constructo comparte más varianza con sus indicadores que con los demás constructos. El HTMT máximo fue 0.569 (PA--IP), muy por debajo del umbral de 0.85. Existe validez discriminante: cada escala captura algo distinto.
+\medskip
+\noindent\textbf{Validez discriminante.}
+
+ La correlación latente más alta implicada por el CFA es 0.562 (PA con IP), inferior a la menor raíz de AVE (0.720 en ST), por lo que se cumple el criterio de Fornell--Larcker: cada constructo comparte más varianza con sus indicadores que con los demás constructos. El HTMT máximo fue 0.569 (PA--IP), muy por debajo del umbral de 0.85. Existe validez discriminante: cada escala captura algo distinto.
 
 La carga más baja fue 0.584 en CO1, todavía aceptable. No fue necesario eliminar ítems, evitando modificar el instrumento únicamente para mejorar el ajuste.
 
-\paragraph{Conclusión del inciso a).} El modelo de medición es adecuado. Cuantitativamente, el CFA presenta buen ajuste global (CFI=0.985, TLI=0.982, RMSEA=0.031), todas las escalas tienen confiabilidad suficiente (alfas entre 0.811 y 0.891; CR entre 0.811 y 0.894), todos los AVE son superiores a 0.50 y el HTMT máximo es 0.569, inferior al umbral de 0.85. Por lo tanto, las escalas muestran confiabilidad, validez convergente y validez discriminante suficientes para continuar con la comparación de los modelos estructurales.
+\medskip
+\noindent\textbf{Conclusión del inciso a).}
 
-\subsection*{b) Selección del modelo estructural superior}
+ El modelo de medición es adecuado. Cuantitativamente, el CFA presenta buen ajuste global (CFI=0.985, TLI=0.982, RMSEA=0.031), todas las escalas tienen confiabilidad suficiente (alfas entre 0.811 y 0.891; CR entre 0.811 y 0.894), todos los AVE son superiores a 0.50 y el HTMT máximo es 0.569, inferior al umbral de 0.85. Por lo tanto, las escalas muestran confiabilidad, validez convergente y validez discriminante suficientes para continuar con la comparación de los modelos estructurales.
+
+\bigskip
+\noindent\textbf{b) Selección del modelo estructural superior.}
 
 La comparación busca determinar si la percepción del ambiente y la actitud hacia los compañeros influyen sobre la intención de permanecer exclusivamente mediante satisfacción y compromiso, o si también conservan efectos directos.
 
@@ -946,7 +1002,8 @@ AIC y BIC también favorecen al modelo parcial (diferencias de 42.83 y 34.84 pun
 
 El $\chi^2$ evalúa ajuste exacto y suele ser sensible al tamaño muestral. CFI y TLI comparan el modelo con uno de independencia; valores cercanos o superiores a 0.95 representan buen ajuste. RMSEA estima error de aproximación por grado de libertad; 0.031 es compatible con muy buen ajuste. AIC y BIC penalizan complejidad, siendo BIC más severo; en este caso todos los criterios coinciden.
 
-\paragraph{Relaciones estructurales del modelo seleccionado.}
+\medskip
+\noindent\textbf{Relaciones estructurales del modelo seleccionado.}
 
 \begin{table}[htbp]\centering
 \caption{Coeficientes del modelo parcialmente mediado}
@@ -970,7 +1027,8 @@ $CO\rightarrow IP$ & .1576 & .329 & $<.001$\\
 La percepción del ambiente incrementa la satisfacción, el compromiso y la intención de permanecer. La actitud hacia compañeros no predice satisfacción, pero sí compromiso y tiene un efecto directo pequeño sobre permanencia. Los coeficientes estandarizados muestran que el camino más fuerte es $PA\rightarrow CO$ ($\beta=.427$), seguido por $PA\rightarrow IP$ ($\beta=.354$) y $CO\rightarrow IP$ ($\beta=.329$). En cambio, $ST\rightarrow CO$ y $ST\rightarrow IP$ no son significativos al 5\% una vez incorporados los caminos directos desde $PA$ y $AC$.
 
 
-\subsection*{c) Comparación de relaciones entre hombres y mujeres}
+\bigskip
+\noindent\textbf{c) Comparación de relaciones entre hombres y mujeres.}
 
 Se estimó el modelo parcialmente mediado por separado para hombres y mujeres. El ajuste fue adecuado en ambos grupos: hombres ($n=200$, CFI=.981, RMSEA=.031) y mujeres ($n=200$, CFI=.972, RMSEA=.041). Esto permite una comparación preliminar de los caminos estructurales entre grupos.
 
@@ -1012,7 +1070,8 @@ No se concluyen diferencias en las demás relaciones estructurales. Es important
 
 La conclusión multigrupo debe interpretarse con cautela. En este trabajo se verifica ajuste adecuado por grupo y se comparan caminos estructurales, pero una comparación completa entre hombres y mujeres requeriría evaluar formalmente invariancia de medición, especialmente invariancia métrica.
 
-\subsection*{d) Explicación y conclusión de los resultados}
+\bigskip
+\noindent\textbf{d) Explicación y conclusión de los resultados.}
 
 El modelo de medición es sólido. El CFA presenta muy buen ajuste global y las escalas muestran confiabilidad, validez convergente y validez discriminante adecuadas. Por tanto, los constructos pueden utilizarse para evaluar las relaciones estructurales propuestas.
 
@@ -1063,7 +1122,8 @@ Los ejecutivos de HBAT tienen diversas preguntas respecto a su desempeño y el n
 
 \subsection*{Respuesta}
 
-\subsection*{Justificación conceptual del análisis}
+\bigskip
+\noindent\textbf{Justificación conceptual del análisis.}
 
 El objetivo de esta pregunta es determinar si el tipo de distribución utilizado por HBAT y el tamaño de la empresa cliente influyen sobre la lealtad de los clientes.
 
@@ -1084,7 +1144,8 @@ El diseño es factorial porque incluye simultáneamente dos factores categórico
 
 Además de evaluar el efecto principal de cada factor, el diseño permite examinar su interacción. Esta interacción es fundamental para responder si la influencia del tipo de distribución sobre la lealtad es igual en empresas pequeñas y grandes.
 
-\subsection*{Variables del análisis}
+\bigskip
+\noindent\textbf{Variables del análisis.}
 
 Las variables incluidas en el modelo son las siguientes:
 
@@ -1121,7 +1182,8 @@ Directa & 53 & 39 \\
 
 Los tamaños de las cuatro celdas no son exactamente iguales, pero se encuentran razonablemente balanceados. Esto favorece la robustez del análisis frente a desviaciones moderadas de algunos supuestos.
 
-\subsection*{Especificación del modelo}
+\bigskip
+\noindent\textbf{Especificación del modelo.}
 
 El análisis corresponde a un MANOVA factorial $2\times 2$.
 
@@ -1165,11 +1227,13 @@ La diferencia con un ANOVA tradicional es que aquí la variable dependiente no e
 
 Por tanto, el MANOVA evalúa si los distintos grupos presentan diferencias en alguna combinación lineal de estas tres variables.
 
-\subsection*{Preguntas e hipótesis}
+\bigskip
+\noindent\textbf{Preguntas e hipótesis.}
 
 El análisis busca responder tres preguntas planteadas por HBAT.
 
-\subsubsection*{Efecto del tipo de distribución}
+\medskip
+\noindent\textbf{Efecto del tipo de distribución.}
 
 La primera pregunta es si los clientes atendidos mediante distribución directa e indirecta presentan diferentes niveles conjuntos de lealtad.
 
@@ -1191,7 +1255,8 @@ H_{11}:
 
 La hipótesis nula indica que ambos tipos de distribución presentan el mismo vector promedio de satisfacción, recomendación y recompra.
 
-\subsubsection*{Efecto del tamaño de la empresa}
+\medskip
+\noindent\textbf{Efecto del tamaño de la empresa.}
 
 La segunda pregunta es si las empresas pequeñas y grandes difieren en su perfil conjunto de lealtad.
 
@@ -1211,7 +1276,8 @@ H_{12}:
 \boldsymbol{\mu}_{\text{grande}}
 \]
 
-\subsubsection*{Interacción entre distribución y tamaño}
+\medskip
+\noindent\textbf{Interacción entre distribución y tamaño.}
 
 La tercera pregunta es si el efecto del tipo de distribución cambia según el tamaño de la empresa.
 
@@ -1231,7 +1297,8 @@ Si la interacción no es significativa, los efectos de distribución y tamaño p
 
 En cambio, si la interacción resulta significativa, el efecto de la distribución depende del tamaño. En ese caso, ambos antecedentes no pueden interpretarse como completamente independientes.
 
-\subsection*{Procedimiento de análisis}
+\bigskip
+\noindent\textbf{Procedimiento de análisis.}
 
 El análisis se desarrolló en cuatro etapas.
 
@@ -1243,7 +1310,8 @@ En tercer lugar, se estimó el MANOVA factorial para los dos efectos principales
 
 Finalmente, al encontrarse efectos multivariados significativos, se realizaron ANOVA univariados y comparaciones de medias para identificar qué dimensiones de la lealtad contribuían a cada efecto.
 
-\subsection*{Consistencia de las variables de lealtad}
+\bigskip
+\noindent\textbf{Consistencia de las variables de lealtad.}
 
 Antes de realizar el MANOVA se evaluó la consistencia interna de las tres variables utilizadas para representar la lealtad.
 
@@ -1259,9 +1327,11 @@ Las correlaciones entre las tres variables se encontraron aproximadamente entre 
 
 Es importante señalar que el MANOVA no transforma automáticamente las tres variables en una escala única. Cada una continúa siendo una variable dependiente distinta. La prueba multivariada simplemente considera sus relaciones al evaluar diferencias entre grupos.
 
-\subsection*{Evaluación de supuestos}
+\bigskip
+\noindent\textbf{Evaluación de supuestos.}
 
-\subsubsection*{Independencia de las observaciones}
+\medskip
+\noindent\textbf{Independencia de las observaciones.}
 
 El supuesto de independencia establece que la respuesta de un cliente no debe determinar la respuesta de otro.
 
@@ -1269,7 +1339,8 @@ La base contiene información de 200 clientes distintos. Por tanto, se asume que
 
 La independencia depende principalmente del diseño de recolección de datos y no puede demostrarse únicamente mediante una prueba estadística.
 
-\subsubsection*{Igualdad de matrices de covarianza}
+\medskip
+\noindent\textbf{Igualdad de matrices de covarianza.}
 
 El MANOVA supone que las matrices de varianzas y covarianzas de las variables dependientes son aproximadamente iguales entre las cuatro celdas del diseño.
 
@@ -1303,7 +1374,8 @@ Dado que $p=0.069>0.05$, no se rechaza la hipótesis nula. Por tanto, no existe 
 
 Este resultado favorece el supuesto de homogeneidad multivariada. Sin embargo, la prueba de Box puede ser sensible a la falta de normalidad y debe considerarse junto con el balance de los tamaños de celda y los demás diagnósticos.
 
-\subsubsection*{Igualdad de varianzas univariadas}
+\medskip
+\noindent\textbf{Igualdad de varianzas univariadas.}
 
 La igualdad de varianzas para cada variable dependiente se evaluó mediante pruebas de Levene.
 
@@ -1313,7 +1385,8 @@ Estos resultados requieren cierta cautela al interpretar los ANOVA univariados. 
 
 Además, se interpretan conjuntamente los resultados multivariados, las medias y los tamaños de efecto, en lugar de depender únicamente de las pruebas univariadas.
 
-\subsubsection*{Otros supuestos}
+\medskip
+\noindent\textbf{Otros supuestos.}
 
 El MANOVA también requiere relaciones aproximadamente lineales entre las variables dependientes dentro de cada grupo, ausencia de multicolinealidad perfecta y ausencia de observaciones multivariadas extremadamente influyentes.
 
@@ -1321,7 +1394,8 @@ Las correlaciones entre satisfacción, recomendación y recompra son elevadas, p
 
 No se identificaron problemas que impidieran estimar el modelo. Sin embargo, cualquier observación extrema debería ser revisada considerando simultáneamente las tres variables de lealtad.
 
-\subsection*{Resultados del MANOVA factorial}
+\bigskip
+\noindent\textbf{Resultados del MANOVA factorial.}
 
 El MANOVA evalúa cada efecto mediante la comparación entre una matriz de variación atribuible al efecto, denominada $\mathbf{H}$, y una matriz de variación residual, denominada $\mathbf{E}$.
 
@@ -1352,7 +1426,8 @@ Distribución $\times$ Tamaño & .9034 & 6.917 & 3 & 194 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-\subsubsection*{Efecto multivariado del tipo de distribución}
+\medskip
+\noindent\textbf{Efecto multivariado del tipo de distribución.}
 
 El efecto del tipo de distribución fue significativo:
 
@@ -1370,7 +1445,8 @@ Esto indica que los clientes atendidos mediante distribución directa e indirect
 
 Por tanto, el tipo de distribución sí incide sobre la lealtad considerada de manera conjunta.
 
-\subsubsection*{Efecto multivariado del tamaño}
+\medskip
+\noindent\textbf{Efecto multivariado del tamaño.}
 
 El efecto del tamaño de la empresa también fue significativo:
 
@@ -1386,7 +1462,8 @@ Se rechaza la hipótesis nula de igualdad entre empresas pequeñas y grandes.
 
 Por tanto, el tamaño de la empresa cliente se relaciona con diferencias en el perfil conjunto de lealtad.
 
-\subsubsection*{Interacción multivariada}
+\medskip
+\noindent\textbf{Interacción multivariada.}
 
 La interacción entre tipo de distribución y tamaño fue significativa:
 
@@ -1404,7 +1481,8 @@ En consecuencia, distribución y tamaño no actúan de manera completamente inde
 
 Esta interacción modifica la forma en que deben interpretarse los efectos principales. Aunque distribución y tamaño presentan efectos promedio significativos, esos promedios pueden ocultar diferencias importantes entre las cuatro combinaciones del diseño.
 
-\subsection*{ANOVA univariados posteriores}
+\bigskip
+\noindent\textbf{ANOVA univariados posteriores.}
 
 Una vez que el MANOVA detecta un efecto conjunto significativo, corresponde examinar cada variable dependiente para identificar cuáles contribuyen a las diferencias multivariadas.
 
@@ -1446,7 +1524,8 @@ Recompra
 \end{tabular}
 \end{table}
 
-\subsubsection*{Resultados para satisfacción}
+\medskip
+\noindent\textbf{Resultados para satisfacción.}
 
 El tipo de distribución presenta un efecto significativo y de magnitud elevada sobre satisfacción:
 
@@ -1482,7 +1561,8 @@ p<0.001,
 
 Por tanto, la diferencia en satisfacción entre distribución directa e indirecta cambia según el tamaño de la empresa.
 
-\subsubsection*{Resultados para recomendación}
+\medskip
+\noindent\textbf{Resultados para recomendación.}
 
 El tipo de distribución afecta significativamente la intención de recomendar:
 
@@ -1516,7 +1596,8 @@ p=0.221,
 
 Esto indica que, para recomendación, los efectos de distribución y tamaño son esencialmente aditivos. La ventaja de la distribución directa es relativamente similar en empresas pequeñas y grandes.
 
-\subsubsection*{Resultados para recompra}
+\medskip
+\noindent\textbf{Resultados para recompra.}
 
 El tipo de distribución presenta un efecto significativo sobre recompra:
 
@@ -1550,7 +1631,8 @@ p=0.010,
 
 Por tanto, la diferencia en intención de recompra entre canales directos e indirectos también depende del tamaño de la empresa, aunque la interacción es de menor magnitud que en satisfacción.
 
-\subsection*{Medias por distribución y tamaño}
+\bigskip
+\noindent\textbf{Medias por distribución y tamaño.}
 
 Para interpretar adecuadamente la interacción, es necesario examinar las medias de las cuatro combinaciones del diseño.
 
@@ -1569,7 +1651,8 @@ Directa & Grande & 8.449 & 8.067 & 8.569 \\
 \end{tabular}
 \end{table}
 
-\subsubsection*{Interpretación de la satisfacción}
+\medskip
+\noindent\textbf{Interpretación de la satisfacción.}
 
 Entre las empresas pequeñas, la diferencia entre distribución directa e indirecta es:
 
@@ -1589,7 +1672,8 @@ Esta diferencia en las diferencias explica la interacción significativa. Si se 
 
 El canal directo mejora la satisfacción en ambos tamaños, pero el aumento es especialmente pronunciado entre las empresas grandes.
 
-\subsubsection*{Interpretación de la recomendación}
+\medskip
+\noindent\textbf{Interpretación de la recomendación.}
 
 Para recomendación, la diferencia entre distribución directa e indirecta es:
 
@@ -1609,7 +1693,8 @@ Aunque la diferencia es algo mayor entre las empresas grandes, el cambio no es s
 
 Por tanto, en recomendación puede afirmarse que el canal directo presenta una ventaja relativamente estable para ambos tamaños.
 
-\subsubsection*{Interpretación de la recompra}
+\medskip
+\noindent\textbf{Interpretación de la recompra.}
 
 Para recompra, la diferencia entre distribución directa e indirecta es:
 
@@ -1629,7 +1714,8 @@ La ventaja del canal directo también es mayor entre clientes grandes. Esta dife
 
 Aunque la interacción tiene una magnitud menor que en satisfacción, el patrón sustantivo es similar: el canal directo resulta especialmente favorable entre empresas grandes.
 
-\subsection*{Análisis de efectos simples}
+\bigskip
+\noindent\textbf{Análisis de efectos simples.}
 
 Cuando existe una interacción significativa, los efectos principales promedio deben interpretarse con cautela. En ese caso, conviene examinar efectos simples, es decir, comparar distribución dentro de cada nivel de tamaño y tamaño dentro de cada tipo de distribución.
 
@@ -1669,9 +1755,11 @@ p=0.064
 
 Esto indica que el tamaño de la empresa produce diferencias particularmente claras cuando el canal es directo. Bajo distribución indirecta, las diferencias entre empresas grandes y pequeñas son menores en algunas dimensiones.
 
-\subsection*{Respuesta a las preguntas planteadas}
+\bigskip
+\noindent\textbf{Respuesta a las preguntas planteadas.}
 
-\subsubsection*{a) ¿Incide el tipo de distribución en la lealtad de los clientes?}
+\medskip
+\noindent\textbf{a) ¿Incide el tipo de distribución en la lealtad de los clientes?}
 
 Sí.
 
@@ -1689,7 +1777,8 @@ Además, los tres ANOVA posteriores fueron significativos. Los clientes atendido
 
 Por tanto, se concluye que el tipo de distribución sí incide en la lealtad de los clientes.
 
-\subsubsection*{b) ¿Se comportan los clientes de forma distinta según el tamaño de la empresa?}
+\medskip
+\noindent\textbf{b) ¿Se comportan los clientes de forma distinta según el tamaño de la empresa?}
 
 Sí.
 
@@ -1707,7 +1796,8 @@ Las empresas grandes presentan, en promedio, mayores niveles de satisfacción, r
 
 Por tanto, los clientes se comportan de manera distinta en términos de lealtad según el tamaño de su empresa.
 
-\subsubsection*{c) ¿Son distribución y tamaño antecedentes independientes de la lealtad?}
+\medskip
+\noindent\textbf{c) ¿Son distribución y tamaño antecedentes independientes de la lealtad?}
 
 No.
 
@@ -1727,7 +1817,8 @@ La interacción se observa principalmente en satisfacción y recompra. En ambas 
 
 Por tanto, distribución y tamaño no pueden interpretarse como antecedentes completamente independientes de la lealtad.
 
-\subsection*{Interpretación gerencial}
+\bigskip
+\noindent\textbf{Interpretación gerencial.}
 
 Los resultados muestran que la distribución directa se asocia con una mejor relación comercial con los clientes. Los clientes atendidos directamente presentan mayores niveles de satisfacción, recomendación y recompra.
 
@@ -1743,7 +1834,8 @@ Una posible estrategia sería priorizar la fuerza de ventas directa para empresa
 
 No obstante, el análisis permite establecer asociaciones entre canal, tamaño y lealtad, pero no demuestra causalidad definitiva. El tipo de distribución podría estar relacionado con otras características de los clientes que también influyen sobre su nivel de lealtad.
 
-\subsection*{Conclusión de la pregunta 4}
+\bigskip
+\noindent\textbf{Conclusión de la pregunta 4.}
 
 El MANOVA factorial muestra que tanto el tipo de distribución como el tamaño de la empresa influyen significativamente sobre el perfil conjunto de lealtad compuesto por satisfacción, recomendación y recompra.
 

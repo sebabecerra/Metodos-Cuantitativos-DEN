@@ -1063,118 +1063,697 @@ Los ejecutivos de HBAT tienen diversas preguntas respecto a su desempeño y el n
 
 \subsection*{Respuesta}
 
-\subsection*{Por qué corresponde MANOVA}
+\subsection*{Justificación conceptual del análisis}
 
-La lealtad no se observa como una sola variable, sino como un perfil de tres respuestas relacionadas: satisfacción, recomendación y recompra. Por eso existen tres resultados que representan conjuntamente la lealtad. Ejecutar tres ANOVA independientes desde el inicio aumentaría el riesgo de error tipo I y perdería la información contenida en sus correlaciones. MANOVA contrasta primero si los grupos difieren en alguna combinación lineal de satisfacción, recomendación y recompra.
+El objetivo de esta pregunta es determinar si el tipo de distribución utilizado por HBAT y el tamaño de la empresa cliente influyen sobre la lealtad de los clientes.
 
-El diseño es factorial porque se analizan simultáneamente dos antecedentes categóricos. Esto permite separar dos efectos principales y una interacción. La interacción es indispensable para responder la tercera pregunta: si resulta significativa, el efecto de distribución depende del tamaño y los antecedentes no pueden describirse como independientes.
+La lealtad no se encuentra representada por una única variable observada. En este caso, la empresa la conceptualiza mediante tres resultados relacionados: satisfacción con HBAT, intención de recomendar a HBAT e intención de volver a comprar a HBAT.
 
-\subsection*{Diseño, procedimiento e hipótesis}
+Estas tres variables describen dimensiones distintas, aunque conectadas, de la relación del cliente con la empresa. La satisfacción refleja la evaluación general de la experiencia; la recomendación representa la disposición del cliente a comunicar una valoración positiva a terceros; y la recompra expresa su intención de mantener la relación comercial en el futuro.
 
-La lealtad se representa mediante satisfacción, intención de recomendar e intención de recomprar. Los antecedentes son tipo de distribución (indirecta con agente frente a directa) y tamaño de la empresa (pequeña frente a grande). Se aplicó MANOVA factorial $2\times2$ con celdas de 45, 63, 53 y 39 clientes.
-\begin{align*}
-H_{01}&:\ \text{el tipo de distribución no afecta conjuntamente la lealtad},\\
-H_{02}&:\ \text{el tamaño no afecta conjuntamente la lealtad},\\
-H_{03}&:\ \text{no existe interacción distribución}\times\text{tamaño}.
-\end{align*}
+Debido a que las tres variables dependientes se encuentran conceptualmente relacionadas, no resulta conveniente comenzar realizando tres ANOVA independientes. Esa estrategia aumentaría la probabilidad de cometer un error tipo I y analizaría cada dimensión de la lealtad de manera aislada, ignorando sus correlaciones.
 
-La escala compuesta presenta alta consistencia ($\alpha=0.876$), con correlaciones entre indicadores de 0.66 a 0.76. Box M no fue significativo, $\chi^2(18)=27.55$, $p=0.069$, apoyando igualdad de matrices de covarianza. Levene fue significativo para satisfacción y recompra, pero no para recomendación; por ello se interpretaron conjuntamente las pruebas multivariadas y las medias, considerando la robustez derivada de tamaños de celda razonablemente balanceados. En un diseño $2\times2$ los efectos tienen un grado de libertad en el numerador, por lo que Pillai, Wilks, Hotelling y Roy producen exactamente el mismo $F$; se reporta Wilks por convención.
+Por esta razón, corresponde aplicar un análisis multivariado de varianza, o MANOVA. Esta técnica permite evaluar si los grupos definidos por el tipo de distribución y el tamaño de la empresa difieren en el perfil conjunto formado por satisfacción, recomendación y recompra.
 
-Además se requiere independencia entre clientes, ausencia de casos multivariados extremadamente influyentes, relaciones aproximadamente lineales entre resultados y ausencia de multicolinealidad perfecta. Box M contrasta igualdad de matrices de covarianza; no rechazarlo favorece el supuesto. Levene estudia igualdad de varianzas por resultado; sus resultados mixtos aconsejan cautela con los ANOVA, pero no invalidan la prueba multivariada.
+El diseño es factorial porque incluye simultáneamente dos factores categóricos:
 
-\subsection*{Resultados MANOVA}
+\begin{itemize}
+    \item tipo de distribución;
+    \item tamaño de la empresa cliente.
+\end{itemize}
 
-La lógica del contraste es comparar la variación dentro de los grupos con la variación atribuible a cada efecto. Wilks se expresa como razón de determinantes,
+Además de evaluar el efecto principal de cada factor, el diseño permite examinar su interacción. Esta interacción es fundamental para responder si la influencia del tipo de distribución sobre la lealtad es igual en empresas pequeñas y grandes.
+
+\subsection*{Variables del análisis}
+
+Las variables incluidas en el modelo son las siguientes:
+
+\begin{table}[H]
+\centering
+\caption{Variables consideradas en el MANOVA}
+\begin{tabular}{lll}
+\toprule
+Rol & Variable & Categorías o escala \\
+\midrule
+Factor 1 & Tipo de distribución & Indirecta / Directa \\
+Factor 2 & Tamaño de la empresa & Pequeña / Grande \\
+Variable dependiente 1 & Satisfacción con HBAT & $X19$ \\
+Variable dependiente 2 & Intención de recomendar & $X20$ \\
+Variable dependiente 3 & Intención de recomprar & $X21$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La muestra contiene 200 clientes distribuidos en cuatro combinaciones de distribución y tamaño:
+
+\begin{table}[H]
+\centering
+\caption{Tamaño de las celdas del diseño factorial}
+\begin{tabular}{lcc}
+\toprule
+Distribución & Empresa pequeña & Empresa grande \\
+\midrule
+Indirecta & 45 & 63 \\
+Directa & 53 & 39 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los tamaños de las cuatro celdas no son exactamente iguales, pero se encuentran razonablemente balanceados. Esto favorece la robustez del análisis frente a desviaciones moderadas de algunos supuestos.
+
+\subsection*{Especificación del modelo}
+
+El análisis corresponde a un MANOVA factorial $2\times 2$.
+
+En términos generales, para cada variable dependiente el modelo puede expresarse como:
+
 \[
-\Lambda = \frac{|E|}{|E+H|},
+Y_{ijk}
+=
+\mu
++
+\alpha_i
++
+\beta_j
++
+(\alpha\beta)_{ij}
++
+\varepsilon_{ijk}
 \]
-donde $E$ es la matriz de error y $H$ la matriz asociada al efecto. Un $\Lambda$ cercano a uno implica poca separación multivariada; un valor menor, acompañado de un $p$ significativo, indica que los vectores de medias difieren.
 
-\begin{table}[htbp]\centering
-\caption{Efectos multivariados sobre lealtad}
-\begin{tabular}{lrrrrr}
+donde:
+
+\begin{itemize}
+    \item $\mu$ representa la media general;
+    \item $\alpha_i$ representa el efecto del tipo de distribución;
+    \item $\beta_j$ representa el efecto del tamaño de la empresa;
+    \item $(\alpha\beta)_{ij}$ representa la interacción entre distribución y tamaño;
+    \item $\varepsilon_{ijk}$ representa el error individual.
+\end{itemize}
+
+La diferencia con un ANOVA tradicional es que aquí la variable dependiente no es una sola medida, sino un vector:
+
+\[
+\mathbf{Y}
+=
+\begin{bmatrix}
+\text{Satisfacción} \\
+\text{Recomendación} \\
+\text{Recompra}
+\end{bmatrix}
+\]
+
+Por tanto, el MANOVA evalúa si los distintos grupos presentan diferencias en alguna combinación lineal de estas tres variables.
+
+\subsection*{Preguntas e hipótesis}
+
+El análisis busca responder tres preguntas planteadas por HBAT.
+
+\subsubsection*{Efecto del tipo de distribución}
+
+La primera pregunta es si los clientes atendidos mediante distribución directa e indirecta presentan diferentes niveles conjuntos de lealtad.
+
+Las hipótesis son:
+
+\[
+H_{01}:
+\boldsymbol{\mu}_{\text{directa}}
+=
+\boldsymbol{\mu}_{\text{indirecta}}
+\]
+
+\[
+H_{11}:
+\boldsymbol{\mu}_{\text{directa}}
+\neq
+\boldsymbol{\mu}_{\text{indirecta}}
+\]
+
+La hipótesis nula indica que ambos tipos de distribución presentan el mismo vector promedio de satisfacción, recomendación y recompra.
+
+\subsubsection*{Efecto del tamaño de la empresa}
+
+La segunda pregunta es si las empresas pequeñas y grandes difieren en su perfil conjunto de lealtad.
+
+Las hipótesis son:
+
+\[
+H_{02}:
+\boldsymbol{\mu}_{\text{pequeña}}
+=
+\boldsymbol{\mu}_{\text{grande}}
+\]
+
+\[
+H_{12}:
+\boldsymbol{\mu}_{\text{pequeña}}
+\neq
+\boldsymbol{\mu}_{\text{grande}}
+\]
+
+\subsubsection*{Interacción entre distribución y tamaño}
+
+La tercera pregunta es si el efecto del tipo de distribución cambia según el tamaño de la empresa.
+
+Las hipótesis son:
+
+\[
+H_{03}:
+\text{no existe interacción entre distribución y tamaño}
+\]
+
+\[
+H_{13}:
+\text{existe interacción entre distribución y tamaño}
+\]
+
+Si la interacción no es significativa, los efectos de distribución y tamaño pueden describirse como aditivos: la diferencia entre distribución directa e indirecta sería aproximadamente la misma en empresas pequeñas y grandes.
+
+En cambio, si la interacción resulta significativa, el efecto de la distribución depende del tamaño. En ese caso, ambos antecedentes no pueden interpretarse como completamente independientes.
+
+\subsection*{Procedimiento de análisis}
+
+El análisis se desarrolló en cuatro etapas.
+
+En primer lugar, se evaluó la relación existente entre satisfacción, recomendación y recompra. Esto permite comprobar que las tres variables comparten suficiente información como para justificar una prueba multivariada, pero sin presentar una correlación tan elevada que las convierta en medidas redundantes.
+
+En segundo lugar, se revisaron los supuestos del MANOVA, incluyendo igualdad de matrices de covarianza e igualdad de varianzas univariadas.
+
+En tercer lugar, se estimó el MANOVA factorial para los dos efectos principales y la interacción.
+
+Finalmente, al encontrarse efectos multivariados significativos, se realizaron ANOVA univariados y comparaciones de medias para identificar qué dimensiones de la lealtad contribuían a cada efecto.
+
+\subsection*{Consistencia de las variables de lealtad}
+
+Antes de realizar el MANOVA se evaluó la consistencia interna de las tres variables utilizadas para representar la lealtad.
+
+El alfa de Cronbach fue:
+
+\[
+\alpha=0.876
+\]
+
+Este valor indica que satisfacción, recomendación y recompra presentan una asociación interna elevada y pueden considerarse manifestaciones relacionadas de una misma idea general de lealtad.
+
+Las correlaciones entre las tres variables se encontraron aproximadamente entre 0.66 y 0.76. Esto resulta adecuado para MANOVA: las variables están suficientemente relacionadas para justificar un análisis conjunto, pero no son perfectamente colineales.
+
+Es importante señalar que el MANOVA no transforma automáticamente las tres variables en una escala única. Cada una continúa siendo una variable dependiente distinta. La prueba multivariada simplemente considera sus relaciones al evaluar diferencias entre grupos.
+
+\subsection*{Evaluación de supuestos}
+
+\subsubsection*{Independencia de las observaciones}
+
+El supuesto de independencia establece que la respuesta de un cliente no debe determinar la respuesta de otro.
+
+La base contiene información de 200 clientes distintos. Por tanto, se asume que las observaciones son independientes, siempre que el proceso de muestreo no haya generado agrupaciones no consideradas, como múltiples respuestas provenientes de una misma empresa o unidad de decisión.
+
+La independencia depende principalmente del diseño de recolección de datos y no puede demostrarse únicamente mediante una prueba estadística.
+
+\subsubsection*{Igualdad de matrices de covarianza}
+
+El MANOVA supone que las matrices de varianzas y covarianzas de las variables dependientes son aproximadamente iguales entre las cuatro celdas del diseño.
+
+Este supuesto se evaluó mediante la prueba de Box:
+
+\[
+\chi^2(18)=27.55,
+\qquad
+p=0.069
+\]
+
+Las hipótesis son:
+
+\[
+H_0:
+\boldsymbol{\Sigma}_1
+=
+\boldsymbol{\Sigma}_2
+=
+\boldsymbol{\Sigma}_3
+=
+\boldsymbol{\Sigma}_4
+\]
+
+\[
+H_1:
+\text{al menos una matriz de covarianza es diferente}
+\]
+
+Dado que $p=0.069>0.05$, no se rechaza la hipótesis nula. Por tanto, no existe evidencia estadísticamente significativa de que las matrices de covarianza difieran entre los grupos.
+
+Este resultado favorece el supuesto de homogeneidad multivariada. Sin embargo, la prueba de Box puede ser sensible a la falta de normalidad y debe considerarse junto con el balance de los tamaños de celda y los demás diagnósticos.
+
+\subsubsection*{Igualdad de varianzas univariadas}
+
+La igualdad de varianzas para cada variable dependiente se evaluó mediante pruebas de Levene.
+
+La prueba fue significativa para satisfacción y recompra, pero no para recomendación. Esto indica que las varianzas de algunas variables no son completamente iguales entre los grupos.
+
+Estos resultados requieren cierta cautela al interpretar los ANOVA univariados. No obstante, no invalidan automáticamente el MANOVA, especialmente porque los tamaños de las celdas se encuentran razonablemente balanceados y porque la prueba de Box no fue significativa.
+
+Además, se interpretan conjuntamente los resultados multivariados, las medias y los tamaños de efecto, en lugar de depender únicamente de las pruebas univariadas.
+
+\subsubsection*{Otros supuestos}
+
+El MANOVA también requiere relaciones aproximadamente lineales entre las variables dependientes dentro de cada grupo, ausencia de multicolinealidad perfecta y ausencia de observaciones multivariadas extremadamente influyentes.
+
+Las correlaciones entre satisfacción, recomendación y recompra son elevadas, pero inferiores a uno, por lo que no existe colinealidad perfecta.
+
+No se identificaron problemas que impidieran estimar el modelo. Sin embargo, cualquier observación extrema debería ser revisada considerando simultáneamente las tres variables de lealtad.
+
+\subsection*{Resultados del MANOVA factorial}
+
+El MANOVA evalúa cada efecto mediante la comparación entre una matriz de variación atribuible al efecto, denominada $\mathbf{H}$, y una matriz de variación residual, denominada $\mathbf{E}$.
+
+El estadístico lambda de Wilks se define como:
+
+\[
+\Lambda
+=
+\frac{|\mathbf{E}|}
+{|\mathbf{E}+\mathbf{H}|}
+\]
+
+Un valor de $\Lambda$ cercano a uno indica que el efecto explica poca variación multivariada. Un valor menor indica una mayor separación entre los vectores de medias de los grupos.
+
+En este diseño, cada efecto posee un grado de libertad en el numerador. Por esta razón, las pruebas de Wilks, Pillai, Hotelling y Roy conducen al mismo estadístico $F$. Se reporta lambda de Wilks por convención.
+
+\begin{table}[H]
+\centering
+\caption{Efectos multivariados sobre la lealtad}
+\begin{tabular}{lccccc}
 \toprule
-Efecto & Wilks $\Lambda$ & $F$ & gl$_1$ & gl$_2$ & $p$\\
+Efecto & Wilks $\Lambda$ & $F$ & $gl_1$ & $gl_2$ & $p$ \\
 \midrule
-Distribución & .8526 & 11.184 & 3 & 194 & $<.001$\\
-Tamaño & .9028 & 6.959 & 3 & 194 & $<.001$\\
-Distribución$\times$Tamaño & .9034 & 6.917 & 3 & 194 & $<.001$\\
+Distribución & .8526 & 11.184 & 3 & 194 & $<.001$ \\
+Tamaño & .9028 & 6.959 & 3 & 194 & $<.001$ \\
+Distribución $\times$ Tamaño & .9034 & 6.917 & 3 & 194 & $<.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Como $p<0.05$ en los tres contrastes, se rechazan las tres hipótesis nulas. Tanto distribución como tamaño influyen en la combinación de variables de lealtad y, además, interactúan: no son antecedentes independientes. Wilks $\Lambda$ representa la proporción de variación multivariada no explicada por el efecto. La interacción significativa es la evidencia formal de que la ventaja de un canal no es constante en ambos tamaños.
+\subsubsection*{Efecto multivariado del tipo de distribución}
 
-\subsection*{ANOVA univariados}
+El efecto del tipo de distribución fue significativo:
 
-\begin{table}[htbp]\centering
-\caption{Pruebas univariadas posteriores}
-\begin{tabular}{llrrr}
+\[
+\Lambda=0.8526,
+\qquad
+F(3,194)=11.184,
+\qquad
+p<0.001
+\]
+
+Dado que el valor $p$ es inferior a 0.05, se rechaza la hipótesis nula de igualdad de vectores de medias.
+
+Esto indica que los clientes atendidos mediante distribución directa e indirecta difieren en alguna combinación de satisfacción, recomendación y recompra.
+
+Por tanto, el tipo de distribución sí incide sobre la lealtad considerada de manera conjunta.
+
+\subsubsection*{Efecto multivariado del tamaño}
+
+El efecto del tamaño de la empresa también fue significativo:
+
+\[
+\Lambda=0.9028,
+\qquad
+F(3,194)=6.959,
+\qquad
+p<0.001
+\]
+
+Se rechaza la hipótesis nula de igualdad entre empresas pequeñas y grandes.
+
+Por tanto, el tamaño de la empresa cliente se relaciona con diferencias en el perfil conjunto de lealtad.
+
+\subsubsection*{Interacción multivariada}
+
+La interacción entre tipo de distribución y tamaño fue significativa:
+
+\[
+\Lambda=0.9034,
+\qquad
+F(3,194)=6.917,
+\qquad
+p<0.001
+\]
+
+Este resultado indica que el efecto del tipo de distribución sobre la lealtad no es constante en empresas pequeñas y grandes.
+
+En consecuencia, distribución y tamaño no actúan de manera completamente independiente. La influencia de uno de los factores depende del nivel del otro.
+
+Esta interacción modifica la forma en que deben interpretarse los efectos principales. Aunque distribución y tamaño presentan efectos promedio significativos, esos promedios pueden ocultar diferencias importantes entre las cuatro combinaciones del diseño.
+
+\subsection*{ANOVA univariados posteriores}
+
+Una vez que el MANOVA detecta un efecto conjunto significativo, corresponde examinar cada variable dependiente para identificar cuáles contribuyen a las diferencias multivariadas.
+
+Estos ANOVA posteriores no reemplazan al MANOVA. Su función es descomponer el resultado conjunto y facilitar su interpretación.
+
+El tamaño de cada efecto se evaluó mediante eta cuadrado parcial:
+
+\[
+\eta_p^2
+=
+\frac{SC_{\text{efecto}}}
+{SC_{\text{efecto}}+SC_{\text{error}}}
+\]
+
+Este estadístico representa la proporción de varianza de una variable dependiente asociada a un efecto, controlando los demás efectos incluidos en el modelo.
+
+\begin{table}[H]
+\centering
+\caption{ANOVA univariados posteriores}
+\begin{tabular}{llccc}
 \toprule
-Resultado & Efecto & $F(1,196)$ & $p$ & $\eta_p^2$\\
+Variable dependiente & Efecto & $F(1,196)$ & $p$ & $\eta_p^2$ \\
 \midrule
-Satisfacción & Distribución & 118.934 & $<.001$ & .378\\
- & Tamaño & 27.977 & $<.001$ & .125\\
- & Interacción & 17.258 & $<.001$ & .081\\
-\addlinespace
-Recomendación & Distribución & 83.116 & $<.001$ & .298\\
- & Tamaño & 43.401 & $<.001$ & .181\\
- & Interacción & 1.506 & .221 & .008\\
-\addlinespace
-Recompra & Distribución & 55.402 & $<.001$ & .220\\
- & Tamaño & 29.988 & $<.001$ & .133\\
- & Interacción & 6.793 & .010 & .033\\
+Satisfacción
+& Distribución & 118.934 & $<.001$ & .378 \\
+& Tamaño & 27.977 & $<.001$ & .125 \\
+& Interacción & 17.258 & $<.001$ & .081 \\
+\midrule
+Recomendación
+& Distribución & 83.116 & $<.001$ & .298 \\
+& Tamaño & 43.401 & $<.001$ & .181 \\
+& Interacción & 1.506 & .221 & .008 \\
+\midrule
+Recompra
+& Distribución & 55.402 & $<.001$ & .220 \\
+& Tamaño & 29.988 & $<.001$ & .133 \\
+& Interacción & 6.793 & .010 & .033 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Los ANOVA posteriores no sustituyen a MANOVA: explican qué resultados contribuyen al efecto conjunto, y se acompañan del tamaño de efecto $\eta_p^2=SC_{efecto}/(SC_{efecto}+SC_{error})$. La interacción se concentra en satisfacción ($\eta_p^2=.081$) y recompra ($\eta_p^2=.033$); para recomendación los efectos son esencialmente aditivos.
+\subsubsection*{Resultados para satisfacción}
 
-\subsection*{Medias e interpretación}
+El tipo de distribución presenta un efecto significativo y de magnitud elevada sobre satisfacción:
 
-\begin{table}[htbp]\centering
-\caption{Medias de lealtad por distribución y tamaño}
-\begin{tabular}{llrrr}
+\[
+F(1,196)=118.934,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.378
+\]
+
+Esto indica que una proporción importante de la variación en satisfacción se encuentra asociada con el tipo de distribución.
+
+El tamaño también presenta un efecto significativo:
+
+\[
+F(1,196)=27.977,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.125
+\]
+
+Además, la interacción es significativa:
+
+\[
+F(1,196)=17.258,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.081
+\]
+
+Por tanto, la diferencia en satisfacción entre distribución directa e indirecta cambia según el tamaño de la empresa.
+
+\subsubsection*{Resultados para recomendación}
+
+El tipo de distribución afecta significativamente la intención de recomendar:
+
+\[
+F(1,196)=83.116,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.298
+\]
+
+El tamaño también es significativo:
+
+\[
+F(1,196)=43.401,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.181
+\]
+
+Sin embargo, la interacción no resulta significativa:
+
+\[
+F(1,196)=1.506,
+\qquad
+p=0.221,
+\qquad
+\eta_p^2=0.008
+\]
+
+Esto indica que, para recomendación, los efectos de distribución y tamaño son esencialmente aditivos. La ventaja de la distribución directa es relativamente similar en empresas pequeñas y grandes.
+
+\subsubsection*{Resultados para recompra}
+
+El tipo de distribución presenta un efecto significativo sobre recompra:
+
+\[
+F(1,196)=55.402,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.220
+\]
+
+El tamaño también resulta significativo:
+
+\[
+F(1,196)=29.988,
+\qquad
+p<0.001,
+\qquad
+\eta_p^2=0.133
+\]
+
+La interacción alcanza significancia estadística:
+
+\[
+F(1,196)=6.793,
+\qquad
+p=0.010,
+\qquad
+\eta_p^2=0.033
+\]
+
+Por tanto, la diferencia en intención de recompra entre canales directos e indirectos también depende del tamaño de la empresa, aunque la interacción es de menor magnitud que en satisfacción.
+
+\subsection*{Medias por distribución y tamaño}
+
+Para interpretar adecuadamente la interacción, es necesario examinar las medias de las cuatro combinaciones del diseño.
+
+\begin{table}[H]
+\centering
+\caption{Medias de lealtad por tipo de distribución y tamaño}
+\begin{tabular}{llccc}
 \toprule
-Distribución & Tamaño & Satisfacción & Recomendación & Recompra\\
+Distribución & Tamaño & Satisfacción & Recomendación & Recompra \\
 \midrule
-Indirecta & Pequeña & 6.211 & 6.091 & 7.142\\
-Indirecta & Grande & 6.406 & 6.771 & 7.475\\
-Directa & Pequeña & 7.128 & 7.079 & 7.670\\
-Directa & Grande & 8.449 & 8.067 & 8.569\\
+Indirecta & Pequeña & 6.211 & 6.091 & 7.142 \\
+Indirecta & Grande & 6.406 & 6.771 & 7.475 \\
+Directa & Pequeña & 7.128 & 7.079 & 7.670 \\
+Directa & Grande & 8.449 & 8.067 & 8.569 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Las medias permiten traducir la interacción. En satisfacción, la diferencia directa--indirecta es aproximadamente 0.92 puntos entre empresas pequeñas, pero 2.04 entre grandes. En recompra, la diferencia pasa de 0.53 a 1.09. Las líneas de medias, por tanto, no serían paralelas. Para recomendación las diferencias son 0.99 y 1.30, patrón más cercano al paralelismo y coherente con la interacción no significativa.
+\subsubsection*{Interpretación de la satisfacción}
 
-Los efectos simples se contrastaron con 12 pruebas $t$ de Welch. Con corrección de Bonferroni por familia ($\alpha=0.05/4=0.0125$ por variable dependiente) todas las conclusiones se mantienen: los contrastes significativos conservan $p<0.0125$ y los no significativos, como la diferencia grande--pequeña bajo distribución indirecta en satisfacción ($p=.347$) y recompra ($p=.064$), siguen siéndolo.
+Entre las empresas pequeñas, la diferencia entre distribución directa e indirecta es:
 
-Los efectos principales deben interpretarse condicionados por la interacción: afirmar solamente que el canal directo es mejor ocultaría que su ventaja es especialmente marcada en empresas grandes. Por ello, la recomendación gerencial se basa en efectos simples y no únicamente en promedios marginales.
+\[
+7.128-6.211=0.917
+\]
 
-\subsection*{a) Incidencia del tipo de distribución}
+Entre las empresas grandes, la diferencia es:
 
-El efecto multivariado del tipo de distribución es significativo: Wilks $\Lambda=.8526$, $F(3,194)=11.184$, $p<.001$. Se rechaza la hipótesis nula de igualdad. Los ANOVA muestran que el canal afecta satisfacción, recomendación y recompra, todos con $p<.001$, y las medias son sistemáticamente mayores bajo distribución directa. Por tanto, el tipo de distribución sí incide en la lealtad.
+\[
+8.449-6.406=2.043
+\]
 
-\subsection*{b) Diferencias de lealtad según tamaño}
+Por tanto, la ventaja del canal directo sobre satisfacción es más del doble entre los clientes grandes que entre los pequeños.
 
-El efecto multivariado del tamaño también es significativo: Wilks $\Lambda=.9028$, $F(3,194)=6.959$, $p<.001$. Los tres ANOVA univariados presentan diferencias significativas. Las empresas grandes muestran mayores niveles medios de satisfacción, recomendación y recompra. Por tanto, los clientes se comportan de forma distinta según el tamaño de su empresa.
+Esta diferencia en las diferencias explica la interacción significativa. Si se representaran gráficamente las medias, las líneas correspondientes a distribución directa e indirecta no serían paralelas.
 
-\subsection*{c) Independencia entre distribución y tamaño}
+El canal directo mejora la satisfacción en ambos tamaños, pero el aumento es especialmente pronunciado entre las empresas grandes.
 
-La interacción distribución$\times$tamaño es significativa: Wilks $\Lambda=.9034$, $F(3,194)=6.917$, $p<.001$. Se rechaza la hipótesis de independencia. La ventaja del canal directo es mayor entre empresas grandes, especialmente en satisfacción y recompra. Por ello, distribución y tamaño no son antecedentes independientes de la lealtad.
+\subsubsection*{Interpretación de la recomendación}
 
-\subsection*{Interpretación general de la pregunta 4}
+Para recomendación, la diferencia entre distribución directa e indirecta es:
 
-El tipo de distribución y el tamaño inciden significativamente en la lealtad, pero no operan de manera independiente: el efecto favorable de la distribución directa se intensifica en empresas grandes, especialmente en satisfacción y recompra. Desde una perspectiva gerencial, HBAT debería priorizar el canal directo para clientes grandes, sin asumir que el mismo incremento de lealtad se producirá con igual magnitud en clientes pequeños.
+\[
+7.079-6.091=0.988
+\]
 
+en empresas pequeñas, y:
 
-\subsection*{Conclusión ejecutiva de la pregunta 4}
+\[
+8.067-6.771=1.296
+\]
 
-El tipo de distribución y el tamaño de la empresa influyen significativamente sobre la lealtad de los clientes. La distribución directa se asocia con mayores niveles de satisfacción, recomendación y recompra. Sin embargo, este efecto no es homogéneo para todos los clientes: la ventaja del canal directo es considerablemente mayor entre empresas grandes, particularmente en satisfacción y recompra.
+en empresas grandes.
 
-Por tanto, distribución y tamaño no pueden considerarse antecedentes independientes de la lealtad. Desde una perspectiva gerencial, HBAT debería priorizar el canal directo especialmente para clientes de mayor tamaño.
+Aunque la diferencia es algo mayor entre las empresas grandes, el cambio no es suficiente para producir una interacción estadísticamente significativa.
 
+Por tanto, en recomendación puede afirmarse que el canal directo presenta una ventaja relativamente estable para ambos tamaños.
+
+\subsubsection*{Interpretación de la recompra}
+
+Para recompra, la diferencia entre distribución directa e indirecta es:
+
+\[
+7.670-7.142=0.528
+\]
+
+entre las empresas pequeñas, y:
+
+\[
+8.569-7.475=1.094
+\]
+
+entre las empresas grandes.
+
+La ventaja del canal directo también es mayor entre clientes grandes. Esta diferencia explica la interacción significativa observada en recompra.
+
+Aunque la interacción tiene una magnitud menor que en satisfacción, el patrón sustantivo es similar: el canal directo resulta especialmente favorable entre empresas grandes.
+
+\subsection*{Análisis de efectos simples}
+
+Cuando existe una interacción significativa, los efectos principales promedio deben interpretarse con cautela. En ese caso, conviene examinar efectos simples, es decir, comparar distribución dentro de cada nivel de tamaño y tamaño dentro de cada tipo de distribución.
+
+Se realizaron doce pruebas $t$ de Welch:
+
+\begin{itemize}
+    \item cuatro contrastes para satisfacción;
+    \item cuatro contrastes para recomendación;
+    \item cuatro contrastes para recompra.
+\end{itemize}
+
+Para controlar la inflación del error tipo I dentro de cada variable dependiente, se aplicó una corrección de Bonferroni:
+
+\[
+\alpha_{\text{ajustado}}
+=
+\frac{0.05}{4}
+=
+0.0125
+\]
+
+Las conclusiones generales se mantuvieron después de la corrección.
+
+Las diferencias que inicialmente eran significativas continuaron presentando valores $p$ inferiores a 0.0125.
+
+En cambio, la diferencia entre empresas grandes y pequeñas dentro de la distribución indirecta no fue significativa para satisfacción:
+
+\[
+p=0.347
+\]
+
+ni para recompra:
+
+\[
+p=0.064
+\]
+
+Esto indica que el tamaño de la empresa produce diferencias particularmente claras cuando el canal es directo. Bajo distribución indirecta, las diferencias entre empresas grandes y pequeñas son menores en algunas dimensiones.
+
+\subsection*{Respuesta a las preguntas planteadas}
+
+\subsubsection*{a) ¿Incide el tipo de distribución en la lealtad de los clientes?}
+
+Sí.
+
+El efecto multivariado del tipo de distribución fue significativo:
+
+\[
+\Lambda=0.8526,
+\qquad
+F(3,194)=11.184,
+\qquad
+p<0.001
+\]
+
+Además, los tres ANOVA posteriores fueron significativos. Los clientes atendidos mediante distribución directa presentan mayores medias de satisfacción, recomendación y recompra que aquellos atendidos mediante distribución indirecta.
+
+Por tanto, se concluye que el tipo de distribución sí incide en la lealtad de los clientes.
+
+\subsubsection*{b) ¿Se comportan los clientes de forma distinta según el tamaño de la empresa?}
+
+Sí.
+
+El efecto multivariado del tamaño fue significativo:
+
+\[
+\Lambda=0.9028,
+\qquad
+F(3,194)=6.959,
+\qquad
+p<0.001
+\]
+
+Las empresas grandes presentan, en promedio, mayores niveles de satisfacción, recomendación y recompra que las empresas pequeñas.
+
+Por tanto, los clientes se comportan de manera distinta en términos de lealtad según el tamaño de su empresa.
+
+\subsubsection*{c) ¿Son distribución y tamaño antecedentes independientes de la lealtad?}
+
+No.
+
+La interacción multivariada fue significativa:
+
+\[
+\Lambda=0.9034,
+\qquad
+F(3,194)=6.917,
+\qquad
+p<0.001
+\]
+
+Esto significa que el efecto del tipo de distribución depende del tamaño de la empresa.
+
+La interacción se observa principalmente en satisfacción y recompra. En ambas variables, la ventaja del canal directo es mayor entre las empresas grandes.
+
+Por tanto, distribución y tamaño no pueden interpretarse como antecedentes completamente independientes de la lealtad.
+
+\subsection*{Interpretación gerencial}
+
+Los resultados muestran que la distribución directa se asocia con una mejor relación comercial con los clientes. Los clientes atendidos directamente presentan mayores niveles de satisfacción, recomendación y recompra.
+
+Sin embargo, este efecto no es uniforme. La ventaja de la distribución directa es particularmente marcada entre las empresas grandes, especialmente en satisfacción y recompra.
+
+Esto sugiere que HBAT no debería utilizar una estrategia de distribución completamente homogénea para todos sus clientes.
+
+El canal directo parece especialmente valioso para clientes grandes, probablemente porque este tipo de empresas requiere mayor coordinación, atención personalizada, capacidad de respuesta y continuidad en la relación comercial.
+
+En clientes pequeños, el canal directo también presenta mejores resultados, pero la magnitud de la ventaja es menor. Esto implica que HBAT podría evaluar el costo y beneficio de mantener atención directa para todos los segmentos.
+
+Una posible estrategia sería priorizar la fuerza de ventas directa para empresas grandes y utilizar una combinación de agentes y atención directa selectiva para clientes pequeños.
+
+No obstante, el análisis permite establecer asociaciones entre canal, tamaño y lealtad, pero no demuestra causalidad definitiva. El tipo de distribución podría estar relacionado con otras características de los clientes que también influyen sobre su nivel de lealtad.
+
+\subsection*{Conclusión de la pregunta 4}
+
+El MANOVA factorial muestra que tanto el tipo de distribución como el tamaño de la empresa influyen significativamente sobre el perfil conjunto de lealtad compuesto por satisfacción, recomendación y recompra.
+
+Los clientes atendidos mediante distribución directa presentan mejores resultados en las tres dimensiones de lealtad. Asimismo, las empresas grandes muestran mayores niveles promedio que las empresas pequeñas.
+
+Sin embargo, ambos factores no operan de manera completamente independiente. La interacción significativa indica que la ventaja del canal directo es mayor entre empresas grandes, especialmente en satisfacción e intención de recompra.
+
+En consecuencia, la interpretación no debe limitarse a afirmar que el canal directo es superior en promedio. El resultado principal es que su efectividad depende del tipo de cliente al que se aplica.
+
+Desde una perspectiva gerencial, HBAT debería priorizar el canal directo para empresas grandes, donde su asociación con la lealtad es especialmente intensa, y evaluar estrategias diferenciadas para empresas pequeñas, considerando el menor incremento relativo observado en ese segmento.
 
 \section*{Conclusión general}
 

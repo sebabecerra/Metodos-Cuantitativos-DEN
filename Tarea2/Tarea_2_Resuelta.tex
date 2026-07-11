@@ -90,7 +90,8 @@ Con los datos de las respuestas 200 empleados de 200 empresas distintas (conteni
 
 \subsection*{Respuesta}
 
-\subsection*{Justificación conceptual del modelo}
+\bigskip
+\noindent\textbf{a) Planteamiento del modelo en forma de hipótesis.}
 
 El objetivo de este análisis es comprender de qué manera la presión competitiva del mercado puede traducirse en un mayor desempeño innovador de la empresa. El planteamiento no supone que esta relación ocurra de forma exclusivamente directa. Por el contrario, propone que la presión competitiva primero modifica el comportamiento de los empleados, incentivándolos a generar, promover e implementar nuevas ideas. Estas conductas innovadoras constituirían el mecanismo mediante el cual una condición externa del mercado termina produciendo resultados innovadores a nivel organizacional.
 
@@ -100,7 +101,8 @@ Sin embargo, el modelo también reconoce que la presión competitiva no necesari
 
 Por esta razón, la cultura de tolerancia al fracaso actúa como variable moderadora. Su función es modificar la intensidad de la relación entre presión competitiva y conducta innovadora. Al combinarse el mecanismo de mediación con esta condición de moderación, el modelo corresponde a una mediación moderada de primera etapa. En esta tarea no se ejecuta la macro PROCESS; el modelo se estima directamente mediante regresiones OLS equivalentes al sistema estadístico requerido.
 
-\subsection*{Especificación formal del modelo}
+\bigskip
+\noindent\textbf{Especificación formal del modelo.}
 
 Las variables del modelo se organizan de la siguiente manera:
 
@@ -121,7 +123,8 @@ Variable dependiente & Desempeño innovador de la empresa & $Y$ \\
 
 El modelo se estima mediante tres regresiones relacionadas entre sí. Cada una responde una pregunta distinta y permite evaluar una parte específica del mecanismo propuesto.
 
-\subsubsection*{Primera regresión: explicación de la conducta innovadora}
+\medskip
+\noindent\textbf{Primera regresión: explicación de la conducta innovadora.}
 
 La primera ecuación toma la conducta innovadora como variable dependiente. Su propósito es determinar si la presión competitiva aumenta la conducta innovadora de los empleados y, al mismo tiempo, si esa relación cambia según el nivel de tolerancia al fracaso.
 
@@ -133,7 +136,8 @@ En esta ecuación, $a_1$ representa el efecto de la presión competitiva cuando 
 
 Si $a_3$ es positivo y significativo, se concluiría que la presión competitiva genera una mayor respuesta innovadora en organizaciones que aceptan con mayor facilidad los errores derivados de la experimentación.
 
-\subsubsection*{Segunda regresión: explicación del desempeño innovador}
+\medskip
+\noindent\textbf{Segunda regresión: explicación del desempeño innovador.}
 
 La segunda ecuación toma el desempeño innovador como variable dependiente. Su objetivo es determinar si la conducta innovadora de los empleados se traduce efectivamente en resultados innovadores para la empresa y si, una vez incorporado este mecanismo, persiste un efecto directo de la presión competitiva.
 
@@ -145,7 +149,8 @@ El coeficiente $b$ representa el efecto de la conducta innovadora sobre el desem
 
 Esta distinción es importante porque permite separar aquello que ocurre directamente desde la presión competitiva hacia el desempeño de aquello que ocurre indirectamente a través del comportamiento innovador de los empleados.
 
-\subsubsection*{Tercera regresión: estimación del efecto total}
+\medskip
+\noindent\textbf{Tercera regresión: estimación del efecto total.}
 
 La tercera ecuación evalúa la relación global entre presión competitiva y desempeño innovador antes de introducir el mediador.
 
@@ -155,7 +160,8 @@ Y=i_T+cX+e_T
 
 El coeficiente $c$ representa el efecto total de la presión competitiva sobre el desempeño innovador. Esta regresión permite establecer si existe una asociación global entre ambas variables, aunque por sí sola no permite identificar el mecanismo que genera dicha relación.
 
-\subsubsection*{Efecto indirecto condicional}
+\medskip
+\noindent\textbf{Efecto indirecto condicional.}
 
 A partir de las dos primeras ecuaciones se obtiene el efecto indirecto condicional:
 
@@ -165,7 +171,8 @@ IE(W)=\left(a_1+a_3W\right)b
 
 Esta expresión muestra que el efecto indirecto de la presión competitiva sobre el desempeño innovador no es constante. Su magnitud depende del nivel de tolerancia al fracaso. Cuando $W$ aumenta, también cambia el efecto de $X$ sobre $M$ y, en consecuencia, cambia el efecto indirecto completo sobre $Y$.
 
-\subsection*{Hipótesis}
+\bigskip
+\noindent\textbf{Hipótesis.}
 
 A partir de esta especificación se plantean las siguientes hipótesis:
 
@@ -183,7 +190,10 @@ A partir de esta especificación se plantean las siguientes hipótesis:
     \item H6: El efecto indirecto de la presión competitiva sobre el desempeño innovador aumenta cuando la tolerancia al fracaso es mayor, por lo que el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
 \end{itemize}
 
-\subsection*{Procedimiento de estimación}
+\bigskip
+\noindent\textbf{b) Evaluación de las hipótesis.}
+
+\textbf{Procedimiento de estimación.}
 
 El análisis se realizó utilizando las 200 observaciones disponibles en la base de datos, sin pérdidas de información en las variables incluidas en el modelo.
 
@@ -209,9 +219,11 @@ Las tres ecuaciones fueron estimadas mediante mínimos cuadrados ordinarios. Par
 
 Los efectos indirectos condicionales fueron evaluados mediante 5.000 remuestras bootstrap. Este procedimiento es especialmente apropiado para la mediación porque el producto de coeficientes no necesariamente sigue una distribución normal. En consecuencia, la significancia del efecto indirecto se determina observando si su intervalo de confianza bootstrap incluye o no el valor cero.
 
-\subsection*{Resultados}
+\bigskip
+\noindent\textbf{Resultados.}
 
-\subsubsection*{Primera regresión: conducta innovadora como variable dependiente}
+\medskip
+\noindent\textbf{Primera regresión: conducta innovadora como variable dependiente.}
 
 La primera regresión evalúa simultáneamente el efecto de la presión competitiva, el efecto de la tolerancia al fracaso y la interacción entre ambas variables sobre la conducta innovadora.
 
@@ -240,7 +252,8 @@ El resultado central de esta regresión corresponde al término de interacción.
 
 En términos sustantivos, la presión competitiva produce una respuesta innovadora más intensa cuando los empleados perciben que la organización acepta los errores propios de la experimentación. Por tanto, los resultados apoyan H2 y H5.
 
-\subsubsection*{Segunda regresión: desempeño innovador como variable dependiente}
+\medskip
+\noindent\textbf{Segunda regresión: desempeño innovador como variable dependiente.}
 
 La segunda regresión evalúa si la conducta innovadora se transforma en desempeño innovador y si la presión competitiva conserva un efecto directo una vez incluido el mediador.
 
@@ -268,7 +281,8 @@ En cambio, el efecto directo residual de la presión competitiva no es significa
 
 Este resultado sugiere que la asociación entre presión competitiva y desempeño innovador se transmite principalmente mediante la conducta innovadora. No obstante, la ausencia de significancia de $c'$ no constituye por sí sola una prueba suficiente de mediación. La evidencia formal debe obtenerse a partir de los intervalos bootstrap del efecto indirecto.
 
-\subsubsection*{Tercera regresión: efecto total}
+\medskip
+\noindent\textbf{Tercera regresión: efecto total.}
 
 La regresión del efecto total muestra que la presión competitiva se relaciona positiva y significativamente con el desempeño innovador antes de incluir la conducta innovadora como mediador.
 
@@ -280,7 +294,8 @@ Este coeficiente indica que una unidad adicional de presión competitiva se asoc
 
 Como el efecto total es positivo y significativo, se encuentra evidencia a favor de H1. Sin embargo, esta regresión no permite determinar por qué ocurre la relación. Para comprender el mecanismo es necesario examinar conjuntamente las dos regresiones anteriores y los efectos indirectos condicionales.
 
-\subsubsection*{Efectos indirectos condicionales}
+\medskip
+\noindent\textbf{Efectos indirectos condicionales.}
 
 El efecto indirecto se estimó en tres niveles representativos de tolerancia al fracaso: una desviación estándar bajo la media, la media y una desviación estándar sobre la media.
 
@@ -318,7 +333,8 @@ El intervalo bootstrap al 95\% fue:
 
 Como este intervalo no contiene el valor cero, se concluye que el efecto indirecto cambia significativamente cuando varía la tolerancia al fracaso. Por tanto, se apoya H6.
 
-\subsection*{Evaluación conjunta de las hipótesis}
+\bigskip
+\noindent\textbf{Evaluación conjunta de las hipótesis.}
 
 \begin{table}[H]
 \centering
@@ -337,7 +353,8 @@ H6 & El índice de mediación moderada es positivo y su intervalo bootstrap excl
 \end{tabular}
 \end{table}
 
-\subsection*{Interpretación general}
+\bigskip
+\noindent\textbf{c) Interpretación de los resultados.}
 
 Los resultados permiten reconstruir el proceso completo propuesto por el modelo. En primer lugar, la presión competitiva estimula la conducta innovadora de los empleados. Esto sugiere que, frente a un entorno más exigente, los trabajadores responden generando e implementando una mayor cantidad de ideas.
 
@@ -764,7 +781,7 @@ Su labor consiste en determinar:
 \subsection*{Respuesta}
 
 \bigskip
-\noindent\textbf{Justificación conceptual del análisis.}
+\noindent\textbf{a) Evaluación del modelo de medición.}
 
 El objetivo de esta pregunta es determinar cómo las condiciones de trabajo percibidas por los empleados se relacionan con su satisfacción laboral, su compromiso con la organización y su intención de permanecer en la empresa.
 
@@ -852,7 +869,7 @@ El análisis busca responder cuatro preguntas: (a) si el modelo de medición es 
 El procedimiento se desarrolló en tres etapas. Primero se estimó un CFA puro con cinco factores correlacionados. Segundo, se estimaron y compararon los modelos estructurales completo y parcial. Tercero, se estimó el modelo seleccionado por separado para hombres y mujeres y se compararon los coeficientes no estandarizados mediante pruebas de diferencia entre pendientes.
 
 \bigskip
-\noindent\textbf{a) Evaluación del modelo de medición.}
+\noindent\textbf{Resultados de confiabilidad y validez del modelo de medición.}
 
 La base contiene 400 empleados y cinco constructos reflectivos, cada uno medido por cuatro indicadores: actitud hacia compañeros (AC), percepción del ambiente (PA), satisfacción laboral (ST), compromiso organizacional (CO) e intención de permanecer (IP).
 
@@ -1094,7 +1111,7 @@ Los ejecutivos de HBAT tienen diversas preguntas respecto a su desempeño y el n
 \subsection*{Respuesta}
 
 \bigskip
-\noindent\textbf{Justificación conceptual del análisis.}
+\noindent\textbf{a), b) y c) Planteamiento común para responder los incisos.}
 
 El objetivo de esta pregunta es determinar si el tipo de distribución utilizado por HBAT y el tamaño de la empresa cliente influyen sobre la lealtad de los clientes.
 

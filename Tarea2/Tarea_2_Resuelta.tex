@@ -90,8 +90,7 @@ Con los datos de las respuestas 200 empleados de 200 empresas distintas (conteni
 
 \subsection*{Respuesta}
 
-\bigskip
-\noindent\textbf{a) Planteamiento del modelo en forma de hipótesis.}
+\subsection*{Justificación conceptual del modelo}
 
 El objetivo de este análisis es comprender de qué manera la presión competitiva del mercado puede traducirse en un mayor desempeño innovador de la empresa. El planteamiento no supone que esta relación ocurra de forma exclusivamente directa. Por el contrario, propone que la presión competitiva primero modifica el comportamiento de los empleados, incentivándolos a generar, promover e implementar nuevas ideas. Estas conductas innovadoras constituirían el mecanismo mediante el cual una condición externa del mercado termina produciendo resultados innovadores a nivel organizacional.
 
@@ -101,8 +100,7 @@ Sin embargo, el modelo también reconoce que la presión competitiva no necesari
 
 Por esta razón, la cultura de tolerancia al fracaso actúa como variable moderadora. Su función es modificar la intensidad de la relación entre presión competitiva y conducta innovadora. Al combinarse el mecanismo de mediación con esta condición de moderación, el modelo corresponde a una mediación moderada de primera etapa. En esta tarea no se ejecuta la macro PROCESS; el modelo se estima directamente mediante regresiones OLS equivalentes al sistema estadístico requerido.
 
-\bigskip
-\noindent\textbf{Especificación formal del modelo.}
+\subsection*{Especificación formal del modelo}
 
 Las variables del modelo se organizan de la siguiente manera:
 
@@ -123,8 +121,7 @@ Variable dependiente & Desempeño innovador de la empresa & $Y$ \\
 
 El modelo se estima mediante tres regresiones relacionadas entre sí. Cada una responde una pregunta distinta y permite evaluar una parte específica del mecanismo propuesto.
 
-\medskip
-\noindent\textbf{Primera regresión: explicación de la conducta innovadora.}
+\subsubsection*{Primera regresión: explicación de la conducta innovadora}
 
 La primera ecuación toma la conducta innovadora como variable dependiente. Su propósito es determinar si la presión competitiva aumenta la conducta innovadora de los empleados y, al mismo tiempo, si esa relación cambia según el nivel de tolerancia al fracaso.
 
@@ -136,8 +133,7 @@ En esta ecuación, $a_1$ representa el efecto de la presión competitiva cuando 
 
 Si $a_3$ es positivo y significativo, se concluiría que la presión competitiva genera una mayor respuesta innovadora en organizaciones que aceptan con mayor facilidad los errores derivados de la experimentación.
 
-\medskip
-\noindent\textbf{Segunda regresión: explicación del desempeño innovador.}
+\subsubsection*{Segunda regresión: explicación del desempeño innovador}
 
 La segunda ecuación toma el desempeño innovador como variable dependiente. Su objetivo es determinar si la conducta innovadora de los empleados se traduce efectivamente en resultados innovadores para la empresa y si, una vez incorporado este mecanismo, persiste un efecto directo de la presión competitiva.
 
@@ -149,8 +145,7 @@ El coeficiente $b$ representa el efecto de la conducta innovadora sobre el desem
 
 Esta distinción es importante porque permite separar aquello que ocurre directamente desde la presión competitiva hacia el desempeño de aquello que ocurre indirectamente a través del comportamiento innovador de los empleados.
 
-\medskip
-\noindent\textbf{Tercera regresión: estimación del efecto total.}
+\subsubsection*{Tercera regresión: estimación del efecto total}
 
 La tercera ecuación evalúa la relación global entre presión competitiva y desempeño innovador antes de introducir el mediador.
 
@@ -160,8 +155,7 @@ Y=i_T+cX+e_T
 
 El coeficiente $c$ representa el efecto total de la presión competitiva sobre el desempeño innovador. Esta regresión permite establecer si existe una asociación global entre ambas variables, aunque por sí sola no permite identificar el mecanismo que genera dicha relación.
 
-\medskip
-\noindent\textbf{Efecto indirecto condicional.}
+\subsubsection*{Efecto indirecto condicional}
 
 A partir de las dos primeras ecuaciones se obtiene el efecto indirecto condicional:
 
@@ -171,8 +165,7 @@ IE(W)=\left(a_1+a_3W\right)b
 
 Esta expresión muestra que el efecto indirecto de la presión competitiva sobre el desempeño innovador no es constante. Su magnitud depende del nivel de tolerancia al fracaso. Cuando $W$ aumenta, también cambia el efecto de $X$ sobre $M$ y, en consecuencia, cambia el efecto indirecto completo sobre $Y$.
 
-\bigskip
-\noindent\textbf{Hipótesis.}
+\subsection*{Hipótesis}
 
 A partir de esta especificación se plantean las siguientes hipótesis:
 
@@ -190,10 +183,7 @@ A partir de esta especificación se plantean las siguientes hipótesis:
     \item H6: El efecto indirecto de la presión competitiva sobre el desempeño innovador aumenta cuando la tolerancia al fracaso es mayor, por lo que el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
 \end{itemize}
 
-\bigskip
-\noindent\textbf{b) Evaluación de las hipótesis.}
-
-\textbf{Procedimiento de estimación.}
+\subsection*{Procedimiento de estimación}
 
 El análisis se realizó utilizando las 200 observaciones disponibles en la base de datos, sin pérdidas de información en las variables incluidas en el modelo.
 
@@ -219,11 +209,9 @@ Las tres ecuaciones fueron estimadas mediante mínimos cuadrados ordinarios. Par
 
 Los efectos indirectos condicionales fueron evaluados mediante 5.000 remuestras bootstrap. Este procedimiento es especialmente apropiado para la mediación porque el producto de coeficientes no necesariamente sigue una distribución normal. En consecuencia, la significancia del efecto indirecto se determina observando si su intervalo de confianza bootstrap incluye o no el valor cero.
 
-\bigskip
-\noindent\textbf{Resultados.}
+\subsection*{Resultados}
 
-\medskip
-\noindent\textbf{Primera regresión: conducta innovadora como variable dependiente.}
+\subsubsection*{Primera regresión: conducta innovadora como variable dependiente}
 
 La primera regresión evalúa simultáneamente el efecto de la presión competitiva, el efecto de la tolerancia al fracaso y la interacción entre ambas variables sobre la conducta innovadora.
 
@@ -252,8 +240,7 @@ El resultado central de esta regresión corresponde al término de interacción.
 
 En términos sustantivos, la presión competitiva produce una respuesta innovadora más intensa cuando los empleados perciben que la organización acepta los errores propios de la experimentación. Por tanto, los resultados apoyan H2 y H5.
 
-\medskip
-\noindent\textbf{Segunda regresión: desempeño innovador como variable dependiente.}
+\subsubsection*{Segunda regresión: desempeño innovador como variable dependiente}
 
 La segunda regresión evalúa si la conducta innovadora se transforma en desempeño innovador y si la presión competitiva conserva un efecto directo una vez incluido el mediador.
 
@@ -281,8 +268,7 @@ En cambio, el efecto directo residual de la presión competitiva no es significa
 
 Este resultado sugiere que la asociación entre presión competitiva y desempeño innovador se transmite principalmente mediante la conducta innovadora. No obstante, la ausencia de significancia de $c'$ no constituye por sí sola una prueba suficiente de mediación. La evidencia formal debe obtenerse a partir de los intervalos bootstrap del efecto indirecto.
 
-\medskip
-\noindent\textbf{Tercera regresión: efecto total.}
+\subsubsection*{Tercera regresión: efecto total}
 
 La regresión del efecto total muestra que la presión competitiva se relaciona positiva y significativamente con el desempeño innovador antes de incluir la conducta innovadora como mediador.
 
@@ -294,8 +280,7 @@ Este coeficiente indica que una unidad adicional de presión competitiva se asoc
 
 Como el efecto total es positivo y significativo, se encuentra evidencia a favor de H1. Sin embargo, esta regresión no permite determinar por qué ocurre la relación. Para comprender el mecanismo es necesario examinar conjuntamente las dos regresiones anteriores y los efectos indirectos condicionales.
 
-\medskip
-\noindent\textbf{Efectos indirectos condicionales.}
+\subsubsection*{Efectos indirectos condicionales}
 
 El efecto indirecto se estimó en tres niveles representativos de tolerancia al fracaso: una desviación estándar bajo la media, la media y una desviación estándar sobre la media.
 
@@ -333,8 +318,7 @@ El intervalo bootstrap al 95\% fue:
 
 Como este intervalo no contiene el valor cero, se concluye que el efecto indirecto cambia significativamente cuando varía la tolerancia al fracaso. Por tanto, se apoya H6.
 
-\bigskip
-\noindent\textbf{Evaluación conjunta de las hipótesis.}
+\subsection*{Evaluación conjunta de las hipótesis}
 
 \begin{table}[H]
 \centering
@@ -353,8 +337,7 @@ H6 & El índice de mediación moderada es positivo y su intervalo bootstrap excl
 \end{tabular}
 \end{table}
 
-\bigskip
-\noindent\textbf{c) Interpretación de los resultados.}
+\subsection*{Interpretación general}
 
 Los resultados permiten reconstruir el proceso completo propuesto por el modelo. En primer lugar, la presión competitiva estimula la conducta innovadora de los empleados. Esto sugiere que, frente a un entorno más exigente, los trabajadores responden generando e implementando una mayor cantidad de ideas.
 
@@ -378,7 +361,7 @@ El cuestionario ``Enseñanza de Experimentos para las Ciencias Sociales'' (EECS)
 \subsection*{Respuesta}
 
 \bigskip
-\noindent\textbf{Justificación conceptual del análisis.}
+\noindent\textbf{a) ¿Por qué corresponde realizar un análisis factorial exploratorio y cómo se prepararon los datos?}
 
 El objetivo de esta pregunta es evaluar si la estructura empírica del cuestionario EECS-R es consistente con la teoría de Blend. Esta teoría sostiene que los buenos profesores de métodos cuantitativos presentan cuatro características fundamentales: amor por la estadística, entusiasmo por el diseño de experimentos, amor por la enseñanza y ausencia de habilidades interpersonales normales.
 
@@ -390,9 +373,6 @@ Esta distinción es importante para justificar por qué no se utilizó un análi
 
 Tampoco resulta conveniente comenzar con un análisis factorial confirmatorio. Aunque la teoría de Blend propone cuatro dimensiones, la tarea solicita evaluar si dicha estructura emerge efectivamente de las respuestas al cuestionario revisado. Por esta razón, primero se realiza un análisis exploratorio y, solo en una etapa posterior, una estructura depurada podría validarse mediante CFA.
 
-\bigskip
-\noindent\textbf{Objetivo del análisis.}
-
 La evaluación de la teoría de Blend requiere responder tres preguntas relacionadas.
 
 En primer lugar, se debe determinar si la matriz de correlaciones entre los 28 ítems contiene suficiente información común como para justificar un análisis factorial.
@@ -403,17 +383,11 @@ En tercer lugar, se debe analizar si el contenido de los ítems asociados con ca
 
 Por tanto, la teoría de Blend no se considera respaldada únicamente porque aparezcan cuatro factores. También es necesario que esos factores sean interpretables, que los ítems carguen principalmente en las dimensiones esperadas y que cada conjunto presente un grado razonable de consistencia interna.
 
-\bigskip
-\noindent\textbf{Preparación de los datos.}
-
 La base contiene las respuestas de 239 profesores de métodos de investigación a los 28 ítems del cuestionario EECS-R.
 
 Antes de realizar el análisis factorial se revisaron los rangos de respuesta, la presencia de valores perdidos y la distribución de los ítems. Se identificaron nueve respuestas faltantes distribuidas en distintas variables. Dado que esta cantidad representa una proporción muy pequeña del total de datos, los valores faltantes fueron reemplazados por la mediana del ítem correspondiente.
 
 La mediana fue utilizada porque las respuestas provienen de escalas ordinales tipo Likert y porque este procedimiento es menos sensible a observaciones extremas que la media. Debido a que la cantidad de datos faltantes es mínima, la imputación no debería afectar de manera sustantiva la estructura de correlaciones. Si la proporción de faltantes hubiese sido mayor, habría sido necesario analizar su mecanismo y considerar procedimientos más sofisticados, como imputación múltiple.
-
-\bigskip
-\noindent\textbf{Procedimiento de análisis.}
 
 El análisis se desarrolló en las siguientes etapas:
 
@@ -435,7 +409,7 @@ La rotación seleccionada fue Oblimin. Esta es una rotación oblicua, lo que sig
 Una rotación ortogonal, como Varimax, habría impuesto artificialmente que las correlaciones entre factores fueran iguales a cero, una restricción que no está respaldada por la teoría.
 
 \bigskip
-\noindent\textbf{Evaluación de la adecuación factorial.}
+\noindent\textbf{b) ¿La matriz de datos es adecuada para realizar el análisis factorial?}
 
 Antes de interpretar cualquier solución factorial es necesario determinar si las correlaciones observadas son adecuadas para este tipo de análisis.
 
@@ -484,7 +458,7 @@ Este valor puede considerarse meritorio y se encuentra ampliamente por sobre el 
 En conjunto, Bartlett y KMO indican que la matriz es factorizable. No obstante, ninguno de estos estadísticos establece por sí solo el número de factores ni confirma el contenido de la teoría.
 
 \bigskip
-\noindent\textbf{Determinación del número de factores.}
+\noindent\textbf{c) ¿Cuántos factores deben retenerse?}
 
 Una de las decisiones más importantes del análisis consiste en determinar cuántos factores conservar. Retener muy pocos factores puede combinar dimensiones conceptualmente distintas, mientras que retener demasiados puede producir factores pequeños, inestables o difíciles de interpretar.
 
@@ -523,7 +497,7 @@ Debido a la cercanía entre ambos valores, se realizó una comprobación adicion
 Por tanto, el análisis paralelo respalda una solución de cuatro factores. Este resultado coincide con la cantidad de dimensiones propuesta por la teoría de Blend, aunque todavía es necesario examinar el contenido de cada factor para determinar si la correspondencia teórica es adecuada.
 
 \bigskip
-\noindent\textbf{Extracción y rotación de los factores.}
+\noindent\textbf{d) ¿Cómo se interpretan los factores y se cumple la teoría de Blend?}
 
 Luego de determinar que debían retenerse cuatro factores, se estimó una solución de máxima verosimilitud y se aplicó rotación Oblimin.
 
@@ -532,9 +506,6 @@ La rotación no modifica la cantidad total de varianza común explicada por la s
 En una rotación oblicua se obtienen dos matrices principales: la matriz patrón y la matriz de estructura. La matriz patrón muestra la contribución específica de cada factor sobre cada ítem, controlando la correlación entre factores. Por esta razón, es la matriz principal utilizada para asignar los ítems a sus dimensiones.
 
 Se consideró sustantiva una carga factorial con valor absoluto cercano o superior a 0.40. Esta regla no constituye un límite absoluto, pero permite distinguir asociaciones relativamente claras de relaciones débiles.
-
-\bigskip
-\noindent\textbf{Interpretación de la matriz patrón.}
 
 La solución de cuatro factores explica conjuntamente el 39.1\% de la varianza de los ítems. El aporte por factor fue F1=15.4\%, F2=9.7\%, F3=7.6\% y F4=6.3\%. Esta varianza acumulada es moderada, pero razonable en escalas actitudinales con contenido heterogéneo.
 
@@ -730,7 +701,7 @@ Confiabilidad & Adecuada en general, aunque más débil en la dimensión interpe
 \end{table}
 
 \bigskip
-\noindent\textbf{Conclusión.}
+\noindent\textbf{Conclusión sobre la teoría de Blend.}
 
 El análisis factorial exploratorio muestra que las respuestas al EECS-R pueden organizarse en cuatro factores relacionados y conceptualmente compatibles con la teoría de Blend.
 

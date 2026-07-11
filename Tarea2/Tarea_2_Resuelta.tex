@@ -1,7 +1,7 @@
 \documentclass[12pt,letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[spanish,es-tabla,es-noshorthands]{babel}
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}
@@ -17,11 +17,49 @@
 \onehalfspacing
 \setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=4pt}
 \setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=4pt}
+\setcounter{secnumdepth}{0}
 \title{Tarea 2--3--4: Respuestas}
 \author{Sebastián Becerra}
 \date{Julio de 2026}
 \begin{document}
-\maketitle
+\begin{center}
+{\large \textbf{UNIVERSIDAD DEL DESARROLLO}}\\
+{\large \textbf{FACULTAD DE ECONOMÍA Y NEGOCIOS}}\\
+{\large \textbf{PhD in Business Economics}}
+
+\vspace{1em}
+
+{\Large \textbf{MÉTODOS CUANTITATIVOS DE INVESTIGACIÓN EN NEGOCIOS}}
+
+\vspace{0.7em}
+
+{\large \textbf{TAREA \#2--3--4: RESPUESTAS}}
+\end{center}
+
+\vspace{1em}
+
+\textbf{Fecha de entrega:} 17 de julio de 2026
+
+\textbf{Ponderación:} 65\%
+
+\textbf{Estudiante:} J. Sebastián Becerra C.
+
+\vspace{1em}
+
+\section*{Enunciado general}
+
+Para cada una de las preguntas, se describen claramente los pasos seguidos y se adjuntan los resultados de los análisis efectuados durante el proceso. Los cálculos fueron realizados en Python y se encuentran respaldados por notebooks individuales reproducibles, uno por pregunta, incluidos en la carpeta de entrega.
+
+\subsection*{Notebooks reproducibles en Google Colab}
+
+Los análisis de cada pregunta pueden revisarse y ejecutarse en Google Colab desde los siguientes vínculos:
+\begin{itemize}\itemsep2pt
+\item \href{https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/notebooks/Tarea_2_P1_Mediacion_Moderada.ipynb}{Pregunta 1: mediación moderada}.
+\item \href{https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/notebooks/Tarea_2_P2_Analisis_Factorial.ipynb}{Pregunta 2: análisis factorial exploratorio}.
+\item \href{https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/notebooks/Tarea_2_P3_SEM.ipynb}{Pregunta 3: CFA, SEM y comparación por género}.
+\item \href{https://colab.research.google.com/github/sebabecerra/Metodos-Cuantitativos-DEN/blob/main/Tarea2/notebooks/Tarea_2_P4_MANOVA.ipynb}{Pregunta 4: MANOVA factorial}.
+\end{itemize}
+
 \newpage
 
 \section{Pregunta 1: mediación moderada}
@@ -439,7 +477,7 @@ H_1:\text{al menos uno de los dos caminos es distinto de cero}.
 
 \begin{table}[H]
 \centering
-\caption{Comparación de los modelos estructurales correctamente especificados}
+\caption{Comparación de los modelos estructurales}
 \begin{tabular}{lcccccccc}
 \toprule
 Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $k$ & AIC & BIC \\
@@ -466,7 +504,7 @@ Por tanto, se selecciona el modelo parcialmente mediado.
 
 \begin{table}[H]
 \centering
-\caption{Coeficientes del modelo parcialmente mediado correcto}
+\caption{Coeficientes del modelo parcialmente mediado}
 \begin{tabular}{lccc}
 \toprule
 Relación & B & $\beta$ estandarizado & p \\
@@ -558,7 +596,7 @@ $CO\rightarrow IP$ & .1327 & .2050 & -1.152 & .250 \\
 
 Existen diferencias significativas en tres relaciones. Primero, $AC\rightarrow ST$ cambia de signo: es negativo entre hombres y positivo entre mujeres. Segundo, $AC\rightarrow CO$ es positivo en ambos grupos, pero considerablemente más intenso entre mujeres. Tercero, $PA\rightarrow IP$ también es más fuerte entre mujeres, aunque su contraste se encuentra muy próximo al nivel de 0.05.
 
-No se encuentran diferencias por género en $ST\rightarrow CO$. Este camino es pequeño y no significativo en ambos grupos, por lo que la conclusión anterior de una diferencia en esta relación provenía de la especificación incompleta del modelo.
+No se encuentran diferencias por género en $ST\rightarrow CO$: este camino es pequeño y no significativo en ambos grupos.
 
 Estas comparaciones deben interpretarse con cautela. Para una evaluación confirmatoria estricta sería necesario demostrar primero invariancia configural, métrica y escalar. El ajuste separado entrega evidencia preliminar de configuración semejante, pero no sustituye la secuencia formal de invariancia.
 

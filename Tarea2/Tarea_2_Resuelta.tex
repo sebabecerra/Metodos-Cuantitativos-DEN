@@ -90,133 +90,264 @@ Con los datos de las respuestas 200 empleados de 200 empresas distintas (conteni
 
 \subsection*{Respuesta}
 
-\subsection*{Por qué corresponde una mediación moderada}
+\subsection*{Justificación conceptual del modelo}
 
-Una mediación explica el mecanismo mediante el cual una variable influye en otra. En este caso no basta con preguntar si la presión competitiva mejora el desempeño: el modelo propone que primero induce a los empleados a generar e implementar ideas y que esta conducta se transforma posteriormente en desempeño innovador. Por eso la conducta innovadora ocupa el papel de mediador.
+El objetivo de este análisis es comprender de qué manera la presión competitiva del mercado puede traducirse en un mayor desempeño innovador de la empresa. El planteamiento no supone que esta relación ocurra de forma exclusivamente directa. Por el contrario, propone que la presión competitiva primero modifica el comportamiento de los empleados, incentivándolos a generar, promover e implementar nuevas ideas. Estas conductas innovadoras constituirían el mecanismo mediante el cual una condición externa del mercado termina produciendo resultados innovadores a nivel organizacional.
 
-La moderación responde una pregunta diferente: determina cuándo o bajo qué condiciones una relación es más fuerte. El enunciado propone que la reacción de los empleados ante la presión competitiva depende de cuánto tolera la organización los errores derivados de experimentar. Por esa razón, la cultura de tolerancia al fracaso modifica el camino entre presión competitiva y conducta innovadora, no simplemente el nivel promedio de desempeño.
+Desde esta perspectiva, la conducta innovadora del empleado funciona como una variable mediadora. Su papel consiste en explicar cómo la presión competitiva se transforma en desempeño innovador. La mediación, por tanto, no se limita a comprobar si dos variables están relacionadas, sino que busca identificar el proceso intermedio que conecta ambas.
 
-Combinar ambas ideas produce una mediación moderada de primera etapa: el mecanismo indirecto $X \rightarrow M \rightarrow Y$ existe, pero su magnitud varía con $W$. En términos sustantivos, esto significa que la presión competitiva se transforma en desempeño innovador principalmente cuando activa la conducta innovadora del empleado, y que esa activación es mayor en organizaciones que toleran mejor el fracaso.
+Sin embargo, el modelo también reconoce que la presión competitiva no necesariamente genera la misma respuesta en todas las organizaciones. En una empresa donde los errores derivados de la experimentación son castigados, los trabajadores podrían reaccionar a la presión evitando riesgos o reduciendo su disposición a proponer nuevas ideas. En cambio, cuando la organización acepta que el fracaso forma parte del proceso de aprendizaje, la misma presión competitiva podría convertirse con mayor facilidad en una fuente de experimentación e innovación.
 
-\subsection*{a) Planteamiento del modelo en forma de hipótesis}
+Por esta razón, la cultura de tolerancia al fracaso actúa como variable moderadora. Su función es modificar la intensidad de la relación entre presión competitiva y conducta innovadora. Al combinarse el mecanismo de mediación con esta condición de moderación, el modelo corresponde a una mediación moderada de primera etapa. En esta tarea no se ejecuta la macro PROCESS; el modelo se estima directamente mediante regresiones OLS equivalentes al sistema estadístico requerido.
 
-Se estudia si la presión competitiva del mercado ($X$) afecta el desempeño innovador de la empresa ($Y$) por medio de la conducta innovadora del empleado ($M$), y si la cultura de tolerancia al fracaso ($W$) modifica la relación entre presión competitiva y conducta innovadora. El análisis se articula en tres ecuaciones:
-\begin{align}
-\text{Mediador:}\quad & M = i_M + a_1 X + a_2 W + a_3 (XW) + e_M,\\
-\text{Resultado:}\quad & Y = i_Y + c'X + bM + e_Y,\\
-\text{Efecto total:}\quad & Y = i_T + cX + e_T.
-\end{align}
-Las ecuaciones (1) y (2) constituyen el sistema estructural equivalente al modelo 7 de Hayes; la ecuación (3) es la que permite evaluar H1. A partir de (1) y (2) se deriva el efecto indirecto condicional,
-\begin{equation}
-IE(W) = (a_1 + a_3 W)\, b,
-\end{equation}
-que es una función de los coeficientes y no una ecuación de regresión adicional.
+\subsection*{Especificación formal del modelo}
 
-Se plantearon las siguientes seis hipótesis:
-\begin{itemize}\itemsep2pt
-\item[\textbf{H1.}] La presión competitiva tiene un efecto total positivo sobre el desempeño innovador: $c>0$.
-\item[\textbf{H2.}] La presión competitiva incrementa la conducta innovadora del empleado: $a_1>0$.
-\item[\textbf{H3.}] La conducta innovadora incrementa el desempeño innovador controlando presión: $b>0$.
-\item[\textbf{H4.}] La conducta innovadora media la relación entre presión competitiva y desempeño: $IE(W)\neq 0$.
-\item[\textbf{H5.}] La tolerancia al fracaso fortalece la relación presión competitiva--conducta innovadora: $a_3>0$.
-\item[\textbf{H6.}] El efecto indirecto aumenta cuando la tolerancia al fracaso es más alta: $a_3 b>0$.
-\end{itemize}
+Las variables del modelo se organizan de la siguiente manera:
 
-La diferencia entre H4 y H6 es central. H4 pregunta si existe un mecanismo indirecto desde presión competitiva hacia desempeño mediante conducta innovadora. H6 pregunta si ese mecanismo indirecto cambia de intensidad según la tolerancia al fracaso. Por tanto, H4 evalúa la mediación y H6 evalúa la mediación moderada.
-
-\subsection*{b) Evaluación de las hipótesis}
-
-El modelo de mediación moderada se estima con las tres ecuaciones del planteamiento: la del mediador y la del resultado, que forman el sistema estructural, más la ecuación auxiliar del efecto total, que no modifica el modelo sino que permite reportar el efecto total requerido para evaluar H1 e interpretar la mediación. La especificación corresponde a una mediación moderada de primera etapa: una regresión para $M$, otra para $Y$ y una ecuación auxiliar para el efecto total. No se combina todo en una única regresión OLS porque $M$ y $Y$ son variables dependientes distintas.
-
-\paragraph{Pasos seguidos.} Se analizaron 200 observaciones sin datos perdidos. $X$ y $W$ se centraron en sus medias y se construyó el producto $X_cW_c$. El centrado facilita la interpretación de los efectos principales y reduce la colinealidad no esencial, pero no altera el ajuste ni el contraste de la interacción. Las regresiones se estimaron por mínimos cuadrados ordinarios con errores estándar robustos HC3. El notebook reproduce en Python la lógica estadística de esa especificación y añade un bootstrap de 5.000 remuestras para los efectos indirectos, siguiendo la práctica habitual en análisis de mediación.
-
-El orden de trabajo fue: (1) revisión de rango, datos perdidos y descriptivos; (2) centrado $X_c = X-\bar X$ y $W_c = W-\bar W$, de modo que el valor cero representa el nivel promedio; (3) construcción del producto $X_cW_c$, cuyo coeficiente $a_3$ indica moderación si es significativo; (4) estimación de las tres ecuaciones, que no pueden combinarse en una única regresión OLS porque poseen variables dependientes distintas; (5) cálculo de los efectos indirectos condicionales $(a_1+a_3W)b$ en niveles representativos de tolerancia; y (6) bootstrap, porque el producto de coeficientes suele presentar una distribución asimétrica y el intervalo percentil resulta más apropiado que la prueba normal de Sobel.
-
-La regla de decisión es siempre la misma: para coeficientes individuales se rechaza $H_0$ cuando $p<0.05$; para efectos indirectos e índice de mediación moderada se concluye significancia cuando el IC95\% bootstrap no incluye cero.
-
-\begin{table}[htbp]\centering
-\caption{Modelo de la conducta innovadora del empleado}
-\begin{tabular}{lrrrr}
-\toprule
-Predictor & $B$ & EE robusto & $t$ & $p$\\
-\midrule
-Constante & 9.5207 & 0.0344 & 277.01 & $<0.001$\\
-Presión competitiva centrada ($a_1$) & 2.0008 & 0.0394 & 50.82 & $<0.001$\\
-Tolerancia centrada ($a_2$) & 2.8732 & 0.0470 & 61.14 & $<0.001$\\
-Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<0.001$\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-El modelo del mediador explica el 98.05\% de su varianza ($R^2=0.9805$). La interacción positiva confirma que la pendiente de presión competitiva aumenta cuando la cultura tolera más el fracaso. Manteniendo constantes los demás predictores: $a_1=2.0008$ indica que, con tolerancia promedio, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales; $a_2=2.8732$ indica que, con presión promedio, un punto adicional de tolerancia se asocia con 2.87 unidades adicionales de conducta innovadora; y $a_3=0.5248$ indica que por cada punto adicional de tolerancia la pendiente de presión sobre conducta innovadora aumenta en 0.525 unidades. El signo positivo señala fortalecimiento, no amortiguación. El $R^2$ no representa causalidad por sí solo; indica que, dentro de esta muestra y especificación, los predictores explican casi toda la variación observada en el mediador.
-
-\begin{table}[htbp]\centering
-\caption{Modelo del desempeño innovador}
-\begin{tabular}{lrrrr}
-\toprule
-Predictor & $B$ & EE robusto & $t$ & $p$\\
-\midrule
-Constante & 1.4086 & 0.1564 & 9.01 & $<0.001$\\
-Presión competitiva centrada ($c'$) & 0.0265 & 0.0492 & 0.54 & 0.590\\
-Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<0.001$\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-La conducta innovadora predice fuertemente el desempeño, mientras que el efecto directo de presión competitiva deja de ser significativo al incluir el mediador. El modelo explica el 97.32\% del desempeño ($R^2=0.9732$). Concretamente, $b=0.8577$ significa que una unidad adicional de conducta innovadora se asocia con 0.858 unidades adicionales de desempeño, controlando presión competitiva. El coeficiente $c'=0.0265$ representa aquello que queda del efecto de presión después de incorporar el mediador; su $p=0.590$ indica que no se distingue estadísticamente de cero. Esto no demuestra por sí solo una ``mediación completa'': la evidencia formal de mediación proviene de los intervalos bootstrap del efecto indirecto.
-
-\paragraph{Efectos indirectos condicionales.}
-
-\begin{table}[htbp]\centering
-\caption{Efecto indirecto según tolerancia al fracaso (bootstrap de 5.000 remuestras)}
-\begin{tabular}{lrrrr}
-\toprule
-Tolerancia & Efecto $X\rightarrow M$ & Indirecto & IC95\% inferior & IC95\% superior\\
-\midrule
-Baja ($-1$ DE) & 1.6029 & 1.3748 & 1.2880 & 1.4620\\
-Media & 2.0008 & 1.7162 & 1.6227 & 1.8104\\
-Alta ($+1$ DE) & 2.3988 & 2.0576 & 1.9319 & 2.1853\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Los tres efectos indirectos son significativos porque sus intervalos no contienen cero. El índice de mediación moderada es
-\[
-a_3 b = (0.5248)(0.8577) = 0.4502,
-\]
-con IC95\% bootstrap $[0.3758,\,0.5184]$. Al excluir cero, se concluye que el efecto indirecto cambia significativamente con la tolerancia al fracaso. No se trata de tres modelos diferentes: son tres evaluaciones de una misma función condicional. El índice 0.4502 resume cuánto cambia el efecto indirecto ante un incremento unitario del moderador.
-
-\paragraph{Decisión para cada hipótesis.}
-
-\begin{table}[htbp]\centering
-\caption{Evaluación de las hipótesis de la pregunta 1}
+\begin{table}[H]
+\centering
+\caption{Variables consideradas en el modelo}
 \begin{tabular}{lll}
 \toprule
-Hipótesis & Evidencia estadística & Decisión\\
+Rol en el modelo & Variable & Símbolo \\
 \midrule
-H1: efecto total $X\rightarrow Y$ & $c=2.0281$, $p<.001$ & Apoyada\\
-H2: $X\rightarrow M$ & $a_1=2.0008$, $p<.001$ & Apoyada\\
-H3: $M\rightarrow Y$ & $b=0.8577$, $p<.001$ & Apoyada\\
-H4: mediación & Todos los IC95\% de $IE(W)$ excluyen cero & Apoyada\\
-H5: moderación del primer camino & $a_3=0.5248$, $p<.001$ & Apoyada\\
-H6: mediación moderada & $a_3b=0.4502$, IC95\% $[0.3758, 0.5184]$ & Apoyada\\
+Variable independiente & Presión competitiva del mercado & $X$ \\
+Variable mediadora & Conducta innovadora del empleado & $M$ \\
+Variable moderadora & Cultura de tolerancia al fracaso & $W$ \\
+Variable dependiente & Desempeño innovador de la empresa & $Y$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-El camino directo dibujado en la figura también fue evaluado: $c'=0.0265$, $p=.590$. No se encuentra evidencia de un efecto directo residual después de incorporar la conducta innovadora. Esto no contradice H1, porque H1 se refiere al efecto total previo a introducir el mecanismo mediador.
+El modelo se estima mediante tres regresiones relacionadas entre sí. Cada una responde una pregunta distinta y permite evaluar una parte específica del mecanismo propuesto.
 
-\paragraph{Supuestos y alcance causal.} No se detectaron problemas relevantes de colinealidad ni heterocedasticidad: todos los VIF fueron inferiores a 1.05 y la prueba de Breusch--Pagan no fue significativa ($LM=1.14$, $p=0.767$). Además, se utilizaron errores estándar robustos HC3. Aunque los resultados son compatibles con el mecanismo propuesto, la interpretación causal definitiva depende del diseño de recolección de datos y de la ausencia de confusores omitidos importantes.
+\subsubsection*{Primera regresión: explicación de la conducta innovadora}
 
+La primera ecuación toma la conducta innovadora como variable dependiente. Su propósito es determinar si la presión competitiva aumenta la conducta innovadora de los empleados y, al mismo tiempo, si esa relación cambia según el nivel de tolerancia al fracaso.
 
+\[
+M=i_M+a_1X+a_2W+a_3(XW)+e_M
+\]
 
-\subsection*{c) Interpretación de los resultados}
+En esta ecuación, $a_1$ representa el efecto de la presión competitiva cuando la tolerancia al fracaso se encuentra en su valor de referencia. El coeficiente $a_2$ representa el efecto de la tolerancia al fracaso cuando la presión competitiva se encuentra en su nivel de referencia. El término más importante para evaluar la moderación es $a_3$, porque indica si la pendiente entre presión competitiva y conducta innovadora cambia cuando aumenta la tolerancia al fracaso.
 
-Los resultados entregan apoyo empírico al modelo propuesto. La presión competitiva del mercado se relaciona positivamente con el desempeño innovador de la empresa, pero esa relación opera principalmente a través de la conducta innovadora del empleado. Además, la cultura de tolerancia al fracaso fortalece este proceso.
+Si $a_3$ es positivo y significativo, se concluiría que la presión competitiva genera una mayor respuesta innovadora en organizaciones que aceptan con mayor facilidad los errores derivados de la experimentación.
 
-En términos sustantivos, la presión competitiva no mejora el desempeño innovador simplemente por existir. Su efecto aparece cuando los empleados responden proponiendo e implementando ideas nuevas. Esa respuesta es más fuerte en empresas donde la gerencia tolera el fracaso asociado a experimentar.
+\subsubsection*{Segunda regresión: explicación del desempeño innovador}
 
-Por tanto, una organización sometida a presión competitiva debería fomentar una cultura que permita aprender de los errores, porque esa cultura facilita transformar presión de mercado en innovación real. Todos los resultados son consistentes con una mediación moderada de primera etapa.
+La segunda ecuación toma el desempeño innovador como variable dependiente. Su objetivo es determinar si la conducta innovadora de los empleados se traduce efectivamente en resultados innovadores para la empresa y si, una vez incorporado este mecanismo, persiste un efecto directo de la presión competitiva.
+
+\[
+Y=i_Y+c'X+bM+e_Y
+\]
+
+El coeficiente $b$ representa el efecto de la conducta innovadora sobre el desempeño innovador, manteniendo constante la presión competitiva. Por su parte, $c'$ representa el efecto directo residual de la presión competitiva sobre el desempeño, una vez que se incorpora al mediador.
+
+Esta distinción es importante porque permite separar aquello que ocurre directamente desde la presión competitiva hacia el desempeño de aquello que ocurre indirectamente a través del comportamiento innovador de los empleados.
+
+\subsubsection*{Tercera regresión: estimación del efecto total}
+
+La tercera ecuación evalúa la relación global entre presión competitiva y desempeño innovador antes de introducir el mediador.
+
+\[
+Y=i_T+cX+e_T
+\]
+
+El coeficiente $c$ representa el efecto total de la presión competitiva sobre el desempeño innovador. Esta regresión permite establecer si existe una asociación global entre ambas variables, aunque por sí sola no permite identificar el mecanismo que genera dicha relación.
+
+\subsubsection*{Efecto indirecto condicional}
+
+A partir de las dos primeras ecuaciones se obtiene el efecto indirecto condicional:
+
+\[
+IE(W)=\left(a_1+a_3W\right)b
+\]
+
+Esta expresión muestra que el efecto indirecto de la presión competitiva sobre el desempeño innovador no es constante. Su magnitud depende del nivel de tolerancia al fracaso. Cuando $W$ aumenta, también cambia el efecto de $X$ sobre $M$ y, en consecuencia, cambia el efecto indirecto completo sobre $Y$.
+
+\subsection*{Hipótesis}
+
+A partir de esta especificación se plantean las siguientes hipótesis:
+
+\begin{itemize}
+    \item H1: La presión competitiva tiene un efecto total positivo sobre el desempeño innovador, de modo que $c>0$.
+    
+    \item H2: La presión competitiva incrementa la conducta innovadora del empleado, de modo que $a_1>0$.
+    
+    \item H3: La conducta innovadora incrementa el desempeño innovador de la empresa, de modo que $b>0$.
+    
+    \item H4: La conducta innovadora media significativamente la relación entre presión competitiva y desempeño innovador, por lo que $IE(W)\neq 0$.
+    
+    \item H5: La tolerancia al fracaso fortalece la relación entre presión competitiva y conducta innovadora, de modo que $a_3>0$.
+    
+    \item H6: El efecto indirecto de la presión competitiva sobre el desempeño innovador aumenta cuando la tolerancia al fracaso es mayor, por lo que el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
+\end{itemize}
+
+\subsection*{Procedimiento de estimación}
+
+El análisis se realizó utilizando las 200 observaciones disponibles en la base de datos, sin pérdidas de información en las variables incluidas en el modelo.
+
+Antes de estimar las regresiones, la presión competitiva y la tolerancia al fracaso fueron centradas respecto de sus medias:
+
+\[
+X_c=X-\bar X
+\]
+
+\[
+W_c=W-\bar W
+\]
+
+A continuación se construyó el término de interacción:
+
+\[
+X_cW_c=(X-\bar X)(W-\bar W)
+\]
+
+El centrado no cambia la significancia de la interacción ni el ajuste general del modelo. Su principal utilidad es facilitar la interpretación de los efectos principales. Después del centrado, el coeficiente de presión competitiva se interpreta en el nivel medio de tolerancia al fracaso, mientras que el coeficiente de tolerancia se interpreta en el nivel medio de presión competitiva.
+
+Las tres ecuaciones fueron estimadas mediante mínimos cuadrados ordinarios. Para fortalecer la inferencia frente a posibles desviaciones de homocedasticidad, se utilizaron errores estándar robustos HC3.
+
+Los efectos indirectos condicionales fueron evaluados mediante 5.000 remuestras bootstrap. Este procedimiento es especialmente apropiado para la mediación porque el producto de coeficientes no necesariamente sigue una distribución normal. En consecuencia, la significancia del efecto indirecto se determina observando si su intervalo de confianza bootstrap incluye o no el valor cero.
+
+\subsection*{Resultados}
+
+\subsubsection*{Primera regresión: conducta innovadora como variable dependiente}
+
+La primera regresión evalúa simultáneamente el efecto de la presión competitiva, el efecto de la tolerancia al fracaso y la interacción entre ambas variables sobre la conducta innovadora.
+
+\begin{table}[H]
+\centering
+\caption{Regresión del modelo del mediador}
+\begin{tabular}{lcccc}
+\toprule
+Predictor & B & EE robusto & t & p \\
+\midrule
+Constante & 9.5207 & 0.0344 & 277.01 & $<0.001$ \\
+Presión competitiva centrada ($a_1$) & 2.0008 & 0.0394 & 50.82 & $<0.001$ \\
+Tolerancia al fracaso centrada ($a_2$) & 2.8732 & 0.0470 & 61.14 & $<0.001$ \\
+Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+El modelo explica el 98.05\% de la variación observada en la conducta innovadora, con un $R^2=0.9805$. Este nivel de ajuste indica que, dentro de la muestra analizada, la presión competitiva, la tolerancia al fracaso y su interacción explican una proporción muy elevada de las diferencias en conducta innovadora.
+
+El coeficiente de presión competitiva es positivo y estadísticamente significativo. Dado que las variables fueron centradas, $a_1=2.0008$ representa el efecto de la presión competitiva cuando la tolerancia al fracaso se encuentra en su nivel promedio. En ese punto, un aumento de una unidad en presión competitiva se asocia con aproximadamente dos unidades adicionales de conducta innovadora.
+
+La tolerancia al fracaso también presenta un efecto positivo y significativo. El coeficiente $a_2=2.8732$ indica que, cuando la presión competitiva se encuentra en su nivel promedio, una unidad adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 unidades adicionales de conducta innovadora.
+
+El resultado central de esta regresión corresponde al término de interacción. El coeficiente $a_3=0.5248$ es positivo y significativo, lo que demuestra que la relación entre presión competitiva y conducta innovadora no es constante. Por cada unidad adicional de tolerancia al fracaso, la pendiente de la presión competitiva aumenta en aproximadamente 0.525 unidades.
+
+En términos sustantivos, la presión competitiva produce una respuesta innovadora más intensa cuando los empleados perciben que la organización acepta los errores propios de la experimentación. Por tanto, los resultados apoyan H2 y H5.
+
+\subsubsection*{Segunda regresión: desempeño innovador como variable dependiente}
+
+La segunda regresión evalúa si la conducta innovadora se transforma en desempeño innovador y si la presión competitiva conserva un efecto directo una vez incluido el mediador.
+
+\begin{table}[H]
+\centering
+\caption{Regresión del modelo del resultado}
+\begin{tabular}{lcccc}
+\toprule
+Predictor & B & EE robusto & t & p \\
+\midrule
+Constante & 1.4086 & 0.1564 & 9.01 & $<0.001$ \\
+Presión competitiva centrada ($c'$) & 0.0265 & 0.0492 & 0.54 & 0.590 \\
+Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+El modelo explica el 97.32\% de la variación del desempeño innovador, con un $R^2=0.9732$.
+
+La conducta innovadora presenta un efecto positivo y altamente significativo sobre el desempeño innovador. El coeficiente $b=0.8577$ indica que, manteniendo constante la presión competitiva, una unidad adicional de conducta innovadora se asocia con un aumento aproximado de 0.858 unidades en el desempeño innovador.
+
+Este resultado confirma que la conducta innovadora no constituye solamente una reacción de los empleados frente a la presión competitiva, sino que también se transforma en un resultado relevante para la empresa. Por tanto, se encuentra evidencia a favor de H3.
+
+En cambio, el efecto directo residual de la presión competitiva no es significativo. El coeficiente $c'=0.0265$, con $p=0.590$, indica que, una vez incorporada la conducta innovadora, la presión competitiva no explica una variación adicional estadísticamente distinguible de cero en el desempeño innovador.
+
+Este resultado sugiere que la asociación entre presión competitiva y desempeño innovador se transmite principalmente mediante la conducta innovadora. No obstante, la ausencia de significancia de $c'$ no constituye por sí sola una prueba suficiente de mediación. La evidencia formal debe obtenerse a partir de los intervalos bootstrap del efecto indirecto.
+
+\subsubsection*{Tercera regresión: efecto total}
+
+La regresión del efecto total muestra que la presión competitiva se relaciona positiva y significativamente con el desempeño innovador antes de incluir la conducta innovadora como mediador.
+
+\[
+c=2.0281,\qquad p<0.001
+\]
+
+Este coeficiente indica que una unidad adicional de presión competitiva se asocia, en promedio, con un aumento de 2.028 unidades en el desempeño innovador.
+
+Como el efecto total es positivo y significativo, se encuentra evidencia a favor de H1. Sin embargo, esta regresión no permite determinar por qué ocurre la relación. Para comprender el mecanismo es necesario examinar conjuntamente las dos regresiones anteriores y los efectos indirectos condicionales.
+
+\subsubsection*{Efectos indirectos condicionales}
+
+El efecto indirecto se estimó en tres niveles representativos de tolerancia al fracaso: una desviación estándar bajo la media, la media y una desviación estándar sobre la media.
+
+\begin{table}[H]
+\centering
+\caption{Efectos indirectos condicionales}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Nivel & Efecto $X\rightarrow M$ & Efecto indirecto & IC95\% inf. & IC95\% sup. \\
+\midrule
+Baja ($-1$ DE) & 1.6029 & 1.3748 & 1.2880 & 1.4620 \\
+Medio & 2.0008 & 1.7162 & 1.6227 & 1.8104 \\
+Alta ($+1$ DE) & 2.3988 & 2.0576 & 1.9319 & 2.1853 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En los tres niveles de tolerancia al fracaso, los intervalos de confianza bootstrap excluyen el valor cero. Esto indica que la presión competitiva presenta un efecto indirecto significativo sobre el desempeño innovador a través de la conducta innovadora. Por tanto, se apoya H4.
+
+Además, la magnitud del efecto indirecto aumenta sistemáticamente con la tolerancia al fracaso. Cuando la tolerancia es baja, el efecto indirecto es 1.3748. En el nivel medio aumenta a 1.7162 y, cuando la tolerancia es alta, alcanza 2.0576.
+
+Este patrón muestra que la conducta innovadora transmite con mayor fuerza el efecto de la presión competitiva en organizaciones que presentan una cultura más tolerante frente al fracaso.
+
+La existencia de mediación moderada se evalúa formalmente mediante el índice:
+
+\[
+a_3b=(0.5248)(0.8577)=0.4502
+\]
+
+El intervalo bootstrap al 95\% fue:
+
+\[
+[0.3758,\;0.5184]
+\]
+
+Como este intervalo no contiene el valor cero, se concluye que el efecto indirecto cambia significativamente cuando varía la tolerancia al fracaso. Por tanto, se apoya H6.
+
+\subsection*{Evaluación conjunta de las hipótesis}
+
+\begin{table}[H]
+\centering
+\caption{Resumen de la evaluación de hipótesis}
+\begin{tabular}{@{}p{1.8cm}p{8.4cm}p{2.0cm}@{}}
+\toprule
+Hipótesis & Evidencia & Decisión \\
+\midrule
+H1 & El efecto total de la presión competitiva sobre el desempeño es positivo y significativo: $c=2.0281$, $p<0.001$. & Apoyada \\
+H2 & La presión competitiva predice positivamente la conducta innovadora: $a_1=2.0008$, $p<0.001$. & Apoyada \\
+H3 & La conducta innovadora predice positivamente el desempeño innovador: $b=0.8577$, $p<0.001$. & Apoyada \\
+H4 & Los efectos indirectos condicionales son significativos en los tres niveles de tolerancia. & Apoyada \\
+H5 & La interacción presión competitiva $\times$ tolerancia es positiva y significativa: $a_3=0.5248$, $p<0.001$. & Apoyada \\
+H6 & El índice de mediación moderada es positivo y su intervalo bootstrap excluye cero. & Apoyada \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Interpretación general}
+
+Los resultados permiten reconstruir el proceso completo propuesto por el modelo. En primer lugar, la presión competitiva estimula la conducta innovadora de los empleados. Esto sugiere que, frente a un entorno más exigente, los trabajadores responden generando e implementando una mayor cantidad de ideas.
+
+En segundo lugar, esta conducta innovadora se transforma en un mayor desempeño innovador para la empresa. Por tanto, el comportamiento de los empleados constituye el mecanismo que conecta una condición del mercado con un resultado organizacional.
+
+En tercer lugar, este mecanismo no opera con la misma intensidad en todas las empresas. La cultura de tolerancia al fracaso modifica la forma en que los empleados responden a la presión competitiva. Cuando la organización acepta los errores derivados de la experimentación, la presión competitiva genera una mayor conducta innovadora y, en consecuencia, un efecto indirecto más fuerte sobre el desempeño.
+
+En términos gerenciales, los resultados indican que la presión competitiva por sí sola no garantiza un mejor desempeño innovador. Para que dicha presión se convierta en innovación, la empresa debe generar condiciones organizacionales que permitan a los trabajadores experimentar sin temor excesivo a las consecuencias del fracaso.
+
+En consecuencia, la evidencia respalda un modelo de mediación moderada de primera etapa. La conducta innovadora explica cómo la presión competitiva influye sobre el desempeño innovador, mientras que la tolerancia al fracaso determina cuán intenso es ese proceso.
 
 \section*{Pregunta 2}
 

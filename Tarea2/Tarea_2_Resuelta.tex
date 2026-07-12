@@ -575,35 +575,36 @@ El modelo parcial ajustó adecuadamente cuando se estimó por separado en ambos 
 
 La Tabla siguiente resume la secuencia formal de invariancia. El criterio principal fue el cambio en CFI, considerando aceptable una caída no superior a .010.
 
+
 \begin{table}[H]
 \centering
 \caption{Pruebas de invariancia multigrupo por género}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
-Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $\Delta\chi^2$ & $\Delta gl$ & $\Delta CFI$ \\
+Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $\Delta\chi^2$ & $\Delta gl$ & $p(\Delta\chi^2)$ & $\Delta CFI$ \\
 \midrule
-Configural & 403.4729 & 320 & .9762 & .9717 & .0256 & -- & -- & -- \\
-Métrica completa & 461.4383 & 335 & .9639 & .9591 & .0308 & 57.9654 & 15 & -.0123 \\
-Métrica parcial (libera CO3) & 439.3743 & 334 & .9699 & .9658 & .0281 & 35.9015 & 14 & -.0062 \\
-Escalar completa & 492.5408 & 349 & .9591 & .9554 & .0321 & 53.1665 & 15 & -.0109 \\
-Estructural completa & 468.3867 & 343 & .9642 & .9604 & .0303 & 29.0124 & 9 & -.0057 \\
-Estructural parcial (libera $AC\rightarrow ST$ y $PA\rightarrow IP$) & 448.9107 & 341 & .9692 & .9657 & .0282 & 9.5364 & 7 & -.0007 \\
+Configural & 403.4729 & 320 & .9762 & .9717 & .0256 & -- & -- & -- & -- \\
+Métrica completa & 461.4383 & 335 & .9639 & .9591 & .0308 & 57.9654 & 15 & $<.001$ & -.0123 \\
+Métrica parcial (permite diferir CO3) & 439.3743 & 334 & .9699 & .9658 & .0281 & 35.9015 & 14 & .0011 & -.0062 \\
+Escalar completa & 492.5408 & 349 & .9591 & .9554 & .0321 & 53.1665 & 15 & $<.001$ & -.0109 \\
+Estructural completa & 468.3867 & 343 & .9642 & .9604 & .0303 & 29.0124 & 9 & $<.001$ & -.0057 \\
+Estructural parcial (libera $AC\rightarrow ST$ y $PA\rightarrow IP$) & 448.9107 & 341 & .9692 & .9657 & .0282 & 9.5364 & 7 & .2164 & -.0007 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
 \noindent\textit{Nota:} la métrica completa se compara contra el modelo configural; la métrica parcial también se compara contra el configural. La escalar completa y los modelos estructurales se comparan contra la métrica parcial. Para la estructura parcial, $\Delta\chi^2(7)=9.5364$, $p=.2164$.
 
-Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Al liberar la carga de CO3, se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar caminos estructurales con cautela.
+Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Mediante inspección secuencial de liberaciones de cargas factoriales, se identificó que permitir que la carga factorial de CO3 difiriera entre hombres y mujeres producía la mayor mejora de ajuste. Con esa liberación se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar caminos estructurales con cautela.
 
-La invariancia escalar completa no se sostiene plenamente ($\Delta CFI=-.0109$). Esto no impide comparar relaciones estructurales, pero sí indica que sería necesario mayor cuidado si el objetivo fuera comparar medias latentes entre hombres y mujeres.
+Desde la métrica parcial se siguen dos ramas analíticas. La primera es la evaluación de invariancia escalar, relevante principalmente para comparar medias latentes. La segunda es la evaluación de invariancia estructural, que compara los caminos entre constructos. La invariancia escalar completa no se sostiene plenamente ($\Delta CFI=-.0109$), pero esto no impide comparar relaciones estructurales, porque para ello la condición central es contar al menos con invariancia métrica parcial.
 
-Al imponer igualdad de todos los caminos estructurales, la prueba de diferencia de $\chi^2$ sugiere cierto deterioro del ajuste. Sin embargo, al liberar únicamente dos relaciones, $AC\rightarrow ST$ y $PA\rightarrow IP$, se obtiene un modelo de invariancia estructural parcial aceptable: $\Delta\chi^2(7)=9.5364$, $p=.2164$, $\Delta CFI=-.0007$.
+Al imponer igualdad de todos los caminos estructurales, la prueba de diferencia de $\chi^2$ sugiere cierto deterioro del ajuste. Sin embargo, al liberar el conjunto de restricciones asociado a $AC\rightarrow ST$ y $PA\rightarrow IP$, se obtiene un modelo de invariancia estructural parcial aceptable: $\Delta\chi^2(7)=9.5364$, $p=.2164$, $\Delta CFI=-.0007$. La decisión de aceptación se basa principalmente en $\Delta CFI$, porque la prueba de $\chi^2$ es sensible al tamaño muestral y puede rechazar restricciones pequeñas.
 
-Como apoyo descriptivo, la comparación directa de coeficientes no estandarizados mostró que $AC\rightarrow ST$ cambia de signo entre grupos: en hombres fue negativo ($B=-.2145$), mientras que en mujeres fue positivo ($B=.3509$). Además, $PA\rightarrow IP$ fue más fuerte en mujeres ($B=.2385$) que en hombres ($B=.0984$).
+Como apoyo descriptivo, la comparación directa de coeficientes no estandarizados mostró que $AC\rightarrow ST$ cambia de signo entre grupos: en hombres fue negativo ($B=-.2145$), mientras que en mujeres fue positivo ($B=.3509$). Además, $PA\rightarrow IP$ fue más fuerte en mujeres ($B=.2385$) que en hombres ($B=.0984$). Estos contrastes ayudan a interpretar la dirección de la falta de invariancia, pero demostrar que cada camino difiere individualmente requeriría pruebas específicas de liberación o restricción camino por camino.
 
-Por tanto, la respuesta al inciso es que la mayoría de las relaciones estructurales se comportan de manera equivalente entre hombres y mujeres. Las diferencias principales se concentran en dos caminos: la asociación entre actitud hacia compañeros y satisfacción laboral, y la asociación directa entre percepción del ambiente e intención de permanecer.
+Por tanto, la respuesta al inciso es que la mayoría de las relaciones estructurales se comportan de manera equivalente entre hombres y mujeres. La falta de invariancia se concentra en el conjunto de restricciones asociado a $AC\rightarrow ST$ y $PA\rightarrow IP$, más que en una demostración definitiva de diferencia individual para cada camino por separado.
 
 \subsection{d) Interpretación y conclusión de la pregunta 3}
 
@@ -615,9 +616,9 @@ En la especificación seleccionada, la percepción del ambiente laboral aparece 
 
 Los caminos desde satisfacción hacia compromiso e intención de permanecer no son estadísticamente significativos una vez incorporadas las demás relaciones. Por ello, no corresponde interpretar el modelo como una cadena simple $ST\rightarrow CO\rightarrow IP$. Con la evidencia disponible, el compromiso organizacional aparece como el mecanismo indirecto potencial más consistente, aunque su papel mediador no queda formalmente confirmado sin estimar productos indirectos con intervalos bootstrap.
 
-El análisis por género muestra que la estructura general del modelo es comparable entre hombres y mujeres bajo invariancia métrica parcial. La mayoría de las relaciones estructurales son equivalentes, pero dos caminos requieren liberarse: $AC\rightarrow ST$ y $PA\rightarrow IP$. En términos sustantivos, esto sugiere que algunas condiciones laborales pueden relacionarse con satisfacción e intención de permanencia de manera distinta según género, aunque el patrón general del modelo se mantiene.
+El análisis por género muestra que la estructura general del modelo es comparable entre hombres y mujeres bajo invariancia métrica parcial. La mayoría de las relaciones estructurales son equivalentes; sin embargo, el modelo mejora cuando se libera el conjunto de restricciones asociado a $AC\rightarrow ST$ y $PA\rightarrow IP$. En términos sustantivos, esto sugiere que algunas condiciones laborales podrían relacionarse con satisfacción e intención de permanencia de manera distinta según género, aunque el patrón general del modelo se mantiene.
 
-En conjunto, la evidencia respalda el modelo parcialmente mediado como la mejor representación de los datos, con equivalencia estructural mayoritaria entre hombres y mujeres y diferencias específicas en dos relaciones.
+En conjunto, la evidencia respalda el modelo parcialmente mediado como la mejor representación de los datos, con equivalencia estructural mayoritaria entre hombres y mujeres y una falta de invariancia localizada en el conjunto de restricciones asociado a dos relaciones.
 
 \newpage
 \section{Pregunta 4: MANOVA factorial}
@@ -769,6 +770,6 @@ Desde una perspectiva gerencial, HBAT debería priorizar la fuerza de ventas dir
 
 Los cuatro análisis responden preguntas distintas. La mediación moderada muestra que la magnitud del efecto indirecto varía según una condición organizacional; el AFE evalúa la estructura latente de un instrumento; el CFA/SEM distingue entre calidad de medición y relaciones estructurales; y el MANOVA evalúa efectos conjuntos e interacción sobre múltiples resultados.
 
-En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanecer se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con equivalencia estructural mayoritaria por género y diferencias específicas en dos caminos; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
+En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanecer se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con equivalencia estructural mayoritaria por género y falta de invariancia localizada en dos restricciones estructurales; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
 
 \end{document}

@@ -558,64 +558,66 @@ AC también presenta una asociación directa positiva, aunque menor ($B=.0709$, 
 
 En conjunto, los resultados muestran que la mediación no se organiza como una cadena simple $ST\rightarrow CO\rightarrow IP$. PA y AC se asocian directamente con el compromiso, mientras que PA, AC y CO se asocian directamente con la intención de permanencia. Los caminos desde ST hacia CO e IP no son significativos en esta especificación. Con la evidencia disponible, CO es el mecanismo potencial más consistente hacia la intención de permanencia, pero no un mediador confirmado, pues no se estimaron sus efectos indirectos con intervalos bootstrap.
 
-\subsection{c) Comparación de relaciones entre hombres y mujeres}
 
-El modelo parcial se estimó por separado para hombres y mujeres. El ajuste fue adecuado en ambos grupos, lo que permite una comparación exploratoria de caminos; sin embargo, esto no equivale a demostrar invariancia configural, métrica ni escalar:
+\subsection{c) Comparación entre hombres y mujeres}
+
+Para evaluar si las relaciones del modelo seleccionado se comportan igual entre hombres y mujeres, se realizó un análisis SEM multigrupo. La lógica fue comparar modelos cada vez más restrictivos: primero se evaluó la misma estructura general en ambos grupos, luego la igualdad de cargas factoriales, después la igualdad de interceptos y, finalmente, la igualdad de los caminos estructurales.
+
+El modelo parcial ajustó adecuadamente cuando se estimó por separado en ambos grupos:
 
 \[
-\text{Hombres: }n=200,\ CFI=.981,\ TLI=.977,\ RMSEA=.031,
+\text{Hombres: } n=200,\ \chi^2(160)=189.98,\ CFI=.981,\ TLI=.977,\ RMSEA=.031,
 \]
 
 \[
-\text{Mujeres: }n=200,\ CFI=.972,\ TLI=.967,\ RMSEA=.041.
+\text{Mujeres: } n=200,\ \chi^2(160)=213.50,\ CFI=.972,\ TLI=.967,\ RMSEA=.041.
 \]
 
-Cada diferencia entre coeficientes no estandarizados se evaluó mediante:
-
-\begin{equation}
-z=\frac{b_H-b_M}{\sqrt{SE_H^2+SE_M^2}}.
-\end{equation}
+La Tabla siguiente resume la secuencia formal de invariancia. El criterio principal fue el cambio en CFI, considerando aceptable una caída no superior a .010.
 
 \begin{table}[H]
 \centering
-\caption{Comparación de relaciones estructurales por género}
-\begin{tabular}{lrrrr}
+\caption{Pruebas de invariancia multigrupo por género}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Relación & $B_H$ & $B_M$ & $z$ & $p$ \\
+Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $\Delta\chi^2$ & $\Delta gl$ & $\Delta CFI$ \\
 \midrule
-$PA\rightarrow ST$ & .2594 & .1443 & 1.059 & .290 \\
-$AC\rightarrow ST$ & -.2145 & .3509 & -3.313 & .001 \\
-$PA\rightarrow CO$ & .6348 & .5099 & .743 & .457 \\
-$AC\rightarrow CO$ & .3620 & 1.0379 & -2.418 & .016 \\
-$ST\rightarrow CO$ & .0729 & .0830 & -.059 & .953 \\
-$PA\rightarrow IP$ & .0984 & .2385 & -1.967 & .049 \\
-$AC\rightarrow IP$ & -.0045 & .0038 & -.072 & .942 \\
-$ST\rightarrow IP$ & .0601 & .0171 & .576 & .565 \\
-$CO\rightarrow IP$ & .1327 & .2050 & -1.152 & .250 \\
+Configural & 403.4729 & 320 & .9762 & .9717 & .0256 & -- & -- & -- \\
+Métrica completa & 461.4383 & 335 & .9639 & .9591 & .0308 & 57.9654 & 15 & -.0123 \\
+Métrica parcial (libera CO3) & 439.3743 & 334 & .9699 & .9658 & .0281 & 35.9015 & 14 & -.0062 \\
+Escalar completa & 492.5408 & 349 & .9591 & .9554 & .0321 & 53.1665 & 15 & -.0109 \\
+Estructural completa & 468.3867 & 343 & .9642 & .9604 & .0303 & 29.0124 & 9 & -.0057 \\
+Estructural parcial (libera $AC\rightarrow ST$ y $PA\rightarrow IP$) & 448.9107 & 341 & .9692 & .9657 & .0282 & 9.5364 & 7 & -.0007 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
-\noindent\textit{Nota:} $B_H$ y $B_M$ corresponden a coeficientes no estandarizados estimados por separado para hombres y mujeres.
+\noindent\textit{Nota:} la métrica completa se compara contra el modelo configural; la métrica parcial también se compara contra el configural. La escalar completa y los modelos estructurales se comparan contra la métrica parcial. Para la estructura parcial, $\Delta\chi^2(7)=9.5364$, $p=.2164$.
 
-Con $p$-values no ajustados aparecen tres diferencias: $AC\rightarrow ST$, $AC\rightarrow CO$ y $PA\rightarrow IP$. Sin embargo, al aplicar una corrección Bonferroni para nueve comparaciones ($\alpha=0.05/9=0.0056$), solo $AC\rightarrow ST$ permanece estadísticamente significativa. En ese camino, el signo cambia: es negativo entre hombres y positivo entre mujeres. Las diferencias en $AC\rightarrow CO$ y $PA\rightarrow IP$ deben considerarse sugerentes, no concluyentes.
+Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Al liberar la carga de CO3, se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar caminos estructurales con cautela.
 
-No se encuentran diferencias por género en $ST\rightarrow CO$: este camino es pequeño y no significativo en ambos grupos.
+La invariancia escalar completa no se sostiene plenamente ($\Delta CFI=-.0109$). Esto no impide comparar relaciones estructurales, pero sí indica que sería necesario mayor cuidado si el objetivo fuera comparar medias latentes entre hombres y mujeres.
 
-Estas comparaciones deben interpretarse con cautela. Para una evaluación confirmatoria estricta sería necesario realizar la secuencia formal de invariancia de medición --configural, métrica y escalar-- antes de comparar caminos estructurales de manera definitiva.
+Al imponer igualdad de todos los caminos estructurales, la prueba de diferencia de $\chi^2$ sugiere cierto deterioro del ajuste. Sin embargo, al liberar únicamente dos relaciones, $AC\rightarrow ST$ y $PA\rightarrow IP$, se obtiene un modelo de invariancia estructural parcial aceptable: $\Delta\chi^2(7)=9.5364$, $p=.2164$, $\Delta CFI=-.0007$.
+
+Como apoyo descriptivo, la comparación directa de coeficientes no estandarizados mostró que $AC\rightarrow ST$ cambia de signo entre grupos: en hombres fue negativo ($B=-.2145$), mientras que en mujeres fue positivo ($B=.3509$). Además, $PA\rightarrow IP$ fue más fuerte en mujeres ($B=.2385$) que en hombres ($B=.0984$).
+
+Por tanto, la respuesta al inciso es que la mayoría de las relaciones estructurales se comportan de manera equivalente entre hombres y mujeres. Las diferencias principales se concentran en dos caminos: la asociación entre actitud hacia compañeros y satisfacción laboral, y la asociación directa entre percepción del ambiente e intención de permanecer.
 
 \subsection{d) Interpretación y conclusión de la pregunta 3}
 
-El modelo de medición es sólido: el CFA presenta muy buen ajuste, todas las escalas poseen confiabilidad adecuada y se cumple la validez convergente y discriminante.
+El modelo de medición es sólido: el CFA presenta muy buen ajuste, todas las escalas poseen confiabilidad adecuada y se cumple la validez convergente y discriminante. Esto permite interpretar las relaciones estructurales con una base de medición razonablemente confiable.
 
-El modelo parcialmente mediado representa mejor los datos que el completamente mediado. Sin embargo, la interpretación sustantiva correcta no es que PA y AC operen principalmente mediante una cadena de satisfacción y compromiso. En la especificación completa, PA se asocia directamente con ST, CO e IP; AC se asocia directamente con CO e IP; y CO se asocia con IP. Los caminos desde ST hacia CO e IP no son estadísticamente significativos.
+El modelo parcialmente mediado representa mejor los datos que el completamente mediado. La comparación indica que fijar en cero los caminos directos $PA\rightarrow IP$ y $AC\rightarrow IP$ deteriora significativamente el ajuste. Por tanto, las condiciones laborales no se asocian con la intención de permanecer únicamente a través de satisfacción y compromiso, sino también mediante relaciones directas.
 
-Por tanto, la percepción del ambiente laboral aparece como el antecedente más consistente: una percepción más favorable se asocia con mayor satisfacción, mayor compromiso y mayor intención de permanecer. La actitud hacia los compañeros contribuye al compromiso y presenta una asociación directa menor con la intención de permanencia. Finalmente, el compromiso organizacional constituye un predictor directo importante de la intención de continuar en la empresa.
+En la especificación seleccionada, la percepción del ambiente laboral aparece como el antecedente más consistente: se asocia positivamente con satisfacción laboral, compromiso organizacional e intención de permanecer. La actitud hacia compañeros se asocia principalmente con compromiso organizacional y, en menor medida, con intención de permanecer. Finalmente, el compromiso organizacional constituye un predictor directo importante de la intención de continuar en la empresa.
 
-Con la evidencia disponible, el compromiso organizacional constituye el mecanismo indirecto potencial más consistente entre PA o AC y la intención de permanecer. Sin embargo, su papel mediador no puede considerarse formalmente confirmado mientras no se estimen los productos indirectos y sus intervalos de confianza bootstrap.
+Los caminos desde satisfacción hacia compromiso e intención de permanecer no son estadísticamente significativos una vez incorporadas las demás relaciones. Por ello, no corresponde interpretar el modelo como una cadena simple $ST\rightarrow CO\rightarrow IP$. Con la evidencia disponible, el compromiso organizacional aparece como el mecanismo indirecto potencial más consistente, aunque su papel mediador no queda formalmente confirmado sin estimar productos indirectos con intervalos bootstrap.
 
-El análisis por género sugiere especialmente una diferencia robusta en $AC\rightarrow ST$; las demás diferencias son exploratorias y deben interpretarse con cautela hasta establecer invariancia de medición.
+El análisis por género muestra que la estructura general del modelo es comparable entre hombres y mujeres bajo invariancia métrica parcial. La mayoría de las relaciones estructurales son equivalentes, pero dos caminos requieren liberarse: $AC\rightarrow ST$ y $PA\rightarrow IP$. En términos sustantivos, esto sugiere que algunas condiciones laborales pueden relacionarse con satisfacción e intención de permanencia de manera distinta según género, aunque el patrón general del modelo se mantiene.
 
+En conjunto, la evidencia respalda el modelo parcialmente mediado como la mejor representación de los datos, con equivalencia estructural mayoritaria entre hombres y mujeres y diferencias específicas en dos relaciones.
 
 \newpage
 \section{Pregunta 4: MANOVA factorial}
@@ -767,6 +769,6 @@ Desde una perspectiva gerencial, HBAT debería priorizar la fuerza de ventas dir
 
 Los cuatro análisis responden preguntas distintas. La mediación moderada muestra que la magnitud del efecto indirecto varía según una condición organizacional; el AFE evalúa la estructura latente de un instrumento; el CFA/SEM distingue entre calidad de medición y relaciones estructurales; y el MANOVA evalúa efectos conjuntos e interacción sobre múltiples resultados.
 
-En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanencia se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con diferencias exploratorias por género; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
+En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanecer se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con equivalencia estructural mayoritaria por género y diferencias específicas en dos caminos; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
 
 \end{document}

@@ -175,7 +175,7 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 
 El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
-El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada unidad adicional de tolerancia al fracaso, la pendiente de presión competitiva sobre conducta innovadora aumenta en aproximadamente 0.525 ideas. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
+El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que la pendiente de presión competitiva sobre conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto adicional de tolerancia al fracaso. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
 
 \subsubsection{Regresión 2: desempeño innovador}
 
@@ -233,6 +233,24 @@ a_3b=(0.5248)(0.8577)=0.4502,
 
 con IC95\% bootstrap $[0.3758,0.5184]$. Como el intervalo no contiene cero, el efecto indirecto varía significativamente con la tolerancia al fracaso. Se apoya H6.
 
+
+\begin{table}[H]
+\centering
+\caption{Resumen de evaluación de hipótesis}
+\begin{tabular}{lll}
+\toprule
+Hipótesis & Evidencia estadística principal & Decisión \\
+\midrule
+H1 & $c=2.0281$, $p<.001$ & Apoyada \\
+H2 & $a_1=2.0008$, $p<.001$ & Apoyada \\
+H3 & $b=0.8577$, $p<.001$ & Apoyada \\
+H4 & Efectos indirectos con IC95\% bootstrap que excluyen cero & Apoyada \\
+H5 & $a_3=0.5248$, $p<.001$ & Apoyada \\
+H6 & $a_3b=0.4502$, IC95\% $[0.3758,0.5184]$ & Apoyada \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{c) Interpretación de los resultados}
 
 La evidencia permite reconstruir el proceso completo. Primero, la presión competitiva se asocia con mayor conducta innovadora de los empleados. Segundo, dicha conducta se asocia con mayor desempeño innovador. Tercero, este mecanismo es más intenso cuando la cultura organizacional tolera los errores derivados de experimentar.
@@ -282,7 +300,7 @@ Los primeros cuatro autovalores observados superaron el percentil 95 de los auto
 
 La solución de cuatro factores explica el 39.1\% de la varianza. En rotación oblicua este porcentaje debe interpretarse con cautela, porque los factores pueden correlacionarse y la varianza no se reparte de forma completamente independiente entre dimensiones. Se interpreta la matriz patrón porque representa la contribución específica de cada factor controlando las correlaciones entre ellos. Se consideraron sustantivas cargas absolutas cercanas o superiores a 0.40. Un ítem se consideró complejo cuando además presentaba una carga secundaria cercana o superior a 0.30, o cuando la diferencia entre sus dos cargas principales era pequeña.
 
-\begin{longtable}{lrrrrp{4.2cm}}
+\begin{longtable}{lrrrr>{\raggedright\arraybackslash}p{4.2cm}}
 \caption{Matriz patrón rotada del EECS-R}\\
 \toprule
 Ítem & F1 & F2 & F3 & F4 & Dimensión dominante \\
@@ -301,7 +319,7 @@ q6 & .16 & -.35 & .16 & .26 & Interpersonal débil \\
 q7 & .14 & .45 & -.05 & .30 & Enseñanza \\
 q8 & .58 & .22 & .04 & .24 & Diseño experimental \\
 q9 & .44 & -.11 & .26 & .37 & Complejo \\
-q10 & .42 & -.07 & .18 & .04 & Diseño/enseñanza \\
+q10 & .42 & -.07 & .18 & .04 & Diseño experimental; asignación teórica a enseñanza \\
 q11 & .27 & .46 & .20 & .10 & Enseñanza \\
 q12 & -.01 & .13 & .27 & -.16 & Débil \\
 q13 & .56 & .08 & -.03 & .21 & Diseño experimental \\
@@ -312,7 +330,7 @@ q17 & .79 & -.01 & -.03 & .14 & Diseño experimental \\
 q18 & .23 & -.32 & .40 & .14 & Interpersonal \\
 q19 & -.05 & .57 & -.18 & .08 & Enseñanza \\
 q20 & .04 & .45 & .05 & .20 & Enseñanza \\
-q21 & .47 & .17 & -.04 & .27 & Diseño/estadística \\
+q21 & .47 & .17 & -.04 & .27 & Diseño experimental; asociación secundaria con estadística \\
 q22 & .86 & -.07 & -.02 & .11 & Diseño experimental \\
 q23 & -.09 & .04 & .70 & .07 & Interpersonal \\
 q24 & .10 & .28 & .13 & .48 & Estadística \\
@@ -530,9 +548,9 @@ $CO\rightarrow IP$ & .1576 & .329 & $<.001$ \\
 ST=\beta_1 PA+\beta_2 AC+\varepsilon_{ST}.
 \end{equation}
 
-La percepción del ambiente tiene un efecto positivo y significativo sobre la satisfacción ($B=.1848$, $\beta=.237$, $p<.001$). Una percepción más favorable del ambiente físico y funcional se asocia con mayor satisfacción laboral.
+La percepción del ambiente presenta una asociación positiva y significativa con la satisfacción ($B=.1848$, $\beta=.237$, $p<.001$). Una percepción más favorable del ambiente físico y funcional se asocia con mayor satisfacción laboral.
 
-La actitud hacia los compañeros no presenta un efecto adicional significativo sobre ST una vez controlada PA ($B=-.0306$, $p=.554$). Esto no significa que las relaciones con compañeros sean irrelevantes en general; significa que no explican variación adicional en satisfacción dentro de esta ecuación.
+La actitud hacia los compañeros no presenta una asociación adicional significativa con ST una vez controlada PA ($B=-.0306$, $p=.554$). Esto no significa que las relaciones con compañeros sean irrelevantes en general; significa que no explican variación adicional en satisfacción dentro de esta ecuación.
 
 \subsubsection{Segunda regresión estructural: compromiso organizacional}
 
@@ -542,7 +560,7 @@ CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}.
 
 PA presenta una asociación positiva importante con CO ($B=.4969$, $\beta=.427$, $p<.001$). AC también presenta una asociación positiva y significativa ($B=.2505$, $\beta=.195$, $p<.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
 
-En cambio, ST no presenta un efecto significativo sobre CO cuando PA y AC se incluyen simultáneamente ($B=.1306$, $\beta=.087$, $p=.110$). Este resultado es sustantivamente relevante: la satisfacción no explica compromiso adicional después de controlar las dos condiciones laborales antecedentes. El coeficiente significativo obtenido en una especificación que omitiera PA y AC de esta ecuación sería atribuible, al menos parcialmente, a esa omisión.
+En cambio, ST no presenta un coeficiente significativo en la ecuación de CO cuando PA y AC se incluyen simultáneamente ($B=.1306$, $\beta=.087$, $p=.110$). Este resultado es sustantivamente relevante: la satisfacción no explica compromiso adicional después de controlar las dos condiciones laborales antecedentes. El coeficiente significativo obtenido en una especificación que omitiera PA y AC de esta ecuación sería atribuible, al menos parcialmente, a esa omisión.
 
 \subsubsection{Tercera regresión estructural: intención de permanecer}
 
@@ -597,7 +615,7 @@ Estructural completa & 468.3867 & 343 & .9642 & .9604 & .0303 & 29.0124 & 9 & $<
 
 \noindent\textit{Nota:} la métrica completa se compara contra el modelo configural; la métrica parcial también se compara contra el configural. La escalar completa y la estructural completa se comparan contra la métrica parcial.
 
-Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Mediante inspección secuencial de liberaciones de cargas factoriales, se identificó que permitir que la carga factorial de CO3 difiriera entre hombres y mujeres producía la mayor mejora de ajuste. Con esa liberación se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar caminos estructurales con cautela.
+Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Mediante inspección secuencial de liberaciones de cargas factoriales, se identificó que permitir que la carga factorial de CO3 difiriera entre hombres y mujeres producía la mayor mejora de ajuste. Con esa liberación se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar los caminos estructurales bajo invariancia métrica parcial.
 
 La decisión anterior se basa principalmente en $\Delta CFI$, considerando como aceptable una disminución no superior a .010. Aunque la diferencia de $\chi^2$ sigue siendo significativa, este estadístico es sensible al tamaño muestral y puede rechazar restricciones pequeñas. Por consistencia, el mismo criterio se aplica a la evaluación de invariancia estructural.
 
@@ -607,7 +625,7 @@ La invariancia estructural completa sí se considera aceptable porque su caída 
 
 Como apoyo descriptivo, los coeficientes no estandarizados estimados por separado muestran algunas diferencias numéricas entre grupos. Por ejemplo, $AC\rightarrow ST$ fue negativo en hombres ($B=-.2145$) y positivo en mujeres ($B=.3509$), mientras que $PA\rightarrow IP$ fue mayor en mujeres ($B=.2385$) que en hombres ($B=.0984$). Sin embargo, estas diferencias numéricas descriptivas no implican por sí solas diferencias estructurales significativas cuando el modelo con caminos igualados mantiene ajuste aceptable según $\Delta CFI$.
 
-Por tanto, la respuesta al inciso es que las relaciones estructurales pueden considerarse equivalentes entre hombres y mujeres. La única diferencia de medición retenida en el análisis es que se permitió que la carga factorial de CO3 difiriera entre ambos grupos.
+Por tanto, la respuesta al inciso es que las relaciones estructurales pueden considerarse equivalentes entre hombres y mujeres. La única diferencia de medición retenida en el análisis es que se permitió que la carga factorial de CO3 difiriera entre ambos grupos. Esto significa que la relación entre el ítem CO3 y el compromiso organizacional no tiene exactamente la misma magnitud en hombres y mujeres; sin embargo, no implica que el constructo completo de compromiso organizacional sea diferente entre grupos.
 
 \subsection{d) Interpretación y conclusión de la pregunta 3}
 
@@ -765,14 +783,14 @@ No. En este contexto, ``independientes'' se interpreta como ausencia de interacc
 
 \subsection{Conclusión de la pregunta 4}
 
-El tipo de distribución y el tamaño se asocian con el perfil conjunto de lealtad. Los clientes atendidos directamente presentan mejores resultados y las empresas grandes muestran mayor lealtad promedio. Sin embargo, ambos factores no operan independientemente: la eficacia del canal directo es mayor entre empresas grandes.
+El tipo de distribución y el tamaño se asocian con el perfil conjunto de lealtad. Los clientes atendidos directamente presentan mejores resultados y las empresas grandes muestran mayor lealtad promedio. Sin embargo, ambos factores no operan independientemente: la ventaja observada del canal directo es mayor entre empresas grandes.
 
-Desde una perspectiva gerencial, HBAT debería priorizar la fuerza de ventas directa para clientes grandes, donde su asociación con satisfacción y recompra es especialmente fuerte, y evaluar estrategias diferenciadas para empresas pequeñas. Estas conclusiones describen asociaciones y no prueban causalidad definitiva, pues el canal podría estar relacionado con otras características no incluidas en el modelo.
+Desde una perspectiva gerencial, los resultados sugieren que HBAT podría priorizar la fuerza de ventas directa para clientes grandes, donde su asociación con satisfacción y recompra es especialmente fuerte, y evaluar estrategias diferenciadas para empresas pequeñas. Estas conclusiones describen asociaciones y no prueban causalidad definitiva, pues el canal podría estar relacionado con otras características no incluidas en el modelo.
 
 \section{Conclusión general}
 
 Los cuatro análisis responden preguntas distintas. La mediación moderada muestra que la magnitud del efecto indirecto varía según una condición organizacional; el AFE evalúa la estructura latente de un instrumento; el CFA/SEM distingue entre calidad de medición y relaciones estructurales; y el MANOVA evalúa efectos conjuntos e interacción sobre múltiples resultados.
 
-En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanecer se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con invariancia estructural entre hombres y mujeres; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
+En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. En la primera pregunta, la evidencia es consistente con una relación indirecta entre presión competitiva y desempeño a través de la conducta innovadora, bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanecer se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con invariancia estructural entre hombres y mujeres; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
 
 \end{document}

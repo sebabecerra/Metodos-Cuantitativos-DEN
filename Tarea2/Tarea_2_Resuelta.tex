@@ -17,9 +17,6 @@
 \onehalfspacing
 \setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=4pt}
 \setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=4pt}
-\title{Tarea 2--3--4: Respuestas}
-\author{Sebastián Becerra}
-\date{Julio de 2026}
 \begin{document}
 \begin{center}
 {\large \textbf{UNIVERSIDAD DEL DESARROLLO}}\\
@@ -155,6 +152,8 @@ para luego construir el término de interacción $X_cW_c$. El centrado no altera
 
 Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores estándar robustos HC3. Los efectos indirectos condicionales y el índice de mediación moderada se evaluaron mediante 5.000 remuestras bootstrap. La regla de decisión fue: para coeficientes individuales, $p<.05$; para efectos indirectos, intervalo de confianza bootstrap que no incluya cero.
 
+Como diagnóstico adicional, se evaluó la multicolinealidad mediante el factor de inflación de la varianza. Todos los VIF fueron inferiores a 1.05, por lo que no se observaron problemas de colinealidad entre la presión competitiva centrada, la tolerancia centrada y su interacción. La prueba de Breusch--Pagan tampoco detectó heterocedasticidad en el modelo del mediador ($LM=1.1407$, $p=.767$). En cualquier caso, la inferencia principal utiliza errores estándar robustos HC3.
+
 \subsection{Resultados}
 
 \subsubsection{Regresión 1: conducta innovadora}
@@ -174,7 +173,7 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, una unidad adicional de presión competitiva se asocia con aproximadamente dos unidades adicionales de conducta innovadora. A su vez, con presión en su media, una unidad adicional de tolerancia se asocia con 2.87 unidades adicionales de conducta innovadora.
+El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
 El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada unidad adicional de tolerancia al fracaso, la pendiente de presión competitiva sobre conducta innovadora aumenta en aproximadamente 0.525 unidades. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
 
@@ -194,19 +193,19 @@ Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). La conducta innovadora tiene un efecto positivo y significativo: una unidad adicional de conducta innovadora se asocia con un aumento de 0.858 unidades en desempeño, controlando presión competitiva. Se apoya H3.
+El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). La conducta innovadora presenta una asociación positiva y significativa: una idea adicional se asocia con un aumento aproximado de 0.858 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos, controlando la presión competitiva. Se apoya H3.
 
 En cambio, el efecto directo residual de la presión competitiva no es significativo. Esto sugiere que, una vez incorporado el comportamiento innovador de los empleados, la presión competitiva no aporta una explicación adicional estadísticamente distinguible de cero. Sin embargo, la ausencia de significancia de $c'$ no constituye por sí sola la prueba formal de mediación; esta debe establecerse mediante el efecto indirecto bootstrap.
 
 \subsubsection{Regresión 3: efecto total}
 
-La presión competitiva presenta un efecto total positivo y significativo sobre el desempeño:
+La presión competitiva presenta una asociación total positiva y significativa con el desempeño:
 
 \[
 c=2.0281,\qquad p<.001.
 \]
 
-Por tanto, se apoya H1. Esta relación global es compatible con el modelo propuesto, pero la explicación del mecanismo requiere considerar las regresiones anteriores y el efecto indirecto.
+El coeficiente indica que un punto adicional de presión competitiva se asocia, en promedio, con un aumento de 2.028 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos. Por tanto, se apoya H1. Esta relación global es compatible con el modelo propuesto, pero la explicación del mecanismo requiere considerar las regresiones anteriores y el efecto indirecto.
 
 \subsubsection{Efectos indirectos condicionales}
 
@@ -215,7 +214,7 @@ Por tanto, se apoya H1. Esta relación global es compatible con el modelo propue
 \caption{Efectos indirectos según tolerancia al fracaso}
 \begin{tabular}{lrrrr}
 \toprule
-Tolerancia & Efecto $X\rightarrow M$ & Indirecto & IC95\% inf. & IC95\% sup. \\
+Tolerancia & Pendiente condicional $X_c\rightarrow M$ & Indirecto & IC95\% inf. & IC95\% sup. \\
 \midrule
 Baja ($-1$ DE) & 1.6029 & 1.3748 & 1.2880 & 1.4620 \\
 Media & 2.0008 & 1.7162 & 1.6227 & 1.8104 \\
@@ -238,7 +237,7 @@ con IC95\% bootstrap $[0.3758,0.5184]$. Como el intervalo no contiene cero, el e
 
 La evidencia permite reconstruir el proceso completo. Primero, la presión competitiva se asocia con mayor conducta innovadora de los empleados. Segundo, dicha conducta se asocia con mayor desempeño innovador. Tercero, este mecanismo es más intenso cuando la cultura organizacional tolera los errores derivados de experimentar.
 
-En términos gerenciales, la presión competitiva por sí sola no garantiza innovación. Para que se asocie con mejores resultados, la organización debe permitir que los empleados experimenten sin un temor excesivo al fracaso. En consecuencia, se respalda una mediación moderada de primera etapa y las seis hipótesis reciben apoyo.
+En términos gerenciales, la presión competitiva por sí sola no garantiza innovación. Para que se asocie con mejores resultados, la organización debe permitir que los empleados experimenten sin un temor excesivo al fracaso. En consecuencia, los resultados son consistentes con una mediación moderada de primera etapa y las seis hipótesis reciben apoyo estadístico.
 
 \newpage
 \section{Pregunta 2: análisis factorial exploratorio}
@@ -277,7 +276,7 @@ Se rechaza $H_0$, por lo que las correlaciones contienen estructura común sufic
 
 La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El criterio de autovalor mayor que uno se consideró solo como referencia porque puede sobreextraer.
 
-Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La evidencia converge en una solución de cuatro factores, en línea con Blend.
+Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.502. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La evidencia converge en una solución de cuatro factores, en línea con Blend.
 
 \subsection{Extracción, rotación e interpretación}
 
@@ -324,13 +323,15 @@ q28 & .01 & .21 & .53 & -.02 & Interpersonal \\
 \bottomrule
 \end{longtable}
 
-El primer factor está definido principalmente por q8, q10, q13, q14, q16, q17 y q22 y representa entusiasmo por el diseño de experimentos. El segundo factor, definido por q7, q11, q19, q20, q25, q26 y q27, representa amor por la enseñanza. El tercero, asociado principalmente con q5, q18, q23 y q28, refleja ausencia de habilidades interpersonales normales. El cuarto, definido por q3, q4 y q24, representa amor por la estadística.
+El primer factor está definido principalmente por q8, q10, q13, q14, q16, q17 y q22 y representa entusiasmo por el diseño de experimentos. El segundo factor, definido por q7, q11, q19, q20, q25, q26 y q27, representa amor por la enseñanza. El tercero, asociado principalmente con q5, q18, q23 y q28, refleja habilidades interpersonales deficientes, dimensión denominada en el enunciado como ausencia de habilidades interpersonales normales. El cuarto, definido por q3, q4 y q24, representa amor por la estadística.
 
 La estructura general es interpretable, pero no perfecta. q1, q9 y q27 muestran complejidad o cargas cruzadas; q10 y q21 no coinciden limpiamente con una sola dimensión teórica; q14 y q18 presentan cargas secundarias relevantes; q12 no alcanza 0.40 en ningún factor; y q15 también es débil. Una carga cruzada reduce la pureza conceptual de la escala, porque el ítem parece recoger contenido de más de una dimensión. En q12, el problema es aún más claro: no se vincula de manera sustantiva con ninguno de los factores y sería el candidato más evidente a revisión o eliminación.
 
 La correlación factorial más alta fue cercana a 0.47 entre F1 y F3. Esto confirma que los factores se relacionan, pero no son equivalentes, y respalda el uso de una rotación oblicua.
 
 \subsection{Confiabilidad}
+
+La confiabilidad se calculó manteniendo la asignación teórica original de los ítems: diseño experimental (q8, q13, q14, q16, q17 y q22); enseñanza (q7, q10, q11, q19, q20, q25 y q26); habilidades interpersonales deficientes (q2, q5, q6, q12, q18, q23, q27 y q28); y estadística (q1, q3, q4, q9, q15, q21 y q24). Esta composición no reasigna automáticamente cada indicador según su mayor carga empírica.
 
 \begin{table}[H]
 \centering
@@ -342,7 +343,7 @@ Dimensión & Alfa de Cronbach \\
 Diseño experimental & 0.880 \\
 Estadística & 0.830 \\
 Enseñanza & 0.747 \\
-Interpersonal & 0.691 \\
+Habilidades interpersonales deficientes & 0.691 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -353,7 +354,7 @@ El alfa no demuestra unidimensionalidad. Debe interpretarse junto con la estruct
 
 \subsection{Conclusión de la pregunta 2}
 
-La evidencia apoya de manera general la teoría de Blend. La matriz es factorizable, el análisis paralelo favorece cuatro factores y el contenido de estos puede interpretarse como diseño experimental, enseñanza, habilidades interpersonales y estadística.
+La evidencia apoya de manera general la teoría de Blend. La matriz es factorizable, el análisis paralelo favorece cuatro factores y el contenido de estos puede interpretarse como diseño experimental, enseñanza, habilidades interpersonales deficientes y estadística.
 
 No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complejos; q10 y q21 no coinciden limpiamente con una única dimensión; q12 y q15 son débiles; y la dimensión interpersonal presenta menor consistencia. Por tanto, el EECS-R reproduce las cuatro dimensiones principales, pero sería recomendable revisar los ítems problemáticos y validar una versión depurada mediante CFA en una muestra independiente.
 
@@ -495,7 +496,9 @@ El modelo parcial presenta mejores índices de ajuste. La diferencia entre los m
 
 Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan efectos directos sobre IP deteriora significativamente el ajuste. AIC y BIC también son menores en el modelo parcial, aun después de penalizar sus dos parámetros adicionales. Estos valores se calcularon a partir de $\chi^2$ y del número de parámetros, por lo que pueden no coincidir exactamente con criterios basados en log-verosimilitud completa reportados por otros programas.
 
-Además, el modelo parcialmente mediado posee los mismos grados de libertad y prácticamente el mismo $\chi^2$ que el CFA de cinco factores. Esto es coherente con que el componente estructural entre los cinco factores queda saturado o justamente identificado: no añade restricciones de covarianza latente más allá de la medición. El SEM completo sigue teniendo 160 grados de libertad debido al componente de medición. El resultado no debe interpretarse como una prueba independiente de causalidad, sino como evidencia de que el modelo parcial reproduce las relaciones latentes disponibles y que las restricciones del modelo completo son rechazadas.
+Además, el modelo parcialmente mediado presenta los mismos grados de libertad y prácticamente el mismo $\chi^2$ que el CFA de cinco factores correlacionados. Esto ocurre porque el componente estructural entre las cinco variables latentes es saturado: los nueve caminos especificados reproducen todas las covarianzas latentes disponibles y, por ello, esa parte del modelo no impone restricciones contrastables adicionales. El SEM completo conserva 160 grados de libertad debido a las restricciones del modelo de medición.
+
+En consecuencia, el excelente ajuste del modelo parcialmente mediado no constituye por sí solo evidencia de que la estructura causal propuesta sea correcta. La comparación permite concluir que las restricciones adicionales del modelo completamente mediado, $PA\rightarrow IP=0$ y $AC\rightarrow IP=0$, deterioran significativamente el ajuste.
 
 Por tanto, se selecciona la especificación parcialmente mediada. Esta etiqueta describe la estructura del modelo, pero no prueba por sí sola todos los efectos indirectos específicos; para ello se requerirían efectos indirectos e intervalos bootstrap.
 
@@ -537,7 +540,7 @@ La actitud hacia los compañeros no presenta un efecto adicional significativo s
 CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}.
 \end{equation}
 
-PA presenta un efecto positivo importante sobre CO ($B=.4969$, $\beta=.427$, $p<.001$). AC también muestra un efecto positivo y significativo ($B=.2505$, $\beta=.195$, $p<.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
+PA presenta una asociación positiva importante con CO ($B=.4969$, $\beta=.427$, $p<.001$). AC también presenta una asociación positiva y significativa ($B=.2505$, $\beta=.195$, $p<.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
 
 En cambio, ST no presenta un efecto significativo sobre CO cuando PA y AC se incluyen simultáneamente ($B=.1306$, $\beta=.087$, $p=.110$). Este resultado es sustantivamente relevante: la satisfacción no explica compromiso adicional después de controlar las dos condiciones laborales antecedentes. El coeficiente significativo obtenido en una especificación que omitiera PA y AC de esta ecuación sería atribuible, al menos parcialmente, a esa omisión.
 
@@ -547,11 +550,11 @@ En cambio, ST no presenta un efecto significativo sobre CO cuando PA y AC se inc
 IP=\beta_6 ST+\beta_7 CO+\beta_8 PA+\beta_9 AC+\varepsilon_{IP}.
 \end{equation}
 
-CO presenta un efecto positivo y significativo sobre IP ($B=.1576$, $\beta=.329$, $p<.001$). Los trabajadores más comprometidos muestran mayor intención de continuar en la empresa.
+CO presenta una asociación positiva y significativa con IP ($B=.1576$, $\beta=.329$, $p<.001$). Los trabajadores más comprometidos muestran mayor intención de continuar en la empresa.
 
-PA conserva un efecto directo positivo y significativo ($B=.1975$, $\beta=.354$, $p<.001$), y constituye el camino estandarizado más intenso hacia IP. Esto indica que el ambiente se asocia con la intención de permanencia incluso después de considerar satisfacción y compromiso.
+PA conserva una asociación directa positiva y significativa dentro del modelo ($B=.1975$, $\beta=.354$, $p<.001$), y constituye el camino estandarizado más intenso hacia IP. Esto indica que el ambiente se asocia con la intención de permanencia incluso después de considerar satisfacción y compromiso.
 
-AC también presenta un efecto directo positivo, aunque menor ($B=.0709$, $\beta=.115$, $p=.018$). En contraste, ST no explica intención de permanecer adicional una vez incorporados PA, AC y CO ($B=.0485$, $p=.169$).
+AC también presenta una asociación directa positiva, aunque menor ($B=.0709$, $\beta=.115$, $p=.018$). En contraste, ST no explica intención de permanecer adicional una vez incorporados PA, AC y CO ($B=.0485$, $p=.169$).
 
 En conjunto, los resultados muestran que la mediación no se organiza como una cadena simple $ST\rightarrow CO\rightarrow IP$. PA y AC se asocian directamente con el compromiso, mientras que PA, AC y CO se asocian directamente con la intención de permanencia. Los caminos desde ST hacia CO e IP no son significativos en esta especificación. Con la evidencia disponible, CO es el mecanismo potencial más consistente hacia la intención de permanencia, pero no un mediador confirmado, pues no se estimaron sus efectos indirectos con intervalos bootstrap.
 
@@ -578,7 +581,7 @@ z=\frac{b_H-b_M}{\sqrt{SE_H^2+SE_M^2}}.
 \caption{Comparación de relaciones estructurales por género}
 \begin{tabular}{lrrrr}
 \toprule
-Relación & Hombres & Mujeres & z & p \\
+Relación & $B_H$ & $B_M$ & $z$ & $p$ \\
 \midrule
 $PA\rightarrow ST$ & .2594 & .1443 & 1.059 & .290 \\
 $AC\rightarrow ST$ & -.2145 & .3509 & -3.313 & .001 \\
@@ -593,6 +596,8 @@ $CO\rightarrow IP$ & .1327 & .2050 & -1.152 & .250 \\
 \end{tabular}
 \end{table}
 
+\noindent\textit{Nota:} $B_H$ y $B_M$ corresponden a coeficientes no estandarizados estimados por separado para hombres y mujeres.
+
 Con $p$-values no ajustados aparecen tres diferencias: $AC\rightarrow ST$, $AC\rightarrow CO$ y $PA\rightarrow IP$. Sin embargo, al aplicar una corrección Bonferroni para nueve comparaciones ($\alpha=0.05/9=0.0056$), solo $AC\rightarrow ST$ permanece estadísticamente significativa. En ese camino, el signo cambia: es negativo entre hombres y positivo entre mujeres. Las diferencias en $AC\rightarrow CO$ y $PA\rightarrow IP$ deben considerarse sugerentes, no concluyentes.
 
 No se encuentran diferencias por género en $ST\rightarrow CO$: este camino es pequeño y no significativo en ambos grupos.
@@ -606,6 +611,8 @@ El modelo de medición es sólido: el CFA presenta muy buen ajuste, todas las es
 El modelo parcialmente mediado representa mejor los datos que el completamente mediado. Sin embargo, la interpretación sustantiva correcta no es que PA y AC operen principalmente mediante una cadena de satisfacción y compromiso. En la especificación completa, PA se asocia directamente con ST, CO e IP; AC se asocia directamente con CO e IP; y CO se asocia con IP. Los caminos desde ST hacia CO e IP no son estadísticamente significativos.
 
 Por tanto, la percepción del ambiente laboral aparece como el antecedente más consistente: una percepción más favorable se asocia con mayor satisfacción, mayor compromiso y mayor intención de permanecer. La actitud hacia los compañeros contribuye al compromiso y presenta una asociación directa menor con la intención de permanencia. Finalmente, el compromiso organizacional constituye un predictor directo importante de la intención de continuar en la empresa.
+
+Con la evidencia disponible, el compromiso organizacional constituye el mecanismo indirecto potencial más consistente entre PA o AC y la intención de permanecer. Sin embargo, su papel mediador no puede considerarse formalmente confirmado mientras no se estimen los productos indirectos y sus intervalos de confianza bootstrap.
 
 El análisis por género sugiere especialmente una diferencia robusta en $AC\rightarrow ST$; las demás diferencias son exploratorias y deben interpretarse con cautela hasta establecer invariancia de medición.
 
@@ -740,11 +747,11 @@ Los efectos simples se contrastaron mediante pruebas $t$ de Welch y corrección 
 
 \subsubsection{a) ¿Incide el tipo de distribución?}
 
-Sí. El efecto multivariado fue significativo y los tres ANOVA mostraron medias superiores bajo distribución directa. Por tanto, el tipo de distribución incide en la lealtad.
+Sí. Se observan diferencias significativas en el perfil de lealtad según el tipo de distribución, y los tres ANOVA muestran medias superiores bajo distribución directa.
 
 \subsubsection{b) ¿Existen diferencias según tamaño?}
 
-Sí. El efecto multivariado de tamaño fue significativo y las empresas grandes presentan mayores medias de satisfacción, recomendación y recompra.
+Sí. Se observan diferencias significativas en el perfil de lealtad según el tamaño de la empresa, y las empresas grandes presentan mayores medias de satisfacción, recomendación y recompra.
 
 \subsubsection{c) ¿Distribución y tamaño son antecedentes independientes?}
 
@@ -758,7 +765,7 @@ Desde una perspectiva gerencial, HBAT debería priorizar la fuerza de ventas dir
 
 \section{Conclusión general}
 
-Los cuatro análisis responden preguntas distintas. La mediación moderada identifica un mecanismo cuyo tamaño se asocia con una condición organizacional; el AFE evalúa la estructura latente de un instrumento; el CFA/SEM distingue entre calidad de medición y relaciones estructurales; y el MANOVA evalúa efectos conjuntos e interacción sobre múltiples resultados.
+Los cuatro análisis responden preguntas distintas. La mediación moderada muestra que la magnitud del efecto indirecto varía según una condición organizacional; el AFE evalúa la estructura latente de un instrumento; el CFA/SEM distingue entre calidad de medición y relaciones estructurales; y el MANOVA evalúa efectos conjuntos e interacción sobre múltiples resultados.
 
 En conjunto, los resultados muestran que las relaciones analizadas no son puramente directas. La presión competitiva se relaciona con el desempeño a través de la conducta innovadora y bajo una cultura favorable; la teoría de Blend emerge en cuatro dimensiones aunque requiere depuración de ítems; la intención de permanencia se asocia principalmente con el ambiente, las relaciones con compañeros y el compromiso, con diferencias exploratorias por género; y la lealtad se asocia conjuntamente con canal y tamaño. Esta lectura sustantiva, además del reporte estadístico, es la principal conclusión metodológica de la tarea.
 

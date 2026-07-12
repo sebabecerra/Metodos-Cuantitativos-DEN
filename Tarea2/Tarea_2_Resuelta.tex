@@ -153,7 +153,7 @@ X_c=X-\bar X, \qquad W_c=W-\bar W,
 
 para luego construir el término de interacción $X_cW_c$. El centrado no altera el ajuste ni la significancia de la interacción, pero permite interpretar los efectos principales en el nivel medio de la otra variable y reduce la colinealidad no esencial.
 
-Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores estándar robustos HC3. Los efectos indirectos condicionales y el índice de mediación moderada se evaluaron mediante 5.000 remuestras bootstrap. La regla de decisión fue: para coeficientes individuales, $p<0.05$; para efectos indirectos, intervalo de confianza bootstrap que no incluya cero.
+Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores estándar robustos HC3. Los efectos indirectos condicionales y el índice de mediación moderada se evaluaron mediante 5.000 remuestras bootstrap. La regla de decisión fue: para coeficientes individuales, $p<.05$; para efectos indirectos, intervalo de confianza bootstrap que no incluya cero.
 
 \subsection{Resultados}
 
@@ -166,10 +166,10 @@ Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores 
 \toprule
 Predictor & $B$ & EE robusto & $t$ & $p$ \\
 \midrule
-Constante & 9.5207 & 0.0344 & 277.01 & $<0.001$ \\
-Presión competitiva centrada ($a_1$) & 2.0008 & 0.0394 & 50.82 & $<0.001$ \\
-Tolerancia centrada ($a_2$) & 2.8732 & 0.0470 & 61.14 & $<0.001$ \\
-Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<0.001$ \\
+Constante & 9.5207 & 0.0344 & 277.01 & $<.001$ \\
+Presión competitiva centrada ($a_1$) & 2.0008 & 0.0394 & 50.82 & $<.001$ \\
+Tolerancia centrada ($a_2$) & 2.8732 & 0.0470 & 61.14 & $<.001$ \\
+Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -187,9 +187,9 @@ El resultado central es la interacción positiva y significativa. El coeficiente
 \toprule
 Predictor & $B$ & EE robusto & $t$ & $p$ \\
 \midrule
-Constante & 1.4086 & 0.1564 & 9.01 & $<0.001$ \\
-Presión competitiva centrada ($c'$) & 0.0265 & 0.0492 & 0.54 & 0.590 \\
-Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<0.001$ \\
+Constante & 1.4086 & 0.1564 & 9.01 & $<.001$ \\
+Presión competitiva centrada ($c'$) & 0.0265 & 0.0492 & 0.54 & .590 \\
+Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -203,7 +203,7 @@ En cambio, el efecto directo residual de la presión competitiva no es significa
 La presión competitiva presenta un efecto total positivo y significativo sobre el desempeño:
 
 \[
-c=2.0281,\qquad p<0.001.
+c=2.0281,\qquad p<.001.
 \]
 
 Por tanto, se apoya H1. Esta relación global es compatible con el modelo propuesto, pero la explicación del mecanismo requiere considerar las regresiones anteriores y el efecto indirecto.
@@ -268,7 +268,7 @@ H_0:\mathbf{R}=\mathbf{I}.
 El resultado fue:
 
 \[
-\chi^2(378)=3045.39,\qquad p<0.001.
+\chi^2(378)=3045.39,\qquad p<.001.
 \]
 
 Se rechaza $H_0$, por lo que las correlaciones contienen estructura común suficiente. El índice KMO global fue 0.895, valor considerado meritorio. En conjunto, ambos resultados justifican continuar con el AFE, aunque no determinan cuántos factores existen ni prueban por sí solos la teoría.
@@ -386,7 +386,7 @@ Intención de permanecer & IP & IP1, IP2, IP3, IP4 \\
 
 La base contiene 400 trabajadores. Cada constructo se especifica de manera reflectiva: el factor latente explica las respuestas observadas en sus cuatro indicadores.
 
-\subsection{Especificación correcta de los modelos estructurales}
+\subsection{Especificación de los modelos estructurales}
 
 Las figuras del enunciado establecen que PA y AC se asocian con ST y CO; además, ST se asocia con CO, y ST y CO se asocian con IP. La diferencia entre los modelos consiste únicamente en que el modelo parcialmente mediado agrega los efectos directos de PA y AC sobre IP.
 
@@ -490,7 +490,7 @@ Parcialmente mediado & 220.31 & 160 & .985 & .982 & .031 & 50 & 320.31 & 519.88 
 El modelo parcial presenta mejores índices de ajuste. La diferencia entre los modelos fue:
 
 \[
-\Delta\chi^2(2)=46.83,\qquad p<0.001.
+\Delta\chi^2(2)=46.83,\qquad p<.001.
 \]
 
 Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan efectos directos sobre IP deteriora significativamente el ajuste. AIC y BIC también son menores en el modelo parcial, aun después de penalizar sus dos parámetros adicionales. Estos valores se calcularon a partir de $\chi^2$ y del número de parámetros, por lo que pueden no coincidir exactamente con criterios basados en log-verosimilitud completa reportados por otros programas.
@@ -508,15 +508,15 @@ Por tanto, se selecciona la especificación parcialmente mediada. Esta etiqueta 
 \toprule
 Relación & B & $\beta$ estandarizado & p \\
 \midrule
-$PA\rightarrow ST$ & .1848 & .237 & $<0.001$ \\
+$PA\rightarrow ST$ & .1848 & .237 & $<.001$ \\
 $AC\rightarrow ST$ & -.0306 & -.036 & .554 \\
-$PA\rightarrow CO$ & .4969 & .427 & $<0.001$ \\
-$AC\rightarrow CO$ & .2505 & .195 & $<0.001$ \\
+$PA\rightarrow CO$ & .4969 & .427 & $<.001$ \\
+$AC\rightarrow CO$ & .2505 & .195 & $<.001$ \\
 $ST\rightarrow CO$ & .1306 & .087 & .110 \\
-$PA\rightarrow IP$ & .1975 & .354 & $<0.001$ \\
+$PA\rightarrow IP$ & .1975 & .354 & $<.001$ \\
 $AC\rightarrow IP$ & .0709 & .115 & .018 \\
 $ST\rightarrow IP$ & .0485 & .068 & .169 \\
-$CO\rightarrow IP$ & .1576 & .329 & $<0.001$ \\
+$CO\rightarrow IP$ & .1576 & .329 & $<.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -527,7 +527,7 @@ $CO\rightarrow IP$ & .1576 & .329 & $<0.001$ \\
 ST=\beta_1 PA+\beta_2 AC+\varepsilon_{ST}.
 \end{equation}
 
-La percepción del ambiente tiene un efecto positivo y significativo sobre la satisfacción ($B=.1848$, $\beta=.237$, $p<0.001$). Una percepción más favorable del ambiente físico y funcional se asocia con mayor satisfacción laboral.
+La percepción del ambiente tiene un efecto positivo y significativo sobre la satisfacción ($B=.1848$, $\beta=.237$, $p<.001$). Una percepción más favorable del ambiente físico y funcional se asocia con mayor satisfacción laboral.
 
 La actitud hacia los compañeros no presenta un efecto adicional significativo sobre ST una vez controlada PA ($B=-.0306$, $p=.554$). Esto no significa que las relaciones con compañeros sean irrelevantes en general; significa que no explican variación adicional en satisfacción dentro de esta ecuación.
 
@@ -537,7 +537,7 @@ La actitud hacia los compañeros no presenta un efecto adicional significativo s
 CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}.
 \end{equation}
 
-PA presenta un efecto positivo importante sobre CO ($B=.4969$, $\beta=.427$, $p<0.001$). AC también muestra un efecto positivo y significativo ($B=.2505$, $\beta=.195$, $p<0.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
+PA presenta un efecto positivo importante sobre CO ($B=.4969$, $\beta=.427$, $p<.001$). AC también muestra un efecto positivo y significativo ($B=.2505$, $\beta=.195$, $p<.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
 
 En cambio, ST no presenta un efecto significativo sobre CO cuando PA y AC se incluyen simultáneamente ($B=.1306$, $\beta=.087$, $p=.110$). Este resultado es sustantivamente relevante: la satisfacción no explica compromiso adicional después de controlar las dos condiciones laborales antecedentes. El coeficiente significativo obtenido en una especificación que omitiera PA y AC de esta ecuación sería atribuible, al menos parcialmente, a esa omisión.
 
@@ -547,13 +547,13 @@ En cambio, ST no presenta un efecto significativo sobre CO cuando PA y AC se inc
 IP=\beta_6 ST+\beta_7 CO+\beta_8 PA+\beta_9 AC+\varepsilon_{IP}.
 \end{equation}
 
-CO presenta un efecto positivo y significativo sobre IP ($B=.1576$, $\beta=.329$, $p<0.001$). Los trabajadores más comprometidos muestran mayor intención de continuar en la empresa.
+CO presenta un efecto positivo y significativo sobre IP ($B=.1576$, $\beta=.329$, $p<.001$). Los trabajadores más comprometidos muestran mayor intención de continuar en la empresa.
 
-PA conserva un efecto directo positivo y significativo ($B=.1975$, $\beta=.354$, $p<0.001$), y constituye el camino estandarizado más intenso hacia IP. Esto indica que el ambiente se asocia con la intención de permanencia incluso después de considerar satisfacción y compromiso.
+PA conserva un efecto directo positivo y significativo ($B=.1975$, $\beta=.354$, $p<.001$), y constituye el camino estandarizado más intenso hacia IP. Esto indica que el ambiente se asocia con la intención de permanencia incluso después de considerar satisfacción y compromiso.
 
 AC también presenta un efecto directo positivo, aunque menor ($B=.0709$, $\beta=.115$, $p=.018$). En contraste, ST no explica intención de permanecer adicional una vez incorporados PA, AC y CO ($B=.0485$, $p=.169$).
 
-En conjunto, los resultados muestran que la mediación no se organiza como una cadena simple $ST\rightarrow CO\rightarrow IP$. PA y AC se asocian directamente con el compromiso, mientras que PA, AC y CO se asocian directamente con la intención de permanencia. Los caminos desde ST hacia CO e IP no son significativos en el modelo correctamente especificado.
+En conjunto, los resultados muestran que la mediación no se organiza como una cadena simple $ST\rightarrow CO\rightarrow IP$. PA y AC se asocian directamente con el compromiso, mientras que PA, AC y CO se asocian directamente con la intención de permanencia. Los caminos desde ST hacia CO e IP no son significativos en esta especificación. Con la evidencia disponible, CO es el mecanismo potencial más consistente hacia la intención de permanencia, pero no un mediador confirmado, pues no se estimaron sus efectos indirectos con intervalos bootstrap.
 
 \subsection{c) Comparación de relaciones entre hombres y mujeres}
 
@@ -654,7 +654,7 @@ Las tres variables de lealtad presentan $\alpha=0.876$ y correlaciones entre 0.6
 Box $M$ no fue significativo:
 
 \[
-\chi^2(18)=27.55,\qquad p=0.069,
+\chi^2(18)=27.55,\qquad p=.069,
 \]
 
 por lo que no existe evidencia suficiente para rechazar la igualdad de matrices de covarianza; esto no prueba igualdad perfecta. Levene fue significativo para satisfacción y recompra, pero no para recomendación. Esto exige cautela en los ANOVA univariados, aunque no invalida automáticamente el MANOVA debido al balance razonable de las celdas y al resultado favorable de Box $M$.
@@ -678,9 +678,9 @@ Valores menores indican mayor separación multivariada.
 \toprule
 Efecto & Wilks $\Lambda$ & $F$ & $gl_1$ & $gl_2$ & $p$ \\
 \midrule
-Distribución & .8526 & 11.184 & 3 & 194 & $<0.001$ \\
-Tamaño & .9028 & 6.959 & 3 & 194 & $<0.001$ \\
-Distribución$\times$Tamaño & .9034 & 6.917 & 3 & 194 & $<0.001$ \\
+Distribución & .8526 & 11.184 & 3 & 194 & $<.001$ \\
+Tamaño & .9028 & 6.959 & 3 & 194 & $<.001$ \\
+Distribución$\times$Tamaño & .9034 & 6.917 & 3 & 194 & $<.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -696,16 +696,16 @@ Se rechazan las tres hipótesis nulas. El canal se asocia con el perfil conjunto
 \toprule
 Resultado & Efecto & $F(1,196)$ & $p$ & $\eta_p^2$ \\
 \midrule
-Satisfacción & Distribución & 118.934 & $<0.001$ & .378 \\
- & Tamaño & 27.977 & $<0.001$ & .125 \\
- & Interacción & 17.258 & $<0.001$ & .081 \\
+Satisfacción & Distribución & 118.934 & $<.001$ & .378 \\
+ & Tamaño & 27.977 & $<.001$ & .125 \\
+ & Interacción & 17.258 & $<.001$ & .081 \\
 \midrule
-Recomendación & Distribución & 83.116 & $<0.001$ & .298 \\
- & Tamaño & 43.401 & $<0.001$ & .181 \\
+Recomendación & Distribución & 83.116 & $<.001$ & .298 \\
+ & Tamaño & 43.401 & $<.001$ & .181 \\
  & Interacción & 1.506 & .221 & .008 \\
 \midrule
-Recompra & Distribución & 55.402 & $<0.001$ & .220 \\
- & Tamaño & 29.988 & $<0.001$ & .133 \\
+Recompra & Distribución & 55.402 & $<.001$ & .220 \\
+ & Tamaño & 29.988 & $<.001$ & .133 \\
  & Interacción & 6.793 & .010 & .033 \\
 \bottomrule
 \end{tabular}
@@ -752,7 +752,7 @@ No. La interacción multivariada fue significativa. La ventaja del canal directo
 
 \subsection{Conclusión de la pregunta 4}
 
-El tipo de distribución y el tamaño influyen en el perfil conjunto de lealtad. Los clientes atendidos directamente presentan mejores resultados y las empresas grandes muestran mayor lealtad promedio. Sin embargo, ambos factores no operan independientemente: la eficacia del canal directo es mayor entre empresas grandes.
+El tipo de distribución y el tamaño se asocian con el perfil conjunto de lealtad. Los clientes atendidos directamente presentan mejores resultados y las empresas grandes muestran mayor lealtad promedio. Sin embargo, ambos factores no operan independientemente: la eficacia del canal directo es mayor entre empresas grandes.
 
 Desde una perspectiva gerencial, HBAT debería priorizar la fuerza de ventas directa para clientes grandes, donde su asociación con satisfacción y recompra es especialmente fuerte, y evaluar estrategias diferenciadas para empresas pequeñas. Estas conclusiones describen asociaciones y no prueban causalidad definitiva, pues el canal podría estar relacionado con otras características no incluidas en el modelo.
 

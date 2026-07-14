@@ -175,7 +175,7 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 
 El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
-El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 unidades de la escala de conducta innovadora por cada punto de presión competitiva. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
+El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
 
 \subsubsection{Regresión 2: desempeño innovador}
 
@@ -294,7 +294,7 @@ Se rechaza $H_0$, por lo que las correlaciones contienen estructura común sufic
 
 La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El criterio de autovalor mayor que uno se consideró solo como referencia porque puede sobreextraer.
 
-Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.502. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La evidencia converge en una solución de cuatro factores, en línea con Blend.
+Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La evidencia converge en una solución de cuatro factores, en línea con Blend.
 
 \subsection{Extracción, rotación e interpretación}
 
@@ -377,13 +377,14 @@ La evidencia apoya de manera general la teoría de Blend. La matriz es factoriza
 No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complejos; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q12 no presenta carga sustantiva y q15 es débil; y la dimensión de habilidades interpersonales deficientes presenta menor consistencia. Por tanto, el EECS-R reproduce las cuatro dimensiones principales, pero sería recomendable revisar los ítems problemáticos y validar una versión depurada mediante CFA en una muestra independiente. En síntesis, la estructura empírica reproduce el número de dimensiones propuesto por la teoría de Blend, pero no replica completamente la asignación teórica de los ítems. En consecuencia, los resultados respaldan la dimensionalidad general del instrumento, aunque sugieren la necesidad de refinar la definición conceptual de algunos factores.
 
 \newpage
+
 \section{Pregunta 3: CFA y ecuaciones estructurales}
 
 \subsection{Justificación conceptual del análisis}
 
-El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. En particular, se consideran cinco constructos: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada uno fue medido mediante varios ítems, el análisis debe tratar explícitamente el error de medición asociado a los indicadores observados.
+El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. Se consideran cinco constructos latentes: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada constructo fue medido mediante cuatro ítems observados, primero se evalúa el modelo de medición y luego se comparan los modelos estructurales propuestos.
 
-Por esta razón, el análisis se desarrolla en dos etapas articuladas. Primero se utiliza análisis factorial confirmatorio (CFA) para evaluar si los indicadores representan adecuadamente sus constructos. Luego se estiman y comparan los modelos de ecuaciones estructurales (SEM) planteados en el enunciado. Esta secuencia es indispensable: si el modelo de medición no es adecuado, las relaciones estructurales entre constructos pierden validez interpretativa.
+Por esta razón se utiliza CFA y SEM con \texttt{lavaan}. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
 
 \subsection{Constructos e indicadores}
 
@@ -403,7 +404,7 @@ Intención de permanecer & IP & IP1, IP2, IP3, IP4 \\
 \end{tabular}
 \end{table}
 
-La base contiene 400 trabajadores. Cada constructo se especifica de manera reflectiva: el factor latente explica las respuestas observadas en sus cuatro indicadores.
+La base contiene 400 trabajadores: 200 hombres y 200 mujeres. La variable género está codificada como 0 = masculino y 1 = femenino. Cada constructo se especifica de manera reflectiva.
 
 \subsection{Especificación de los modelos estructurales}
 
@@ -411,15 +412,13 @@ Las figuras del enunciado establecen que PA y AC se asocian con ST y CO; además
 
 \subsubsection{Modelo completamente mediado}
 
-El modelo completamente mediado se expresa mediante tres ecuaciones:
-
 \begin{align}
 ST &= \beta_1 PA + \beta_2 AC + \varepsilon_{ST}, \\
 CO &= \beta_3 PA + \beta_4 AC + \beta_5 ST + \varepsilon_{CO}, \\
 IP &= \beta_6 ST + \beta_7 CO + \varepsilon_{IP}.
 \end{align}
 
-La primera ecuación evalúa si el ambiente y las relaciones con los compañeros se asocian con la satisfacción laboral. La segunda evalúa si esas mismas condiciones, junto con la satisfacción, se asocian con el compromiso organizacional. La tercera evalúa si la intención de permanecer se asocia con la satisfacción y el compromiso. En este modelo, PA y AC no poseen caminos directos hacia IP; sus efectos deben transmitirse a través de ST y CO.
+En este modelo, PA y AC no poseen caminos directos hacia IP; sus asociaciones con la intención de permanecer deben transmitirse a través de ST y CO.
 
 \subsubsection{Modelo parcialmente mediado}
 
@@ -431,25 +430,47 @@ IP = \beta_6 ST + \beta_7 CO + \beta_8 PA + \beta_9 AC + \varepsilon_{IP}.
 
 Por tanto, permite que PA y AC se relacionen con la intención de permanecer tanto indirectamente, por medio de ST y CO, como directamente. Los modelos son anidados: el completo se obtiene al fijar $\beta_8=\beta_9=0$.
 
-\subsection{Procedimiento de estimación}
-
-El análisis se realizó en tres etapas. Primero se estimó un CFA de cinco factores correlacionados. Segundo, se estimaron los modelos completamente y parcialmente mediados y se compararon mediante ajuste global, diferencia de $\chi^2$ y criterios de información. Finalmente, el modelo seleccionado se evaluó mediante SEM multigrupo para comparar la estructura entre hombres y mujeres, considerando invariancia de medición y restricciones sobre los caminos estructurales.
-
 \subsection{a) Evaluación del modelo de medición}
 
 \subsubsection{Ajuste global del CFA}
 
-El CFA presentó un ajuste muy bueno:
+El CFA de cinco factores correlacionados presentó un ajuste muy bueno. Los índices robustos estimados con \texttt{lavaan} fueron:
 
 \[
-\chi^2(160)=220.31,\qquad CFI=0.985,\qquad TLI=0.982,\qquad RMSEA=0.031.
+\begin{aligned}
+\chi^2_{rob}(160)&=216.90, & CFI_{rob}&=.987, & TLI_{rob}&=.985,\\
+RMSEA_{rob}&=.028, & SRMR&=.033.
+\end{aligned}
 \]
 
-El CFI y el TLI superan 0.95 y el RMSEA es inferior a 0.06. Por tanto, la estructura de cinco factores reproduce adecuadamente la matriz de covarianzas observada.
+El CFI y el TLI superan .95, el RMSEA es inferior a .06 y el SRMR es bajo. Por tanto, la estructura de cinco factores reproduce adecuadamente la matriz de covarianzas observada.
+
+\begin{table}[H]
+\centering
+\caption{Cargas factoriales estandarizadas del CFA}
+\begin{tabular}{llc@{\qquad}llc}
+\toprule
+Constructo & Ítem & Carga & Constructo & Ítem & Carga \\
+\midrule
+AC & AC1 & .822 & ST & ST1 & .737 \\
+AC & AC2 & .820 & ST & ST2 & .737 \\
+AC & AC3 & .837 & ST & ST3 & .697 \\
+AC & AC4 & .815 & ST & ST4 & .709 \\
+PA & PA1 & .692 & CO & CO1 & .583 \\
+PA & PA2 & .804 & CO & CO2 & .886 \\
+PA & PA3 & .778 & CO & CO3 & .657 \\
+PA & PA4 & .823 & CO & CO4 & .836 \\
+IP & IP1 & .811 & IP & IP2 & .864 \\
+IP & IP3 & .741 & IP & IP4 & .852 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las cargas estandarizadas oscilan entre .583 y .886. La mayoría supera .70. La carga más baja corresponde a CO1, pero sigue siendo sustantiva y no justifica eliminar el indicador, especialmente porque la escala completa conserva buena confiabilidad.
 
 \subsubsection{Confiabilidad y validez convergente}
 
-La confiabilidad se evaluó mediante alfa de Cronbach y confiabilidad compuesta (CR). La validez convergente se analizó mediante la varianza media extraída (AVE):
+La confiabilidad se evaluó mediante alfa de Cronbach y confiabilidad compuesta (CR). La validez convergente se evaluó mediante varianza media extraída (AVE):
 
 \begin{equation}
 CR=\frac{\left(\sum_i\lambda_i\right)^2}{\left(\sum_i\lambda_i\right)^2+\sum_i\theta_i},
@@ -464,26 +485,24 @@ AVE=\frac{\sum_i\lambda_i^2}{\sum_i\lambda_i^2+\sum_i\theta_i}.
 \toprule
 Constructo & Alfa & CR & AVE & $\sqrt{AVE}$ & Carga mín. & Carga máx. \\
 \midrule
-AC & .891 & .894 & .679 & .824 & .816 & .837 \\
+AC & .891 & .894 & .679 & .824 & .815 & .837 \\
 PA & .847 & .858 & .602 & .776 & .692 & .823 \\
 ST & .811 & .812 & .519 & .720 & .697 & .737 \\
-CO & .823 & .834 & .564 & .751 & .584 & .885 \\
+CO & .823 & .834 & .564 & .751 & .583 & .886 \\
 IP & .886 & .890 & .670 & .818 & .741 & .864 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Todos los valores de alfa y CR son superiores a 0.70, por lo que existe consistencia interna adecuada. Las AVE superan 0.50, indicando que cada constructo explica, en promedio, más de la mitad de la varianza de sus indicadores. La carga más baja, 0.584, continúa siendo sustantiva; por ello no fue necesario eliminar ítems.
+Todos los valores de alfa y CR son superiores a .70, por lo que existe consistencia interna adecuada. Todas las AVE superan .50, indicando que cada constructo explica más de la mitad de la varianza de sus indicadores.
 
 \subsubsection{Validez discriminante}
 
-La correlación latente más alta fue $r_{PA,IP}=0.562$, inferior a la menor raíz de AVE, correspondiente a ST ($\sqrt{AVE}=0.720$). Por tanto, se cumple el criterio de Fornell--Larcker. El HTMT máximo fue 0.569, claramente inferior al umbral conservador de 0.85.
+La correlación latente más alta fue $r_{PA,IP}=.562$, inferior a la menor raíz de AVE, correspondiente a ST ($\sqrt{AVE}=.720$). Por tanto, se cumple el criterio de Fornell--Larcker. Además, el HTMT máximo fue .569, claramente inferior al umbral conservador de .85.
 
 En consecuencia, los constructos están relacionados, pero no son empíricamente redundantes. El modelo de medición presenta confiabilidad, validez convergente y validez discriminante adecuadas, por lo que resulta razonable continuar con el análisis estructural.
 
 \subsection{b) Selección del modelo estructural superior}
-
-\subsubsection{Lógica de la comparación}
 
 La comparación evalúa si los caminos directos $PA\rightarrow IP$ y $AC\rightarrow IP$ pueden fijarse simultáneamente en cero. Las hipótesis son:
 
@@ -495,151 +514,147 @@ H_1:\text{al menos uno de los dos caminos es distinto de cero}.
 
 \begin{table}[H]
 \centering
-\caption{Comparación de los modelos estructurales}
+\caption{Comparación de los modelos estructurales en lavaan}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccccc}
 \toprule
-Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $k$ & AIC & BIC \\
+Modelo & $\chi^2_{rob}$ & gl & CFI$_{rob}$ & TLI$_{rob}$ & RMSEA$_{rob}$ & SRMR & AIC & BIC \\
 \midrule
-Completamente mediado & 267.13 & 162 & .974 & .969 & .040 & 48 & 363.13 & 554.72 \\
-Parcialmente mediado & 220.31 & 160 & .985 & .982 & .031 & 50 & 320.31 & 519.88 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-El modelo parcial presenta mejores índices de ajuste. La diferencia entre los modelos fue:
-
-\[
-\Delta\chi^2(2)=46.83,\qquad p<.001.
-\]
-
-Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan efectos directos sobre IP deteriora significativamente el ajuste. AIC y BIC también son menores en el modelo parcial, aun después de penalizar sus dos parámetros adicionales. Estos valores se calcularon a partir de $\chi^2$ y del número de parámetros, por lo que pueden no coincidir exactamente con criterios basados en log-verosimilitud completa reportados por otros programas.
-
-Además, el modelo parcialmente mediado presenta los mismos grados de libertad y prácticamente el mismo $\chi^2$ que el CFA de cinco factores correlacionados. Esto ocurre porque el componente estructural entre las cinco variables latentes es saturado: los nueve caminos especificados reproducen todas las covarianzas latentes disponibles y, por ello, esa parte del modelo no impone restricciones contrastables adicionales. El SEM completo conserva 160 grados de libertad debido a las restricciones del modelo de medición.
-
-En consecuencia, el excelente ajuste del modelo parcialmente mediado no constituye por sí solo evidencia de que la estructura causal propuesta sea correcta. La comparación permite concluir que las restricciones adicionales del modelo completamente mediado, $PA\rightarrow IP=0$ y $AC\rightarrow IP=0$, deterioran significativamente el ajuste.
-
-Por tanto, se selecciona la especificación parcialmente mediada. Esta etiqueta describe la estructura del modelo, pero no prueba por sí sola todos los efectos indirectos específicos; para ello se requerirían efectos indirectos e intervalos bootstrap.
-
-\subsubsection{Explicación de cada regresión estructural del modelo seleccionado}
-
-\begin{table}[H]
-\centering
-\caption{Coeficientes del modelo parcialmente mediado}
-\begin{tabular}{lccc}
-\toprule
-Relación & B & $\beta$ estandarizado & p \\
-\midrule
-$PA\rightarrow ST$ & .1848 & .237 & $<.001$ \\
-$AC\rightarrow ST$ & -.0306 & -.036 & .554 \\
-$PA\rightarrow CO$ & .4969 & .427 & $<.001$ \\
-$AC\rightarrow CO$ & .2505 & .195 & $<.001$ \\
-$ST\rightarrow CO$ & .1306 & .087 & .110 \\
-$PA\rightarrow IP$ & .1975 & .354 & $<.001$ \\
-$AC\rightarrow IP$ & .0709 & .115 & .018 \\
-$ST\rightarrow IP$ & .0485 & .068 & .169 \\
-$CO\rightarrow IP$ & .1576 & .329 & $<.001$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsubsection{Primera regresión estructural: satisfacción laboral}
-
-\begin{equation}
-ST=\beta_1 PA+\beta_2 AC+\varepsilon_{ST}.
-\end{equation}
-
-La percepción del ambiente presenta una asociación positiva y significativa con la satisfacción ($B=.1848$, $\beta=.237$, $p<.001$). Una percepción más favorable del ambiente físico y funcional se asocia con mayor satisfacción laboral.
-
-La actitud hacia los compañeros no presenta una asociación adicional significativa con ST una vez controlada PA ($B=-.0306$, $p=.554$). Esto no significa que las relaciones con compañeros sean irrelevantes en general; significa que no explican variación adicional en satisfacción dentro de esta ecuación.
-
-\subsubsection{Segunda regresión estructural: compromiso organizacional}
-
-\begin{equation}
-CO=\beta_3 PA+\beta_4 AC+\beta_5 ST+\varepsilon_{CO}.
-\end{equation}
-
-PA presenta una asociación positiva importante con CO ($B=.4969$, $\beta=.427$, $p<.001$). AC también presenta una asociación positiva y significativa ($B=.2505$, $\beta=.195$, $p<.001$). Por tanto, tanto el ambiente como las relaciones con los compañeros se asocian directamente con el compromiso organizacional.
-
-En cambio, ST no presenta un coeficiente significativo en la ecuación de CO cuando PA y AC se incluyen simultáneamente ($B=.1306$, $\beta=.087$, $p=.110$). Este resultado es sustantivamente relevante: la satisfacción no explica compromiso adicional después de controlar las dos condiciones laborales antecedentes. El coeficiente significativo obtenido en una especificación que omitiera PA y AC de esta ecuación sería atribuible, al menos parcialmente, a esa omisión.
-
-\subsubsection{Tercera regresión estructural: intención de permanecer}
-
-\begin{equation}
-IP=\beta_6 ST+\beta_7 CO+\beta_8 PA+\beta_9 AC+\varepsilon_{IP}.
-\end{equation}
-
-CO presenta una asociación positiva y significativa con IP ($B=.1576$, $\beta=.329$, $p<.001$). Los trabajadores más comprometidos muestran mayor intención de continuar en la empresa.
-
-PA conserva una asociación directa positiva y significativa dentro del modelo ($B=.1975$, $\beta=.354$, $p<.001$), y constituye el camino estandarizado más intenso hacia IP. Esto indica que el ambiente se asocia con la intención de permanencia incluso después de considerar satisfacción y compromiso.
-
-AC también presenta una asociación directa positiva, aunque menor ($B=.0709$, $\beta=.115$, $p=.018$). En contraste, ST no explica intención de permanecer adicional una vez incorporados PA, AC y CO ($B=.0485$, $p=.169$).
-
-En conjunto, los resultados muestran que la mediación no se organiza como una cadena simple $ST\rightarrow CO\rightarrow IP$. PA y AC se asocian directamente con el compromiso, mientras que PA, AC y CO se asocian directamente con la intención de permanencia. Los caminos desde ST hacia CO e IP no son significativos en esta especificación. Con la evidencia disponible, CO es el mecanismo potencial más consistente hacia la intención de permanencia, pero no un mediador confirmado, pues no se estimaron sus efectos indirectos con intervalos bootstrap.
-
-
-\subsection{c) Comparación entre hombres y mujeres}
-
-Para evaluar si las relaciones del modelo seleccionado se comportan igual entre hombres y mujeres, se realizó un análisis SEM multigrupo. La lógica fue comparar modelos cada vez más restrictivos: primero se evaluó la misma estructura general en ambos grupos, luego la igualdad de cargas factoriales, después la igualdad de interceptos y, finalmente, la igualdad de los caminos estructurales.
-
-El modelo parcial ajustó adecuadamente cuando se estimó por separado en ambos grupos:
-
-\[
-\text{Hombres: } n=200,\ \chi^2(160)=189.98,\ CFI=.981,\ TLI=.977,\ RMSEA=.031,
-\]
-
-\[
-\text{Mujeres: } n=200,\ \chi^2(160)=213.50,\ CFI=.972,\ TLI=.967,\ RMSEA=.041.
-\]
-
-La Tabla siguiente resume la secuencia formal de invariancia. El criterio principal fue el cambio en CFI, considerando aceptable una caída no superior a .010.
-
-
-
-\begin{table}[H]
-\centering
-\caption{Pruebas de invariancia multigrupo por género}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrrrrr}
-\toprule
-Modelo & $\chi^2$ & gl & CFI & TLI & RMSEA & $\Delta\chi^2$ & $\Delta gl$ & $p(\Delta\chi^2)$ & $\Delta CFI$ \\
-\midrule
-Configural & 403.4729 & 320 & .9762 & .9717 & .0256 & -- & -- & -- & -- \\
-Métrica completa & 461.4383 & 335 & .9639 & .9591 & .0308 & 57.9654 & 15 & $<.001$ & -.0123 \\
-Métrica parcial (permite diferir CO3) & 439.3743 & 334 & .9699 & .9658 & .0281 & 35.9015 & 14 & .0011 & -.0062 \\
-Escalar: interceptos iguales y carga de CO3 libre & 492.5408 & 349 & .9591 & .9554 & .0321 & 53.1665 & 15 & $<.001$ & -.0109 \\
-Caminos estructurales iguales sobre el modelo métrico parcial & 468.3867 & 343 & .9642 & .9604 & .0303 & 29.0124 & 9 & $<.001$ & -.0057 \\
+Completamente mediado & 260.86 & 162 & .976 & .972 & .038 & .058 & 24690.37 & 24961.79 \\
+Parcialmente mediado & 216.90 & 160 & .987 & .985 & .028 & .033 & 24647.54 & 24926.95 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
+Con MLR, la comparación entre modelos anidados debe hacerse mediante una prueba robusta de diferencia, no restando manualmente los chi-cuadrados. La prueba robusta de Satorra--Bentler entregó:
 
-\noindent\textit{Nota:} la métrica completa se compara contra el modelo configural; la métrica parcial también se compara contra el configural. El modelo escalar y el modelo de caminos estructurales iguales se comparan contra la métrica parcial; en ambos se mantiene libre la carga de CO3.
+\[
+\Delta\chi^2_{SB}(2)=31.12,\qquad p<.001.
+\]
 
-Los resultados muestran que el modelo configural presenta buen ajuste, por lo que la estructura general es plausible tanto en hombres como en mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.0123$). Se realizó una inspección secuencial de restricciones de cargas factoriales, liberando una carga a la vez y comparando la mejora de ajuste; la mayor mejora correspondió a permitir que la carga factorial de CO3 difiriera entre hombres y mujeres. Con esa liberación se obtiene invariancia métrica parcial ($\Delta CFI=-.0062$), suficiente para comparar los caminos estructurales bajo invariancia métrica parcial. La detección de una carga no invariante y la adopción de una solución de invariancia métrica parcial permiten mantener la comparabilidad de los constructos sin imponer restricciones incompatibles con los datos observados. En los modelos escalar y estructural posteriores, la carga factorial de CO3 permanece libre entre hombres y mujeres.
+Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan caminos directos hacia IP deteriora significativamente el ajuste. Además, AIC y BIC, obtenidos directamente desde \texttt{lavaan}, son menores en el modelo parcialmente mediado. Por tanto, se selecciona el modelo parcialmente mediado como mejor representación de la estructura de covarianzas observada.
 
-La decisión anterior se basa principalmente en $\Delta CFI$, considerando como aceptable una disminución no superior a .010. Aunque la diferencia de $\chi^2$ sigue siendo significativa, este estadístico es sensible al tamaño muestral y puede rechazar restricciones pequeñas. Por consistencia, el mismo criterio se aplica a la evaluación de invariancia estructural.
+El excelente ajuste del modelo parcial debe interpretarse con prudencia. La parte estructural entre las cinco variables latentes queda prácticamente saturada al incluir los nueve caminos propuestos. Por ello, la comparación no demuestra causalidad; solo indica que las restricciones adicionales del modelo completamente mediado no son compatibles con los datos.
 
-Desde la métrica parcial se siguen dos ramas analíticas. La primera es la evaluación de invariancia escalar, relevante principalmente para comparar medias latentes. La segunda es la evaluación de invariancia estructural, que compara los caminos entre constructos. El modelo escalar construido sobre la solución métrica parcial no cumple plenamente el criterio adoptado ($\Delta CFI=-.0109$). Por tanto, no se realizaron comparaciones de medias latentes entre hombres y mujeres.
+\subsubsection{Coeficientes estructurales del modelo seleccionado}
 
-La invariancia de caminos estructurales sí se considera aceptable porque su caída en CFI es pequeña ($\Delta CFI=-.0057$), inferior al umbral de .010. En consecuencia, no se rechaza la equivalencia de los caminos estructurales entre hombres y mujeres bajo el criterio principal adoptado.
+\begin{table}[H]
+\centering
+\caption{Coeficientes del modelo parcialmente mediado}
+\begin{tabular}{lrrrr}
+\toprule
+Relación & B & $\beta$ est. & z & p \\
+\midrule
+$PA\rightarrow ST$ & .244 & .237 & 4.177 & $<.001$ \\
+$AC\rightarrow ST$ & -.036 & -.036 & -.610 & .542 \\
+$PA\rightarrow CO$ & .507 & .427 & 5.554 & $<.001$ \\
+$AC\rightarrow CO$ & .231 & .195 & 3.828 & $<.001$ \\
+$ST\rightarrow CO$ & .101 & .087 & 1.582 & .114 \\
+$PA\rightarrow IP$ & .469 & .354 & 4.360 & $<.001$ \\
+$AC\rightarrow IP$ & .152 & .115 & 2.333 & .020 \\
+$ST\rightarrow IP$ & .087 & .068 & 1.607 & .108 \\
+$CO\rightarrow IP$ & .367 & .329 & 4.185 & $<.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Como apoyo descriptivo, los coeficientes no estandarizados estimados por separado muestran algunas diferencias numéricas entre grupos. Por ejemplo, $AC\rightarrow ST$ fue negativo en hombres ($B=-.2145$) y positivo en mujeres ($B=.3509$), mientras que $PA\rightarrow IP$ fue mayor en mujeres ($B=.2385$) que en hombres ($B=.0984$). Sin embargo, estas diferencias numéricas descriptivas no implican por sí solas diferencias estructurales significativas cuando el modelo con caminos igualados mantiene ajuste aceptable según $\Delta CFI$.
+\textbf{Primera ecuación: satisfacción laboral.} PA se asocia positiva y significativamente con ST ($B=.244$, $\beta=.237$, $p<.001$). En cambio, AC no presenta una asociación adicional significativa con ST una vez controlada PA ($p=.542$).
 
-Por tanto, la respuesta al inciso es que las relaciones estructurales pueden considerarse equivalentes entre hombres y mujeres y, en consecuencia, pueden interpretarse de manera comparable en ambos grupos. La única diferencia de medición retenida en el análisis es que se permitió que la carga factorial de CO3 difiriera entre ambos grupos. Esto significa que la relación entre el ítem CO3 y el compromiso organizacional no tiene exactamente la misma magnitud en hombres y mujeres; sin embargo, no implica que el constructo completo de compromiso organizacional sea diferente entre grupos.
+\textbf{Segunda ecuación: compromiso organizacional.} PA se asocia positivamente con CO ($B=.507$, $\beta=.427$, $p<.001$) y AC también se asocia positivamente con CO ($B=.231$, $\beta=.195$, $p<.001$). ST no presenta una asociación adicional significativa con CO dentro de esta ecuación ($p=.114$).
+
+\textbf{Tercera ecuación: intención de permanecer.} PA conserva una asociación directa positiva con IP ($B=.469$, $\beta=.354$, $p<.001$), CO también se asocia positivamente con IP ($B=.367$, $\beta=.329$, $p<.001$), y AC presenta una asociación directa menor pero significativa ($B=.152$, $\beta=.115$, $p=.020$). ST no presenta una asociación adicional significativa con IP ($p=.108$).
+
+\subsubsection{Efectos indirectos bootstrap}
+
+Los efectos indirectos se estimaron en un modelo separado con ML y bootstrap de 5.000 remuestras, porque \texttt{lavaan} no combina directamente MLR con bootstrap convencional. La interpretación de mediación se basa en si el intervalo de confianza bootstrap incluye o no el cero.
+
+\begin{table}[H]
+\centering
+\caption{Efectos indirectos bootstrap hacia intención de permanecer}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Efecto indirecto & Estimación & EE boot. & IC 95\% inf. & IC 95\% sup. \\
+\midrule
+$PA\rightarrow ST\rightarrow IP$ & .021 & .015 & -.004 & .055 \\
+$PA\rightarrow CO\rightarrow IP$ & .186 & .049 & .104 & .291 \\
+$PA\rightarrow ST\rightarrow CO\rightarrow IP$ & .009 & .007 & -.002 & .025 \\
+Indirecto total de PA & .216 & .053 & .127 & .329 \\
+$AC\rightarrow ST\rightarrow IP$ & -.003 & .006 & -.019 & .008 \\
+$AC\rightarrow CO\rightarrow IP$ & .085 & .035 & .029 & .166 \\
+$AC\rightarrow ST\rightarrow CO\rightarrow IP$ & -.001 & .003 & -.008 & .004 \\
+Indirecto total de AC & .080 & .036 & .022 & .163 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Los resultados muestran apoyo para los efectos indirectos que pasan por compromiso organizacional. En particular, $PA\rightarrow CO\rightarrow IP$ y $AC\rightarrow CO\rightarrow IP$ tienen intervalos que no incluyen cero. En cambio, los mecanismos que pasan por satisfacción laboral no reciben apoyo bootstrap. Por tanto, la evidencia de mediación se concentra en el compromiso organizacional, no en satisfacción laboral.
+
+\subsection{c) Comparación entre hombres y mujeres}
+
+Para evaluar si las relaciones se comportan igual entre hombres y mujeres, se estimó el modelo parcialmente mediado mediante SEM multigrupo. Primero se evaluó la misma estructura general en ambos grupos, luego la igualdad de cargas factoriales, después la igualdad de interceptos y, finalmente, la igualdad de los caminos estructurales.
+
+\begin{table}[H]
+\centering
+\caption{Pruebas de invariancia multigrupo por género en lavaan}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Modelo & $\chi^2_{rob}$ & gl & CFI$_{rob}$ & TLI$_{rob}$ & RMSEA$_{rob}$ & SRMR & $\Delta\chi^2_{SB}$ & $\Delta gl$ & p & $\Delta CFI$ \\
+\midrule
+Configural & 413.28 & 320 & .980 & .976 & .033 & .047 & -- & -- & -- & -- \\
+Métrica completa & 464.08 & 335 & .969 & .964 & .040 & .060 & 42.28 & 15 & $<.001$ & -.011 \\
+Métrica parcial: carga de CO3 libre & 445.41 & 334 & .974 & .970 & .037 & .056 & 30.97 & 14 & .006 & -.006 \\
+Escalar: interceptos iguales y carga de CO3 libre & 501.40 & 349 & .962 & .959 & .043 & .061 & 71.27 & 15 & $<.001$ & -.012 \\
+Caminos estructurales iguales sobre métrica parcial & 475.99 & 343 & .968 & .965 & .040 & .074 & 25.78 & 9 & .002 & -.006 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\noindent\textit{Nota:} la métrica completa y la métrica parcial se comparan contra el modelo configural. El modelo escalar y el modelo de caminos estructurales iguales se comparan contra la métrica parcial. En los modelos posteriores se mantiene libre la carga factorial de CO3.
+
+El modelo configural presenta buen ajuste, por lo que la estructura general es plausible en hombres y mujeres. La invariancia métrica completa queda levemente fuera del criterio práctico ($\Delta CFI=-.011$). Se realizó una inspección secuencial de restricciones de cargas factoriales, liberando una carga a la vez; la mayor mejora correspondió a permitir que la carga factorial de CO3 difiriera entre hombres y mujeres. Con esa liberación se obtiene invariancia métrica parcial ($\Delta CFI=-.006$), suficiente para comparar los caminos estructurales.
+
+El modelo escalar construido sobre la solución métrica parcial no cumple plenamente el criterio adoptado ($\Delta CFI=-.012$). Por tanto, no se realizaron comparaciones de medias latentes entre hombres y mujeres. Esto no invalida la comparación de caminos, porque para comparar relaciones estructurales la condición central es contar con invariancia métrica, completa o parcial.
+
+La igualdad exacta de todos los caminos estructurales es rechazada por la prueba robusta de diferencia de $\chi^2$ ($p=.002$). Sin embargo, el deterioro práctico global es pequeño según CFI ($\Delta CFI=-.006$), por debajo del umbral de .010. Por ello, se concluye invariancia estructural aproximada: globalmente, las relaciones estructurales pueden interpretarse de manera comparable entre hombres y mujeres, aunque conviene revisar contrastes específicos.
+
+\begin{table}[H]
+\centering
+\caption{Diferencias específicas de caminos estructurales por género}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Relación & Hombres & Mujeres & Diferencia & z & p \\
+\midrule
+$PA\rightarrow ST$ & .237 & .249 & -.012 & -.103 & .918 \\
+$AC\rightarrow ST$ & .257 & -.187 & .444 & 3.390 & .001 \\
+$PA\rightarrow CO$ & .523 & .625 & -.103 & -.541 & .589 \\
+$AC\rightarrow CO$ & .475 & .325 & .150 & 1.210 & .226 \\
+$ST\rightarrow CO$ & .052 & .075 & -.023 & -.181 & .856 \\
+$PA\rightarrow IP$ & .556 & .222 & .335 & 1.762 & .078 \\
+$AC\rightarrow IP$ & .004 & -.009 & .013 & .087 & .931 \\
+$ST\rightarrow IP$ & .024 & .141 & -.117 & -1.056 & .291 \\
+$CO\rightarrow IP$ & .467 & .303 & .163 & .958 & .338 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+La comparación directa de coeficientes muestra una diferencia específica clara en $AC\rightarrow ST$ ($p=.001$): en hombres la asociación es positiva, mientras que en mujeres es negativa y marginal. La diferencia $PA\rightarrow IP$ es solo marginal ($p=.078$) y no debe interpretarse como evidencia fuerte de diferencia entre grupos. Por tanto, la conclusión más prudente es que el modelo presenta comparabilidad estructural aproximada, con una posible diferencia localizada en la relación entre actitud hacia compañeros y satisfacción laboral.
 
 \subsection{d) Interpretación y conclusión de la pregunta 3}
 
-El modelo de medición es sólido: el CFA presenta muy buen ajuste, todas las escalas poseen confiabilidad adecuada y se cumple la validez convergente y discriminante. Esto permite interpretar las relaciones estructurales con una base de medición razonablemente confiable.
+El modelo de medición es sólido: el CFA estimado con \texttt{lavaan} presenta muy buen ajuste, todas las escalas poseen confiabilidad adecuada y se cumple la validez convergente y discriminante. Esto permite interpretar las relaciones estructurales con una base de medición razonablemente confiable.
 
-El modelo parcialmente mediado representa mejor los datos que el completamente mediado. La comparación indica que fijar en cero los caminos directos $PA\rightarrow IP$ y $AC\rightarrow IP$ deteriora significativamente el ajuste. Por tanto, las condiciones laborales no se asocian con la intención de permanecer únicamente a través de satisfacción y compromiso, sino también mediante relaciones directas.
+El modelo parcialmente mediado representa mejor los datos que el completamente mediado. La comparación robusta indica que fijar en cero los caminos directos $PA\rightarrow IP$ y $AC\rightarrow IP$ deteriora significativamente el ajuste. Por tanto, las condiciones laborales no se asocian con la intención de permanecer únicamente a través de satisfacción y compromiso, sino también mediante relaciones directas.
 
-En la especificación seleccionada, la percepción del ambiente laboral aparece como el antecedente más consistente: se asocia positivamente con satisfacción laboral, compromiso organizacional e intención de permanecer. La actitud hacia compañeros se asocia principalmente con compromiso organizacional y, en menor medida, con intención de permanecer. Finalmente, el compromiso organizacional constituye un predictor directo importante de la intención de continuar en la empresa.
+En la especificación seleccionada, la percepción del ambiente laboral aparece como el antecedente más consistente: se asocia positivamente con satisfacción laboral, compromiso organizacional e intención de permanecer. La actitud hacia compañeros se asocia principalmente con compromiso organizacional y, en menor medida, con intención de permanecer. El compromiso organizacional constituye un predictor directo importante de la intención de continuar en la empresa.
 
-Los caminos desde satisfacción hacia compromiso e intención de permanecer no son estadísticamente significativos una vez incorporadas las demás relaciones. Por ello, no corresponde interpretar el modelo como una cadena simple $ST\rightarrow CO\rightarrow IP$. Con la evidencia disponible, el compromiso organizacional aparece como el mecanismo indirecto potencial más consistente, aunque su papel mediador no queda formalmente confirmado sin estimar productos indirectos con intervalos bootstrap.
+Los efectos indirectos bootstrap muestran que los mecanismos de mediación apoyados son los que pasan por compromiso organizacional. En cambio, los mecanismos que pasan por satisfacción laboral no reciben apoyo, porque sus intervalos de confianza incluyen cero. Por ello, no corresponde interpretar el modelo como una cadena simple $ST\rightarrow CO\rightarrow IP$.
 
-El análisis por género muestra que la estructura general del modelo es comparable entre hombres y mujeres bajo invariancia métrica parcial. Además, se acepta invariancia de caminos estructurales bajo el criterio principal de $\Delta CFI\leq .010$. Por ello, los caminos estructurales del modelo pueden considerarse equivalentes entre hombres y mujeres. Dado que el modelo escalar construido sobre la solución métrica parcial no cumple plenamente el criterio adoptado, no se realizaron comparaciones de medias latentes.
+El análisis por género muestra invariancia métrica parcial, manteniendo libre la carga de CO3, y no permite comparar medias latentes porque no se alcanzó invariancia escalar. Respecto de los caminos estructurales, existe invariancia estructural aproximada: la igualdad exacta es rechazada por $\chi^2$, pero el deterioro práctico global es pequeño según $\Delta CFI$. La única diferencia específica claramente detectable aparece en el camino $AC\rightarrow ST$.
 
-En conjunto, la evidencia respalda el modelo parcialmente mediado como la mejor representación de los datos, con invariancia métrica parcial e invariancia estructural entre hombres y mujeres.
+En conjunto, la evidencia respalda el modelo parcialmente mediado como la mejor representación de los datos. La permanencia laboral se asocia principalmente con percepción del ambiente, actitud hacia compañeros y compromiso organizacional; además, el compromiso organizacional es el mecanismo indirecto más consistente hacia la intención de permanecer.
 
 \newpage
 \section{Pregunta 4: MANOVA factorial}

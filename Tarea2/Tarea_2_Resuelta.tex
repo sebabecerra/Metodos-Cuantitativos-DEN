@@ -44,7 +44,7 @@
 
 \section*{Enunciado general}
 
-Para cada una de las preguntas, se describen claramente los pasos seguidos y se adjuntan los resultados de los análisis efectuados durante el proceso. Los cálculos fueron realizados en Python y se encuentran respaldados por notebooks individuales reproducibles, uno por pregunta, incluidos en la carpeta de entrega.
+Para cada una de las preguntas, se describen claramente los pasos seguidos y se adjuntan los resultados de los análisis efectuados durante el proceso. Los cálculos fueron realizados en Python y R mediante notebooks reproducibles, uno por pregunta, incluidos en la carpeta de entrega.
 
 \subsection*{Notebooks reproducibles en Google Colab}
 
@@ -175,7 +175,7 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 
 El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
-El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. Se apoyan H2 y H5.
+El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. En términos sustantivos, la presión competitiva se asocia con una respuesta innovadora más intensa cuando la organización acepta los errores propios de la experimentación. La magnitud excepcionalmente alta del $R^2$ debe interpretarse como una característica de esta muestra y no necesariamente como evidencia de igual capacidad predictiva fuera de ella. Se apoyan H2 y H5.
 
 \subsubsection{Regresión 2: desempeño innovador}
 
@@ -193,7 +193,7 @@ Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). La conducta innovadora presenta una asociación positiva y significativa: una idea adicional se asocia con un aumento aproximado de 0.858 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos, controlando la presión competitiva. Se apoya H3.
+El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). Nuevamente, este ajuste extremadamente alto debe interpretarse con cautela como evidencia dentro de esta muestra. La conducta innovadora presenta una asociación positiva y significativa: una idea adicional se asocia con un aumento aproximado de 0.858 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos, controlando la presión competitiva. Se apoya H3.
 
 En cambio, el efecto directo residual de la presión competitiva no es significativo. Esto sugiere que, una vez incorporada la conducta innovadora de los empleados, la presión competitiva no aporta una explicación adicional estadísticamente distinguible de cero. Sin embargo, la ausencia de significancia de $c'$ no constituye por sí sola la prueba formal de mediación; esta debe establecerse mediante el efecto indirecto bootstrap. La evidencia relevante para evaluar la mediación no proviene de la significancia del efecto directo, sino del intervalo de confianza bootstrap del efecto indirecto condicional. Por ello, la conclusión principal descansa en los efectos indirectos y en el índice de mediación moderada.
 
@@ -270,9 +270,9 @@ La teoría no queda confirmada únicamente porque aparezcan cuatro factores. Tam
 
 \subsection{Preparación y procedimiento}
 
-La base contiene 239 profesores y 28 ítems. Se encontraron nueve respuestas faltantes, imputadas mediante la mediana del ítem por tratarse de una proporción mínima y de escalas tipo Likert. El análisis siguió estas etapas: revisión de rangos y faltantes, matriz de correlaciones, Bartlett y KMO, determinación del número de factores, extracción, rotación, interpretación de cargas y confiabilidad.
+La base contiene 239 profesores y 28 ítems. Se encontraron nueve respuestas faltantes, imputadas mediante la mediana del ítem por tratarse de una proporción mínima y de escalas tipo Likert. Esta decisión conserva el tamaño muestral, pero no incorpora incertidumbre por imputación y puede reducir levemente la variabilidad. El análisis siguió estas etapas: revisión de rangos y faltantes, matriz de correlaciones, Bartlett y KMO, determinación del número de factores, extracción, rotación, interpretación de cargas y confiabilidad.
 
-Se utilizó máxima verosimilitud como método de extracción y Oblimin como rotación oblicua. La máxima verosimilitud permite evaluar la estructura factorial bajo un marco estadístico coherente con procedimientos confirmatorios posteriores. Dado que el porcentaje de valores perdidos fue reducido, se utilizó imputación por mediana para preservar el tamaño muestral y evitar pérdida innecesaria de información. Como los ítems son tipo Likert, se trataron como aproximadamente continuos; como robustez futura podría repetirse el análisis con correlaciones policóricas. La elección de Oblimin es coherente con la teoría, porque las cuatro características pueden estar correlacionadas. Imponer una rotación ortogonal habría forzado correlaciones nulas sin justificación conceptual.
+Se utilizó máxima verosimilitud como método de extracción y Oblimin como rotación oblicua. La máxima verosimilitud estima un modelo de factores comunes y permite evaluar la estructura factorial bajo un marco estadístico coherente con procedimientos confirmatorios posteriores. Como los ítems son tipo Likert, se trataron como aproximadamente continuos; una solución basada en correlaciones policóricas podría utilizarse como análisis de robustez. La elección de Oblimin es coherente con la teoría, porque las cuatro características pueden estar correlacionadas. Imponer una rotación ortogonal habría forzado correlaciones nulas sin justificación conceptual.
 
 \subsection{Adecuación factorial}
 
@@ -294,7 +294,7 @@ Se rechaza $H_0$, por lo que las correlaciones contienen estructura común sufic
 
 La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El criterio de autovalor mayor que uno se consideró solo como referencia porque puede sobreextraer.
 
-Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La evidencia converge en una solución de cuatro factores, en línea con Blend.
+Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La decisión no se basa solo en la diferencia numérica, sino también en la teoría previa y en la interpretabilidad de la solución de cuatro factores.
 
 \subsection{Extracción, rotación e interpretación}
 
@@ -372,7 +372,7 @@ El alfa no demuestra unidimensionalidad. Debe interpretarse junto con la estruct
 
 \subsection{Conclusión de la pregunta 2}
 
-La evidencia apoya de manera general la teoría de Blend. La matriz es factorizable, el análisis paralelo favorece una solución de cuatro factores y el contenido de estos puede interpretarse como diseño experimental, enseñanza, habilidades interpersonales deficientes y estadística. En consecuencia, la estructura obtenida es coherente con la teoría original de Blend y aporta evidencia preliminar de validez de constructo.
+La evidencia apoya de manera general la teoría de Blend. La matriz es factorizable, el análisis paralelo favorece una solución de cuatro factores y el contenido de estos puede interpretarse como diseño experimental, enseñanza, habilidades interpersonales deficientes y estadística. En consecuencia, la estructura obtenida es coherente con la teoría original de Blend y aporta evidencia preliminar sobre la estructura interna del instrumento.
 
 No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complejos; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q12 no presenta carga sustantiva y q15 es débil; y la dimensión de habilidades interpersonales deficientes presenta menor consistencia. Por tanto, el EECS-R reproduce las cuatro dimensiones principales, pero sería recomendable revisar los ítems problemáticos y validar una versión depurada mediante CFA en una muestra independiente. En síntesis, la estructura empírica reproduce el número de dimensiones propuesto por la teoría de Blend, pero no replica completamente la asignación teórica de los ítems. En consecuencia, los resultados respaldan la dimensionalidad general del instrumento, aunque sugieren la necesidad de refinar la definición conceptual de algunos factores.
 
@@ -625,7 +625,7 @@ La igualdad exacta de todos los caminos estructurales es rechazada por la prueba
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrr}
 \toprule
-Relación & Hombres & Mujeres & Diferencia & z & p \\
+Relación & Hombres (B) & Mujeres (B) & Diferencia de B & z & p \\
 \midrule
 $PA\rightarrow ST$ & .237 & .249 & -.012 & -.103 & .918 \\
 $AC\rightarrow ST$ & .257 & -.187 & .444 & 3.390 & .001 \\
@@ -640,7 +640,7 @@ $CO\rightarrow IP$ & .467 & .303 & .163 & .958 & .338 \\
 \end{tabular}}
 \end{table}
 
-La comparación directa de coeficientes muestra una diferencia específica clara en $AC\rightarrow ST$ ($p=.001$): en hombres la asociación es positiva, mientras que en mujeres es negativa y marginal. La diferencia $PA\rightarrow IP$ es solo marginal ($p=.078$) y no debe interpretarse como evidencia fuerte de diferencia entre grupos. Por tanto, la conclusión más prudente es que el modelo presenta comparabilidad estructural aproximada, con una posible diferencia localizada en la relación entre actitud hacia compañeros y satisfacción laboral.
+La comparación directa de coeficientes muestra una diferencia específica clara en $AC\rightarrow ST$ ($p=.001$): en hombres la asociación es positiva, mientras que en mujeres es negativa y la diferencia entre ambos coeficientes es estadísticamente significativa. La diferencia $PA\rightarrow IP$ es más débil ($p=.078$) y no debe interpretarse como evidencia fuerte de diferencia entre grupos. Por tanto, la conclusión más prudente es que el modelo presenta comparabilidad estructural aproximada, con una posible diferencia localizada en la relación entre actitud hacia compañeros y satisfacción laboral.
 
 \subsection{d) Interpretación y conclusión de la pregunta 3}
 
@@ -695,7 +695,7 @@ Las celdas contienen 45, 63, 53 y 39 clientes, tamaños razonablemente balancead
 
 \subsection{Consistencia y supuestos}
 
-Las tres variables de lealtad presentan $\alpha=0.876$ y correlaciones entre 0.66 y 0.76. Este alfa se reporta como evidencia de consistencia conjunta, pero no implica que se haya construido una puntuación única. Las variables están suficientemente relacionadas para analizarlas conjuntamente, pero no son redundantes.
+Las tres variables de lealtad presentan $\alpha=0.876$ y correlaciones entre 0.66 y 0.76. Este alfa se reporta solo como descripción de consistencia conjunta; no implica que las tres variables formen una escala unidimensional ni constituye un supuesto del MANOVA. Las variables están suficientemente relacionadas para analizarlas conjuntamente, pero no son redundantes.
 
 Box $M$ no fue significativo:
 
@@ -705,7 +705,7 @@ Box $M$ no fue significativo:
 
 por lo que no existe evidencia suficiente para rechazar la igualdad de matrices de covarianza; esto no prueba igualdad perfecta. Levene fue significativo para satisfacción y recompra, pero no para recomendación. Esto exige cautela en los ANOVA univariados, aunque no invalida automáticamente el MANOVA debido al balance razonable de las celdas y al resultado favorable de Box $M$.
 
-También se requiere independencia, relaciones aproximadamente lineales entre dependientes, ausencia de colinealidad perfecta y ausencia de casos multivariados extremadamente influyentes.
+Como diagnóstico adicional, la normalidad multivariada se evaluó mediante Mardia. La asimetría multivariada no fue significativa ($\chi^2(10)=10.96$, $p=.360$) y la curtosis tampoco mostró desviación relevante ($z=-0.696$, $p=.486$). El máximo de Mahalanobis fue 17.54, levemente superior al punto de corte $\chi^2_{.999,3}=16.27$, identificando un caso potencialmente extremo. Dado que se trata de un solo caso y el MANOVA se interpreta principalmente con Pillai, se mantuvo la muestra completa.
 
 \subsection{Resultados MANOVA}
 

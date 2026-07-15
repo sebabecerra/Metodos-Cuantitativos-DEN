@@ -91,7 +91,7 @@ Dependiente & Desempeño innovador de la empresa & $Y$ \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.86\textwidth]{figura_1_modelo.png}
-\caption{Figura 1 del enunciado: modelo conceptual de mediación moderada. La cultura de tolerancia al fracaso modera el camino entre presión competitiva y conducta innovadora, y el modelo conserva el camino directo entre presión competitiva y desempeño innovador.}
+\caption{Modelo conceptual de mediación moderada presentado en el enunciado. La cultura de tolerancia al fracaso modera el camino entre presión competitiva y conducta innovadora, y el modelo conserva el camino directo entre presión competitiva y desempeño innovador.}
 \label{fig:p1-enunciado}
 \end{figure}
 
@@ -283,7 +283,7 @@ La teoría no queda confirmada únicamente porque aparezcan cuatro factores. Tam
 
 \subsection{Preparación y procedimiento}
 
-La base contiene 239 profesores y 28 ítems. Se encontraron nueve respuestas faltantes, imputadas mediante la mediana del ítem por tratarse de una proporción mínima y de escalas tipo Likert. Esta decisión conserva el tamaño muestral, pero no incorpora incertidumbre por imputación y puede reducir levemente la variabilidad. El análisis siguió estas etapas: revisión de rangos y faltantes, matriz de correlaciones, Bartlett y KMO, determinación del número de factores, extracción, rotación, interpretación de cargas y confiabilidad.
+La base contiene 239 profesores y 28 ítems. Se encontraron nueve respuestas faltantes, equivalentes aproximadamente al 0.13\% del total de respuestas posibles, imputadas mediante la mediana del ítem por tratarse de una proporción mínima y de escalas tipo Likert. Esta decisión conserva el tamaño muestral, pero no incorpora incertidumbre por imputación y puede reducir levemente la variabilidad. El análisis siguió estas etapas: revisión de rangos y faltantes, matriz de correlaciones, Bartlett y KMO, determinación del número de factores, extracción, rotación, interpretación de cargas y confiabilidad.
 
 Se utilizó máxima verosimilitud como método de extracción y Oblimin como rotación oblicua. La máxima verosimilitud estima un modelo de factores comunes y permite evaluar la estructura factorial bajo un marco estadístico coherente con procedimientos confirmatorios posteriores. Como los ítems son tipo Likert, se trataron como aproximadamente continuos; una solución basada en correlaciones policóricas podría utilizarse como análisis de robustez. La elección de Oblimin es coherente con la teoría, porque las cuatro características pueden estar correlacionadas. Imponer una rotación ortogonal habría forzado correlaciones nulas sin justificación conceptual.
 
@@ -350,7 +350,7 @@ q17 & .79 & -.01 & -.03 & .14 & Diseño experimental \\
 q18 & .23 & -.32 & .40 & .14 & Habilidades interpersonales deficientes \\
 q19 & -.05 & .57 & -.18 & .08 & Enseñanza \\
 q20 & .04 & .45 & .05 & .20 & Enseñanza \\
-q21 & .47 & .17 & -.04 & .27 & Diseño experimental; asociación secundaria con estadística \\
+q21 & .47 & .17 & -.04 & .27 & Diseño experimental; asignación teórica a estadística \\
 q22 & .86 & -.07 & -.02 & .11 & Diseño experimental \\
 q23 & -.09 & .04 & .70 & .07 & Habilidades interpersonales deficientes \\
 q24 & .10 & .28 & .13 & .48 & Estadística \\
@@ -404,7 +404,7 @@ No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complej
 
 El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. Se consideran cinco constructos latentes: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada constructo fue medido mediante cuatro ítems observados, primero se evalúa el modelo de medición y luego se comparan los modelos estructurales propuestos.
 
-Por esta razón se utiliza CFA y SEM con \texttt{lavaan}. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
+Por esta razón se utiliza CFA y SEM con \texttt{lavaan} en R para el CFA, la comparación de modelos SEM, la comparación robusta de modelos anidados y las pruebas de invariancia multigrupo. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
 
 \subsection{Constructos e indicadores}
 
@@ -439,10 +439,16 @@ Las figuras del enunciado establecen que PA y AC se asocian con ST y CO; además
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.82\textwidth]{p3_modelo_completamente_mediado.png}\\[6pt]
+\includegraphics[width=0.82\textwidth]{p3_modelo_completamente_mediado.png}
+\caption{Modelo estructural completamente mediado presentado en el enunciado de la Pregunta 3.}
+\label{fig:p3-modelo-completo}
+\end{figure}
+
+\begin{figure}[H]
+\centering
 \includegraphics[width=0.82\textwidth]{p3_modelo_parcialmente_mediado.png}
-\caption{Modelos estructurales del enunciado: modelo completamente mediado (arriba) y modelo parcialmente mediado (abajo). El modelo parcial agrega caminos directos desde percepción del ambiente y actitud hacia compañeros hacia intención de permanecer.}
-\label{fig:p3-modelos}
+\caption{Modelo estructural parcialmente mediado presentado en el enunciado de la Pregunta 3. El modelo parcial agrega caminos directos desde percepción del ambiente y actitud hacia compañeros hacia intención de permanecer.}
+\label{fig:p3-modelo-parcial}
 \end{figure}
 
 \subsubsection{Modelo completamente mediado}
@@ -812,7 +818,7 @@ Directa & Grande & 8.449 & 8.067 & 8.569 \\
 \label{fig:p4-interaccion-lealtad}
 \end{figure}
 
-En satisfacción, la diferencia directa--indirecta es 0.917 entre pequeñas y 2.042 entre grandes. En recompra, la diferencia aumenta de 0.528 a 1.095. Estas diferencias en diferencias explican las interacciones significativas. Para recomendación, la ventaja del canal directo es 0.988 entre pequeñas y 1.295 entre grandes, patrón más cercano al paralelismo y coherente con la interacción no significativa.
+En satisfacción, la diferencia directa--indirecta es 0.917 entre pequeñas y 2.043 entre grandes. En recompra, la diferencia aumenta de 0.528 a 1.094. Estas diferencias en diferencias explican las interacciones significativas. Para recomendación, la ventaja del canal directo es 0.988 entre pequeñas y 1.296 entre grandes, patrón más cercano al paralelismo y coherente con la interacción no significativa.
 
 Debido a la interacción, los efectos principales deben interpretarse condicionados. Decir simplemente que el canal directo es mejor es incompleto: su ventaja es especialmente marcada entre empresas grandes.
 
@@ -847,5 +853,20 @@ En conjunto, los resultados muestran que las relaciones analizadas no son purame
 En la segunda pregunta, la teoría de Blend emerge en cuatro dimensiones interpretables, aunque algunos ítems requieren revisión y eventual depuración. En la tercera, la intención de permanecer se asocia principalmente con la percepción del ambiente, la actitud hacia los compañeros y el compromiso organizacional. Además, los caminos estructurales pueden interpretarse de manera comparable entre hombres y mujeres bajo invariancia métrica parcial. Finalmente, en la cuarta pregunta, la lealtad se asocia conjuntamente con el tipo de distribución y el tamaño de la empresa, y la ventaja del canal directo es especialmente marcada entre las empresas grandes.
 
 La principal conclusión metodológica de la tarea es que una interpretación adecuada no puede limitarse al reporte de significancia estadística. También debe considerar el mecanismo analizado, la calidad de la medición, las restricciones comparadas y la forma en que los efectos cambian según las condiciones del modelo.
+
+
+\section{Referencias metodológicas}
+
+Cheung, G. W., \& Rensvold, R. B. (2002). Evaluating goodness-of-fit indexes for testing measurement invariance. \textit{Structural Equation Modeling, 9}(2), 233--255.
+
+Fornell, C., \& Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. \textit{Journal of Marketing Research, 18}(1), 39--50.
+
+Hayes, A. F. (2018). \textit{Introduction to Mediation, Moderation, and Conditional Process Analysis} (2nd ed.). Guilford Press.
+
+Henseler, J., Ringle, C. M., \& Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. \textit{Journal of the Academy of Marketing Science, 43}(1), 115--135.
+
+Meredith, W. (1993). Measurement invariance, factor analysis and factorial invariance. \textit{Psychometrika, 58}(4), 525--543.
+
+Zhao, X., Lynch, J. G., \& Chen, Q. (2010). Reconsidering Baron and Kenny: Myths and truths about mediation analysis. \textit{Journal of Consumer Research, 37}(2), 197--206.
 
 \end{document}

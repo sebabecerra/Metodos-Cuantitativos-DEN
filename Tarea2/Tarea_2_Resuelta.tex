@@ -218,7 +218,7 @@ La presión competitiva presenta una asociación total positiva y significativa 
 c=2.0281,\qquad p<.001.
 \]
 
-El coeficiente indica que un punto adicional de presión competitiva se asocia, en promedio, con un aumento de 2.028 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos. Este efecto total no se utiliza como hipótesis formal principal, porque la figura teórica distingue entre el camino directo $c'$, el camino mediado y la moderación de la primera etapa. Sin embargo, se reporta porque permite documentar la asociación global entre presión competitiva y desempeño antes de descomponerla en efecto directo e indirecto. La relación total es positiva y compatible con el modelo propuesto, pero la explicación del mecanismo requiere considerar las regresiones anteriores y el efecto indirecto.
+El coeficiente indica que un punto adicional de presión competitiva se asocia, en promedio, con un aumento de 2.028 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos. Este efecto total no se utiliza como hipótesis formal principal, porque la figura teórica distingue entre el camino directo $c'$, el camino mediado y la moderación de la primera etapa. Sin embargo, se reporta porque permite documentar la asociación global entre presión competitiva y desempeño antes de descomponerla en efecto directo e indirecto. En este modelo, el efecto total de la regresión simple no tiene por qué coincidir exactamente con $c'$ más el efecto indirecto evaluado en la media del moderador, porque la ecuación de resultado no incluye $W$ ni $XW$ y la regresión total absorbe asociación compartida entre $X$ y $W$. La relación total es positiva y compatible con el modelo propuesto, pero la explicación del mecanismo requiere considerar las regresiones anteriores y el efecto indirecto.
 
 \subsubsection{Efectos indirectos condicionales}
 
@@ -361,7 +361,7 @@ q28 & .01 & .21 & .53 & -.02 & Habilidades interpersonales deficientes \\
 \bottomrule
 \end{longtable}
 
-El primer factor está definido principalmente por q8, q10, q13, q14, q16, q17 y q22 y representa entusiasmo por el diseño de experimentos. El segundo factor, definido por q7, q11, q19, q20, q25, q26 y q27, representa amor por la enseñanza. El tercero, asociado principalmente con q5, q18, q23 y q28, refleja habilidades interpersonales deficientes, dimensión denominada en el enunciado como ausencia de habilidades interpersonales normales. El cuarto, definido por q3, q4 y q24, representa amor por la estadística.
+El primer factor está definido principalmente por q8, q10, q13, q14, q16, q17, q21 y q22 y representa entusiasmo por el diseño de experimentos. El segundo factor, definido por q7, q11, q19, q20, q25, q26 y q27, representa amor por la enseñanza. El tercero, asociado principalmente con q5, q18, q23 y q28, refleja habilidades interpersonales deficientes, dimensión denominada en el enunciado como ausencia de habilidades interpersonales normales. El cuarto, definido por q3, q4 y q24, representa amor por la estadística.
 
 La estructura general es interpretable, pero no perfecta. q1, q9 y q27 muestran complejidad o cargas cruzadas; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q14 y q18 presentan cargas secundarias relevantes; q12 no alcanza 0.40 en ningún factor; y q15 también es débil. Una carga cruzada reduce la pureza conceptual de la escala, porque el ítem parece recoger contenido de más de una dimensión. En q12, el problema es aún más claro: no se vincula de manera sustantiva con ninguno de los factores y sería el candidato más evidente a revisión o eliminación.
 
@@ -404,7 +404,7 @@ No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complej
 
 El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. Se consideran cinco constructos latentes: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada constructo fue medido mediante cuatro ítems observados, primero se evalúa el modelo de medición y luego se comparan los modelos estructurales propuestos.
 
-Por esta razón se utiliza CFA y SEM con \texttt{lavaan} en R para el CFA, la comparación de modelos SEM, la comparación robusta de modelos anidados y las pruebas de invariancia multigrupo. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
+Los análisis se realizaron con \texttt{lavaan} en R: CFA, comparación de modelos SEM, comparación robusta de modelos anidados y pruebas de invariancia multigrupo. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
 
 \subsection{Constructos e indicadores}
 
@@ -575,7 +575,7 @@ Con MLR, la comparación entre modelos anidados debe hacerse mediante una prueba
 
 Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan caminos directos hacia IP deteriora significativamente el ajuste. Además, AIC y BIC, obtenidos directamente desde \texttt{lavaan}, son menores en el modelo parcialmente mediado. Por tanto, se selecciona el modelo parcialmente mediado como mejor representación de la estructura de covarianzas observada.
 
-El excelente ajuste del modelo parcial debe interpretarse con prudencia. La parte estructural entre las cinco variables latentes queda prácticamente saturada al incluir los nueve caminos propuestos. Por ello, la comparación no demuestra causalidad; solo indica que las restricciones adicionales del modelo completamente mediado no son compatibles con los datos.
+El excelente ajuste del modelo parcial debe interpretarse con prudencia. La parte estructural entre las cinco variables latentes queda exactamente saturada al incluir los nueve caminos propuestos; por eso su ajuste global coincide con el del CFA de medición. Por ello, la comparación no demuestra causalidad; solo indica que las restricciones adicionales del modelo completamente mediado no son compatibles con los datos.
 
 \subsubsection{Coeficientes estructurales del modelo seleccionado}
 
@@ -861,7 +861,11 @@ Cheung, G. W., \& Rensvold, R. B. (2002). Evaluating goodness-of-fit indexes for
 
 Fornell, C., \& Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. \textit{Journal of Marketing Research, 18}(1), 39--50.
 
-Hayes, A. F. (2018). \textit{Introduction to Mediation, Moderation, and Conditional Process Analysis} (2nd ed.). Guilford Press.
+Byrne, B. M., Shavelson, R. J., \& Muthén, B. (1989). Testing for the equivalence of factor covariance and mean structures: The issue of partial measurement invariance. \textit{Psychological Bulletin, 105}(3), 456--466.
+
+Chen, F. F. (2007). Sensitivity of goodness of fit indexes to lack of measurement invariance. \textit{Structural Equation Modeling, 14}(3), 464--504.
+
+Hayes, A. F. (2022). \textit{Introduction to Mediation, Moderation, and Conditional Process Analysis: A Regression-Based Approach} (3rd ed.). Guilford Press.
 
 Henseler, J., Ringle, C. M., \& Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. \textit{Journal of the Academy of Marketing Science, 43}(1), 115--135.
 

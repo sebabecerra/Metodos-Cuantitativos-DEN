@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs,array,longtable,multirow}
 \usepackage{graphicx,float}
+\graphicspath{{assets/}}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{parskip}
@@ -87,6 +88,13 @@ Dependiente & Desempeño innovador de la empresa & $Y$ \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{figura_1_modelo.png}
+\caption{Figura 1 del enunciado: modelo conceptual de mediación moderada. La cultura de tolerancia al fracaso modera el camino entre presión competitiva y conducta innovadora, y el modelo conserva el camino directo entre presión competitiva y desempeño innovador.}
+\label{fig:p1-enunciado}
+\end{figure}
+
 El modelo se estima mediante tres regresiones relacionadas, cada una con una finalidad distinta.
 
 \subsubsection{Primera regresión: modelo del mediador}
@@ -163,7 +171,7 @@ Como diagnóstico adicional, se evaluó la multicolinealidad mediante el factor 
 \caption{Modelo del mediador}
 \begin{tabular}{lrrrr}
 \toprule
-Predictor & $B$ & EE robusto & $t$ & $p$ \\
+Predictor & $B$ & EE robusto & $z$ & $p$ \\
 \midrule
 Constante & 9.5207 & 0.0344 & 277.01 & $<.001$ \\
 Presión competitiva centrada ($a_1$) & 2.0008 & 0.0394 & 50.82 & $<.001$ \\
@@ -184,7 +192,7 @@ El resultado central es la interacción positiva y significativa. El coeficiente
 \caption{Modelo del resultado}
 \begin{tabular}{lrrrr}
 \toprule
-Predictor & $B$ & EE robusto & $t$ & $p$ \\
+Predictor & $B$ & EE robusto & $z$ & $p$ \\
 \midrule
 Constante & 1.4086 & 0.1564 & 9.01 & $<.001$ \\
 Presión competitiva centrada ($c'$) & 0.0265 & 0.0492 & 0.54 & .590 \\
@@ -296,6 +304,13 @@ La decisión se basó en autovalores, gráfico de sedimentación y análisis par
 
 Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La decisión no se basa solo en la diferencia numérica, sino también en la teoría previa y en la interpretabilidad de la solución de cuatro factores.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{p2_scree_parallel.png}
+\caption{Análisis paralelo y gráfico de sedimentación generado desde el notebook de la Pregunta 2. Los cuatro primeros autovalores observados superan la referencia aleatoria; el cuarto lo hace por un margen estrecho respecto del percentil 95 y con mayor holgura respecto de la media aleatoria.}
+\label{fig:p2-parallel}
+\end{figure}
+
 \subsection{Extracción, rotación e interpretación}
 
 La solución de cuatro factores explica el 39.1\% de la varianza. En rotación oblicua este porcentaje debe interpretarse con cautela, porque los factores pueden correlacionarse y la varianza no se reparte de forma completamente independiente entre dimensiones. Se interpreta la matriz patrón porque representa la contribución específica de cada factor controlando las correlaciones entre ellos. Se consideraron sustantivas cargas absolutas cercanas o superiores a 0.40. Un ítem se consideró complejo cuando además presentaba una carga secundaria cercana o superior a 0.30, o cuando la diferencia entre sus dos cargas principales era pequeña.
@@ -406,9 +421,24 @@ Intención de permanecer & IP & IP1, IP2, IP3, IP4 \\
 
 La base contiene 400 trabajadores: 200 hombres y 200 mujeres. La variable género está codificada como 0 = masculino y 1 = femenino. Cada constructo se especifica de manera reflectiva.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{p3_tabla_constructos.png}
+\caption{Constructos e ítems del cuestionario según el enunciado de la Pregunta 3.}
+\label{fig:p3-items}
+\end{figure}
+
 \subsection{Especificación de los modelos estructurales}
 
 Las figuras del enunciado establecen que PA y AC se asocian con ST y CO; además, ST se asocia con CO, y ST y CO se asocian con IP. La diferencia entre los modelos consiste únicamente en que el modelo parcialmente mediado agrega los efectos directos de PA y AC sobre IP.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{p3_modelo_completamente_mediado.png}\\[6pt]
+\includegraphics[width=0.82\textwidth]{p3_modelo_parcialmente_mediado.png}
+\caption{Modelos estructurales del enunciado: modelo completamente mediado (arriba) y modelo parcialmente mediado (abajo). El modelo parcial agrega caminos directos desde percepción del ambiente y actitud hacia compañeros hacia intención de permanecer.}
+\label{fig:p3-modelos}
+\end{figure}
 
 \subsubsection{Modelo completamente mediado}
 
@@ -770,7 +800,14 @@ Directa & Grande & 8.449 & 8.067 & 8.569 \\
 \end{tabular}
 \end{table}
 
-En satisfacción, la diferencia directa--indirecta es 0.917 entre pequeñas y 2.043 entre grandes. En recompra, la diferencia aumenta de 0.528 a 1.094. Estas diferencias en diferencias explican las interacciones significativas. Para recomendación, la ventaja del canal directo es 0.988 entre pequeñas y 1.296 entre grandes, patrón más cercano al paralelismo y coherente con la interacción no significativa.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{p4_interaccion_satisfaccion.png}
+\caption{Interacción entre tipo de distribución y tamaño de empresa sobre satisfacción, generada desde el notebook de la Pregunta 4.}
+\label{fig:p4-interaccion-satisfaccion}
+\end{figure}
+
+En satisfacción, la diferencia directa--indirecta es 0.917 entre pequeñas y 2.042 entre grandes. En recompra, la diferencia aumenta de 0.528 a 1.095. Estas diferencias en diferencias explican las interacciones significativas. Para recomendación, la ventaja del canal directo es 0.988 entre pequeñas y 1.295 entre grandes, patrón más cercano al paralelismo y coherente con la interacción no significativa.
 
 Debido a la interacción, los efectos principales deben interpretarse condicionados. Decir simplemente que el canal directo es mejor es incompleto: su ventaja es especialmente marcada entre empresas grandes.
 
@@ -778,15 +815,15 @@ Los efectos simples se contrastaron mediante pruebas $t$ de Welch y corrección 
 
 \subsection{Respuestas según incisos del enunciado}
 
-\subsubsection{a) ¿Incide el tipo de distribución?}
+\subsubsection{a) \textquestiondown{}Incide el tipo de distribución?}
 
 Sí. Se observan diferencias significativas en el perfil de lealtad según el tipo de distribución, y los tres ANOVA muestran medias superiores bajo distribución directa.
 
-\subsubsection{b) ¿Existen diferencias según tamaño?}
+\subsubsection{b) \textquestiondown{}Existen diferencias según tamaño?}
 
 Sí. Se observan diferencias significativas en el perfil de lealtad según el tamaño de la empresa, y las empresas grandes presentan mayores medias de satisfacción, recomendación y recompra.
 
-\subsubsection{c) ¿Distribución y tamaño son antecedentes independientes?}
+\subsubsection{c) \textquestiondown{}Distribución y tamaño son antecedentes independientes?}
 
 No. En este contexto, ``independientes'' se interpreta como ausencia de interacción: no se está evaluando independencia estadística entre distribución y tamaño, sino si el efecto de uno depende del nivel del otro. La interacción multivariada fue significativa, por lo que la ventaja del canal directo varía según el tamaño y es especialmente intensa entre empresas grandes, sobre todo en satisfacción y recompra.
 

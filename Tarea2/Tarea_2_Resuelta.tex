@@ -61,7 +61,7 @@ Los análisis de cada pregunta pueden revisarse y ejecutarse en Google Colab des
 
 \section{Pregunta 1: mediación moderada}
 
-\subsection{Justificación conceptual del modelo}
+\subsection{Modelo conceptual}
 
 El objetivo es comprender de qué manera una condición externa, como la presión competitiva del mercado, puede traducirse en un mayor desempeño innovador de la empresa. El modelo no asume que esta relación sea exclusivamente directa. Más bien plantea que la presión competitiva activa primero una respuesta interna en los empleados, expresada en la generación, promoción e implementación de nuevas ideas. Esa conducta innovadora constituye el mecanismo que conecta la presión del entorno con resultados innovadores a nivel organizacional.
 
@@ -150,7 +150,7 @@ Por tanto, el mecanismo $X_c\rightarrow M\rightarrow Y$ no tiene necesariamente 
 \item H6: el efecto indirecto aumenta cuando la tolerancia al fracaso es mayor; formalmente, el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
 \end{itemize}
 
-\subsection{b) Evaluación de las hipótesis}
+\subsection{b) Estrategia analítica y evaluación de hipótesis}
 
 Se analizaron 200 observaciones sin valores perdidos. La presión competitiva y la tolerancia al fracaso se centraron respecto de sus medias:
 
@@ -161,6 +161,8 @@ X_c=X-\bar X, \qquad W_c=W-\bar W,
 para luego construir el término de interacción $X_cW_c$. El centrado no altera el ajuste ni la significancia de la interacción, pero permite interpretar los efectos principales en el nivel medio de la otra variable y reduce la colinealidad no esencial.
 
 Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores estándar robustos HC3. Los efectos indirectos condicionales y el índice de mediación moderada se evaluaron mediante 5.000 remuestras bootstrap. La regla de decisión fue: para coeficientes individuales, $p<.05$; para efectos indirectos, intervalo de confianza bootstrap que no incluya cero.
+
+El análisis se desarrolla en seis pasos: primero se revisan descriptivos y correlaciones; segundo, se estima el modelo del mediador; tercero, se interpreta la interacción mediante pendientes simples; cuarto, se estima el modelo del resultado; quinto, se reporta el efecto total; y sexto, se evalúan los efectos indirectos condicionales y el índice de mediación moderada.
 
 
 Como complemento, la Tabla \ref{tab:p1-descriptivos} resume las variables originales antes de centrar $X$ y $W$. Esto permite verificar la escala real de cada variable y facilita interpretar las magnitudes estimadas.
@@ -234,9 +236,9 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
+El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
-El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. Los resultados sugieren que la presión competitiva genera una respuesta innovadora más intensa cuando la organización tolera los errores inherentes a los procesos de experimentación. La magnitud excepcionalmente alta del $R^2$ debe interpretarse como una característica de esta muestra y no necesariamente como evidencia de igual capacidad predictiva fuera de ella. Se apoyan H1 y H5.
+El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. Los resultados sugieren que la presión competitiva genera una respuesta innovadora más intensa cuando la organización tolera los errores inherentes a los procesos de experimentación. Se apoyan H1 y H5.
 
 
 \begin{table}[H]
@@ -277,7 +279,7 @@ Conducta innovadora ($b$) & 0.8577 & 0.0167 & 51.27 & $<.001$ \\
 \end{tabular}
 \end{table}
 
-El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). Nuevamente, este ajuste extremadamente alto debe interpretarse con cautela como evidencia dentro de esta muestra. La conducta innovadora presenta una asociación positiva y significativa: una idea adicional se asocia con un aumento aproximado de 0.858 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos, controlando la presión competitiva. Se apoya H2.
+El modelo explica el 97.32\% del desempeño innovador ($R^2=0.9732$). La conducta innovadora presenta una asociación positiva y significativa: una idea adicional se asocia con un aumento aproximado de 0.858 puntos porcentuales en el porcentaje de ingresos proveniente de productos o servicios nuevos, controlando la presión competitiva. Se apoya H2.
 
 En cambio, el efecto directo residual de la presión competitiva no es significativo, por lo que H3 no recibe apoyo estadístico. Esto sugiere que, una vez incorporada la conducta innovadora de los empleados, la presión competitiva no aporta una explicación adicional estadísticamente distinguible de cero. Sin embargo, la ausencia de significancia de $c'$ no constituye por sí sola la prueba formal de mediación; esta debe establecerse mediante el efecto indirecto bootstrap. La evidencia relevante para evaluar la mediación no proviene de la significancia del efecto directo, sino del intervalo de confianza bootstrap del efecto indirecto condicional. Por ello, la conclusión principal descansa en los efectos indirectos y en el índice de mediación moderada.
 
@@ -358,7 +360,7 @@ En términos gerenciales, la presión competitiva por sí sola no garantiza inno
 \newpage
 \section{Pregunta 2: análisis factorial exploratorio}
 
-\subsection{Justificación conceptual}
+\subsection{Teoría de Blend y objetivo del AFE}
 
 La teoría de Blend propone que la evaluación de buenos profesores de métodos cuantitativos puede organizarse en cuatro características latentes: amor por la estadística, entusiasmo por el diseño de experimentos, amor por la enseñanza y ausencia de habilidades interpersonales normales. Dado que estas dimensiones no se observan directamente, deben inferirse a partir del patrón de respuestas a los 28 ítems del cuestionario.
 
@@ -366,9 +368,31 @@ El análisis factorial exploratorio (AFE) es apropiado porque permite determinar
 
 La teoría no queda confirmada únicamente porque aparezcan cuatro factores. También es necesario que los factores sean interpretables, que los ítems carguen de forma coherente y que las dimensiones presenten confiabilidad razonable.
 
-\subsection{Preparación y procedimiento}
+\subsection{Preparación de datos y descriptivos}
 
 La base contiene 239 profesores y 28 ítems. Se encontraron nueve respuestas faltantes, equivalentes aproximadamente al 0.13\% del total de respuestas posibles, imputadas mediante la mediana del ítem por tratarse de una proporción mínima y de escalas tipo Likert. Esta decisión conserva el tamaño muestral, pero no incorpora incertidumbre por imputación y puede reducir levemente la variabilidad. El análisis siguió estas etapas: revisión de rangos y faltantes, matriz de correlaciones, Bartlett y KMO, determinación del número de factores, extracción, rotación, interpretación de cargas y confiabilidad.
+
+\begin{table}[H]
+\centering
+\caption{Descriptivos generales de los ítems del EECS-R}
+\label{tab:p2-descriptivos}
+\begin{tabular}{lr}
+\toprule
+Indicador descriptivo & Valor \\
+\midrule
+Profesores observados & 239 \\
+Ítems analizados & 28 \\
+Rango observado de respuestas & 1 a 7 \\
+Media global de respuestas & 4.705 \\
+Desviación estándar global & 1.488 \\
+Media mínima entre ítems & 3.406 \\
+Media máxima entre ítems & 5.456 \\
+DE mínima entre ítems & 1.102 \\
+DE máxima entre ítems & 1.773 \\
+Valores faltantes & 9 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Se utilizó máxima verosimilitud como método de extracción y Oblimin como rotación oblicua. La máxima verosimilitud estima un modelo de factores comunes y permite evaluar la estructura factorial bajo un marco estadístico coherente con procedimientos confirmatorios posteriores. Como los ítems son tipo Likert, se trataron como aproximadamente continuos; una solución basada en correlaciones policóricas podría utilizarse como análisis de robustez. La elección de Oblimin es coherente con la teoría, porque las cuatro características pueden estar correlacionadas. Imponer una rotación ortogonal habría forzado correlaciones nulas sin justificación conceptual.
 
@@ -581,6 +605,8 @@ No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complej
 El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. Se consideran cinco constructos latentes: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada constructo fue medido mediante cuatro ítems observados, primero se evalúa el modelo de medición y luego se comparan los modelos estructurales propuestos.
 
 Los análisis se realizaron con \texttt{lavaan} en R: CFA, comparación de modelos SEM, comparación robusta de modelos anidados y pruebas de invariancia multigrupo. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
+
+La respuesta sigue cuatro pasos: primero se evalúa el modelo de medición mediante CFA; segundo, se revisa confiabilidad y validez; tercero, se comparan los modelos estructurales del enunciado; y cuarto, se analiza si el modelo funciona de manera comparable entre hombres y mujeres.
 
 \subsection{Constructos e indicadores}
 
@@ -987,7 +1013,7 @@ HBAT evalúa la lealtad mediante tres resultados relacionados: satisfacción, in
 
 El diseño es factorial $2\times2$ porque combina dos factores categóricos: distribución (directa/indirecta) y tamaño (pequeña/grande). Además de los efectos principales, la interacción es central: si resulta significativa, la asociación del canal con la lealtad no es uniforme, sino que cambia según el tamaño del cliente.
 
-\subsection{Especificación e hipótesis}
+\subsection{Diseño factorial, estrategia analítica e hipótesis}
 
 Para cada resultado, el modelo general es:
 
@@ -1014,6 +1040,8 @@ Las hipótesis son:
 \end{itemize}
 
 Las celdas contienen 45, 63, 53 y 39 clientes, tamaños razonablemente balanceados.
+
+La estrategia analítica es secuencial: primero se revisan descriptivos y supuestos; luego se estima el MANOVA factorial para evaluar los efectos conjuntos; después se analizan ANOVA univariados y tamaños de efecto; finalmente se interpretan las medias por celda, la interacción y los efectos simples.
 
 
 \begin{table}[H]
@@ -1140,7 +1168,7 @@ Levene recompra & 4.553 & 3,196 & .004 \\
 \end{tabular}
 \end{table}
 
-\subsection{Resultados MANOVA}
+\subsection{MANOVA}
 
 Dado que dos de las tres variables dependientes presentaron evidencia de heterogeneidad de varianzas, la interpretación principal se basó en la traza de Pillai, considerada uno de los estadísticos multivariados más robustos ante incumplimientos moderados de los supuestos. En este diseño, cada efecto tiene un grado de libertad en el numerador, por lo que Pillai, Wilks, Hotelling y Roy entregan la misma decisión inferencial. Valores mayores de Pillai indican mayor separación multivariada entre grupos.
 
@@ -1160,7 +1188,7 @@ Distribución$\times$Tamaño & .0966 & 6.917 & 3 & 194 & $<.001$ \\
 
 Se rechazan las tres hipótesis nulas. El canal se asocia con el perfil conjunto de lealtad, el tamaño también y, además, existe una interacción significativa. Por tanto, ambos factores presentan un efecto conjunto significativo sobre la lealtad y la asociación del tipo de distribución depende del tamaño de la empresa.
 
-\subsection{ANOVA univariados posteriores}
+\subsection{ANOVA posteriores y tamaños de efecto}
 
 \begin{table}[H]
 \centering

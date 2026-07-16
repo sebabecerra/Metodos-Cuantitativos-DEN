@@ -435,9 +435,9 @@ KMO global & .895 \\
 
 \subsection{Número de factores}
 
-La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El criterio de autovalor mayor que uno se consideró solo como referencia porque puede sobreextraer.
+La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El gráfico de sedimentación muestra los autovalores ordenados de mayor a menor y permite observar el punto donde la curva comienza a aplanarse; desde ese punto, los factores adicionales aportan poca información nueva. El criterio de autovalor mayor que uno se consideró solo como referencia, porque puede sugerir más factores de los realmente respaldados por los datos.
 
-Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La decisión no se basa solo en la diferencia numérica, sino también en la teoría previa y en la interpretabilidad de la solución de cuatro factores.
+Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Este valor corresponde al percentil 95 del cuarto autovalor obtenido en las 1.000 matrices aleatorias generadas para el análisis paralelo. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La decisión no se basa solo en la diferencia numérica, sino también en la teoría previa y en la interpretabilidad de la solución de cuatro factores.
 
 
 \begin{table}[H]
@@ -533,7 +533,6 @@ La estructura general es interpretable, pero no perfecta. q1, q9 y q27 muestran 
 
 La correlación factorial más alta fue cercana a 0.47 entre F1 y F3. Esto confirma que los factores se relacionan, pero no son equivalentes, y respalda el uso de una rotación oblicua.
 
-Como contraste, se estimó también una solución con rotación Varimax. Varimax es una rotación ortogonal y, por tanto, fuerza correlaciones iguales a cero entre los factores. Esta solución acumuló 45.9\% de varianza, pero redistribuyó varias cargas y produjo una estructura menos alineada con el supuesto teórico de dimensiones relacionadas. Por ejemplo, algunos ítems quedaron con patrones más mezclados entre factores. Por ello, Varimax se interpreta solo como análisis de robustez y no como solución final. La decisión principal se basa en Oblimin porque respeta la posibilidad teórica y empírica de correlación entre las dimensiones.
 
 
 \begin{table}[H]
@@ -606,7 +605,7 @@ No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complej
 
 El objetivo es analizar cómo las condiciones laborales percibidas por los trabajadores se relacionan con su satisfacción, compromiso organizacional e intención de permanecer en la empresa. Se consideran cinco constructos latentes: actitud hacia compañeros, percepción del ambiente de trabajo, satisfacción laboral, compromiso organizacional e intención de permanencia. Como cada constructo fue medido mediante cuatro ítems observados, primero se evalúa el modelo de medición y luego se comparan los modelos estructurales propuestos.
 
-Los análisis se realizaron con \texttt{lavaan} en R: CFA, comparación de modelos SEM, comparación robusta de modelos anidados y pruebas de invariancia multigrupo. El CFA permite evaluar si los ítems representan adecuadamente sus constructos. Luego, el SEM permite estimar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con MLR y FIML. MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
+Los análisis se realizaron con \texttt{lavaan} en R. Primero se estimó un análisis factorial confirmatorio (CFA, por sus siglas en inglés) para evaluar si los ítems representan adecuadamente sus constructos. Luego se estimaron modelos de ecuaciones estructurales (SEM, por sus siglas en inglés) para analizar simultáneamente las relaciones entre constructos latentes, considerando el error de medición. La estimación principal se realizó con máxima verosimilitud robusta (MLR) y máxima verosimilitud con información completa (FIML). MLR entrega errores estándar y pruebas robustas frente a desviaciones de normalidad; FIML permite utilizar toda la información disponible. En esta base no hubo valores perdidos en las variables de la Pregunta 3.
 
 La respuesta sigue cuatro pasos: primero se evalúa el modelo de medición mediante CFA; segundo, se revisa confiabilidad y validez; tercero, se comparan los modelos estructurales del enunciado; y cuarto, se analiza si el modelo funciona de manera comparable entre hombres y mujeres.
 
@@ -697,7 +696,7 @@ Intención de permanecer (IP) & .886 \\
 \end{table}
 
 
-El CFA de cinco factores correlacionados presentó un ajuste muy bueno. Los índices robustos estimados con \texttt{lavaan} fueron:
+El CFA de cinco factores correlacionados presentó un ajuste muy bueno. El ajuste se evaluó mediante el índice de ajuste comparativo (CFI), el índice Tucker--Lewis (TLI), el error cuadrático medio de aproximación (RMSEA) y el residuo cuadrático medio estandarizado (SRMR). Los índices robustos estimados con \texttt{lavaan} fueron:
 
 \[
 \begin{aligned}
@@ -748,7 +747,7 @@ Las cargas estandarizadas oscilan entre .583 y .886. La mayoría supera .70. La 
 
 \subsubsection{Confiabilidad y validez convergente}
 
-La confiabilidad se evaluó mediante alfa de Cronbach y confiabilidad compuesta (CR). La validez convergente se evaluó mediante varianza media extraída (AVE):
+La confiabilidad se evaluó mediante alfa de Cronbach y confiabilidad compuesta (CR, \textit{composite reliability}). La validez convergente se evaluó mediante varianza media extraída (AVE, \textit{average variance extracted}):
 
 \begin{equation}
 CR=\frac{\left(\sum_i\lambda_i\right)^2}{\left(\sum_i\lambda_i\right)^2+\sum_i\theta_i},
@@ -776,7 +775,7 @@ Todos los valores de alfa y CR son superiores a .70, por lo que existe consisten
 
 \subsubsection{Validez discriminante}
 
-La correlación latente más alta fue $r_{PA,IP}=.562$, inferior a la menor raíz de AVE, correspondiente a ST ($\sqrt{AVE}=.720$). Por tanto, se cumple el criterio de Fornell--Larcker. Además, el HTMT máximo fue .569, claramente inferior al umbral conservador de .85.
+La correlación latente más alta fue $r_{PA,IP}=.562$, inferior a la menor raíz de AVE, correspondiente a ST ($\sqrt{AVE}=.720$). Por tanto, se cumple el criterio de Fornell--Larcker. Además, se calculó la razón heterotrait--monotrait (HTMT), un criterio adicional de validez discriminante; el HTMT máximo fue .569, claramente inferior al umbral conservador de .85.
 
 
 \begin{table}[H]
@@ -1296,13 +1295,13 @@ La principal conclusión metodológica de la tarea es que una interpretación ad
 
 \section{Referencias metodológicas}
 
-Cheung, G. W., \& Rensvold, R. B. (2002). Evaluating goodness-of-fit indexes for testing measurement invariance. \textit{Structural Equation Modeling, 9}(2), 233--255.
-
-Fornell, C., \& Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. \textit{Journal of Marketing Research, 18}(1), 39--50.
-
 Byrne, B. M., Shavelson, R. J., \& Muthén, B. (1989). Testing for the equivalence of factor covariance and mean structures: The issue of partial measurement invariance. \textit{Psychological Bulletin, 105}(3), 456--466.
 
 Chen, F. F. (2007). Sensitivity of goodness of fit indexes to lack of measurement invariance. \textit{Structural Equation Modeling, 14}(3), 464--504.
+
+Cheung, G. W., \& Rensvold, R. B. (2002). Evaluating goodness-of-fit indexes for testing measurement invariance. \textit{Structural Equation Modeling, 9}(2), 233--255.
+
+Fornell, C., \& Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. \textit{Journal of Marketing Research, 18}(1), 39--50.
 
 Hayes, A. F. (2022). \textit{Introduction to Mediation, Moderation, and Conditional Process Analysis: A Regression-Based Approach} (3rd ed.). Guilford Press.
 

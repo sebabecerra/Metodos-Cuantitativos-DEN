@@ -147,7 +147,6 @@ Por tanto, el mecanismo $X_c\rightarrow M\rightarrow Y$ no tiene necesariamente 
 \item H3: existe un efecto directo residual de la presión competitiva sobre el desempeño innovador una vez incorporada la conducta innovadora ($c'\neq0$).
 \item H4: existe un efecto indirecto significativo de la presión competitiva sobre el desempeño innovador a través de la conducta innovadora ($IE(W_c)\neq0$).
 \item H5: la tolerancia al fracaso fortalece la relación entre presión competitiva y conducta innovadora ($a_3>0$).
-\item H6: el efecto indirecto aumenta cuando la tolerancia al fracaso es mayor; formalmente, el índice de mediación moderada $a_3b$ es positivo y distinto de cero.
 \end{itemize}
 
 \subsection{b) Estrategia analítica y evaluación de hipótesis}
@@ -317,7 +316,7 @@ El índice de mediación moderada es:
 a_3b=(0.5248)(0.8577)=0.4502,
 \]
 
-con IC95\% bootstrap $[0.3758,0.5184]$. Como el intervalo no contiene cero, el efecto indirecto varía significativamente con la tolerancia al fracaso. Se apoya H6.
+con IC95\% bootstrap $[0.3758,0.5184]$. Como el intervalo no contiene cero, el efecto indirecto varía significativamente con la tolerancia al fracaso. Este resultado complementa H4 y H5, mostrando que el mecanismo indirecto es más fuerte cuando aumenta la tolerancia al fracaso.
 
 
 \begin{table}[H]
@@ -336,26 +335,29 @@ $a_3b$ & .4502 & .3758 & .5184 \\
 
 \begin{table}[H]
 \centering
-\caption{Resumen de evaluación de hipótesis}
-\begin{tabular}{lll}
+\caption{Resumen final de hipótesis de la Pregunta 1}
+\label{tab:p1-resumen-hipotesis}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llll}
 \toprule
-Hipótesis & Evidencia estadística principal & Decisión \\
+Hipótesis & Relación evaluada & Evidencia principal & Decisión \\
 \midrule
-H1 & $a_1=2.0008$, $p<.001$ & Apoyada \\
-H2 & $b=0.8577$, $p<.001$ & Apoyada \\
-H3 & $c'=0.0265$, $p=.590$ & No apoyada \\
-H4 & Efectos indirectos con IC95\% bootstrap que excluyen cero & Apoyada \\
-H5 & $a_3=0.5248$, $p<.001$ & Apoyada \\
-H6 & $a_3b=0.4502$, IC95\% $[0.3758,0.5184]$ & Apoyada \\
+H1 & Presión competitiva $\rightarrow$ conducta innovadora & $a_1=2.0008$, $p<.001$ & Apoyada \\
+H2 & Conducta innovadora $\rightarrow$ desempeño innovador & $b=0.8577$, $p<.001$ & Apoyada \\
+H3 & Efecto directo presión competitiva $\rightarrow$ desempeño & $c'=0.0265$, $p=.590$ & No apoyada \\
+H4 & Efecto indirecto vía conducta innovadora & IC95\% bootstrap sin cero & Apoyada \\
+H5 & Moderación de tolerancia al fracaso sobre $X\rightarrow M$ & $a_3=0.5248$, $p<.001$ & Apoyada \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
+
+En conjunto, los resultados apoyan H1, H2, H4 y H5. El efecto directo planteado en H3 no recibe apoyo empírico, por lo que la evidencia es consistente con una mediación \textit{indirect-only}.
 
 \subsection{c) Interpretación de los resultados}
 
 La evidencia permite reconstruir el proceso completo. Primero, la presión competitiva se asocia con mayor conducta innovadora de los empleados. Segundo, dicha conducta se asocia con mayor desempeño innovador. Tercero, este mecanismo es más intenso cuando la cultura organizacional tolera los errores derivados de experimentar.
 
-En términos gerenciales, la presión competitiva por sí sola no garantiza innovación. Para que se asocie con mejores resultados, la organización debe permitir que los empleados experimenten sin un temor excesivo al fracaso. En consecuencia, los resultados son consistentes con una mediación moderada de primera etapa: H1, H2, H4, H5 y H6 reciben apoyo estadístico, mientras que H3 no. El patrón observado corresponde a una mediación de tipo \textit{indirect-only}: el efecto total de la presión competitiva sobre el desempeño es positivo, pero la asociación directa residual deja de ser significativa una vez incorporada la conducta innovadora.
+En términos gerenciales, la presión competitiva por sí sola no garantiza innovación. Para que se asocie con mejores resultados, la organización debe permitir que los empleados experimenten sin un temor excesivo al fracaso. El patrón observado corresponde a una mediación de tipo \textit{indirect-only}: el efecto total de la presión competitiva sobre el desempeño es positivo, pero la asociación directa residual deja de ser significativa una vez incorporada la conducta innovadora.
 
 \newpage
 \section{Pregunta 2: análisis factorial exploratorio}

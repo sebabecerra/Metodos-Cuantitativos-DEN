@@ -162,7 +162,60 @@ para luego construir el término de interacción $X_cW_c$. El centrado no altera
 
 Las regresiones se estimaron mediante mínimos cuadrados ordinarios con errores estándar robustos HC3. Los efectos indirectos condicionales y el índice de mediación moderada se evaluaron mediante 5.000 remuestras bootstrap. La regla de decisión fue: para coeficientes individuales, $p<.05$; para efectos indirectos, intervalo de confianza bootstrap que no incluya cero.
 
+
+Como complemento, la Tabla \ref{tab:p1-descriptivos} resume las variables originales antes de centrar $X$ y $W$. Esto permite verificar la escala real de cada variable y facilita interpretar las magnitudes estimadas.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticos descriptivos de las variables de la Pregunta 1}
+\label{tab:p1-descriptivos}
+\begin{tabular}{lrrrrr}
+\toprule
+Variable & $N$ & Media & DE & Mín. & Máx. \\
+\midrule
+Presión competitiva & 200 & 4.576 & 1.079 & 2.129 & 7.778 \\
+Tolerancia al fracaso & 200 & 2.785 & 0.758 & 1.054 & 4.543 \\
+Conducta innovadora & 200 & 9.595 & 3.406 & 3.000 & 21.000 \\
+Desempeño innovador & 200 & 9.639 & 2.983 & 4.113 & 21.066 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La Tabla \ref{tab:p1-correlaciones} muestra las asociaciones bivariadas iniciales. La presión competitiva se correlaciona fuertemente con conducta innovadora y desempeño innovador, y de forma positiva pero más moderada con tolerancia al fracaso.
+
+\begin{table}[H]
+\centering
+\caption{Correlaciones bivariadas con presión competitiva}
+\label{tab:p1-correlaciones}
+\begin{tabular}{lrr}
+\toprule
+Variable correlacionada con presión competitiva & $r$ & $p$ \\
+\midrule
+Tolerancia al fracaso & .174 & .014 \\
+Conducta innovadora & .739 & $<.001$ \\
+Desempeño innovador & .733 & $<.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 Como diagnóstico adicional, se evaluó la multicolinealidad mediante el factor de inflación de la varianza. Todos los VIF fueron inferiores a 1.05, por lo que no se observaron problemas de colinealidad entre la presión competitiva centrada, la tolerancia centrada y su interacción. La prueba de Breusch--Pagan tampoco detectó heterocedasticidad en el modelo del mediador ($LM=1.1407$, $p=.767$). En cualquier caso, la inferencia principal utiliza errores estándar robustos HC3.
+
+
+\begin{table}[H]
+\centering
+\caption{Diagnóstico de multicolinealidad en el modelo del mediador}
+\label{tab:p1-vif}
+\begin{tabular}{lr}
+\toprule
+Término & VIF \\
+\midrule
+Constante & 1.027 \\
+Presión competitiva centrada ($X_c$) & 1.036 \\
+Tolerancia centrada ($W_c$) & 1.046 \\
+Interacción $X_cW_c$ & 1.016 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsubsection{Regresión 1: conducta innovadora}
 
@@ -184,6 +237,22 @@ Interacción $X_cW_c$ ($a_3$) & 0.5248 & 0.0389 & 13.48 & $<.001$ \\
 El modelo explica el 98.05\% de la variación en conducta innovadora ($R^2=0.9805$). Este valor indica alto ajuste predictivo dentro de la muestra, pero no demuestra causalidad por sí solo. Con tolerancia al fracaso en su media, un punto adicional de presión competitiva se asocia con aproximadamente dos ideas adicionales propuestas por el empleado durante el período considerado. A su vez, con presión competitiva en su media, un punto adicional de tolerancia al fracaso se asocia con aproximadamente 2.87 ideas adicionales.
 
 El resultado central es la interacción positiva y significativa. El coeficiente $a_3=0.5248$ indica que, por cada punto adicional de tolerancia al fracaso, la pendiente que relaciona la presión competitiva con la conducta innovadora aumenta en aproximadamente 0.525 ideas por cada punto de presión competitiva. Los resultados sugieren que la presión competitiva genera una respuesta innovadora más intensa cuando la organización tolera los errores inherentes a los procesos de experimentación. La magnitud excepcionalmente alta del $R^2$ debe interpretarse como una característica de esta muestra y no necesariamente como evidencia de igual capacidad predictiva fuera de ella. Se apoyan H1 y H5.
+
+
+\begin{table}[H]
+\centering
+\caption{Pendientes simples de presión competitiva sobre conducta innovadora}
+\label{tab:p1-pendientes}
+\begin{tabular}{lrrrrr}
+\toprule
+Nivel de tolerancia & Pendiente & EE robusto & $z$ & IC95\% inf. & IC95\% sup. \\
+\midrule
+Baja ($-1$ DE) & 1.603 & 0.045 & 35.66 & 1.515 & 1.691 \\
+Media & 2.001 & 0.039 & 50.82 & 1.924 & 2.078 \\
+Alta ($+1$ DE) & 2.399 & 0.053 & 45.15 & 2.295 & 2.503 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{figure}[H]
 \centering
@@ -251,6 +320,20 @@ con IC95\% bootstrap $[0.3758,0.5184]$. Como el intervalo no contiene cero, el e
 
 \begin{table}[H]
 \centering
+\caption{Índice de mediación moderada}
+\label{tab:p1-indice}
+\begin{tabular}{lrrr}
+\toprule
+Índice & Estimación & IC95\% inf. & IC95\% sup. \\
+\midrule
+$a_3b$ & .4502 & .3758 & .5184 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
 \caption{Resumen de evaluación de hipótesis}
 \begin{tabular}{lll}
 \toprule
@@ -305,11 +388,51 @@ El resultado fue:
 
 Se rechaza $H_0$, por lo que las correlaciones contienen estructura común suficiente. El índice KMO global fue 0.895, valor considerado meritorio. En conjunto, ambos resultados justifican continuar con el AFE, aunque no determinan cuántos factores existen ni prueban por sí solos la teoría.
 
+
+\begin{table}[H]
+\centering
+\caption{Adecuación de los datos para análisis factorial}
+\label{tab:p2-adecuacion}
+\begin{tabular}{lr}
+\toprule
+Indicador & Resultado \\
+\midrule
+Observaciones & 239 \\
+Ítems analizados & 28 \\
+Valores faltantes & 9 \\
+Valores faltantes sobre respuestas posibles & 0.13\% \\
+Bartlett $\chi^2$ & 3045.39 \\
+Grados de libertad & 378 \\
+$p$ Bartlett & $<.001$ \\
+KMO global & .895 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Número de factores}
 
 La decisión se basó en autovalores, gráfico de sedimentación y análisis paralelo con 1.000 matrices aleatorias. El criterio de autovalor mayor que uno se consideró solo como referencia porque puede sobreextraer.
 
 Los primeros cuatro autovalores observados superaron el percentil 95 de los autovalores aleatorios. La decisión del cuarto factor fue ajustada: 1.505 frente a un umbral de 1.501. Por ello se verificó con la media de los autovalores aleatorios, donde el cuarto factor también fue retenido y el quinto quedó claramente por debajo. La decisión no se basa solo en la diferencia numérica, sino también en la teoría previa y en la interpretabilidad de la solución de cuatro factores.
+
+
+\begin{table}[H]
+\centering
+\caption{Análisis paralelo para determinar el número de factores}
+\label{tab:p2-paralelo}
+\begin{tabular}{lrrrr}
+\toprule
+Factor & Autovalor observado & Media aleatoria & Percentil 95 aleatorio & Decisión \\
+\midrule
+1 & 9.021 & 1.694 & 1.799 & Retener \\
+2 & 2.743 & 1.590 & 1.660 & Retener \\
+3 & 1.707 & 1.511 & 1.574 & Retener \\
+4 & 1.505 & 1.445 & 1.501 & Retener \\
+5 & 1.158 & 1.385 & 1.435 & Descartar \\
+6 & 0.976 & 1.331 & 1.376 & Descartar \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{figure}[H]
 \centering
@@ -321,6 +444,23 @@ Los primeros cuatro autovalores observados superaron el percentil 95 de los auto
 \subsection{Extracción, rotación e interpretación}
 
 La solución de cuatro factores explica el 39.1\% de la varianza. En rotación oblicua este porcentaje debe interpretarse con cautela, porque los factores pueden correlacionarse y la varianza no se reparte de forma completamente independiente entre dimensiones. Se interpreta la matriz patrón porque representa la contribución específica de cada factor controlando las correlaciones entre ellos. Se consideraron sustantivas cargas absolutas cercanas o superiores a 0.40. Un ítem se consideró complejo cuando además presentaba una carga secundaria cercana o superior a 0.30, o cuando la diferencia entre sus dos cargas principales era pequeña.
+
+
+\begin{table}[H]
+\centering
+\caption{Varianza explicada por la solución de cuatro factores}
+\label{tab:p2-varianza}
+\begin{tabular}{lrrr}
+\toprule
+Factor & Suma de cargas al cuadrado & Varianza explicada & Varianza acumulada \\
+\midrule
+F1 & 4.322 & 15.44\% & 15.44\% \\
+F2 & 2.715 & 9.70\% & 25.13\% \\
+F3 & 2.124 & 7.59\% & 32.72\% \\
+F4 & 1.773 & 6.33\% & 39.05\% \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{longtable}{lrrrr>{\raggedright\arraybackslash}p{4.2cm}}
 \caption{Matriz patrón rotada del EECS-R}\\
@@ -368,6 +508,40 @@ El primer factor está definido principalmente por q8, q10, q13, q14, q16, q17, 
 La estructura general es interpretable, pero no perfecta. q1, q9 y q27 muestran complejidad o cargas cruzadas; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q14 y q18 presentan cargas secundarias relevantes; q12 no alcanza 0.40 en ningún factor; y q15 también es débil. Una carga cruzada reduce la pureza conceptual de la escala, porque el ítem parece recoger contenido de más de una dimensión. En q12, el problema es aún más claro: no se vincula de manera sustantiva con ninguno de los factores y sería el candidato más evidente a revisión o eliminación.
 
 La correlación factorial más alta fue cercana a 0.47 entre F1 y F3. Esto confirma que los factores se relacionan, pero no son equivalentes, y respalda el uso de una rotación oblicua.
+
+
+\begin{table}[H]
+\centering
+\caption{Diagnóstico de ítems en la solución factorial}
+\label{tab:p2-diagnostico-items}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lp{8.8cm}}
+\toprule
+Criterio diagnóstico & Ítems identificados \\
+\midrule
+Carga primaria menor a .40 & q2, q6, q12, q15 \\
+Comunalidad menor a .30 & q6, q10, q12, q15, q20 \\
+Carga secundaria cercana o superior a .30 & q1, q2, q9, q14, q18, q27 \\
+Discrepancia teoría--cargas & q10 y q21 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Correlaciones entre factores rotados}
+\label{tab:p2-correlaciones-factores}
+\begin{tabular}{lrrrr}
+\toprule
+ & F1 & F2 & F3 & F4 \\
+\midrule
+F1 & 1.000 & .299 & .471 & .370 \\
+F2 & .299 & 1.000 & .130 & .129 \\
+F3 & .471 & .130 & 1.000 & .252 \\
+F4 & .370 & .129 & .252 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Confiabilidad de las subescalas teóricas}
 
@@ -477,6 +651,24 @@ Por tanto, permite que PA y AC se relacionen con la intención de permanecer tan
 
 \subsubsection{Ajuste global del CFA}
 
+\begin{table}[H]
+\centering
+\caption{Confiabilidad alfa de Cronbach por constructo}
+\label{tab:p3-alpha}
+\begin{tabular}{lr}
+\toprule
+Constructo & Alfa de Cronbach \\
+\midrule
+Actitud hacia compañeros de trabajo (AC) & .891 \\
+Percepción del ambiente de trabajo (PA) & .847 \\
+Satisfacción con el trabajo (ST) & .811 \\
+Compromiso organizacional (CO) & .823 \\
+Intención de permanecer (IP) & .886 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 El CFA de cinco factores correlacionados presentó un ajuste muy bueno. Los índices robustos estimados con \texttt{lavaan} fueron:
 
 \[
@@ -487,6 +679,21 @@ RMSEA_{rob}&=.028, & SRMR&=.033.
 \]
 
 El CFI y el TLI superan .95, el RMSEA es inferior a .06 y el SRMR es bajo. Por tanto, la estructura de cinco factores reproduce adecuadamente la matriz de covarianzas observada.
+
+
+\begin{table}[H]
+\centering
+\caption{Ajuste global del CFA de cinco factores}
+\label{tab:p3-ajuste-cfa}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Modelo & $\chi^2_{rob}$ & gl & $p$ & CFI$_{rob}$ & TLI$_{rob}$ & RMSEA$_{rob}$ & SRMR & BIC \\
+\midrule
+CFA cinco factores & 216.90 & 160 & .002 & .987 & .985 & .028 & .033 & 24926.95 \\
+\bottomrule
+\end{tabular}}
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -543,6 +750,41 @@ Todos los valores de alfa y CR son superiores a .70, por lo que existe consisten
 
 La correlación latente más alta fue $r_{PA,IP}=.562$, inferior a la menor raíz de AVE, correspondiente a ST ($\sqrt{AVE}=.720$). Por tanto, se cumple el criterio de Fornell--Larcker. Además, el HTMT máximo fue .569, claramente inferior al umbral conservador de .85.
 
+
+\begin{table}[H]
+\centering
+\caption{Matriz de Fornell--Larcker}
+\label{tab:p3-fornell}
+\begin{tabular}{lrrrrr}
+\toprule
+ & AC & PA & ST & CO & IP \\
+\midrule
+AC & .824 & .257 & .025 & .307 & .308 \\
+PA & .257 & .776 & .228 & .497 & .562 \\
+ST & .025 & .228 & .720 & .190 & .214 \\
+CO & .307 & .497 & .190 & .751 & .553 \\
+IP & .308 & .562 & .214 & .553 & .818 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Razones HTMT entre constructos}
+\label{tab:p3-htmt}
+\begin{tabular}{lrrrrr}
+\toprule
+ & AC & PA & ST & CO & IP \\
+\midrule
+AC & 1.000 & .260 & .044 & .275 & .310 \\
+PA & .260 & 1.000 & .231 & .495 & .569 \\
+ST & .044 & .231 & 1.000 & .193 & .217 \\
+CO & .275 & .495 & .193 & 1.000 & .501 \\
+IP & .310 & .569 & .217 & .501 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 En consecuencia, los constructos están relacionados, pero no son empíricamente redundantes. El modelo de medición presenta confiabilidad, validez convergente y validez discriminante adecuadas, por lo que resulta razonable continuar con el análisis estructural.
 
 \subsection{b) Selección del modelo estructural superior}
@@ -574,6 +816,20 @@ Con MLR, la comparación entre modelos anidados debe hacerse mediante una prueba
 \[
 \Delta\chi^2_{SB}(2)=31.12,\qquad p<.001.
 \]
+
+
+\begin{table}[H]
+\centering
+\caption{Prueba robusta de diferencia entre modelos estructurales}
+\label{tab:p3-dif-robusta}
+\begin{tabular}{lrrrr}
+\toprule
+Comparación & $\Delta\chi^2_{SB}$ & $\Delta gl$ & $p$ & Decisión \\
+\midrule
+Completo vs. parcialmente mediado & 31.12 & 2 & $<.001$ & Favorece modelo parcial \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Se rechaza $H_0$: imponer simultáneamente que PA y AC no tengan caminos directos hacia IP deteriora significativamente el ajuste. Además, AIC y BIC, obtenidos directamente desde \texttt{lavaan}, son menores en el modelo parcialmente mediado. Por tanto, se selecciona el modelo parcialmente mediado como mejor representación de la estructura de covarianzas observada.
 
@@ -662,6 +918,29 @@ El modelo escalar construido sobre la solución métrica parcial no cumple plena
 
 La igualdad exacta de todos los caminos estructurales es rechazada por la prueba robusta de diferencia de $\chi^2$ ($p=.002$). Sin embargo, el deterioro práctico global es pequeño según CFI ($\Delta CFI=-.006$), por debajo del umbral de .010. Por ello, se concluye invariancia estructural aproximada: globalmente, las relaciones estructurales pueden interpretarse de manera comparable entre hombres y mujeres, aunque conviene revisar contrastes específicos.
 
+
+\begin{table}[H]
+\centering
+\caption{Coeficientes estructurales por género en el modelo multigrupo}
+\label{tab:p3-coef-genero}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Relación & Hombres (B) & Hombres ($\beta$) & $p_H$ & Mujeres (B) & Mujeres ($\beta$) & $p_M$ \\
+\midrule
+$PA\rightarrow ST$ & .237 & .221 & .005 & .249 & .238 & .002 \\
+$AC\rightarrow ST$ & .257 & .239 & .004 & -.187 & -.179 & .051 \\
+$PA\rightarrow CO$ & .523 & .408 & $<.001$ & .625 & .502 & $<.001$ \\
+$AC\rightarrow CO$ & .475 & .371 & $<.001$ & .325 & .261 & .001 \\
+$ST\rightarrow CO$ & .052 & .044 & .512 & .075 & .063 & .443 \\
+$PA\rightarrow IP$ & .556 & .391 & $<.001$ & .222 & .192 & .043 \\
+$AC\rightarrow IP$ & .004 & .003 & .969 & -.009 & -.008 & .934 \\
+$ST\rightarrow IP$ & .024 & .018 & .756 & .141 & .128 & .072 \\
+$CO\rightarrow IP$ & .467 & .421 & .001 & .303 & .328 & .002 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 \begin{table}[H]
 \centering
 \caption{Diferencias específicas de caminos estructurales por género}
@@ -736,9 +1015,86 @@ Las hipótesis son:
 
 Las celdas contienen 45, 63, 53 y 39 clientes, tamaños razonablemente balanceados.
 
+
+\begin{table}[H]
+\centering
+\caption{Distribución de la muestra por tipo de distribución y tamaño}
+\label{tab:p4-distribucion-muestra}
+\begin{tabular}{lrrr}
+\toprule
+Tamaño & Indirecta & Directa & Total \\
+\midrule
+Pequeña & 45 & 53 & 98 \\
+Grande & 63 & 39 & 102 \\
+\midrule
+Total & 108 & 92 & 200 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Estadísticos descriptivos generales de lealtad}
+\label{tab:p4-descriptivos}
+\begin{tabular}{lrrrrrr}
+\toprule
+Variable & $N$ & Media & DE & Mín. & Mediana & Máx. \\
+\midrule
+Satisfacción & 200 & 6.952 & 1.241 & 4.700 & 7.050 & 9.900 \\
+Recomendación & 200 & 6.952 & 1.083 & 4.000 & 7.000 & 9.900 \\
+Recompra & 200 & 7.665 & 0.893 & 4.300 & 7.600 & 9.900 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Medias por tamaño de empresa}
+\label{tab:p4-medias-tamano}
+\begin{tabular}{lrrrrrr}
+\toprule
+Tamaño & Sat. media & Sat. DE & Rec. media & Rec. DE & Recomp. media & Recomp. DE \\
+\midrule
+Pequeña & 6.707 & 1.085 & 6.626 & 1.004 & 7.428 & 0.823 \\
+Grande & 7.187 & 1.338 & 7.267 & 1.067 & 7.893 & 0.902 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Medias por tipo de distribución}
+\label{tab:p4-medias-distribucion}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Distribución & Sat. media & Sat. DE & Rec. media & Rec. DE & Recomp. media & Recomp. DE \\
+\midrule
+Indirecta & 6.325 & 1.033 & 6.488 & 0.986 & 7.336 & 0.880 \\
+Directa & 7.688 & 1.049 & 7.498 & 0.930 & 8.051 & 0.745 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 \subsection{Consistencia y supuestos}
 
 Las tres variables de lealtad presentan $\alpha=0.876$ y correlaciones entre 0.66 y 0.76. Este alfa se reporta solo como descripción de consistencia conjunta; no implica que las tres variables formen una escala unidimensional ni constituye un supuesto del MANOVA. Las variables están suficientemente relacionadas para analizarlas conjuntamente, pero no son redundantes.
+
+
+\begin{table}[H]
+\centering
+\caption{Correlaciones entre variables dependientes}
+\label{tab:p4-correlaciones}
+\begin{tabular}{lrrr}
+\toprule
+ & Satisfacción & Recomendación & Recompra \\
+\midrule
+Satisfacción & 1.000 & .762 & .726 \\
+Recomendación & .762 & 1.000 & .661 \\
+Recompra & .726 & .661 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Box $M$ no fue significativo:
 
@@ -749,6 +1105,40 @@ Box $M$ no fue significativo:
 por lo que no existe evidencia suficiente para rechazar la igualdad de matrices de covarianza; esto no prueba igualdad perfecta. Levene fue significativo para satisfacción y recompra, pero no para recomendación. Esto exige cautela en los ANOVA univariados, aunque no invalida automáticamente el MANOVA debido al balance razonable de las celdas y al resultado favorable de Box $M$.
 
 Como diagnóstico adicional, la normalidad multivariada se evaluó mediante Mardia. La asimetría multivariada no fue significativa ($\chi^2(10)=10.96$, $p=.360$) y la curtosis tampoco mostró desviación relevante ($z=-0.696$, $p=.486$). El máximo de Mahalanobis fue 17.54, levemente superior al punto de corte $\chi^2_{.999,3}=16.27$, identificando un caso potencialmente extremo. Dado que se trata de un solo caso y el MANOVA se interpreta principalmente con Pillai, se mantuvo la muestra completa.
+
+
+\begin{table}[H]
+\centering
+\caption{Normalidad univariada y diagnóstico multivariado}
+\label{tab:p4-normalidad}
+\begin{tabular}{lrrrr}
+\toprule
+Variable / diagnóstico & Asimetría & Curtosis & Estadístico & $p$ \\
+\midrule
+Satisfacción (Shapiro) & .090 & -.769 & .976 & .001 \\
+Recomendación (Shapiro) & .070 & -.226 & .995 & .710 \\
+Recompra (Shapiro) & -.206 & .584 & .990 & .171 \\
+Mardia asimetría multivariada & -- & -- & 10.96 & .360 \\
+Mardia curtosis multivariada & -- & -- & -0.696 & .486 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Homogeneidad de varianzas y covarianzas}
+\label{tab:p4-homogeneidad}
+\begin{tabular}{lrrr}
+\toprule
+Prueba & Estadístico & gl & $p$ \\
+\midrule
+Box $M$ & 27.55 & 18 & .069 \\
+Levene satisfacción & 4.933 & 3,196 & .003 \\
+Levene recomendación & 1.720 & 3,196 & .164 \\
+Levene recompra & 4.553 & 3,196 & .004 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Resultados MANOVA}
 
@@ -839,6 +1229,21 @@ Sí. Se observan diferencias significativas en el perfil de lealtad según el ta
 \subsubsection{c) \textquestiondown{}Distribución y tamaño son antecedentes independientes?}
 
 No. En este contexto, ``independientes'' se interpreta como ausencia de interacción: no se está evaluando independencia estadística entre distribución y tamaño, sino si el efecto de uno depende del nivel del otro. La interacción multivariada fue significativa, por lo que la ventaja del canal directo varía según el tamaño y es especialmente intensa entre empresas grandes, sobre todo en satisfacción y recompra.
+
+\begin{table}[H]
+\centering
+\caption{Resumen de hipótesis de la Pregunta 4}
+\label{tab:p4-hipotesis}
+\begin{tabular}{llc}
+\toprule
+Hipótesis nula & Evidencia principal & Decisión \\
+\midrule
+$H_{01}$: sin efecto conjunto de distribución & Pillai $V=.1474$, $p<.001$ & Se rechaza \\
+$H_{02}$: sin efecto conjunto de tamaño & Pillai $V=.0972$, $p<.001$ & Se rechaza \\
+$H_{03}$: sin interacción distribución$\times$tamaño & Pillai $V=.0966$, $p<.001$ & Se rechaza \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Conclusión de la pregunta 4}
 

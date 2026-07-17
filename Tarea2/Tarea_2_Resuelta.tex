@@ -396,7 +396,24 @@ Valores faltantes & 9 \\
 \end{tabular}
 \end{table}
 
-Se utilizó máxima verosimilitud como método de extracción porque el objetivo es identificar la varianza común explicada por factores latentes. Posteriormente se aplicó rotación Oblimin, que es una rotación oblicua. La rotación no crea nuevos factores ni modifica la información total del modelo; reorganiza la solución para que las cargas factoriales sean más fáciles de interpretar. Se eligió una rotación oblicua porque permite que los factores se relacionen entre sí. Esta decisión es coherente con el enunciado, que señala que las cuatro características pueden estar correlacionadas, y también con la evidencia empírica: las correlaciones estimadas entre factores alcanzaron valores de hasta 0.471.
+Se utilizó máxima verosimilitud como método de extracción principal porque el objetivo es identificar varianza común atribuible a factores latentes y no solo resumir la varianza observada de los ítems. Además, como análisis de sensibilidad, se estimó la misma solución de cuatro factores mediante el método principal. Esta comparación es importante porque ambos métodos responden a lógicas distintas: máxima verosimilitud modela factores comunes y separa error de medición, mientras que el método principal tiende a reproducir una proporción mayor de varianza observada.
+
+Con la misma base imputada y la misma rotación Oblimin, máxima verosimilitud explicó 39.05\% de la varianza acumulada en cuatro factores, mientras que el método principal explicó 47.82\%. La diferencia no implica que el método principal sea automáticamente superior. Indica que captura más varianza observada, pero el análisis principal mantiene máxima verosimilitud porque está más alineado con la evaluación de dimensiones latentes derivadas de la teoría de Blend.
+
+Posteriormente se aplicó rotación Oblimin, que es una rotación oblicua. La rotación no crea nuevos factores ni modifica la información total del modelo; reorganiza la solución para que las cargas factoriales sean más fáciles de interpretar. Se eligió una rotación oblicua porque permite que los factores se relacionen entre sí. Esta decisión es coherente con el enunciado, que señala que las cuatro características pueden estar correlacionadas, y también con la evidencia empírica: las correlaciones estimadas entre factores alcanzaron valores de hasta 0.471.
+
+\begin{table}[H]
+\centering
+\caption{Comparación de métodos de extracción con la misma muestra imputada}
+\begin{tabular}{lccc}
+\toprule
+Método & Rotación & Observaciones & Varianza acumulada 4 factores \\
+\midrule
+Máxima verosimilitud & Oblimin & 239 & 39.05\% \\
+Principal & Oblimin & 239 & 47.82\% \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Adecuación factorial}
 
@@ -598,6 +615,34 @@ El alfa no demuestra unidimensionalidad. Debe interpretarse junto con la estruct
 La evidencia ofrece apoyo general, aunque no completo, a la estructura de cuatro dimensiones propuesta por la teoría de Blend. La matriz es factorizable, el análisis paralelo favorece una solución de cuatro factores y el contenido de estos puede interpretarse como diseño experimental, enseñanza, habilidades interpersonales deficientes y estadística.
 
 No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complejos; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q12 no presenta una carga factorial relevante y q15 es débil; y la dimensión de habilidades interpersonales deficientes presenta menor consistencia. Por tanto, el EECS-R reproduce las cuatro dimensiones principales, pero sería recomendable revisar los ítems problemáticos y validar una versión depurada mediante CFA en una muestra independiente.
+
+
+\subsection{Apéndice de sensibilidad: especificaciones alternativas sin ID}
+
+Como contraste adicional, se estimaron dos especificaciones alternativas usando solamente los 28 ítems del cuestionario, sin incluir la variable administrativa \texttt{ID}. La primera usa el método principal con eliminación listwise y rotación Oblimin; la segunda usa residuos mínimos con eliminación listwise y rotación Varimax. El objetivo no es reemplazar el análisis principal, sino mostrar cómo cambian los resultados bajo decisiones alternativas.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Especificaciones alternativas de sensibilidad sin ID}
+\begin{tabular}{p{0.43\textwidth}cc}
+\toprule
+Criterio & Principal + Oblimin & Minres + Varimax \\
+\midrule
+Variables incluidas & 28 ítems & 28 ítems \\
+Variable \texttt{ID} incluida & No & No \\
+Tratamiento de faltantes & Eliminación listwise & Eliminación listwise \\
+Observaciones usadas & 231 & 231 \\
+Método de extracción & Principal & Minres \\
+Rotación & Oblimin & Varimax \\
+Varianza acumulada de la solución de 4 factores & 47.88\% & 46.23\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La primera alternativa muestra que la varianza acumulada cercana a 48\% aparece cuando se utiliza el método principal, incluso sin incluir \texttt{ID}. Por tanto, la diferencia respecto del análisis principal no se explica principalmente por los casos faltantes, sino por el método de extracción. La segunda alternativa muestra que Varimax también produce una solución interpretable, pero no se adopta como referencia porque fuerza factores ortogonales, es decir, no correlacionados.
+
+Esta comparación permite aclarar dos puntos. Primero, \texttt{ID} no debe incorporarse a la matriz factorial: no es un ítem del EECS-R, no mide ningún rasgo latente y su inclusión alteraría artificialmente KMO, Bartlett, autovalores y cargas factoriales. Segundo, aunque el método principal reporta más varianza acumulada, máxima verosimilitud se mantiene como especificación principal porque el propósito de la pregunta es evaluar factores latentes comunes y no maximizar la varianza observada reproducida.
 
 \newpage
 

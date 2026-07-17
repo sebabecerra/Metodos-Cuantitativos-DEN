@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs,array,longtable,multirow}
 \usepackage{graphicx,float}
+\usepackage{pdfpages}
 \graphicspath{{assets/}}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
@@ -396,25 +397,6 @@ Valores faltantes & 9 \\
 \end{tabular}
 \end{table}
 
-Se utilizó máxima verosimilitud como método de extracción principal porque el objetivo es identificar varianza común atribuible a factores latentes y no solo resumir la varianza observada de los ítems. Además, como análisis de sensibilidad, se estimó la misma solución de cuatro factores mediante el método principal. Esta comparación es importante porque ambos métodos responden a lógicas distintas: máxima verosimilitud modela factores comunes y separa error de medición, mientras que el método principal tiende a reproducir una proporción mayor de varianza observada.
-
-Con la misma base imputada y la misma rotación Oblimin, máxima verosimilitud explicó 39.05\% de la varianza acumulada en cuatro factores, mientras que el método principal explicó 47.82\%. La diferencia no implica que el método principal sea automáticamente superior. Indica que captura más varianza observada, pero el análisis principal mantiene máxima verosimilitud porque está más alineado con la evaluación de dimensiones latentes derivadas de la teoría de Blend.
-
-Posteriormente se aplicó rotación Oblimin, que es una rotación oblicua. La rotación no crea nuevos factores ni modifica la información total del modelo; reorganiza la solución para que las cargas factoriales sean más fáciles de interpretar. Se eligió una rotación oblicua porque permite que los factores se relacionen entre sí. Esta decisión es coherente con el enunciado, que señala que las cuatro características pueden estar correlacionadas, y también con la evidencia empírica: las correlaciones estimadas entre factores alcanzaron valores de hasta 0.471.
-
-\begin{table}[H]
-\centering
-\caption{Comparación de métodos de extracción con la misma muestra imputada}
-\begin{tabular}{lccc}
-\toprule
-Método & Rotación & Observaciones & Varianza acumulada 4 factores \\
-\midrule
-Máxima verosimilitud & Oblimin & 239 & 39.05\% \\
-Principal & Oblimin & 239 & 47.82\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
 \subsection{Adecuación factorial}
 
 La prueba de Bartlett evalúa si la matriz de correlaciones poblacional es una identidad:
@@ -484,14 +466,33 @@ Factor & Autovalor observado & Media aleatoria & Percentil 95 aleatorio & Decisi
 \label{fig:p2-parallel}
 \end{figure}
 
+
 \subsection{Extracción, rotación e interpretación}
 
-La solución de cuatro factores explica el 39.1\% de la varianza. En rotación oblicua este porcentaje debe interpretarse con cautela, porque los factores pueden correlacionarse y la varianza no se reparte de forma completamente independiente entre dimensiones. Se interpreta la matriz patrón porque representa la contribución específica de cada factor controlando las correlaciones entre ellos. Se consideraron relevantes las cargas factoriales absolutas cercanas o superiores a 0.40. Un ítem se consideró complejo cuando además presentaba una carga secundaria cercana o superior a 0.30, o cuando la diferencia entre sus dos cargas principales era pequeña.
+Una vez retenidos cuatro factores, se estimó la solución factorial principal mediante máxima verosimilitud y rotación Oblimin. La elección de máxima verosimilitud se justifica porque la pregunta busca evaluar dimensiones latentes de la teoría de Blend, no solamente reducir los ítems a un conjunto de componentes. En este enfoque, el modelo intenta explicar la varianza común entre los ítems mediante factores latentes y separarla de la varianza específica o de error.
 
+Para transparentar la decisión metodológica, se estimó también la misma solución de cuatro factores con el método principal, manteniendo la misma muestra imputada y la misma rotación Oblimin. El método principal reporta una varianza acumulada mayor, porque reproduce una proporción más alta de la varianza observada de los ítems. Sin embargo, explicar más varianza observada no implica necesariamente representar mejor constructos latentes. Por esta razón, máxima verosimilitud se mantiene como especificación principal, mientras que el método principal se presenta como análisis de sensibilidad.
 
 \begin{table}[H]
 \centering
-\caption{Varianza explicada por la solución de cuatro factores}
+\caption{Comparación de métodos de extracción con la misma muestra imputada}
+\begin{tabular}{lccc}
+\toprule
+Método & Rotación & Observaciones & Varianza acumulada 4 factores \\
+\midrule
+Máxima verosimilitud & Oblimin & 239 & 39.05\% \\
+Principal & Oblimin & 239 & 47.82\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La rotación Oblimin se utilizó porque es una rotación oblicua: permite que los factores se correlacionen entre sí. Esta decisión es coherente con el enunciado, que indica que las cuatro características pueden estar correlacionadas, y con los resultados empíricos, donde las correlaciones entre factores alcanzaron un máximo de 0.471. Por tanto, no se fuerza artificialmente independencia entre dimensiones.
+
+La solución principal con máxima verosimilitud explica 39.05\% de la varianza acumulada. En una rotación oblicua este porcentaje debe interpretarse con cautela, porque los factores pueden correlacionarse y la varianza no se reparte de forma completamente independiente entre dimensiones. Se interpreta la matriz patrón porque representa la contribución específica de cada factor controlando las correlaciones entre ellos. Se consideraron relevantes las cargas factoriales absolutas cercanas o superiores a 0.40. Un ítem se consideró complejo cuando además presentaba una carga secundaria cercana o superior a 0.30, o cuando la diferencia entre sus dos cargas principales era pequeña.
+
+\begin{table}[H]
+\centering
+\caption{Varianza explicada por la solución principal de cuatro factores}
 \label{tab:p2-varianza}
 \begin{tabular}{lrrr}
 \toprule
@@ -617,9 +618,10 @@ La evidencia ofrece apoyo general, aunque no completo, a la estructura de cuatro
 No obstante, el apoyo no es perfecto a nivel de ítems. q1, q9 y q27 son complejos; q10 y q21 presentan discrepancias entre su asignación teórica y su patrón empírico de cargas; q12 no presenta una carga factorial relevante y q15 es débil; y la dimensión de habilidades interpersonales deficientes presenta menor consistencia. Por tanto, el EECS-R reproduce las cuatro dimensiones principales, pero sería recomendable revisar los ítems problemáticos y validar una versión depurada mediante CFA en una muestra independiente.
 
 
+
 \subsection{Apéndice de sensibilidad: especificaciones alternativas sin ID}
 
-Como contraste adicional, se estimaron dos especificaciones alternativas usando solamente los 28 ítems del cuestionario, sin incluir la variable administrativa \texttt{ID}. La primera usa el método principal con eliminación listwise y rotación Oblimin; la segunda usa residuos mínimos con eliminación listwise y rotación Varimax. El objetivo no es reemplazar el análisis principal, sino mostrar cómo cambian los resultados bajo decisiones alternativas.
+Como verificación adicional, se estimaron dos especificaciones alternativas usando solamente los 28 ítems del cuestionario, sin incluir la variable administrativa \texttt{ID}. La primera usa el método principal con eliminación listwise y rotación Oblimin; la segunda usa residuos mínimos con eliminación listwise y rotación Varimax.
 
 \begin{table}[H]
 \centering
@@ -640,9 +642,9 @@ Varianza acumulada de la solución de 4 factores & 47.88\% & 46.23\% \\
 \end{tabular}
 \end{table}
 
-La primera alternativa muestra que la varianza acumulada cercana a 48\% aparece cuando se utiliza el método principal, incluso sin incluir \texttt{ID}. Por tanto, la diferencia respecto del análisis principal no se explica principalmente por los casos faltantes, sino por el método de extracción. La segunda alternativa muestra que Varimax también produce una solución interpretable, pero no se adopta como referencia porque fuerza factores ortogonales, es decir, no correlacionados.
+La alternativa con método principal y eliminación listwise alcanza 47.88\%, muy cerca del 47.82\% obtenido con método principal e imputación por mediana. Por tanto, la diferencia frente al 39.05\% del análisis principal se debe principalmente al método de extracción y no al tratamiento de los valores faltantes. La alternativa Varimax también produce una solución interpretable, pero no se adopta como referencia porque fuerza factores no correlacionados.
 
-Esta comparación permite aclarar dos puntos. Primero, \texttt{ID} no debe incorporarse a la matriz factorial: no es un ítem del EECS-R, no mide ningún rasgo latente y su inclusión alteraría artificialmente KMO, Bartlett, autovalores y cargas factoriales. Segundo, aunque el método principal reporta más varianza acumulada, máxima verosimilitud se mantiene como especificación principal porque el propósito de la pregunta es evaluar factores latentes comunes y no maximizar la varianza observada reproducida.
+La variable \texttt{ID} se excluye en todos los análisis porque no es un ítem del EECS-R, no mide ningún rasgo latente y su inclusión alteraría artificialmente KMO, Bartlett, autovalores y cargas factoriales.
 
 \newpage
 
@@ -1357,5 +1359,51 @@ Henseler, J., Ringle, C. M., \& Sarstedt, M. (2015). A new criterion for assessi
 Meredith, W. (1993). Measurement invariance, factor analysis and factorial invariance. \textit{Psychometrika, 58}(4), 525--543.
 
 Zhao, X., Lynch, J. G., \& Chen, Q. (2010). Reconsidering Baron and Kenny: Myths and truths about mediation analysis. \textit{Journal of Consumer Research, 37}(2), 197--206.
+
+
+\newpage
+\section*{Anexo 1: Código y output pregunta 1}
+\addcontentsline{toc}{section}{Anexo 1: Código y output pregunta 1}
+\begin{center}
+\vspace*{0.35\textheight}
+{\Large \textbf{Anexo 1: Código y output pregunta 1}}\\[1em]
+{\large Notebook ejecutado de la Pregunta 1}
+\end{center}
+\newpage
+\includepdf[pages=-,pagecommand={}]{notebook_pdfs/Tarea_2_P1_Mediacion_Moderada.pdf}
+
+\newpage
+\section*{Anexo 2: Código y output pregunta 2}
+\addcontentsline{toc}{section}{Anexo 2: Código y output pregunta 2}
+\begin{center}
+\vspace*{0.35\textheight}
+{\Large \textbf{Anexo 2: Código y output pregunta 2}}\\[1em]
+{\large Notebook ejecutado de la Pregunta 2}
+\end{center}
+\newpage
+\includepdf[pages=-,pagecommand={}]{notebook_pdfs/Tarea_2_P2_Analisis_Factorial.pdf}
+
+\newpage
+\section*{Anexo 3: Código y output pregunta 3}
+\addcontentsline{toc}{section}{Anexo 3: Código y output pregunta 3}
+\begin{center}
+\vspace*{0.35\textheight}
+{\Large \textbf{Anexo 3: Código y output pregunta 3}}\\[1em]
+{\large Notebook ejecutado de la Pregunta 3}
+\end{center}
+\newpage
+\includepdf[pages=-,pagecommand={}]{notebook_pdfs/Tarea_2_P3_SEM.pdf}
+
+\newpage
+\section*{Anexo 4: Código y output pregunta 4}
+\addcontentsline{toc}{section}{Anexo 4: Código y output pregunta 4}
+\begin{center}
+\vspace*{0.35\textheight}
+{\Large \textbf{Anexo 4: Código y output pregunta 4}}\\[1em]
+{\large Notebook ejecutado de la Pregunta 4}
+\end{center}
+\newpage
+\includepdf[pages=-,pagecommand={}]{notebook_pdfs/Tarea_2_P4_MANOVA.pdf}
+
 
 \end{document}
